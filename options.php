@@ -83,7 +83,7 @@ function optionsframework_options() {
 	// Pull all the pages into an array
 	$options_pages = array();
 	$options_pages_obj = get_pages( 'sort_column=post_parent,menu_order' );
-	$options_pages[''] = 'Select a page:';
+	$options_pages[''] = __( 'Select a page:', 'uuui' );
 	foreach ($options_pages_obj as $page) {
 		$options_pages[$page->ID] = $page->post_title;
 	}
@@ -353,6 +353,20 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __( '首页设置', 'uuui' ),
 		'type' => 'heading'
+	);
+	$options[] = array(
+		'name' => __( '选择注册页面', 'uuui' ),
+		'desc' => __( '需要先发布页面，页面模板选择“前台注册”', 'uuui' ),
+		'id' => 'select_pages_registered',
+		'type' => 'select',
+		'options' => $options_pages
+	);
+	$options[] = array(
+		'name' => __( '选择登录页面', 'uuui' ),
+		'desc' => __( '需要先发布页面，页面模板选择“前台登录”', 'uuui' ),
+		'id' => 'select_pages_login',
+		'type' => 'select',
+		'options' => $options_pages
 	);
 	$options[] = array(
 		'name' => __( '选择全部文章页面', 'uuui' ),

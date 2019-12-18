@@ -59,57 +59,66 @@ if( !empty($_POST['ludou_reg']) ) {
 }?>
 
 <?php get_header(); ?>
-        
-        <div class="row">
-            <div class="col-lg-12 col-sm-12 text-center" style="margin-bottom: 40px;">
-                <h2 style="font-weight: 600; margin: 20px 0px;"><?php the_title(); ?></h2>
-                <div class="dropdown-divider"></div>
-            </div>
-            <div class="col-lg-3 hide-768px"></div>
-            <div class="col-lg-6 col-sm-12">
-                <div class="page-support-content" >
-                    <?php if(!empty($error)) {
-                    echo '<p class="ludou-error">'.$error.'</p>';
-                    }
-                    if (!is_user_logged_in()) { ?>
-                    <form name="registerform" method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>" class="ludou-reg">
-                        <p>
-                        <label for="user_login">用户名<br />
-                            <input type="text" name="user_login" tabindex="1" id="user_login" class="input" value="<?php if(!empty($sanitized_user_login)) echo $sanitized_user_login; ?>" />
-                        </label>
-                        </p>
-
-                        <p>
-                        <label for="user_email">电子邮件<br />
-                            <input type="text" name="user_email" tabindex="2" id="user_email" class="input" value="<?php if(!empty($user_email)) echo $user_email; ?>" size="25" />
-                        </label>
-                        </p>
-                        
-                        <p>
-                        <label for="user_pwd1">密码(至少6位)<br />
-                            <input id="user_pwd1" class="input" tabindex="3" type="password" tabindex="21" size="25" value="" name="user_pass" />
-                        </label>
-                        </p>
-                        
-                        <p>
-                        <label for="user_pwd2">重复密码<br />
-                            <input id="user_pwd2" class="input" tabindex="4" type="password" tabindex="21" size="25" value="" name="user_pass2" />
-                        </label>
-                        </p>
-                        
-                        <p class="submit">
-                        <input type="hidden" name="ludou_reg" value="ok" />
-                        <button class="button button-primary button-large" type="submit">注册</button>
-                        </p>
-                    </form>
-                    <?php } else {
-                    echo '<div class="alert alert-info">您已注册成功，并已登录！<a href="'.wp_logout_url().'" title="登出">登出？</a></div>';
-                    } ?>
-                </div>
-            </div>
-            <div class="col-lg-3 hide-768px"></div>
+    <div class="row">
+        <div class="col-lg-12 col-sm-12 text-center" style="margin-bottom: 40px;">
+            <h2 style="font-weight: 600; margin: 20px 0px;"><?php the_title(); ?></h2>
+            <div class="dropdown-divider"></div>
         </div>
-        
+        <div class="col-lg-3 hide-768px"></div>
+        <div class="col-lg-6 col-sm-12">
+            <div class="page-support-content" >
+                <?php if(!empty($error)) {
+                  echo '<p class="ludou-error">'.$error.'</p>';
+                  }
+                  if (!is_user_logged_in()) { ?>
+                <form name="registerform" method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
+                    <!-- 用户名 -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text">用&nbsp;&nbsp;户&nbsp;名</span>
+                      </div>
+                      <input type="text" name="user_login" tabindex="1" id="user_login" class="form-control" value="<?php if(!empty($sanitized_user_login)) echo $sanitized_user_login; ?>" />
+                    </div>
+                    <!-- 电子邮件 -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text">电子邮件</span>
+                      </div>
+                      <input type="text" name="user_email" tabindex="2" id="user_email" class="form-control" value="<?php if(!empty($user_email)) echo $user_email; ?>" size="25" />
+                    </div>
+                    <!-- 密码(至少6位) -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</span>
+                        </div>
+                        <input id="user_pwd1" class="form-control" tabindex="3" type="password" tabindex="21" size="25" value="" name="user_pass" />
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">至少6位</span>
+                        </div>
+                    </div>
+                    <!-- 重复密码 -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">重复密码</span>
+                        </div>
+                        <input id="user_pwd2" class="form-control" tabindex="4" type="password" tabindex="21" size="25" value="" name="user_pass2" />
+                    </div>
+                    <!-- 注册 -->
+                      <input type="hidden" name="ludou_reg" value="ok" />
+                      <button class="btn btn-primary" type="submit">注册</button>
+                      <span class="font-size-small">点击注册即表示同意本网站的<a href="#" class="font-size-small">隐私条款</a></span>
+                      
+                </form>
+                <br /><br />
+
+                <?php } else {
+                echo '<div class="alert alert-info">您已注册成功，并已登录！<a href="'.wp_logout_url().'" title="登出">登出？</a></div>';
+                } ?>
+            </div>
+        </div>
+        <div class="col-lg-3 hide-768px"></div>
+    </div>
+    
             
 
 
