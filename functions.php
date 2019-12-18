@@ -46,13 +46,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 /* —— 启用特色图片 —— 结束 */
 
 
-/* —— 自定义登陆之后的重定向链接 —— 如果是管理员就重定向到管理员面板，如果是普通用户则跳转到首页。*/  
-function soi_login_redirect($redirect_to, $request, $user)   
-{   
-    return (is_array($user->roles) && in_array('administrator', $user->roles)) ? admin_url() : site_url();   
-}    
-add_filter('login_redirect', 'soi_login_redirect', 10, 3); 
-/* —— 自定义登陆之后的重定向链接 —— 结束 */ 
+
 
 
 

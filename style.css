@@ -536,3 +536,31 @@ footer a:hover{
     border-radius: 4px;
     border: rgb(238, 238, 238) 1px solid;
 }
+
+.registered-landing-img-div-1 , .registered-landing-img-div-2 , .registered-landing-img-div-3{
+    padding-left: 140px;
+}
+
+.registered-landing-img-div-4 , .registered-landing-img-div-5{
+    padding-left: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.registered-landing-img-div-6{
+    padding-left: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.registered-landing-text{
+    padding: 40px 0px 10px 40px;
+}
+
+.registered-landing-text h3{
+    font-weight: 600;
+}
+
+.registered-landing-text p{
+    padding-right: 80px;
+}

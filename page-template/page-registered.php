@@ -120,8 +120,8 @@ if( !empty($_POST['ludou_reg']) ) {
         <div class="col-lg-3 hide-768px"></div>
     </div>
     
-    <div class="col-12 registered-landing">
-      <?php include( get_stylesheet_directory() . '/index/registered-page-landing.php' ); ?>
+    <div class="col-12">
+        <?php include( get_stylesheet_directory() . '/index/landing-page.php' ); ?>
     </div>
    
 

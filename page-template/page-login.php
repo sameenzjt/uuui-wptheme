@@ -121,7 +121,9 @@
             <div class="col-lg-3 hide-768px"></div>
         </div>
         
-            
+        <div class="col-12">
+            <?php include( get_stylesheet_directory() . '/index/landing-page.php' ); ?>
+        </div>
 
 
 <?php get_footer(); ?>
