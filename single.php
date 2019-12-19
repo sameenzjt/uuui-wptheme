@@ -66,6 +66,7 @@
                 <div class="single-tool" id="fixed-tool">
                     <h5 class="lanmu-title">文章小工具</h5>
                     <div class="dropdown-divider"></div>
+                    <p class="font-size-small-14">《<?php the_title(); ?>》</p>
                     <img src="<?php bloginfo('template_url'); ?>/images/time.png" style="float: left; margin: 4px 6px 0px 0px ;">
                     <p class="font-size-small-14"><?php echo count_words_read_time(); ?></p>
                     <div class="post-font-size-change">

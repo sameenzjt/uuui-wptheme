@@ -166,6 +166,9 @@ function cn_nf_url_parse( $content ) {
 include( 'includes/categories-images.php' );//分类目录添加图像
 
 
+include( 'includes/custom-editor.php' );//向 WordPress 可视化编辑器添加自定义样式
+
+
 /* —— 更改作者存档前缀 —— */
 add_action('init', 'change_author_base');
 function change_author_base() {

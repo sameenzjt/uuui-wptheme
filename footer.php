@@ -1,6 +1,6 @@
 </main>
 
-    <footer>
+    <footer class="footer">
         <div class="row">
             <div class="col-lg-4 footer-about-us">
                 <p>关于我们</p>
