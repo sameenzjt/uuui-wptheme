@@ -29,6 +29,11 @@
                 <div class="post-content">
                     <?php the_content(); ?>
 
+                    <?php the_field('001'); ?>
+
+                    
+                    
+
 
 
                 </div>
@@ -37,6 +42,18 @@
                     没有文章！
                 </div>
                 <?php endif; ?>
+
+                
+
+
+
+
+
+               
+
+
+
+
                 <!--版权声明-->
                 <div class="post-copyright-notice">
                     <div class="dropdown-divider"></div>

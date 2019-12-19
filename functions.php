@@ -46,7 +46,24 @@ if ( function_exists( 'add_theme_support' ) ) {
 /* —— 启用特色图片 —— 结束 */
 
 
+/**
+ * ACF插件
+ */
+// Define path and URL to the ACF plugin.
+define( 'MY_ACF_PATH', get_stylesheet_directory() . '/includes/acf/' );
+define( 'MY_ACF_URL', get_stylesheet_directory_uri() . '/includes/acf/' );
 
+// Include the ACF plugin.
+include_once( MY_ACF_PATH . 'acf.php' );
+
+// Customize the url setting to fix incorrect asset URLs.
+add_filter('acf/settings/url', 'my_acf_settings_url');
+function my_acf_settings_url( $url ) {
+    return MY_ACF_URL;
+}
+/**
+ * ACF插件————结束
+ */
 
 
 
@@ -163,10 +180,10 @@ function cn_nf_url_parse( $content ) {
 /* —— 自动添加nofollow属性和新窗口打开WordPress文章/页面的站外链接 —— 结束 */
 
 
-include( 'includes/categories-images.php' );//分类目录添加图像
+include( 'functions/categories-images.php' );//分类目录添加图像
 
 
-include( 'includes/custom-editor.php' );//向 WordPress 可视化编辑器添加自定义样式
+include( 'functions/custom-editor.php' );//向 WordPress 可视化编辑器添加自定义样式
 
 
 /* —— 更改作者存档前缀 —— */
