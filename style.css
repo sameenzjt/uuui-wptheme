@@ -564,3 +564,26 @@ footer a:hover{
 .registered-landing-text p{
     padding-right: 80px;
 }
+
+.post_tags{
+    list-style-type: none;
+    
+}
+
+.post_tags li{
+    float: left;
+    margin: 5px 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.post_tags li:hover{
+    background-color: #ff5c00;
+}
+
+.post_tags li:hover a{
+    color: #fff;
+}
+
+
+
