@@ -215,4 +215,49 @@ function count_words_read_time () {
 
 
 
+
+add_filter('manage_book_posts_columns','add_new_book_columns');   
+ 
+function add_new_book_columns($book_columns) {   
+       
+    $new_columns['cb'] = '<input type="checkbox" />';//这个是前面那个选框，不要丢了   
+  
+     
+	$new_columns['title'] = ' 书本名'; 
+	$new_columns['id'] = __('ID');
+	$new_columns['url'] = 'URL'; 
+    $new_columns['categories'] = __('Categories');
+    
+    $new_columns['date'] = _x('Date', 'column name');   
+  
+    //直接返回一个新的数组   
+    return $new_columns;   
+}  
+
+
+add_action('manage_book_posts_custom_column', 'manage_book_columns', 10, 2);   
+    
+function manage_book_columns($column_name, $id) {   
+    global $wpdb; 
+    switch ($column_name) {   
+    case 'id':
+        echo $id;  
+	break;
+    
+    case 'url':   
+        //通过数据库查询附件数量   
+        $url = get_field('url');   
+        echo $url;  
+	break;
+    default: 
+break; 
+    }   
+}  
+
+
+
+
+
+
+
 ?>
