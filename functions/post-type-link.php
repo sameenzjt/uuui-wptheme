@@ -39,20 +39,88 @@ function my_custom_init()
 			'excerpt',//摘要
 			)
 	);
-	register_post_type('book',$args);
+	register_post_type('links',$args);
 }
-
-
 /**
  * 创建自定义文章类型 —— 结束
  */
 
 
 
+/**
+ * 自定义文章类型分类
+ */
+function uuui_website_links() {
+	$labels = array(
+	'name' => _x( '网址分类', 'taxonomy 名称' ),
+	'singular_name' => _x( '网址分类', 'taxonomy 单数名称' ),
+	'search_items' => __( '搜索网址分类' ),
+	'all_items' => __( '所有网址分类' ),
+	'parent_item' => __( '该网址分类的上级分类' ),
+	'parent_item_colon' => __( '该网址分类的上级分类：' ),
+	'edit_item' => __( '编辑网址分类' ),
+	'update_item' => __( '更新网址分类' ),
+	'add_new_item' => __( '添加新的网址分类' ),
+	'new_item_name' => __( '新网址分类' ),
+	'menu_name' => __( '网址分类' ),
+	);
+	$args = array(
+	'labels' => $labels,
+	'hierarchical' => true,
+	);
+	register_taxonomy( 'links_cat', 'links', $args );
+	}
+	add_action( 'init', 'uuui_website_links', 0 );
+/**
+ * 自定义文章类型分类 —— 结束
+ */
 
 
 
 
+ /**
+ * 自定义文章类型后台文章列表新增栏目
+ */
+add_filter('manage_links_posts_columns','add_new_links_columns');   
+ 
+function add_new_links_columns($links_columns) {   
+       
+    $new_columns['cb'] = '<input type="checkbox" />';//这个是前面那个选框，不要丢了   
+  
+	$new_columns['title'] = '网站'; 
+	$new_columns['id'] = __('ID');
+	$new_columns['url'] = 'URL'; 
+    
+    $new_columns['date'] = _x('Date', 'column name');   
+  
+    //直接返回一个新的数组   
+    return $new_columns;   
+}  
+
+add_action('manage_links_posts_custom_column', 'manage_links_columns', 10, 2);   
+    
+function manage_links_columns($column_name, $id) {   
+    global $wpdb; 
+    switch ($column_name) {
+    case 'id':
+        echo $id;  
+	break;
+    
+    case 'url':     
+        $url = get_field('url');   
+        echo $url;  
+	break;
+
+	
+
+    default: 
+break; 
+    }   
+}  
+
+/**
+ * 自定义文章类型后台文章列表新增栏目 —— 结束
+ */
 
 
 
