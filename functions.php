@@ -46,6 +46,11 @@ if ( function_exists( 'add_theme_support' ) ) {
 /* —— 启用特色图片 —— 结束 */
 
 
+/* —— 后台启用链接选项 —— */
+add_filter( 'pre_option_link_manager_enabled', '__return_true' );
+/* —— 后台启用链接选项 —— 结束 */
+
+
 /**
  * ACF插件
  */
@@ -186,7 +191,7 @@ include( 'functions/categories-images.php' );//分类目录添加图像
 include( 'functions/custom-editor.php' );//向 WordPress 可视化编辑器添加自定义样式
 
 
-include( 'functions/post-type-link.php' );//向 WordPress 可视化编辑器添加自定义样式
+//include( 'functions/post-type-link.php' );//自定义文章类型
 
 
 /* —— 更改作者存档前缀 —— */
