@@ -186,6 +186,9 @@ include( 'functions/categories-images.php' );//分类目录添加图像
 include( 'functions/custom-editor.php' );//向 WordPress 可视化编辑器添加自定义样式
 
 
+include( 'functions/post-type-link.php' );//向 WordPress 可视化编辑器添加自定义样式
+
+
 /* —— 更改作者存档前缀 —— */
 add_action('init', 'change_author_base');
 function change_author_base() {
@@ -207,6 +210,9 @@ function count_words_read_time () {
 	   	return $output;
 	}
 /* —— 字数统计 —— 结束 */
+
+
+
 
 
 ?>
