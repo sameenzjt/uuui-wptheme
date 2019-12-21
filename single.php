@@ -93,7 +93,6 @@
                         <a href="javascript:void(0);" class="font-size-small-14"><span>18</span></a>
                         <a href="javascript:void(0);" class="font-size-small-14"><span>20</span></a>
                         <a href="javascript:void(0);" class="font-size-small-14"><span class="bigger">A+</span></a>
-                        
                     </div>
                 </div>
                 <div class="single-tool">
@@ -122,6 +121,11 @@
                             <?php endif; wp_reset_query(); } ?>                                                        
                     </ul>
                 </div>
+
+
+
+
+                
             </div>
 
         </div>

@@ -117,18 +117,17 @@
 </head>
 <?php flush(); ?>
 <body>
-    <nav>
+    <nav style="float:left;width:100%;position: fixed;top:0px;z-index:999;">
         <a href="<?php echo get_option('home'); ?>/">
             <img src="<?php bloginfo('template_url'); ?>/images/083456tqzn4xxw99f1999w.jpg" class="logo_img">
         </a>
         <div class="nav-link hide-768px">
-            <ul>
-                <li><a href="<?php echo get_option('home'); ?>">首页</a></li>
-                <li><a href="#">设计文章</a></li>
-                <li><a href="#">设计专题</a></li>
-                <li><a href="#">设计素材</a></li>
-                <li class="about-us"><a href="#">关于我们</a></li>
-            </ul>
+        <?php 
+        if(function_exists('wp_nav_menu')) {
+            wp_nav_menu(array( 'theme_location' => 'nav_menu','container_id'=>'menu_left') ); 
+        }
+        ?>
+            
         </div>
 
         <div style="float:right; margin-top:16px;">
@@ -182,5 +181,5 @@
         </div>
         
     </nav>
-    
-    <main style="margin-top: 20px;">
+    <div style="clear:both;"></div>
+    <main style="margin-top: 80px;">

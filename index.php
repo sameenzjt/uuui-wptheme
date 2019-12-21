@@ -165,6 +165,7 @@
                         <?php edit_post_link('编辑', '', ''); ?>
                     </p>
                 </div>
+                <div class="dropdown-divider"></div>
                 <?php endwhile; ?>
 
                 <div class="posts-div" style="width: 100%;margin: 20px 0px;float: left;">

@@ -152,7 +152,7 @@
             {
                 var s = document.body.scrollTop || document.documentElement.scrollTop
                 if(s>H) {
-                    oDiv.style = "position:fixed;top:20px;"
+                    oDiv.style = "position:fixed;top:60px;"
                 } else {
                     oDiv.style = ""
                 }
@@ -165,6 +165,8 @@
         });
     </script>
 
+
+    
 <?php wp_footer(); ?>
 </body>
 </html>

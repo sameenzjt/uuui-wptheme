@@ -586,4 +586,53 @@ main{
 }
 
 
+.navigation-infotext{
+    display:inline-block;
+    font-size: 12px;
+    line-height: 1.6em;
+}
+
+.navigation-cat{
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.navigation-links{
+    border-radius: 4px;
+    padding: 10px;
+    height: 100%;
+    transition: all 0.1s ease-in-out;
+}
+
+.navigation-links:hover{
+    color: #fff;
+    background-color: #ff5c00;
+}
+
+.navigation-div{
+    padding: 0px 5px;
+    margin: 3px 0px;
+}
+
+.plus{
+    float: right;
+    background-image: url(images/plus.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+    transition: all 0.4s ease-in-out;
+    
+}
+
+.minus{
+    float: right;
+    background-image: url(images/minus.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(30deg);
+    transition: all 0.4s ease-in-out;
+    
+}
 
