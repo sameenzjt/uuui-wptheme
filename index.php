@@ -8,24 +8,39 @@
                     <span>软件教程</span>
                     <span  class="font-size-small">常用软件自学路径</span>
                     <div class="dropdown-divider"></div>
+
                     <div class="row text-center">
                         <div class="col-3">
-                            <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ps.png" width="36px">
-                            <span class="font-size-small">Ps</span>
+                            <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ps.png" width="36px" style="margin:5px 0px;">
                         </div>
                         <div class="col-3">
-                            <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ai.png" width="36px">
-                            <span class="font-size-small">Ai</span>
+                            <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ai.png"  width="36px" style="margin:5px 0px;">
                         </div>
                         <div class="col-3">
-                            <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ae.png" width="36px">
-                            <span class="font-size-small">Ae</span>
+                            <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ae.png"  width="36px" style="margin:5px 0px;">
                         </div>
                         <div class="col-3">
-                            <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Pr.png" width="36px">
-                            <span class="font-size-small">Pr</span>
+                            <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Pr.png"  width="36px" style="margin:5px 0px;">
                         </div>
+                        <div class="col-3">
+                            <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ps.png"  width="36px" style="margin:5px 0px;">
+                        </div>
+                        <div class="col-3">
+                            <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ai.png"  width="36px" style="margin:5px 0px;">
+                        </div>
+                        <div class="col-3">
+                            <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ae.png"  width="36px" style="margin:5px 0px;">
+                        </div>
+                        <div class="col-3">
+                            <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Pr.png"  width="36px" style="margin:5px 0px;">
+                        </div>
+
+                        
+
+
+
                     </div>
+
                 </div>
             </div>
 
@@ -128,7 +143,7 @@
     -->
 
         <div class="box row">
-            <div class="col-lg-9 col-sm-12 post-list" style="width: 100%; padding-right:30px;">
+            <div class="col-lg-9 col-sm-12 post-list" style="width: 100%; padding: 10px 30px 0px 20px;">
                 <span class="index-title new-post">最新文章</span>
                 <span class="font-size-small">设计文章</span>
                 <ul>
@@ -141,7 +156,7 @@
                     <li><a href="#">产品</a></li>
                     <li><a href="#">下载</a></li>
                 </ul>
-                <span style="font-size: small; float: right;"><a href="#">查看全部</a></span>
+                
                 <div class="dropdown-divider"></div>
                 
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -187,7 +202,7 @@
 
         </div>
 
-        <div class="box" >
+        <div class="box" style="padding:20px;">
             <span class="index-title">专题</span>
             <span style="font-size: small; float: right;"><a href="
                 <?php $select_pages_allthematic = of_get_option('select_pages_allthematic', '');

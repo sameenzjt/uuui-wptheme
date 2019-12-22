@@ -103,7 +103,7 @@ function optionsframework_options() {
 		'desc' => __( '迷你文本输入字段。', 'uuui' ),
 		'id' => 'example_text_mini',
 		'std' => 'Default',
-		'class' => 'mini',
+		
 		'type' => 'text'
 	);
 
@@ -354,81 +354,114 @@ function optionsframework_options() {
 		'name' => __( '首页设置', 'uuui' ),
 		'type' => 'heading'
 	);
-	$options[] = array(
-		'name' => __( '选择注册页面', 'uuui' ),
-		'desc' => __( '需要先发布页面，页面模板选择“前台注册”', 'uuui' ),
-		'id' => 'select_pages_registered',
-		'type' => 'select',
-		'options' => $options_pages
-	);
-	$options[] = array(
-		'name' => __( '选择登录页面', 'uuui' ),
-		'desc' => __( '需要先发布页面，页面模板选择“前台登录”', 'uuui' ),
-		'id' => 'select_pages_login',
-		'type' => 'select',
-		'options' => $options_pages
-	);
-	$options[] = array(
-		'name' => __( '选择全部文章页面', 'uuui' ),
-		'desc' => __( '需要先发布页面，页面模板选择“全部文章”', 'uuui' ),
-		'id' => 'select_pages_allposts',
-		'type' => 'select',
-		'options' => $options_pages
-	);
+	
+		if ( $options_categories ) {
+			$options[] = array(
+				'name' => __( '首页专题栏目', 'uuui' ),
+				'desc' => __( '第一个专题', 'uuui' ),
+				'id' => 'index_thematic_1',
+				'type' => 'select',
+				'class' => 'mini', //mini, tiny, small
+				'options' => $options_categories
+			);
+			$options[] = array(
+				'desc' => __( '第二个专题', 'uuui' ),
+				'id' => 'index_thematic_2',
+				'type' => 'select',
+				'class' => 'mini', //mini, tiny, small
+				'options' => $options_categories
+			);
+			$options[] = array(
+				'desc' => __( '第三个专题', 'uuui' ),
+				'id' => 'index_thematic_3',
+				'type' => 'select',
+				'class' => 'mini', //mini, tiny, small
+				'options' => $options_categories
+			);
+			$options[] = array(
+				'desc' => __( '第四个专题', 'uuui' ),
+				'id' => 'index_thematic_4',
+				'type' => 'select',
+				'class' => 'mini', //mini, tiny, small
+				'options' => $options_categories
+			);
+		}
 
+/* —— 页面设置 —— */
 	$options[] = array(
-		'name' => __( '选择全部专题页面', 'uuui' ),
-		'desc' => __( '需要先发布页面，页面模板选择“全部专题”', 'uuui' ),
-		'id' => 'select_pages_allthematic',
-		'type' => 'select',
-		'options' => $options_pages
+		'name' => __( '页面设置', 'uuui' ),
+		'type' => 'heading'
 	);
-	if ( $options_categories ) {
 		$options[] = array(
-			'name' => __( '首页专题栏目', 'uuui' ),
-			'desc' => __( '第一个专题', 'uuui' ),
-			'id' => 'index_thematic_1',
+			'name' => __( '选择注册页面', 'uuui' ),
+			'desc' => __( '需要先发布页面，页面模板选择“前台注册”', 'uuui' ),
+			'id' => 'select_pages_registered',
+			'class' => 'mini',
 			'type' => 'select',
-			'class' => 'mini', //mini, tiny, small
-			'options' => $options_categories
+			'options' => $options_pages
 		);
 		$options[] = array(
-			'desc' => __( '第二个专题', 'uuui' ),
-			'id' => 'index_thematic_2',
+			'name' => __( '选择登录页面', 'uuui' ),
+			'desc' => __( '需要先发布页面，页面模板选择“前台登录”', 'uuui' ),
+			'id' => 'select_pages_login',
+			'class' => 'mini',
 			'type' => 'select',
-			'class' => 'mini', //mini, tiny, small
-			'options' => $options_categories
+			'options' => $options_pages
 		);
 		$options[] = array(
-			'desc' => __( '第三个专题', 'uuui' ),
-			'id' => 'index_thematic_3',
+			'name' => __( '选择全部文章页面', 'uuui' ),
+			'desc' => __( '需要先发布页面，页面模板选择“全部文章”', 'uuui' ),
+			'id' => 'select_pages_allposts',
+			'class' => 'mini',
 			'type' => 'select',
-			'class' => 'mini', //mini, tiny, small
-			'options' => $options_categories
+			'options' => $options_pages
 		);
+
 		$options[] = array(
-			'desc' => __( '第四个专题', 'uuui' ),
-			'id' => 'index_thematic_4',
+			'name' => __( '选择全部专题页面', 'uuui' ),
+			'desc' => __( '需要先发布页面，页面模板选择“全部专题”', 'uuui' ),
+			'id' => 'select_pages_allthematic',
+			'class' => 'mini',
 			'type' => 'select',
-			'class' => 'mini', //mini, tiny, small
-			'options' => $options_categories
+			'options' => $options_pages
 		);
-	}
+
+
 	
 /* —— 页首页脚设置 —— */
 	$options[] = array(
 		'name' => __( '页首页脚设置', 'uuui' ),
 		'type' => 'heading'
 	);
-	$options[] = array(
-		'name' => __( '关于我们', 'uuui' ),
-		'desc' => __( '页脚', 'uuui' ),
-		'id' => 'footer-about-us',
-		'std' => '',
-		'type' => 'textarea'
-	);
+		$options[] = array(
+			'name' => __( '页脚——关于我们', 'uuui' ),
+			'desc' => __( '页脚', 'uuui' ),
+			'id' => 'footer-about-us',
+			'std' => '',
+			'type' => 'textarea'
+		);
 	
-
+		$options[] = array(
+			'name' => __( '页脚导航1标题', 'uuui' ),
+			'desc' => __( '页脚中间的三列导航', 'uuui' ),
+			'id' => 'footer_menu_1_title',
+			'class' => 'mini',
+			'type' => 'text'
+		);
+		$options[] = array(
+			'name' => __( '页脚导航2标题', 'uuui' ),
+			'desc' => __( '页脚中间的三列导航', 'uuui' ),
+			'id' => 'footer_menu_2_title',
+			'class' => 'mini',
+			'type' => 'text'
+		);
+		$options[] = array(
+			'name' => __( '页脚导航3标题', 'uuui' ),
+			'desc' => __( '页脚中间的三列导航', 'uuui' ),
+			'id' => 'footer_menu_3_title',
+			'class' => 'mini',
+			'type' => 'text'
+		);
 
 
 

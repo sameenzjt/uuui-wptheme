@@ -1,4 +1,4 @@
-<div style="padding-left:30px;"><!-- 细节看点 -->
+<div class="sidebar-border"><!-- 细节看点 -->
     <h5 class="lanmu-title">细节看点</h5>
     <div class="dropdown-divider"></div>
     <div class="row">

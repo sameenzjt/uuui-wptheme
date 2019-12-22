@@ -100,7 +100,7 @@
             font-family: "PingFang SC", "Lantinghei SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", Arial, "Hiragino Sans GB", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
             color: #333;    /*字体颜色*/
             line-height: 1.5em;
-            background-color: #fff;
+            background-color: rgba(248, 248, 248);
         }
         a{
             text-decoration: none;

@@ -33,7 +33,9 @@ function myplugin_init() {
 /* —— 注册菜单 —— */
 register_nav_menus( array(
 	'nav_menu' => '导航栏菜单',
-	'footer_menu' => 'My Custom Footer Menu'
+	'footer_menu_1' => '页脚导航1',
+	'footer_menu_2' => '页脚导航2',
+	'footer_menu_3' => '页脚导航3',
 ) );
 /* —— 注册菜单 —— 结束 */
 

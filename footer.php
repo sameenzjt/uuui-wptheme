@@ -8,39 +8,32 @@
             </div>
             <div class="col-lg-5 footer-about-us hide-768px" style="padding: 0px 60px;">
                 <div class="row">
-                    <div class="col-4">
-                        <p>热门频道</p>
-                        <ul style="list-style: none; padding: 0px; font-size: 14px;">
-                            <li><a href="#">文章专题</a></li>
-                            <li><a href="#">热门话题</a></li>
-                            <li><a href="#">设计大赛</a></li>
-                            <li><a href="#">免费教程</a></li>
-                            <li><a href="#">设计导航</a></li>
-                            <li><a href="#">设计课程</a></li>
-                        </ul>
+                    <div class="col-4 footer_menu">
+                        <p><?php echo of_get_option('footer_menu_1_title', ''); ?></p>
+                        <?php 
+                            if(function_exists('wp_nav_menu')) {
+                                wp_nav_menu(array( 'theme_location' => 'footer_menu_1','container_id'=>'menu_left') ); 
+                            }
+                        ?>
+                        
                     </div>
-                    <div class="col-4">
-                        <p>热门频道</p>
-                        <ul style="list-style: none; padding: 0px; font-size: 14px;">
-                            <li><a href="#">主编推荐</a></li>
-                            <li><a href="#">Banner设计</a></li>
-                            <li><a href="#">海报设计</a></li>
-                            <li><a href="#">Logo设计</a></li>
-                            <li><a href="#">插画绘画</a></li>
-                            <li><a href="#">字体设计</a></li>
-                        </ul>
+                    <div class="col-4 footer_menu">
+                        <p><?php echo of_get_option('footer_menu_2_title', ''); ?></p>
+                        <?php 
+                            if(function_exists('wp_nav_menu')) {
+                                wp_nav_menu(array( 'theme_location' => 'footer_menu_2','container_id'=>'menu_left') ); 
+                            }
+                        ?>
                     </div>
-                    <div class="col-4">
-                            <p>热门频道</p>
-                            <ul style="list-style: none; padding: 0px; font-size: 14px;">
-                                <li><a href="#">联系我们</a></li>
-                                <li><a href="#">广告投放</a></li>
-                                <li><a href="#">入驻优创</a></li>
-                                <li><a href="#">作者投稿</a></li>
-                                <li><a href="#">友链申请</a></li>
-                                <li><a href="#">意见反馈</a></li>
-                            </ul>
-                        </div>
+                    <div class="col-4 footer_menu">
+                        <p><?php echo of_get_option('footer_menu_3_title', ''); ?></p>
+                        <?php 
+                            if(function_exists('wp_nav_menu')) {
+                                wp_nav_menu(array( 'theme_location' => 'footer_menu_3','container_id'=>'menu_left') ); 
+                            }
+                        ?>
+                    </div>
+                    
                 </div>
             </div>
             <div class="col-lg-3 mx-auto text-center hide-768px" style="margin: 0px auto;padding-left: 60px; color: #fff;font-size: 12px;">
@@ -164,7 +157,7 @@
             $('[data-toggle="popover"]').popover({html : true });   
         });
     </script>
-
+ 
 
     
 <?php wp_footer(); ?>
