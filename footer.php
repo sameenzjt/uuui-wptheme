@@ -87,6 +87,8 @@
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <script src="<?php bloginfo('template_url'); ?>/res/js/index-navigation.js"></script>
 
     <!--<script>
         $(".ds").mouseover(function()  //鼠标悬停执行函数

@@ -2,7 +2,7 @@
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
 Description: 设计资源分享网站
-Version: v0.7.2
+Version: v0.8.0
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 设计,UI
@@ -650,3 +650,64 @@ main{
     font-size: 14px;
 }
 
+/*首页——网址导航*/
+.marketing {
+    height: 100%;
+    overflow: hidden;
+}
+
+.mark-main {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 240px;
+}
+
+.click_con {
+    width: 100%;
+    padding-top: 40px;
+    overflow: hidden;
+    margin-left: -133px;
+}
+
+.system_list {
+    width: 360px;
+    height: 240px;
+    position: relative;
+    background: #FaFafa;
+    margin: 0 5px;
+    float: left;
+    transition: All 0.4s ease-in-out;
+    -webkit-transition: All 0.4s ease-in-out;
+    -moz-transition: All 0.4s ease-in-out;
+    -o-transition: All 0.4s ease-in-out;
+}
+
+.layer-mask {
+    width: 100%;
+    height: 240px;
+    opacity: 0.3;
+    transition: all 1s;
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+
+.click_con .new_cur .layer-mask {
+    opacity: 0;
+}
+
+.click_con .new_cur {
+    z-index: 10;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(214,214,214,0.75);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(214,214,214,0.75);
+    box-shadow: 0px 0px 8px 0px rgba(214,214,214,0.75);
+}

@@ -116,31 +116,12 @@
             
         </div><!--box row--> 
 
-        <!--
-        <div class="box col-12" >
-            <img src="< ?php bloginfo('template_url'); ?>/images/URL_16-16.png" style="margin-right: 5px;">
-            <span class="index-title">优秀设计网站</span>
-            <span class="font-size-small">每周更新</span>
-            <span style="font-size: small; float: right;"><a href="#">查看全部</a></span>
-            <div class="dropdown-divider"></div>
-            <div class="row">
-                <a href="#" class="col-lg-2 col-sm-4 ui-div"><div><p>NicePSD</p><span>优质设计素材下载站</span></div></a>
-                <a href="#" class="col-lg-2 col-sm-4 ui-div"><div><p>NicePSD</p><span>优质设计素材下载站</span></div></a>
-                <a href="#" class="col-lg-2 col-sm-4 ui-div"><div><p>UI-Cloud</p><span>海量UI资源，可当素材库或灵感库使用</span></div></a>
-                <a href="#" class="col-lg-2 col-sm-4 ui-div"><div><p>flypixel</p><span>目前已有800多个优秀UI资源</span></div></a>
-                <a href="#" class="col-lg-2 col-sm-4 ui-div"><div><p>PixedenAPP</p><span>UI、网页模板、纹理等</span></div></a>
-                <a href="#" class="col-lg-2 col-sm-4 ui-div"><div><p>优秀设计资源</p><span>不定期分享免费高品质干货</span></div></a>
+
+
+        <div class="box col-12" style="padding: 20px;">
+                <?php include( 'index/index-navigation.php' ); ?>
             </div>
-            <div class="row hide-768px">
-                <a href="#" class="col-lg-2 col-sm-4 ui-div"><div><p>NicePSD</p><span>优质设计素材下载站</span></div></a>
-                <a href="#" class="col-lg-2 col-sm-4 ui-div"><div><p>NicePSD</p><span>优质设计素材下载站</span></div></a>
-                <a href="#" class="col-lg-2 col-sm-4 ui-div"><div><p>UI-Cloud</p><span>海量UI资源，可当素材库或灵感库使用</span></div></a>
-                <a href="#" class="col-lg-2 col-sm-4 ui-div"><div><p>flypixel</p><span>目前已有800多个优秀UI资源</span></div></a>
-                <a href="#" class="col-lg-2 col-sm-4 ui-div"><div><p>PixedenAPP</p><span>UI、网页模板、纹理等</span></div></a>
-                <a href="#" class="col-lg-2 col-sm-4 ui-div"><div><p>优秀设计资源</p><span>不定期分享免费高品质干货</span></div></a>
-            </div>
-        </div>
-    -->
+
 
         <div class="box row">
             <div class="col-lg-9 col-sm-12 post-list" style="width: 100%; padding: 10px 30px 0px 20px;">
