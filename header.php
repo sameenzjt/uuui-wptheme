@@ -66,7 +66,16 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 
-    <?php wp_head(); ?>
+    <?php
+        ob_start();
+        wp_head();
+        $themeHead = ob_get_contents();
+        ob_end_clean();
+        define( 'HEAD_CONTENT', $themeHead );
+
+        $allowedTags = '<style><link><meta><title>';
+        print theme_strip_tags_content( HEAD_CONTENT, $allowedTags );
+        ?><!--将JS文件自动移至网站底部02-->
 </head>
 <?php flush(); ?>
 <body>

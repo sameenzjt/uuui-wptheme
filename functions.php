@@ -242,7 +242,6 @@ function ludou_sanitize_user ($username, $raw_username, $strict) {
 /* —— 支持中文用户名 —— 结束 */
 
 
-
 /* —— 添加帮助面板 ——https://www.ludou.org/wordpress-customizing-the-dashboard-widgets.html */
 function ludou_dashboard_help() {
 	echo '这里填使用说明的内容，可填写HTML代码';
@@ -254,6 +253,7 @@ function ludou_dashboard_help() {
  }
  add_action('wp_dashboard_setup', 'ludou_add_dashboard_widgets' );
 /* —— 添加帮助面板 —— 结束 */
+
 
 /* 替换 Ultimate Member 加载的google字体文件*/
 function cmp_replace_google_webfont() {
@@ -268,30 +268,14 @@ function cmp_replace_google_webfont() {
 
 
 
-remove_action( 'wp_head', 'wp_generator' );//移除WordPress版本
-remove_action( 'wp_head', 'rsd_link' ); //移除离线编辑器开放接口,wlwmanifest是针对微软Live Writer编辑器的
-remove_action( 'wp_head', 'wlwmanifest_link' );//移除离线编辑器开放接口,wlwmanifest是针对微软Live Writer编辑器的
-remove_action( 'wp_head', 'index_rel_link' ); //移除前后文、第一篇文章、主页meta信息
-remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); //移除前后文、第一篇文章、主页meta信息
-remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); //移除前后文、第一篇文章、主页meta信息
-remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 ); //移除前后文、第一篇文章、主页meta信息
-remove_action( 'wp_head', 'feed_links', 2 );//文章和评论feed 
-remove_action( 'wp_head', 'feed_links_extra', 3 ); //分类等feed
+
+
+  include( 'functions/clear-excess-header-files.php' );//清除header多余文件引用&将JS文件自动移至网站底部
 
 
 
 
 
 
-//去除JS，css版本号
-function qcbb( $src ){
-	$parts = explode( '?', $src );
-	return $parts[0];
-   }
-   add_filter( 'script_loader_src', 'qcbb', 15, 1 );
-   add_filter( 'style_loader_src', 'qcbb', 15, 1 );
-   function wpbeginner_remove_version() {
-   return '';}
-   add_filter('the_generator', 'wpbeginner_remove_version');
 
 ?>

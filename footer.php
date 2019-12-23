@@ -89,7 +89,7 @@
     <scrip type="text/javascript"t src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/index-navigation.js"></script>
-
+    <?php theme_insert_js( HEAD_CONTENT ); ?><!--将JS文件自动移至网站底部03-->
     <!--<script>
         $(".ds").mouseover(function()  //鼠标悬停执行函数
         {
