@@ -25,9 +25,9 @@
 
         if (is_home() || is_page()) {
         // 将以下引号中的内容改成你的主页description
-            $description = "朱曙明博客，是一个关注互联网、搜索引擎、资源分享、美文欣赏、写写生活随笔的江西SEO个人博客。";
+            $description = of_get_option('website_description', '');
             // 将以下引号中的内容改成你的主页keywords
-            $keywords = "搜索引擎优化,生活随笔,朱曙明博客,江西SEO,个人博客,资源分享,互联网,SEO优化,美文欣赏";
+            $keywords = of_get_option('website-keywords', '');
         }elseif (is_single()) {
             $description1 = get_post_meta($post->ID, "description", true);
             $description2 = str_replace("\n","",mb_strimwidth(strip_tags($post->post_content), 0, 200, "…", 'utf-8'));

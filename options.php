@@ -316,37 +316,33 @@ function optionsframework_options() {
 		'name' => __( '基本设置', 'uuui' ),
 		'type' => 'heading'
 	);
-	
+
 	$options[] = array(
-		'name' => __( '工信部备案号', 'uuui' ),
-		'desc' => __( '鲁ICP备19008202号', 'uuui' ),
+		'name' => __( '网站描述', 'uuui' ),
+		'desc' => __( '网站描述description，有利于SEO。', 'uuui' ),
+		'id' => 'website_description',
+		'type' => 'textarea',
+	);
+
+	$options[] = array(
+		'name' => __( '网站关键词', 'uuui' ),
+		'desc' => __( '网站关键词keywords，有利于SEO。关键词之间用半角(英文)逗号分隔', 'uuui' ),
+		'id' => 'website-keywords',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => __( '网站备案信息', 'uuui' ),
+		'desc' => __( '工信部备案号，例：X ICP备XXXXXX号', 'uuui' ),
 		'id' => 'icp-bei',
-		'type' => 'text'
+		'type' => 'text',
 	);
 	$options[] = array(
-		'name' => __( '公网安备', 'uuui' ),
-		'desc' => __( '鲁公网安备 37021102000826号', 'uuui' ),
+		'desc' => __( '公网安备，例：X 公网安备 XXXXXX号', 'uuui' ),
 		'id' => 'gongwang-bei',
-		'type' => 'text'
+		'type' => 'text',
 	);
-	$options[] = array(
-		'name' => __( '微信二维码', 'uuui' ),
-		'desc' => __( '支持外链，亦可上传微信公众号二维码', 'uuui' ),
-		'id' => 'weixin_qr_uploader',
-		'type' => 'upload'
-	);
-	$options[] = array(
-		'name' => __( '微博二维码', 'uuui' ),
-		'desc' => __( '支持外链', 'uuui' ),
-		'id' => 'weibo_qr_uploader',
-		'type' => 'upload'
-	);
-	$options[] = array(
-		'name' => __( '头条二维码', 'uuui' ),
-		'desc' => __( '支持外链', 'uuui' ),
-		'id' => 'toutiao_qr_uploader',
-		'type' => 'upload'
-	);
+	
 
 
 /* —— 首页设置 —— */
@@ -393,24 +389,24 @@ function optionsframework_options() {
 		'type' => 'heading'
 	);
 		$options[] = array(
-			'name' => __( '选择注册页面', 'uuui' ),
-			'desc' => __( '需要先发布页面，页面模板选择“前台注册”', 'uuui' ),
+			'name' => __( '注册', 'uuui' ),
+			'desc' => __( '需要先发布页面', 'uuui' ),
 			'id' => 'select_pages_registered',
 			'class' => 'mini',
 			'type' => 'select',
 			'options' => $options_pages
 		);
 		$options[] = array(
-			'name' => __( '选择登录页面', 'uuui' ),
-			'desc' => __( '需要先发布页面，页面模板选择“前台登录”', 'uuui' ),
+			'name' => __( '登录', 'uuui' ),
+			'desc' => __( '需要先发布页面', 'uuui' ),
 			'id' => 'select_pages_login',
 			'class' => 'mini',
 			'type' => 'select',
 			'options' => $options_pages
 		);
 		$options[] = array(
-			'name' => __( '选择全部文章页面', 'uuui' ),
-			'desc' => __( '需要先发布页面，页面模板选择“全部文章”', 'uuui' ),
+			'name' => __( '全部文章', 'uuui' ),
+			'desc' => __( '先发布页面，模板必须选择“全部文章”', 'uuui' ),
 			'id' => 'select_pages_allposts',
 			'class' => 'mini',
 			'type' => 'select',
@@ -418,8 +414,8 @@ function optionsframework_options() {
 		);
 
 		$options[] = array(
-			'name' => __( '选择全部专题页面', 'uuui' ),
-			'desc' => __( '需要先发布页面，页面模板选择“全部专题”', 'uuui' ),
+			'name' => __( '全部专题', 'uuui' ),
+			'desc' => __( '先发布页面，模板必须选择“全部专题”', 'uuui' ),
 			'id' => 'select_pages_allthematic',
 			'class' => 'mini',
 			'type' => 'select',
@@ -435,35 +431,48 @@ function optionsframework_options() {
 	);
 		$options[] = array(
 			'name' => __( '页脚——关于我们', 'uuui' ),
-			'desc' => __( '页脚', 'uuui' ),
+			'desc' => __( '页面页脚左侧关于我们', 'uuui' ),
 			'id' => 'footer-about-us',
 			'std' => '',
 			'type' => 'textarea'
 		);
 	
 		$options[] = array(
-			'name' => __( '页脚导航1标题', 'uuui' ),
-			'desc' => __( '页脚中间的三列导航', 'uuui' ),
+			'name' => __( '页脚导航标题', 'uuui' ),
+			'desc' => __( '页脚第一列导航', 'uuui' ),
 			'id' => 'footer_menu_1_title',
 			'class' => 'mini',
 			'type' => 'text'
 		);
 		$options[] = array(
-			'name' => __( '页脚导航2标题', 'uuui' ),
-			'desc' => __( '页脚中间的三列导航', 'uuui' ),
+			'desc' => __( '页脚第二列导航', 'uuui' ),
 			'id' => 'footer_menu_2_title',
 			'class' => 'mini',
 			'type' => 'text'
 		);
 		$options[] = array(
-			'name' => __( '页脚导航3标题', 'uuui' ),
-			'desc' => __( '页脚中间的三列导航', 'uuui' ),
+			'desc' => __( '页脚第三列导航', 'uuui' ),
 			'id' => 'footer_menu_3_title',
 			'class' => 'mini',
 			'type' => 'text'
 		);
 
-
+		$options[] = array(
+			'name' => __( '页脚二维码', 'uuui' ),
+			'desc' => __( '微信二维码，支持外链', 'uuui' ),
+			'id' => 'weixin_qr_uploader',
+			'type' => 'upload'
+		);
+		$options[] = array(
+			'desc' => __( '微博二维码，支持外链', 'uuui' ),
+			'id' => 'weibo_qr_uploader',
+			'type' => 'upload'
+		);
+		$options[] = array(
+			'desc' => __( '头条二维码，支持外链', 'uuui' ),
+			'id' => 'toutiao_qr_uploader',
+			'type' => 'upload'
+		);
 
 	return $options;
 }
