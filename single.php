@@ -73,7 +73,7 @@
                 </div>
                 <!--评论-->
                 <div style="margin: 40px 0; padding: 0px 90px 0px 100px;">
-                    <?php comment_form(); ?>
+                    <?php comments_template(); ?>
                 </div>
 
             </div>

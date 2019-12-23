@@ -49,7 +49,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 
 
 /* —— 后台启用链接选项 —— */
-//add_filter( 'pre_option_link_manager_enabled', '__return_true' );
+add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 /* —— 后台启用链接选项 —— 结束 */
 
 
@@ -221,16 +221,52 @@ function count_words_read_time () {
 /* —— 字数统计 —— 结束 */
 
 
+/* —— 支持中文用户名 —— */
+function ludou_sanitize_user ($username, $raw_username, $strict) {
+	$username = wp_strip_all_tags( $raw_username );
+	$username = remove_accents( $username );
+	// Kill octets
+	$username = preg_replace( '|%([a-fA-F0-9][a-fA-F0-9])|', '', $username );
+	$username = preg_replace( '/&.+?;/', '', $username ); // Kill entities
+	// 网上很多教程都是直接将$strict赋值false，
+	// 这样会绕过字符串检查，留下隐患
+	if ($strict) {
+	  $username = preg_replace ('|[^a-z\p{Han}0-9 _.\-@]|iu', '', $username);
+	}
+	$username = trim( $username );
+	// Consolidate contiguous whitespace
+	$username = preg_replace( '|\s+|', ' ', $username );
+	return $username;
+  }
+  add_filter ('sanitize_user', 'ludou_sanitize_user', 10, 3);
+/* —— 支持中文用户名 —— 结束 */
 
 
 
+/* —— 添加帮助面板 ——https://www.ludou.org/wordpress-customizing-the-dashboard-widgets.html */
+function ludou_dashboard_help() {
+	echo '这里填使用说明的内容，可填写HTML代码';
+	// 如以下一行代码是露兜博客开放投稿功能所使用的投稿说明
+	// echo "<p><ol><li>投稿，请依次点击 文章 - 添加新文章，点击 "送交审查" 即可提交</li><li>修改个人资料，请依次点击 资料 - 我的资料</li><li>请认真填写“个人说明”，该信息将会显示在文章末尾</li><li>有事请与我联系，Email: zhouzb889@gmail.com   QQ: 825533758</li></ol></p>";     
+ }
+ function ludou_add_dashboard_widgets() {
+	wp_add_dashboard_widget('ludou_help_widget', '这里替换成面板标题', 'ludou_dashboard_help');
+ }
+ add_action('wp_dashboard_setup', 'ludou_add_dashboard_widgets' );
+/* —— 添加帮助面板 —— 结束 */
 
-
-
-
-
-
-
-
+/**
+ * 替换 Ultimate Member 加载的google字体文件
+ * https://www.wpdaxue.com/ultimate-member.html
+ */
+function cmp_replace_google_webfont() {
+	if ( class_exists( 'reduxCoreEnqueue' ) ) {
+	  wp_enqueue_script('jquery');
+	  wp_deregister_script('webfontloader');
+	  wp_register_script('webfontloader', 'http://ajax.useso.com/ajax/libs/webfont/1.5.0/webfont.js',array('jquery'),'1.5.0',true);
+	  wp_enqueue_script('webfontloader');
+	}
+  }
+  add_action('admin_enqueue_scripts', 'cmp_replace_google_webfont',9);
 
 ?>
