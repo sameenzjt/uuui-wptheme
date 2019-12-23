@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>
-        <?php if ( is_home() ) {
+        <?php
+        $description = '';
+        $keywords = '';
+        if ( is_home() ) {
             bloginfo('name'); echo " - "; bloginfo('description');
             } elseif ( is_category() ) {
                 single_cat_title(); echo " - "; bloginfo('name');
@@ -19,6 +22,45 @@
                 wp_title('',true);
             } ?>
     </title>
+    
+    <?php
+        $description = '';
+        $keywords = '';
+
+        if (is_home() || is_page()) {
+        // 将以下引号中的内容改成你的主页description
+            $description = "朱曙明博客，是一个关注互联网、搜索引擎、资源分享、美文欣赏、写写生活随笔的江西SEO个人博客。";
+            // 将以下引号中的内容改成你的主页keywords
+            $keywords = "搜索引擎优化,生活随笔,朱曙明博客,江西SEO,个人博客,资源分享,互联网,SEO优化,美文欣赏";
+        }elseif (is_single()) {
+            $description1 = get_post_meta($post->ID, "description", true);
+            $description2 = str_replace("\n","",mb_strimwidth(strip_tags($post->post_content), 0, 200, "…", 'utf-8'));
+            // 填写自定义字段description时显示自定义字段的内容，否则使用文章内容前200字作为描述
+            $description = $description1 ? $description1 : $description2;
+            // 填写自定义字段keywords时显示自定义字段的内容，否则使用文章tags作为关键词
+            $keywords = get_post_meta($post->ID, "keywords", true);
+        if($keywords == '') {
+            $tags = wp_get_post_tags($post->ID);
+            foreach ($tags as $tag ) {
+                $keywords = $keywords . $tag->name . ", ";
+            }
+            $keywords = rtrim($keywords, ', ');
+        }
+        }elseif (is_category()) {
+            // 分类的description可以到后台 - 文章 -分类目录，修改分类的描述
+            $description = category_description();
+            $keywords = single_cat_title('', false);
+        }elseif (is_tag()){
+            // 标签的description可以到后台 - 文章 - 标签，修改标签的描述
+            $description = tag_description();
+            $keywords = single_tag_title('', false);
+            }
+            $description = trim(strip_tags($description));
+            $keywords = trim(strip_tags($keywords));
+    ?>
+    <meta name="description" content="<?php echo $description; ?>" />
+    <meta name="keywords" content="<?php echo $keywords; ?>" />
+    
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="<?php echo get_bloginfo('rss2_url'); ?>" />
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有评论" href="<?php bloginfo('comments_rss2_url'); ?>" />

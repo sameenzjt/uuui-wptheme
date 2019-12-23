@@ -266,4 +266,50 @@ function cmp_replace_google_webfont() {
   }
   add_action('admin_enqueue_scripts', 'cmp_replace_google_webfont',9);
 
+
+
+
+
+
+
+/* —— 精简头部多余的代码 —— */
+//去除版本号
+//精简header.php头部代码
+remove_action('wp_head', 'rsd_link');//移除离线编辑器开放接口
+remove_action('wp_head', 'wlwmanifest_link');//移除离线编辑器开放接口
+remove_action('wp_head', 'wp_shortlink_wp_head');//移除短链接
+remove_action('wp_head', 'start_post_rel_link');
+remove_action('wp_head', 'adjacent_posts_rel_link');
+remove_action('wp_head', 'wp_generator' );//移除WordPress版本
+remove_action('wp_head', 'parent_post_rel_link', 10, 0 );//清除前后文信息
+remove_action('wp_head', 'start_post_rel_link', 10, 0 );//清除前后文信息
+//禁用WordPress Emoji功能
+remove_action( 'admin_print_scripts',   'print_emoji_detection_script');
+remove_action( 'admin_print_styles',    'print_emoji_styles');
+remove_action( 'wp_head',       'print_emoji_detection_script', 7);
+remove_action( 'wp_print_styles',   'print_emoji_styles');
+remove_filter( 'the_content_feed',  'wp_staticize_emoji');
+remove_filter( 'comment_text_rss',  'wp_staticize_emoji');
+remove_filter( 'wp_mail',       'wp_staticize_emoji_for_email');
+
+
+//去除JS，css版本号
+function qcbb( $src ){
+	$parts = explode( '?', $src );
+	return $parts[0];
+   }
+   add_filter( 'script_loader_src', 'qcbb', 15, 1 );
+   add_filter( 'style_loader_src', 'qcbb', 15, 1 );
+   function wpbeginner_remove_version() {
+   return '';}
+   add_filter('the_generator', 'wpbeginner_remove_version');
+/* —— 精简头部多余的代码 —— 结束 */
+
+
+
+
+
+
+
+
 ?>
