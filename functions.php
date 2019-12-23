@@ -9,8 +9,8 @@ function coolwp_remove_open_sans_from_wp_core() {
 add_action( 'init', 'coolwp_remove_open_sans_from_wp_core' );
 
 
-/* —— 后台禁用古腾堡编辑器 —— */
-add_filter('use_block_editor_for_post', '__return_false');
+/* —— 后台禁用古腾堡编辑器 —— 
+add_filter('use_block_editor_for_post', '__return_false');*/
 
 
 /* —— 禁用工具栏 —— */
@@ -74,13 +74,13 @@ function my_acf_settings_url( $url ) {
 
 
 
-/* —— 自定义登出之后的重定向链接 —— */  
+/* —— 自定义登出之后的重定向链接 ——   
 add_action('wp_logout','auto_redirect_after_logout');   
 function auto_redirect_after_logout(){   
   wp_redirect( home_url() );   
   exit();   
 }
-/* —— 自定义登出之后的重定向链接 —— 结束 */ 
+ —— 自定义登出之后的重定向链接 —— 结束 */ 
 
 
 /* —— 后台主题设置optionsframework —— */
@@ -198,14 +198,14 @@ include( 'functions/custom-editor.php' );//向 WordPress 可视化编辑器添�
 
 
 
-/* —— 更改作者存档前缀 —— */
+/* —— 更改作者存档前缀 —— 
 add_action('init', 'change_author_base');
 function change_author_base() {
 global $wp_rewrite;
 $author_slug = 'profile'; // change slug name
 $wp_rewrite->author_base = $author_slug;
 }
-/* —— 更改作者存档前缀 —— 结束 */
+ —— 更改作者存档前缀 —— 结束 */
 
 
 /* —— 字数统计 —— */
@@ -255,10 +255,7 @@ function ludou_dashboard_help() {
  add_action('wp_dashboard_setup', 'ludou_add_dashboard_widgets' );
 /* —— 添加帮助面板 —— 结束 */
 
-/**
- * 替换 Ultimate Member 加载的google字体文件
- * https://www.wpdaxue.com/ultimate-member.html
- */
+/* 替换 Ultimate Member 加载的google字体文件*/
 function cmp_replace_google_webfont() {
 	if ( class_exists( 'reduxCoreEnqueue' ) ) {
 	  wp_enqueue_script('jquery');

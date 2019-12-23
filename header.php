@@ -131,44 +131,13 @@
         </div>
 
         <div style="float:right; margin-top:16px;">
-            <?php
-                if ( is_user_logged_in() ) {?>
+            <?php if ( is_user_logged_in() ) {?>
                 <?php global $current_user; //当前用户信息数组
                     wp_get_current_user();
                     echo ' '. $current_user->display_name .' ';
                     ?>
-                    <a href="<?php echo home_url().'/wp-admin/'?>"><span>管理</span></a>
                     <a href="<?php echo wp_logout_url( get_bloginfo('url') ); ?>"><span>登出</span></a>
-                    <a href="#"  data-toggle="modal" data-target="#myModal"><span>登出</span></a>
-                    <!-- 模态框 -->
-                    <div class="modal fade" id="myModal">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                        
-                            <!-- 模态框头部 -->
-                            <div class="modal-header">
-                                <h4 class="modal-title">模态框头部</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                        
-                            <!-- 模态框主体 -->
-                            <div class="modal-body">
-                                是否要登出账号？
-                            </div>
-                        
-                            <!-- 模态框底部 -->
-                            <div class="modal-footer">
-                                <a href="<?php echo wp_logout_url( get_bloginfo('url') ); ?>">
-                                    <button type="button" class="btn btn-secondary">确定</button>
-                                </a>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-                            </div>
-                        
-                            </div>
-                        </div>
-                    </div>
-            <?php 
-                } else { ?>
+            <?php } else { ?>
                 <a href="<?php $select_pages_login = of_get_option('select_pages_login', '');  the_permalink($select_pages_login); ?>">
                     <span>登录</span>
                 </a>
