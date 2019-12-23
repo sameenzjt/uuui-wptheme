@@ -82,14 +82,14 @@
     </footer>
     <div class="back_top hide-768px"></div>
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
-    <script type="text/javascript" src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
-    <scrip type="text/javascript"t src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     
-    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/index-navigation.js"></script>
-    <?php theme_insert_js( HEAD_CONTENT ); ?><!--将JS文件自动移至网站底部03-->
+    <script src="<?php bloginfo('template_url'); ?>/res/js/index-navigation.js"></script>
+
     <!--<script>
         $(".ds").mouseover(function()  //鼠标悬停执行函数
         {

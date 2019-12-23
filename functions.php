@@ -242,6 +242,7 @@ function ludou_sanitize_user ($username, $raw_username, $strict) {
 /* —— 支持中文用户名 —— 结束 */
 
 
+
 /* —— 添加帮助面板 ——https://www.ludou.org/wordpress-customizing-the-dashboard-widgets.html */
 function ludou_dashboard_help() {
 	echo '这里填使用说明的内容，可填写HTML代码';
@@ -254,7 +255,6 @@ function ludou_dashboard_help() {
  add_action('wp_dashboard_setup', 'ludou_add_dashboard_widgets' );
 /* —— 添加帮助面板 —— 结束 */
 
-
 /* 替换 Ultimate Member 加载的google字体文件*/
 function cmp_replace_google_webfont() {
 	if ( class_exists( 'reduxCoreEnqueue' ) ) {
@@ -265,17 +265,5 @@ function cmp_replace_google_webfont() {
 	}
   }
   add_action('admin_enqueue_scripts', 'cmp_replace_google_webfont',9);
-
-
-
-
-
-  include( 'functions/clear-excess-header-files.php' );//清除header多余文件引用&将JS文件自动移至网站底部
-
-
-
-
-
-
 
 ?>

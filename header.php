@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>
-        <?php
-        $description = '';
-        $keywords = '';
-        if ( is_home() ) {
+        <?php if ( is_home() ) {
             bloginfo('name'); echo " - "; bloginfo('description');
             } elseif ( is_category() ) {
                 single_cat_title(); echo " - "; bloginfo('name');
@@ -22,7 +19,6 @@
                 wp_title('',true);
             } ?>
     </title>
-    
     <?php
         $description = '';
         $keywords = '';
@@ -62,20 +58,102 @@
     <meta name="keywords" content="<?php echo $keywords; ?>" />
     
 
+
+    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="<?php echo get_bloginfo('rss2_url'); ?>" />
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有评论" href="<?php bloginfo('comments_rss2_url'); ?>" />
+
     <!-- 新 Bootstrap4 核心 CSS 文件 -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+    <style>
+        @media only screen and (max-width: 1024px) {
+            .nav-link{
+                float: left;
+                margin-left: 10px;
 
-    <?php
-        ob_start();
-        wp_head();
-        $themeHead = ob_get_contents();
-        ob_end_clean();
-        define( 'HEAD_CONTENT', $themeHead );
-
-        $allowedTags = '<style><link><meta><title>';
-        print theme_strip_tags_content( HEAD_CONTENT, $allowedTags );
-        ?><!--将JS文件自动移至网站底部02-->
+            }
+            .nav-link ul {
+                display: inline;
+                list-style-type: none;
+                overflow: hidden;
+            }
+            .nav-link li {
+                float: left;
+                padding: 10px 8px;
+                font-size: 12px;
+            }
+            .logo_img{
+                float: left;
+                height:100%;
+            }
+            .index-posts-list-img{
+                float: left;
+                border-radius: 4px;
+                margin-right: 20px;
+                width: 160px;
+            }
+        
+        }
+        @media only screen and (max-width: 768px) {
+            .hide-768px{
+                display: none;
+            }
+            nav{
+                font-size: 15px;
+                height: 40px;
+                padding: 0px 20px;
+                background-color: #fff;
+                box-shadow: 0px 1px 12px 1px #888;
+            }
+            
+            .logo_img{
+                float: left;
+                height:40px;
+            }
+            .user_img{
+                border-radius:4px;
+                float: right;
+                margin-top: 4px;
+                width: 32px;
+            }
+            .index-posts-list-img{
+                float: left;
+                border-radius: 4px;
+                margin-right: 20px;
+                width: 160px;
+            }
+            .index-posts-list-title{
+                font-size: 16px;
+                font-weight: 400;
+            }
+            .page-support-content{
+                padding: 0px 10px;
+            }
+            
+        }
+        
+        
+        
+        body{
+            /*font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;  字体*/
+            font-family: "PingFang SC", "Lantinghei SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", Arial, "Hiragino Sans GB", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
+            color: #333;    /*字体颜色*/
+            line-height: 1.5em;
+            background-color: rgba(248, 248, 248);
+        }
+        a{
+            text-decoration: none;
+            color: #333;
+            transition: all 0.1s ease-in-out;
+        }
+        a:hover{
+            text-decoration:none; 
+            color: #ff5c00;
+        }
+    
+    </style>
+    <?php wp_head(); ?>
 </head>
 <?php flush(); ?>
 <body>
