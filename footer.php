@@ -88,7 +88,7 @@
     <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     
-    <script src="<?php bloginfo('template_url'); ?>/res/js/index-navigation.js"></script>
+    
 
     <!--<script>
         $(".ds").mouseover(function()  //鼠标悬停执行函数
@@ -100,67 +100,23 @@
             $(this).removeClass().addClass("col-2 ui-div"); //把class清空。再重新赋一个值给它！
         });
     </script>-->
-    <script>/* 返回顶部，按钮默认不可见，当滚动页面到一定高度后，按钮出现（低于500px不显示），500毫秒动画 */
-        $(function() {
-            $(window).scroll(function() {
-                if ($(window).scrollTop() > 500)
-                    $('.back_top').show();
-                else
-                    $('.back_top').hide();
-        
-            });
-            $('.back_top').click(function() {
-                $('html, body').animate({scrollTop: 0}, 500);
-            });
-        });
-    </script>
-    <script type="text/javascript">/* 更改文章内容字体大小 */
-        $(function(){
-            $("span").click(function(){
-                var thisEle = $(".post-content").css("font-size"); 
-                var textFontSize = parseFloat(thisEle , 10);
-                var unit = thisEle.slice(-2); //获取单位
-                var cName = $(this).attr("class");
-                if(cName == "bigger"){
-                    if( textFontSize <= 22 ){
-                        textFontSize += 1;
-                    }
-                }else if(cName == "smaller"){
-                    if( textFontSize >= 12  ){
-                        textFontSize -= 1;
-                    }
-                }else{
-                    textFontSize = $(this).text();
-                }
-                $(".post-content").css("font-size",  textFontSize + unit);
-            });
-        });
-    </script>
-    <script type="text/javascript">/* 工具栏上滑至顶部后固定位置 */
-        window.onload=
-        function(){
-            var oDiv = document.getElementById("fixed-tool"),
-            H = 0,
-            Y = oDiv
-            while (Y) {H += Y.offsetTop; Y = Y.offsetParent}
-            window.onscroll = function()
-            {
-                var s = document.body.scrollTop || document.documentElement.scrollTop
-                if(s>H) {
-                    oDiv.style = "position:fixed;top:60px;"
-                } else {
-                    oDiv.style = ""
-                }
-            }
-        }
-    </script>
-    <script>/* 二维码弹出框 */
-        $(document).ready(function(){
-            $('[data-toggle="popover"]').popover({html : true });   
-        });
-    </script>
- 
 
+
+    <!-- 返回顶部，按钮默认不可见，当滚动页面到一定高度后，按钮出现（低于500px不显示），500毫秒动画 -->
+    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/back-top.js"></script>
+    <!-- 二维码弹出框 -->
+    <script src="<?php bloginfo('template_url'); ?>/res/js/qr-pop.js"></script>
+
+    <?php if (is_home()) { ?>
+        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/index-navigation.js"></script>
+
+    <?php } elseif( is_single() ) { ?>
+        <!--  更改文章内容字体大小 -->
+        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/change-single-font-size.js"></script>
+        <!-- 工具栏上滑至顶部后固定位置 -->
+        <script src="<?php bloginfo('template_url'); ?>/res/js/tool-slide-top-fixed.js"></script>
+    <?php } ?>
+    
     
 <?php wp_footer(); ?>
 </body>
