@@ -318,6 +318,14 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
+		'name' => __( '网站整体变灰', 'uuui' ),
+		'desc' => __( '在一些特别的时间，设置网站整体变灰', 'uuui' ),
+		'id' => 'website_overall_grayed',
+		'std' => 'ture',
+		'type' => 'checkbox'
+	);
+
+	$options[] = array(
 		'name' => __( '网站描述', 'uuui' ),
 		'desc' => __( '网站描述description，有利于SEO。', 'uuui' ),
 		'id' => 'website_description',

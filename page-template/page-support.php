@@ -7,11 +7,7 @@
         
         <div class="row">
             <div class="col-12">
-                <ol class="page-breadcrumb" >
-                    <li class="post-breadcrumb-item font-size-small"><a href="#">首页</a></li>
-                    <li class="post-breadcrumb-item font-size-small"><a href="#">支持与服务</a></li>
-                    <li class="post-breadcrumb-item font-size-small"><a href="#">免责声明</a></li>    
-                </ol> 
+                <?php if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();?>
             </div>
             <div class="col-lg-12 col-sm-12 text-center" style="margin-bottom: 40px;">
                 <h2 style="font-weight: 600; margin: 20px 0px;"><?php the_title(); ?></h2>
@@ -19,14 +15,9 @@
             </div>
             <div class="col-lg-2 hide-768px">
                 <div id="fixed-tool" class="page-tool">
-                    <ul>
-                        <a href="#" class="font-size-small-14"><li>关于我们</li></a>
-                        <a href="#" class="font-size-small-14"><li>意见反馈</li></a href="#">
-                        <a href="#" class="font-size-small-14"><li>友情链接</li></a href="#">
-                        <a href="#" class="font-size-small-14"><li>联系优设</li></a href="#">
-                        <a href="#" class="font-size-small-14"><li>用户协议</li></a href="#">
-                        <a href="#" class="font-size-small-14"><li>免责声明</li></a href="#">
-                    </ul>
+                    <?php if(function_exists('wp_nav_menu')) {
+                        wp_nav_menu(array( 'theme_location' => 'support_menu','menu_class'=>'support_menu_ul') ); 
+                    }?>
                 </div>
             </div>
             <div class="col-lg-8 col-sm-12">

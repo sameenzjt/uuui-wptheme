@@ -48,6 +48,7 @@ register_nav_menus( array(
 	'footer_menu_1' => '页脚导航1',
 	'footer_menu_2' => '页脚导航2',
 	'footer_menu_3' => '页脚导航3',
+	'support_menu' => '支持与服务',
 ) );
 /* —— 注册菜单 —— 结束 */
 
@@ -208,6 +209,10 @@ include( 'functions/custom-editor.php' );//向 WordPress 可视化编辑器添�
 //include( 'functions/post-type-link.php' );//自定义文章类型
 
 
+include( 'functions/breadcrumb.php' );//面包屑导航调用：if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();
+
+
+//include( 'functions/website-grayed.php' );//网站整体变灰
 
 
 /* —— 更改作者存档前缀 —— 
@@ -317,7 +322,7 @@ function set_post_views () {
 	
 }   
 add_action('get_header', 'set_post_views');  
-/* —— 添加帮助面板 —— 结束 */
+/* —— 阅读数postviews —— 结束 */
 
 
 

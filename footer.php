@@ -115,9 +115,12 @@
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/change-single-font-size.js"></script>
         <!-- 工具栏上滑至顶部后固定位置 -->
         <script src="<?php bloginfo('template_url'); ?>/res/js/tool-slide-top-fixed.js"></script>
-    <?php } ?>
-    
-    
+
+    <?php } elseif( is_page() ) { ?>
+        <!-- 工具栏上滑至顶部后固定位置 -->
+        <script src="<?php bloginfo('template_url'); ?>/res/js/tool-slide-top-fixed.js"></script>
+        
+    <?php }?>
 <?php wp_footer(); ?>
 </body>
 </html>

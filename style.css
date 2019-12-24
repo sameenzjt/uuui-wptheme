@@ -2,7 +2,7 @@
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
 Description: 设计资源分享网站
-Version: v0.9.2
+Version: v0.9.3
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 设计,UI
@@ -284,11 +284,19 @@ main{
 .font-size-small{
     font-size: 0.75em; color: rgb(160, 160, 160);margin: 0px 10px;
 }
-
-.font-size-small-14{
-    font-size: 14px; color: rgb(160, 160, 160);
+.font-size-small a{
+    color: rgb(160, 160, 160);
+}
+.font-size-small a:hover{
+    color: #ff5c00;
 }
 
+.font-size-small-14 , .support_menu_ul li a{
+    font-size: 14px; color: rgb(160, 160, 160);
+}
+.support_menu_ul li a:hover{
+    color: #ff5c00;
+}
 .badge-tags{
     background-color:rgb(248, 248, 248);
     padding: 2px 6px;
@@ -413,26 +421,7 @@ main{
     right:10px; bottom:100px;				
 }
 
-.post-breadcrumb{
-    margin: 20px 0px;
-    padding: 0;
-}
-.post-breadcrumb li{
-    list-style:none;
-    display:inline;
-    margin: 0;
-    padding: 0;
-}
-.post-breadcrumb a{
-    color: rgb(160, 160, 160);
-}
 
-.post-breadcrumb-item + .post-breadcrumb-item::before {
-    display: inline;
-    padding-right: 0.5rem;
-    color: #6c757d;
-    content: "/";
-}
 
 .post-info span{
     margin: 0px 10px;
@@ -819,4 +808,8 @@ main{
 
 .index-navigation a:hover{
     color: #333;
+}
+
+.support_menu_ul .current-menu-item a{
+    color: #ff5c00;
 }
