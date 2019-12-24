@@ -1,4 +1,8 @@
-<div class="post-list" style="width: 100%;">
+<?php $select_pages_allposts = of_get_option('select_pages_allposts', '');
+$full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
+?>
+
+<div class="post-list">
     <span class="index-title new-post">最新文章</span>
     <span class="font-size-small">设计文章</span>
     <div class="post-list-tags hide-768px right">
@@ -18,7 +22,7 @@
     
     <div class="index-posts-list" style="margin: 20px 0px; padding: 10px 10px; overflow: hidden;" >
         <a href="<?php the_permalink(); ?>">
-            <div style="background-image:url(<?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); echo $full_image_url[0]; ?>)" class="imgs"></div>
+            <div style="background-image:url(<?php echo $full_image_url[0]; ?>)" class="imgs"></div>
             <!--<img src="< ?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); echo $full_image_url[0]; ?>" class="index-posts-list-img">-->
             <p class="index-posts-list-title"><?php the_title(); ?></p>
             <p class="font-size-small-14 hide-768px" style="margin: 20px 0px;">
@@ -38,11 +42,11 @@
     <div class="dropdown-divider"></div>
     <?php endwhile; ?>
 
-    <div class="posts-div" style="width: 100%;margin: 20px 0px;float: left;">
-        <a href="<?php $select_pages_allposts = of_get_option('select_pages_allposts', '');
-        the_permalink($select_pages_allposts); ?>
-        "><div class="text-center all-post-btn">查看全部文章</div></a>
-    </div>
+    <a href="<?php the_permalink($select_pages_allposts); ?>">
+        <button type="button" class="btn all-post-btn btn-block">查看全部文章</button>
+    </a>
+
+    
 
     <?php else : ?>
     <h3 class="title"><a href="#" rel="bookmark">未找到</a></h3>
