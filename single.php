@@ -13,7 +13,7 @@
                 <p class="font-size-small-14 post-info">
                     <span>作者：Lyudmil</span>
                     <span><?php the_time('Y年n月j日') ?></span>
-                    <span>阅读 12775</span>
+                    <span>阅读 <?php get_post_views($post -> ID); ?></span>
                     <span>点赞 82</span>
                     <span><?php comments_popup_link('0 条评论', '1 条评论', '% 条评论', '', '评论已关闭'); ?></span>
                     <span><?php the_tags('标签：', ', ', ''); ?></span>
@@ -23,7 +23,7 @@
             </div>
 
 
-            <div class="col-lg-9 col-sm-12">
+            <div class="col-lg-9 col-sm-12 container">
             <?php if (have_posts()) : the_post(); update_post_caches($posts); ?>
                 <!--文章内容-->
                 <div class="post-content">

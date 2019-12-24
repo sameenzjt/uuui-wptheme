@@ -9,8 +9,20 @@ function coolwp_remove_open_sans_from_wp_core() {
 add_action( 'init', 'coolwp_remove_open_sans_from_wp_core' );
 
 
-/* —— 后台禁用古腾堡编辑器 —— 
-add_filter('use_block_editor_for_post', '__return_false');*/
+/* —— 后台禁用古腾堡编辑器 —— */
+add_filter('use_block_editor_for_post', '__return_false');
+
+
+/**
+  *WordPress 自定义文章编辑器的样式
+  *自定义 CSS 文件
+  *http://www.endskin.com/editor-style/
+*/
+function Bing_add_editor_style(){
+	add_editor_style( 'https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css' );//引入外部的 CSS 文件
+	add_editor_style( 'res/css/custom-editor-style.css' );//这样就会调用主题目录 CSS 文件夹的 custom-editor-style.css 文件
+  }
+  add_action( 'after_setup_theme', 'Bing_add_editor_style' );
 
 
 /* —— 禁用工具栏 —— */
@@ -265,5 +277,53 @@ function cmp_replace_google_webfont() {
 	}
   }
   add_action('admin_enqueue_scripts', 'cmp_replace_google_webfont',9);
+
+
+
+/* —— 阅读数postviews 使用get_post_views($post -> ID);调用 —— 结束 */
+  //postviews   
+function get_post_views ($post_id) {   
+  
+    $count_key = 'views';   
+    $count = get_post_meta($post_id, $count_key, true);   
+  
+    if ($count == '') {   
+        delete_post_meta($post_id, $count_key);   
+        add_post_meta($post_id, $count_key, '0');   
+        $count = '0';   
+	}
+	
+    echo number_format_i18n($count);
+}   
+  
+function set_post_views () {   
+  
+    global $post;   
+  
+    $post_id = $post -> ID;   
+    $count_key = 'views';   
+    $count = get_post_meta($post_id, $count_key, true);   
+  
+    if (is_single() || is_page()) {   
+  
+        if ($count == '') {   
+            delete_post_meta($post_id, $count_key);   
+            add_post_meta($post_id, $count_key, '0');   
+        } else {   
+            update_post_meta($post_id, $count_key, $count + 1);   
+		}
+		
+	}
+	
+}   
+add_action('get_header', 'set_post_views');  
+/* —— 添加帮助面板 —— 结束 */
+
+
+
+
+
+
+
 
 ?>

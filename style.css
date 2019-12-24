@@ -2,7 +2,7 @@
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
 Description: 设计资源分享网站
-Version: v0.8.10
+Version: v0.8.11
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 设计,UI
@@ -76,6 +76,7 @@ Tags: 设计,UI
     
 }
 
+
 body{
     /*font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;  字体*/
     font-family: "PingFang SC", "Lantinghei SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", Arial, "Hiragino Sans GB", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
@@ -88,6 +89,7 @@ a{
     text-decoration: none;
     color: #333;
     transition: all 0.1s ease-in-out;
+    cursor:url("images/aero-middle-finger.png"),auto;
 }
 
 a:hover{
@@ -796,4 +798,11 @@ main{
     -webkit-box-shadow: 0px 0px 8px 0px rgba(214,214,214,0.75);
     -moz-box-shadow: 0px 0px 8px 0px rgba(214,214,214,0.75);
     box-shadow: 0px 0px 8px 0px rgba(214,214,214,0.75);
+}
+
+.post-content a{
+    color:blue;
+}
+.post-content a:hover{
+    color: #ff5c00;
 }
