@@ -212,8 +212,6 @@ include( 'functions/custom-editor.php' );//向 WordPress 可视化编辑器添�
 include( 'functions/breadcrumb.php' );//面包屑导航调用：if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();
 
 
-//include( 'functions/website-grayed.php' );//网站整体变灰
-
 
 /* —— 更改作者存档前缀 —— 
 add_action('init', 'change_author_base');

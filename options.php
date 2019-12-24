@@ -311,19 +311,38 @@ function optionsframework_options() {
 		'settings' => $wp_editor_settings
 	);
 
+/* —— 样式 —— */
+	$options[] = array(
+		'name' => __( '样式', 'uuui' ),
+		'type' => 'heading'
+	);
+
+	$options[] = array(
+		'name' => __( 'header代码', 'uuui' ),
+		'desc' => __( '添加自定义的style，直接填写css选择器，无需额外添加&lt;style&gt;', 'uuui' ),
+		'id' => 'header_style',
+		'std' => '',
+		'type' => 'textarea'
+	);
+
+	$options[] = array(
+		'desc' => __( '全局变灰：html{overflow-y:scroll;filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(100%);}', 'uuui' ),
+		'type' => 'info'
+	);
+
+	$options[] = array(
+		'name' => __( 'footer代码', 'uuui' ),
+		'desc' => __( '直接填写需要的代码，如引入js文件。需手动添加html标签', 'uuui' ),
+		'id' => 'footer_code',
+		'std' => '',
+		'type' => 'textarea'
+	);
 /* —— 基本设置 —— */
 	$options[] = array(
 		'name' => __( '基本设置', 'uuui' ),
 		'type' => 'heading'
 	);
-
-	$options[] = array(
-		'name' => __( '网站整体变灰', 'uuui' ),
-		'desc' => __( '在一些特别的时间，设置网站整体变灰', 'uuui' ),
-		'id' => 'website_overall_grayed',
-		'std' => 'ture',
-		'type' => 'checkbox'
-	);
+	
 
 	$options[] = array(
 		'name' => __( '网站描述', 'uuui' ),
