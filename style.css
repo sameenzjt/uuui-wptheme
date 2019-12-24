@@ -2,7 +2,7 @@
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
 Description: 设计资源分享网站
-Version: v0.9.0
+Version: v0.9.1
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 设计,UI
@@ -815,4 +815,8 @@ main{
 .post-content a:hover{
     color: #ff5c00;
     text-decoration: none;
+}
+
+.index-navigation a:hover{
+    color: #333;
 }

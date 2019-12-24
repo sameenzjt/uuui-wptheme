@@ -123,18 +123,18 @@
     </div><!--col-12 nember-1--> 
 
 
-    <div class="col-12 hide-768px">
+    <div class="col-12 hide-768px index-navigation">
         <?php include( 'index/index-navigation.php' ); ?>
     </div>
 
 
-    <div class="col-9">
+    <div class="col-lg-9 col-sm-12">
         <?php include( 'index/index-post-list.php' ); ?>
         <?php include( 'index/index-thematic.php' ); ?>
     </div>
 
 
-    <div class="col-3">
+    <div class="col-3 hide-768px">
         <?php include( 'index/index-sidebar.php' ); ?>
     </div>
 
