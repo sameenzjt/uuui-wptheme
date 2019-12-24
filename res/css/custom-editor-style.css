@@ -1,6 +1,8 @@
 a{
-    color:blue;
+    color:#177cb0;
+    transition: all 0.1s ease-in-out;
 }
 a:hover{
     color: #ff5c00;
+    text-decoration: none;
 }
