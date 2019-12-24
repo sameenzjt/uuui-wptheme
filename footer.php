@@ -88,6 +88,8 @@
     <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     
+    
+
     <!--<script>
         $(".ds").mouseover(function()  //鼠标悬停执行函数
         {
@@ -120,17 +122,16 @@
         
     <?php }?>
 
+
     <!-- 自定义footer代码 -->
     <?php $footer_code = of_get_option('footer_code');
         if(empty($footer_code)){
             echo "";
         } else{
-            echo "<style>\n";
             echo $footer_code;
-            echo "\n</style>";
     } ?>
 
-
+    
 <?php wp_footer(); ?>
 </body>
 </html>

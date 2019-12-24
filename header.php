@@ -67,6 +67,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
     
+    
     <!-- 自定义style样式 -->
     <?php $header_style = of_get_option('header_style');
         if(empty($header_style)){
@@ -76,6 +77,7 @@
             echo $header_style;
             echo "\n</style>";
     } ?>
+
 
     <?php wp_head(); ?>
 </head>
@@ -112,7 +114,7 @@
             <?php 
                 } ?>
         </div>
-            
+        
     </nav>
     <div style="clear:both;"></div>
     <main style="margin-top: 80px;">
