@@ -53,12 +53,12 @@ register_nav_menus( array(
 /* —— 注册菜单 —— 结束 */
 
 
-/* —— 启用特色图片 —— */
+/* —— 启用特色图片 —— 
 if ( function_exists( 'add_theme_support' ) ) {
 	add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
 	set_post_thumbnail_size( 200, 200, true );
 }
-/* —— 启用特色图片 —— 结束 */
+ —— 启用特色图片 —— 结束 */
 
 
 /* —— 后台启用链接选项 —— */
@@ -66,9 +66,7 @@ add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 /* —— 后台启用链接选项 —— 结束 */
 
 
-/**
- * ACF插件
- */
+/* —— ACF插件 —— */
 // Define path and URL to the ACF plugin.
 define( 'MY_ACF_PATH', get_stylesheet_directory() . '/includes/acf/' );
 define( 'MY_ACF_URL', get_stylesheet_directory_uri() . '/includes/acf/' );
@@ -81,19 +79,13 @@ add_filter('acf/settings/url', 'my_acf_settings_url');
 function my_acf_settings_url( $url ) {
     return MY_ACF_URL;
 }
-/**
- * ACF插件————结束
- */
 
+//add_filter('acf/settings/show_admin', '__return_false');//隐藏 ACF 前端菜单
 
+include( 'functions/acf.php' );//本地字段组
 
-/* —— 自定义登出之后的重定向链接 ——   
-add_action('wp_logout','auto_redirect_after_logout');   
-function auto_redirect_after_logout(){   
-  wp_redirect( home_url() );   
-  exit();   
-}
- —— 自定义登出之后的重定向链接 —— 结束 */ 
+/* —— ACF插件 —— 结束 */
+
 
 
 /* —— 后台主题设置optionsframework —— */
@@ -211,17 +203,6 @@ include( 'functions/custom-editor.php' );//向 WordPress 可视化编辑器添�
 
 include( 'functions/breadcrumb.php' );//面包屑导航调用：if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();
 
-
-
-
-/* —— 更改作者存档前缀 —— 
-add_action('init', 'change_author_base');
-function change_author_base() {
-global $wp_rewrite;
-$author_slug = 'profile'; // change slug name
-$wp_rewrite->author_base = $author_slug;
-}
- —— 更改作者存档前缀 —— 结束 */
 
 
 /* —— 字数统计 —— */

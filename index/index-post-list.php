@@ -18,7 +18,9 @@
     
     <div class="index-posts-list" style="margin: 20px 0px; padding: 10px 10px; overflow: hidden;" >
         <a href="<?php the_permalink(); ?>">
-            <div style="background-image:url(<?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); echo $full_image_url[0]; ?>)" class="imgs"></div>
+            <div class="post-img-div">
+                <img class="post-img" src="<?php the_field('article-cover-images'); ?>">
+            </div>
             <!--<img src="< ?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); echo $full_image_url[0]; ?>" class="index-posts-list-img">-->
             <p class="index-posts-list-title"><?php the_title(); ?></p>
             <p class="font-size-small-14 hide-768px" style="margin: 20px 0px;">
