@@ -1,5 +1,6 @@
 <div class="post-list">
-    <span class="index-title new-post">最新文章</span>
+    <i class="iconfont icon-wenzhang" style="margin-right: 5px; color:#ff5c00;"></i>
+    <span class="index-title">最新文章</span>
     <span class="font-size-small">设计文章</span>
     <div class="post-list-tags hide-768px right">
         <a href="#">UI</a>

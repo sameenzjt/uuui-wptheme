@@ -80,7 +80,7 @@
         </div>
         
     </footer>
-    <div class="back_top hide-768px border-radius-4"></div>
+    <div class="back_top hide-768px border-radius-4"><i class="iconfont icon-top"></i></div>
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->

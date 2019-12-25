@@ -7,7 +7,7 @@
             <!--软件教程--> 
             <div class="col-lg-3 col-sm-6">
                 <div class="little-section">
-                    <img src="<?php bloginfo('template_url'); ?>/images/software_16-16.png" style="margin-right: 5px;">
+                    <i class="iconfont icon-drgspingtairuanjianxitong37" style="margin-right: 5px; color:#ff5c00;"></i>
                     <span>软件教程</span>
                     <span  class="font-size-small">常用软件自学路径</span>
                     <div class="dropdown-divider"></div>

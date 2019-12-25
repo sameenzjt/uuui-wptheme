@@ -68,7 +68,7 @@
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
     
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/5.12.0-1/css/all.min.css" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_gaqznl9vuqf.css" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_s0z8zpnbz9.css" type="text/css"/>
     <!-- 自定义style样式 -->
     <?php $header_style = of_get_option('header_style');
         if(empty($header_style)){
@@ -78,7 +78,6 @@
             echo $header_style;
             echo "\n</style>";
     } ?>
-
 
     <?php wp_head(); ?>
 </head>

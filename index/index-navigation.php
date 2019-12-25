@@ -1,4 +1,4 @@
-<img src="<?php bloginfo('template_url'); ?>/images/URL_16-16.png" style="margin-right: 5px;">
+<i class="iconfont icon-daohanghaiwaigou" style="margin-right: 5px; color:#ff5c00;"></i>
 <span class="index-title">设计导航</span>
 <span class="font-size-small">每周更新</span>
 <a href="javascript:;" class="hover_L"><i class="iconfont icon-zuo"></i></a>
