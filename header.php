@@ -67,7 +67,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
     
-    
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/5.12.0-1/css/all.min.css" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_irp6dkc79dt.css" type="text/css"/>
     <!-- 自定义style样式 -->
     <?php $header_style = of_get_option('header_style');
         if(empty($header_style)){
