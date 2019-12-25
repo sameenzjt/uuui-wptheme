@@ -68,7 +68,7 @@
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
     
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/5.12.0-1/css/all.min.css" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_irp6dkc79dt.css" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_gaqznl9vuqf.css" type="text/css"/>
     <!-- 自定义style样式 -->
     <?php $header_style = of_get_option('header_style');
         if(empty($header_style)){
@@ -86,15 +86,14 @@
 <body>
     <nav style="float:left;width:100%;position: fixed;top:0px;z-index:999;">
         <a href="<?php echo get_option('home'); ?>/">
-            <img src="<?php bloginfo('template_url'); ?>/images/083456tqzn4xxw99f1999w.jpg" class="logo_img">
+            <img src="<?php bloginfo('template_url'); ?>/images/083456tqzn4xxw99f1999w.jpg" class="logo_img left">
         </a>
-        <div class="nav-link hide-768px">
-        <?php 
-        if(function_exists('wp_nav_menu')) {
-            wp_nav_menu(array( 'theme_location' => 'nav_menu','container_id'=>'menu_left') ); 
-        }
-        ?>
-            
+        <div class="nav-link hide-768px left">
+            <?php 
+            if(function_exists('wp_nav_menu')) {
+                wp_nav_menu(array( 'theme_location' => 'nav_menu','container_id'=>'menu_left') ); 
+            }
+            ?>
         </div>
 
         <div style="float:right; margin-top:16px;">

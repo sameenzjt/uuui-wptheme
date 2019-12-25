@@ -6,7 +6,7 @@
 
             <!--软件教程--> 
             <div class="col-lg-3 col-sm-6">
-                <div style="background-color:#fff;padding:15px;border-radius: 4px;border: rgb(238, 238, 238) 1px solid;">
+                <div class="little-section">
                     <img src="<?php bloginfo('template_url'); ?>/images/software_16-16.png" style="margin-right: 5px;">
                     <span>软件教程</span>
                     <span  class="font-size-small">常用软件自学路径</span>
@@ -49,23 +49,23 @@
 
             <!--设计师必备--> 
             <div class="col-lg-3 col-sm-6">
-                <div style="background-color:#fff;padding:15px;border-radius: 4px;border: rgb(238, 238, 238) 1px solid;">
+                <div class="little-section height-100">
                     <img src="<?php bloginfo('template_url'); ?>/images/photoshop_16-16.png" style="margin-right: 5px;">
                     <span>设计师必备</span>
                     <span  class="font-size-small">优设倾心推荐</span>
                     <div class="dropdown-divider"></div>
                     <div>
-                        <a href="#"><span class="font-size-small badge-tags">11111111</span></a>
-                        <a href="#"><span class="font-size-small badge-tags">2222</span></a>
-                        <a href="#"><span class="font-size-small badge-tags">33333333</span></a>
-                        <a href="#"><span class="font-size-small badge-tags">44444444</span></a>
+                        <a href="#"><span class="font-size-small badge-tags border-radius-4">11111111</span></a>
+                        <a href="#"><span class="font-size-small badge-tags border-radius-4">2222</span></a>
+                        <a href="#"><span class="font-size-small badge-tags border-radius-4">33333333</span></a>
+                        <a href="#"><span class="font-size-small badge-tags border-radius-4">44444444</span></a>
                     </div>
                 </div>
             </div>
 
             <!--软件教程--> 
             <div class="col-lg-3 col-sm-6">
-                <div style="background-color:#fff;padding:15px;border-radius: 4px;border: rgb(238, 238, 238) 1px solid;">
+                <div class="little-section height-100">
                     <img src="<?php bloginfo('template_url'); ?>/images/software_16-16.png" style="margin-right: 5px;">
                     <span>软件教程</span>
                     <span  class="font-size-small">常用软件自学路径</span>
@@ -93,7 +93,7 @@
 
             <!-- 软件教程 --> 
             <div class="col-lg-3 col-sm-6">
-                <div style="background-color:#fff;padding:15px;border-radius: 4px;border: rgb(238, 238, 238) 1px solid;">
+                <div class="little-section height-100">
                     <img src="<?php bloginfo('template_url'); ?>/images/software_16-16.png" style="margin-right: 5px;">
                     <span>软件教程</span>
                     <span  class="font-size-small">常用软件自学路径</span>

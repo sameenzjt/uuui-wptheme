@@ -45,13 +45,13 @@
                         </a>
                     </div>
                     <div style="margin: 0px auto; float: left; padding: 0px 10px;">
-                        <a href="javascript:void(0);" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="<img src='<?php echo of_get_option('weibo_qr_uploader', ''); ?>' width='100%'>">
+                        <a href="javascript:void(0);" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="<img src='<?php echo of_get_option('weibo_qr_uploader', ''); ?>' width='160px'>">
                             <div class="weibo mx-auto"></div>
                             <p>微博</p>
                         </a>
                     </div>
                     <div style="margin: 0px auto; float: left; padding: 0px 10px;">
-                        <a href="javascript:void(0);" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="<img src='<?php echo of_get_option('toutiao_qr_uploader', ''); ?>' width='100%'>">
+                        <a href="javascript:void(0);" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="<img src='<?php echo of_get_option('toutiao_qr_uploader', ''); ?>' width='160px'>">
                             <div class="toutiao mx-auto"></div>
                             <p>头条</p>
                         </a>
@@ -80,7 +80,7 @@
         </div>
         
     </footer>
-    <div class="back_top hide-768px"></div>
+    <div class="back_top hide-768px border-radius-4"></div>
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->

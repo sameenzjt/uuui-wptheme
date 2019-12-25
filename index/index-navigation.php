@@ -1,8 +1,8 @@
 <img src="<?php bloginfo('template_url'); ?>/images/URL_16-16.png" style="margin-right: 5px;">
 <span class="index-title">设计导航</span>
 <span class="font-size-small">每周更新</span>
-<a href="javascript:;" class="hover_L">《</a>
-        <a href="javascript:;" class="hover_R">》</a>
+<a href="javascript:;" class="hover_L"><i class="iconfont icon-zuo"></i></a>
+<a href="javascript:;" class="hover_R"><i class="iconfont icon-you"></i></a>
 <span style="font-size: small; float: right;"><a href="#">查看全部</a></span>
 <div class="dropdown-divider"></div>
 

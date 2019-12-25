@@ -18,7 +18,7 @@
     
     <div class="index-posts-list" style="margin: 20px 0px; padding: 10px 10px; overflow: hidden;" >
         <a href="<?php the_permalink(); ?>">
-            <div class="post-img-div">
+            <div class="post-img-div left">
                 <img class="post-img" src="<?php the_field('article-cover-images'); ?>">
             </div>
             <!--<img src="< ?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); echo $full_image_url[0]; ?>" class="index-posts-list-img">-->
@@ -41,7 +41,7 @@
     <?php endwhile; ?>
 
     <a href="<?php $select_pages_allposts = of_get_option('select_pages_allposts', ''); the_permalink($select_pages_allposts); ?>">
-        <button type="button" class="btn all-post-btn btn-block">查看全部文章</button>
+        <button type="button" class="btn all-post-btn btn-block border-radius-4">查看全部文章</button>
     </a>
 
     
