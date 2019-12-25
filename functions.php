@@ -82,7 +82,7 @@ function my_acf_settings_url( $url ) {
 
 //add_filter('acf/settings/show_admin', '__return_false');//隐藏 ACF 前端菜单
 
-include( 'functions/acf.php' );//本地字段组
+//include( 'functions/acf.php' );//本地字段组
 
 /* —— ACF插件 —— 结束 */
 

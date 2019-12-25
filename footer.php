@@ -39,7 +39,7 @@
             <div class="col-lg-3 mx-auto text-center hide-768px" style="margin: 0px auto;padding-left: 60px; color: #fff;font-size: 12px;">
                 
                     <div style="margin: 0px auto; float: left; padding: 0px 10px;">
-                        <a href="javascript:void(0);" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="<img src='<?php echo of_get_option('weixin_qr_uploader', ''); ?>' width='100%'>">
+                        <a href="javascript:void(0);" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="<img src='<?php echo of_get_option('weixin_qr_uploader', ''); ?>' width='160px'>">
                             <div class="weixin mx-auto"></div>
                             <p>微信</p>
                         </a>

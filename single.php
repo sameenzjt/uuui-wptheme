@@ -2,21 +2,37 @@
 
         <div class="row">
             <div class="col-12">
-                <ol class="post-breadcrumb">
-                    <li class="post-breadcrumb-item font-size-small"><a href="#">首页</a></li>
-                    <li class="post-breadcrumb-item font-size-small"><a href="#">设计文章</a></li>
-                    <li class="post-breadcrumb-item font-size-small"><a href="#">交互</a></li>
-                    <li class="post-breadcrumb-item font-size-small"><a href="#">正文</a></li>     
-                </ol>
+                <?php if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();?>
 
-                <h2><?php the_title(); ?></h2>
+                <h1><?php the_title(); ?></h1>
+                
+
                 <p class="font-size-small-14 post-info">
-                    <span>作者：Lyudmil</span>
+
+                <?php
+                    $article_type = get_field('article-type');
+                    $reprinted_from = get_field('reprinted-from');
+                    $reprinted_url = get_field('reprinted-url');
+                    $translation_from = get_field('translation-from');
+                    $translation_url = get_field('translation-url');
+
+                    if($article_type == "original") {
+                        echo "<span class='badge badge-info'>原创</span>";
+                        echo "<span>作者：Lyudmil</span>";
+                    } elseif ($article_type == "reproduced") {
+                        echo "<span class='badge badge-info'>转载</span>";
+                        echo "<span>转载来源：" . $reprinted_from . "</span>";
+                    } elseif ($article_type == "translation") {
+                        echo "<span class='badge badge-info'>翻译</span>";
+                        echo "<span>原文来源：" . $translation_from . "</span>";
+                    }
+                ?>
+                    
                     <span><?php the_time('Y年n月j日') ?></span>
                     <span>阅读 <?php get_post_views($post -> ID); ?></span>
                     <span>点赞 82</span>
                     <span><?php comments_popup_link('0 条评论', '1 条评论', '% 条评论', '', '评论已关闭'); ?></span>
-                    <span><?php the_tags('标签：', ', ', ''); ?></span>
+
                     <span><?php edit_post_link('编辑', ' • ', ''); ?></span>
                 </p>
                 <div class="dropdown-divider"></div>
@@ -43,42 +59,30 @@
                 </div>
                 <?php endif; ?>
 
-                
-
-
-
-
-
-               
-
-
-
-
-                <!--版权声明-->
+                <!-- 二维码引流 -->
+                <div class="post-qr" style="background:red;">
+                    <p>扫码关注公众号</p>
+                    <img src="<?php echo of_get_option('weixin_qr_uploader', ''); ?>" width="120px">
+                </div>
+                <!-- 版权声明 -->
                 <div class="post-copyright-notice">
                     <div class="dropdown-divider"></div>
                     <p>文章为作者独立观点不代表优设网立场，未经允许不得转载。</p>
                     <div class="dropdown-divider"></div>
                 </div>
-                <!--文章标签-->
+                <!-- 文章标签 -->
                 <div class="post-tags">
                     <p>继续阅读与本文标签相同的文章</p>
-                    <div>
-                        <a href="#"><span class="post-tags-badge font-size-small-14">2020设计趋势</span></a>
-                        <a href="#"><span class="post-tags-badge font-size-small-14">LOGO 设计</span></a>
-                        <a href="#"><span class="post-tags-badge font-size-small-14">LOGO设计趋势</span></a>
-                        <a href="#"><span class="post-tags-badge font-size-small-14">经验分享</span></a>
-                        <a href="#"><span class="post-tags-badge font-size-small-14">设计趋势</span></a>
-                    </div>
+                    <?php the_tags('<span class="post-tags-badge">','</span><span class="post-tags-badge">','</span>'); ?>
                 </div>
-                <!--评论-->
+                <!-- 评论 -->
                 <div style="margin: 40px 0; padding: 0px 90px 0px 100px;">
                     <?php comments_template(); ?>
                 </div>
 
             </div>
 
-            <!--右-->
+            <!-- 右 -->
             <div class="col-lg-3 hide-768px">
                 <div class="single-tool" id="fixed-tool">
                     <h5 class="lanmu-title">文章小工具</h5>
