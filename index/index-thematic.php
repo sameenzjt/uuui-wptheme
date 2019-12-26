@@ -1,4 +1,5 @@
 
+    <i class='iconfont icon-zhuanti1 post-icon'></i>
     <span class="index-title">专题</span>
     <span style="font-size: small; float: right;">
         <a href="<?php $select_pages_allthematic = of_get_option('select_pages_allthematic', '');

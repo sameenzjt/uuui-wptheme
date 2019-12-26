@@ -68,14 +68,13 @@
                         $the_title = get_the_title();
                         echo "转载请注明出处：<a href='" . $the_permalink ."'>《".$the_title."》</a>";
                         echo "<a href='javascript:void(0)' onclick='copy_code('" .$the_permalink. "'); return false;' class='click-copy-link'><i class='iconfont icon-link' aria-hidden='true'></i><span>点击复制链接</span></a>";
-                        echo "<br /><span>文章为作者独立观点不代表本网站立场</span>";
-
+                        echo "<br /><i class='iconfont icon-yuanchuang post-icon'></i><span>文章为作者独立观点不代表本网站立场</span>";
                     } elseif ($article_type == "reproduced") {
                         echo "<span>转载自：<a href='" . $reprinted_url ."'>" . $reprinted_from . "</a></span>";
-                        echo "<br /><span>本文转载自其他网站，请勿再次转载本文</span>";
+                        echo "<br /><i class='iconfont icon-azhuanzai post-icon'></i><span>本文转载自其他网站，请勿再次转载本文</span>";
                     } elseif ($article_type == "translation") {
                         echo "<span>原文：<a href='" . $translation_url ."'>" . $translation_from . "</a></span>";
-                        echo "<br /><span>本文翻译自其他文章，可能存在翻译错误，本网站不保证文章准确性</span>";
+                        echo "<br /><i class='iconfont icon-fanyiline post-icon'></i><span>本文翻译自其他文章，可能存在翻译错误，本网站不保证文章准确性</span>";
                 }?>
             </div>
 

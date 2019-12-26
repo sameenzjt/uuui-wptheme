@@ -242,9 +242,10 @@ function ludou_sanitize_user ($username, $raw_username, $strict) {
 
 /* —— 添加帮助面板 ——https://www.ludou.org/wordpress-customizing-the-dashboard-widgets.html */
 function ludou_dashboard_help() {
+	$file_get_contents = file_get_contents( "https://zhangjintao.art/version.txt" );
 	$my_theme = wp_get_theme();
 	echo "当前主题版本：" . $my_theme->get( 'Name' ) . "&nbsp;" . $my_theme->get( 'Version' ) . "<br />";
-
+	echo "最新版本：" . $file_get_contents;
 	echo '<p>有事请与我联系，Email: sameen.zjt@gmail.com   QQ: 2459012173</p>';
 	// 如以下一行代码是露兜博客开放投稿功能所使用的投稿说明
 	// echo "<p><ol><li>投稿，请依次点击 文章 - 添加新文章，点击 "送交审查" 即可提交</li><li>修改个人资料，请依次点击 资料 - 我的资料</li><li>请认真填写“个人说明”，该信息将会显示在文章末尾</li><li>有事请与我联系，Email: zhouzb889@gmail.com   QQ: 825533758</li></ol></p>";     
