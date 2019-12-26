@@ -7,7 +7,7 @@
             <!--软件教程--> 
             <div class="col-lg-3 col-sm-6">
                 <div class="little-section">
-                    <i class="iconfont icon-drgspingtairuanjianxitong37" style="margin-right: 5px; color:#ff5c00;"></i>
+                    <i class="iconfont icon-drgspingtairuanjianxitong37 post-icon"></i>
                     <span>软件教程</span>
                     <span  class="font-size-small">常用软件自学路径</span>
                     <div class="dropdown-divider"></div>

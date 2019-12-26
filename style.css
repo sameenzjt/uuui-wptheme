@@ -2,7 +2,7 @@
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
 Description: 设计资源分享网站
-Version: v0.11.5
+Version: v0.11.6
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 设计,UI
@@ -50,25 +50,14 @@ Tags: 设计,UI
     }
     
     .logo_img{
-        float: left;
         height:40px;
     }
-    .user_img{
-        border-radius:4px;
-        float: right;
-        margin-top: 4px;
-        width: 32px;
-    }
-    .index-posts-list-img{
-        float: left;
-        border-radius: 4px;
-        margin-right: 20px;
-        width: 160px;
-    }
+
     .index-posts-list-title{
         font-size: 16px;
         font-weight: 400;
     }
+
     .page-support-content{
         padding: 0px 10px;
     }
@@ -121,7 +110,7 @@ main{
     font-size: 14px;
     transition: all 0.3s ease-in-out;
 }
-.footer a:hover{
+.footer a:hover , .friend-link a:hover , .weixin i:hover , .weibo i:hover , .toutiao i:hover , .category-title a , .post_tags li:hover a{
     color: #fff;
 }
 
@@ -135,17 +124,12 @@ main{
     font-size: 12px;
     transition: all 0.3s ease-in-out;
 }
-.friend-link a:hover{
-    color: #fff;
-}
-
 
 .logo_img{
     height:60px;
 }
 
 .nav-link{
-    float: left;
     margin-left: 40px;
   
 }
@@ -159,27 +143,6 @@ main{
     padding: 10px 16px;
 }
  
-.ui-div{
-    margin: 10px 0px;
-    border-radius:4px;
-    padding: 10px 20px;
-    transition: all 0.1s ease;
-}
-
-.ui-div span{
-    font-size: 14px; color: rgb(90, 90, 90);
-    transition: all 0.2s ease;
-}
-
-.ui-div:hover{
-    background-color: #ff5c00;
-    color: #fff;
-}
-
-.ui-div:hover span{
-    color: #fff;
-}
-
 .index-thematic-img{
     border-radius: 4px;
     background-repeat: no-repeat;
@@ -192,12 +155,6 @@ main{
 }
 
 .index-thematic-img:hover{
-    border-radius: 4px;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center center;
-    height: 120px;
-    margin: 0px 0px 10px 0px;
     filter:brightness(100%);
 }
 
@@ -209,9 +166,6 @@ main{
 }
 
 .index-thematic-div:hover{
-    margin-top: 10px;
-    padding: 0px 0px;
-    border-radius: 4px;
     -webkit-box-shadow: 0px 0px 8px 0px rgba(214,214,214,0.75);
     -moz-box-shadow: 0px 0px 8px 0px rgba(214,214,214,0.75);
     box-shadow: 0px 0px 8px 0px rgba(214,214,214,0.75);
@@ -248,8 +202,8 @@ main{
 }
 .index-posts-list:hover .post-img{
     z-index: 5;
-  transform: scale(1.05); /*把图片放大1.05倍*/
-  -webkit-transform: scale(1.05);
+    transform: scale(1.05); /*把图片放大1.05倍*/
+    -webkit-transform: scale(1.05);
 }
 
 .index-posts-list:hover{
@@ -321,33 +275,9 @@ main{
     padding-right: 40px;
     color: #fff;
 }
-.weixin{
-    width: 50px;
-    height: 50px;
-    background-image: url(images/weixin.png);
-    background-size: 100% 100%;
+.weixin i , .weibo i , .toutiao i{
+    font-size: 40px;
     transition: all 0.3s ease;
-}
-.weixin:hover{
-    background-image: url(images/weixin-light.png);
-}
-.weibo{
-    width: 50px;
-    height: 50px;
-    background-image: url(images/weibo.png);
-    background-size: 100% 100%;
-}
-.weibo:hover{
-    background-image: url(images/weibo-light.png);
-}
-.toutiao{
-    width: 50px;
-    height: 50px;
-    background-image: url(images/toutiao.png);
-    background-size: 100% 100%;
-}
-.toutiao:hover{
-    background-image: url(images/toutiao-light.png);
 }
 
 .index-title{
@@ -386,6 +316,7 @@ main{
 
 .back_top:hover{
     color: #ff5c00;
+    border: 1px solid #ff5c00;
 }
 
 .post-info span{
@@ -393,9 +324,8 @@ main{
  }
 
 .post-content{
+    margin: 0px 90px;
     padding: 20px;
-    margin: 0px 70px;
-    border-radius: 4px;
     border:1px solid rgb(235, 235, 235);
 }
 
@@ -418,11 +348,20 @@ main{
     text-decoration: none;
 }
 
-.post-copyright-notice , .post-tags , .post-qr{
-    margin: 0px 90px;
-}
-.post-copyright-notice p , .post-tags p{
+.post-copyright-notice , .post-tags , .post-qr , .post-comments{
     margin: 30px 0px;
+}
+.post-copyright-notice p , .post-tags p , .post-qr p , .post-comments p{
+    margin-bottom: 20px;
+}
+
+.post-content-bottom{
+    margin: 30px 90px;
+}
+
+.post-icon{
+    margin-right: 5px;
+    color:#ff5c00;
 }
 
 .post-tags-badge a{
@@ -432,25 +371,15 @@ main{
     margin: 20px 5px;
     white-space: nowrap;/*强制不换行*/
 }
-.post-tags-badge a:hover{
+.post-tags-badge a:hover , .ui-div:hover{
     background-color: #ff5c00;
     color: #fff;
 }
 
-.single-tool{
-    border-radius:4px;
+.single-tool , .sidebar-border{
     margin: 10px;
     padding: 20px;
     border: rgb(238, 238, 238) 1px solid;
-    background-color: #fff;
-}
-
-.sidebar-border{
-    border-radius:4px;
-    margin: 10px 0px;
-    padding: 20px;
-    border: rgb(238, 238, 238) 1px solid;
-    background-color: #fff;
 }
 
 .post-font-size-change a{
@@ -461,31 +390,19 @@ main{
 }
 
 .post-font-size-change a:hover{
-    margin: 0px 5px;
-    padding:2px 4px;
     color: #fff;
-    border-radius:4px;
     background-color: #ff5c00;
-}
-.post-font-size-change a:active{
-    margin: 0px 5px;
-    padding:2px 4px;
-    color: #fff;
-    border-radius:4px;
-    background-color: #f05800;
-    
 }
 
 .page-breadcrumb{
-    margin: 0px;
     padding: 10px 0px;
 }
+
 .page-breadcrumb li{
     list-style:none;
     display:inline;
-    margin: 0;
-    padding: 0;
 }
+
 .page-breadcrumb a{
     color: rgb(160, 160, 160);
 }
@@ -498,11 +415,10 @@ main{
 }
 
 .page-thematic-list:hover{
-    background-color: rgba(250, 250, 250);;
+    background-color: rgba(250, 250, 250);
 }
+
 .page-thematic-list-img{
-    float: left;
-    border-radius: 4px;
     margin-right: 20px;
     width: 260px;
 }
@@ -569,9 +485,6 @@ main{
 }
 
 .sidebar-tags-div:hover{
-    padding:10px 10px;
-    background-color:blueviolet;
-    border-radius: 4px;
     background-color: #ff5c00;
     color: #fff;
 }
@@ -584,8 +497,6 @@ main{
 }
 
 .all-tags-btn:hover{
-    padding: 5px 0px;
-    border-radius: 4px;
     background-color: #ff5c00;
     color: #fff;
 }
@@ -602,16 +513,8 @@ main{
     padding-left: 140px;
 }
 
-.registered-landing-img-div-4 , .registered-landing-img-div-5{
-    padding-left: 100px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.registered-landing-img-div-6{
-    padding-left: 100px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+.registered-landing-img-div-4 , .registered-landing-img-div-5 , .registered-landing-img-div-6{
+    padding: 20px 0px 20px 100px;
 }
 
 .registered-landing-text{
@@ -628,7 +531,6 @@ main{
 
 .post_tags{
     list-style-type: none;
-    
 }
 
 .post_tags li{
@@ -640,10 +542,6 @@ main{
 
 .post_tags li:hover{
     background-color: #ff5c00;
-}
-
-.post_tags li:hover a{
-    color: #fff;
 }
 
 .footer_menu ul{

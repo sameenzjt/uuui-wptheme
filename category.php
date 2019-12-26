@@ -41,7 +41,7 @@
             
                 <div class="page-thematic-list" style="margin: 20px 0px; padding: 10px 10px; overflow: hidden;" >
                     <a href="<?php the_permalink(); ?>">    
-                        <img src="<?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); echo $full_image_url[0]; ?>" class="page-thematic-list-img">
+                        <img src="<?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); echo $full_image_url[0]; ?>" class="page-thematic-list-img left  border-radius-4">
                         <p class="page-thematic-list-title"><?php the_title(); ?></p>
                         <p class="font-size-small-14 hide-768px" style="margin: 20px 0px;">
                             <?php if (has_excerpt()) {

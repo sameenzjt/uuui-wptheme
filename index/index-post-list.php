@@ -1,5 +1,5 @@
 <div class="post-list">
-    <i class="iconfont icon-wenzhang" style="margin-right: 5px; color:#ff5c00;"></i>
+    <i class="iconfont icon-wenzhang post-icon"></i>
     <span class="index-title">最新文章</span>
     <span class="font-size-small">设计文章</span>
     <div class="post-list-tags hide-768px right">
