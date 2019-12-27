@@ -1,6 +1,12 @@
 <?php get_header(); ?>
 <div class="row">
 
+
+    <div class="col-12">
+        <?php include( 'index/index-carousel.php' ); ?>
+    </div>
+
+
     <div class="col-12" style="margin:30px 0px">
         <div class="row">
 
@@ -123,9 +129,8 @@
     </div><!--col-12 nember-1--> 
 
 
-    <div class="col-12 hide-768px index-navigation" style="margin:30px 0px">
-        <?php include( 'index/index-navigation.php' ); ?>
-    </div>
+    
+   
 
 
     <div class="col-lg-9 col-sm-12">
@@ -143,5 +148,8 @@
     </div>
 
 
+    <div class="col-12 hide-768px index-navigation" style="margin:30px 0px">
+        <?php include( 'index/index-navigation.php' ); ?>
+    </div>
 </div>
 <?php get_footer(); ?>

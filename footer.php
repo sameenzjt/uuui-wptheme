@@ -91,7 +91,7 @@
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     
     
-
+	
     <!--<script>
         $(".ds").mouseover(function()  //鼠标悬停执行函数
         {
@@ -111,7 +111,7 @@
 
     <?php if (is_home()) { ?>
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/index-navigation.js"></script>
-
+        
     <?php } elseif( is_single() ) { ?>
         <!--  更改文章内容字体大小 -->
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/change-single-font-size.js"></script>
