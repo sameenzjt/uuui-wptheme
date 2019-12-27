@@ -53,7 +53,7 @@
             }
             $description = trim(strip_tags($description));
             $keywords = trim(strip_tags($keywords));
-    ?>
+        ?>
     <meta name="description" content="<?php echo $description; ?>" />
     <meta name="keywords" content="<?php echo $keywords; ?>" />
     

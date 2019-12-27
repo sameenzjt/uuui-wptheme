@@ -338,12 +338,29 @@ function optionsframework_options() {
 		'id' => 'icp-bei',
 		'type' => 'text',
 	);
+
 	$options[] = array(
 		'desc' => __( '公网安备，例：X 公网安备 XXXXXX号', 'uuui' ),
 		'id' => 'gongwang-bei',
 		'type' => 'text',
 	);
-	
+
+	$options[] = array(
+		'name' => __( '404标题', 'uuui' ),
+		'desc' => __( '404页面的标题', 'uuui' ),
+		'std' => '404 页面未找到！',
+		'id' => '404_title',
+		'type' => 'text',
+		'class' => 'mini',
+	);
+
+	$options[] = array(
+			'name' => __( '404描述', 'uuui' ),
+			'desc' => __( '404页面中描述，可以向用户提示发生了什么', 'uuui' ),
+			'std' => '没有找到该页面，可能是以下情况：<br />1、检查网址石佛偶争取',
+			'id' => '404_description',
+			'type' => 'textarea',
+		);
 
 
 /* —— 首页设置 —— */
