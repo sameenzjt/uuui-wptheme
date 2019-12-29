@@ -1,13 +1,12 @@
 
     <i class='iconfont icon-zhuanti1 post-icon'></i>
     <span class="index-title">专题</span>
-    <span style="font-size: small; float: right;">
+    <span class="font-size-small-14 float-right view-all">
         <a href="<?php $select_pages_allthematic = of_get_option('select_pages_allthematic', '');
                 the_permalink($select_pages_allthematic); ?>">查看全部</a>
     </span>
-    <div class="dropdown-divider"></div>
 
-    <div class="row">
+    <div class="row" style="margin-top:20px">
         <?php $index_thematic_1 = of_get_option('index_thematic_1', '');
             $index_thematic_2 = of_get_option('index_thematic_2', '');
             $index_thematic_3 = of_get_option('index_thematic_3', '');
@@ -20,7 +19,7 @@
                         <span class="index-thematic-info left">2333人观看</span>
                         <span class="index-thematic-info right"><?php echo get_category($index_thematic_1)->count; ?>篇文章</span>
                     </div>
-                    <i style="background-color: #ff5c00;">&nbsp;</i>
+                    <i class="bg-primary-color">&nbsp;</i>
                     <span style="font-size:20px; font-weight: 600;"><?php echo get_cat_name($index_thematic_1);?></span>
                     <br />
                     <span class="font-size-small-14 index-category-description"><?php echo category_description($index_thematic_1);?></span>
@@ -35,7 +34,7 @@
                         <span class="index-thematic-info left">2333人观看</span>
                         <span class="index-thematic-info right"><?php echo get_category($index_thematic_2)->count; ?>篇文章</span>
                     </div>
-                    <i style="background-color: #ff5c00;">&nbsp;</i>
+                    <i class="bg-primary-color">&nbsp;</i>
                     <span style="font-size:20px; font-weight: 600;"><?php echo get_cat_name($index_thematic_2);?></span>
                     <br />
                     <span class="font-size-small-14 index-category-description"><?php echo category_description($index_thematic_2);?></span>
@@ -50,7 +49,7 @@
                         <span class="index-thematic-info left">2333人观看</span>
                         <span class="index-thematic-info right"><?php echo get_category($index_thematic_3)->count; ?>篇文章</span>
                     </div>
-                    <i style="background-color: #ff5c00;">&nbsp;</i>
+                    <i class="bg-primary-color">&nbsp;</i>
                     <span style="font-size:20px; font-weight: 600;"><?php echo get_cat_name($index_thematic_3);?></span>
                     <br />
                     <span class="font-size-small-14 index-category-description"><?php echo category_description($index_thematic_3);?></span>
@@ -65,7 +64,7 @@
                         <span class="index-thematic-info left">2333人观看</span>
                         <span class="index-thematic-info right"><?php echo get_category($index_thematic_4)->count; ?>篇文章</span>
                     </div>
-                    <i style="background-color: #ff5c00;">&nbsp;</i>
+                    <i class="bg-primary-color">&nbsp;</i>
                     <span style="font-size:20px; font-weight: 600;"><?php echo get_cat_name($index_thematic_4);?></span>
                     <br />
                     <span class="font-size-small-14 index-category-description"><?php echo category_description($index_thematic_4);?></span>

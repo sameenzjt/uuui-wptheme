@@ -98,7 +98,7 @@
 </head>
 <?php flush(); ?>
 <body>
-    <nav style="float:left;width:100%;position: fixed;top:0px;z-index:999;">
+    <nav class="left">
         <a href="<?php echo get_option('home'); ?>/">
             <img src="<?php bloginfo('template_url'); ?>/images/083456tqzn4xxw99f1999w.jpg" class="logo_img left">
         </a>
@@ -110,7 +110,7 @@
             ?>
         </div>
 
-        <div style="float:right; margin-top:16px;">
+        <div class="right" style=" margin-top:16px;">
             <?php if ( is_user_logged_in() ) {?>
                 <?php global $current_user; //当前用户信息数组
                     wp_get_current_user();

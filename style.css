@@ -2,7 +2,7 @@
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
 Description: 设计资源分享网站
-Version: v0.13.1
+Version: v0.14.0
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 设计,UI
@@ -76,7 +76,7 @@ Tags: 设计,UI
 body{
     /*font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;  字体*/
     font-family: "PingFang SC", "Lantinghei SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", Arial, "Hiragino Sans GB", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
-    color: #333;    /*字体颜色*/
+    color: #212121;    /*字体颜色*/
     line-height: 1.5em;
     /*background-color: rgba(248, 248, 248);*/
     background-color: #fff;
@@ -84,18 +84,21 @@ body{
 
 a{
     text-decoration: none;
-    color: #333;
+    color: #212121;
     transition: all 0.1s ease-in-out;
     cursor:url("images/aero-middle-finger.png"),auto;
 }
 
 a:hover{
     text-decoration:none; 
-    color: #ff5c00;
+    color: #ff5722;
 }
 
 nav{
-    font-size: 15px;
+    width:100%;
+    position: fixed;
+    top:0px;
+    z-index:999;
     height: 60px;
     padding: 0px 40px;
     background-color: #fff;
@@ -108,10 +111,16 @@ main{
     margin: 0px auto;
 }
 
+.inline{display: inline;}
+
+.bg-primary-color { background: #FF5722; }
+.font-divider-color{color: #BDBDBD;}
+.secondary-text-color{ color: #757575; }/*辅助文本*/
+
 .badge-themecolor{
     font-size: 16px;
     color: #fff;
-    background-color: #ff5c00;
+    background-color: #ff5722;
 }
 
 .footer{
@@ -119,8 +128,9 @@ main{
     margin: 0px auto;
     background-color: #2a2a32;
 }
+
 .footer a{
-    color: rgb(170, 169, 169);
+    color: #BDBDBD;
     margin: 2px 5px;
     font-size: 14px;
     transition: all 0.3s ease-in-out;
@@ -134,7 +144,7 @@ main{
 }
 
 .friend-link a , .friend-link span{
-    color: rgb(120, 120, 120);
+    color: #757575;
     margin: 2px 5px;
     font-size: 12px;
     transition: all 0.3s ease-in-out;
@@ -205,15 +215,17 @@ main{
     border-radius: 4px;
     margin-right: 20px;
     width: 260px;
-    height: 146px;
+    height: 166px;
     overflow: hidden;
     transition: all 0.2s ease-in-out;
 }
 .post-img{
+    width: 100%;
+    height: 100%;
     max-width: 260px;
-  max-height: 146px;
-  transition: all 0.2s ease-out; /*ease-out 减速、慢慢结束*/
-  -webkit-transition: all 0.2s ease-out;
+    max-height: 166px;
+    transition: all 0.2s ease-out; /*ease-out 减速、慢慢结束*/
+    -webkit-transition: all 0.2s ease-out;
 }
 .index-posts-list:hover .post-img{
     z-index: 5;
@@ -222,41 +234,41 @@ main{
 }
 
 .index-posts-list:hover{
-    background-color: rgba(250, 250, 250);
+    border-radius: 4px;
+    background-color: rgba(240, 240, 240);
 }
 
 .index-posts-list-title{
-    font-size: 24px;
     font-weight: 600;
 }
 
-.little-section{
-    background-color:#fff;
-    padding:15px;
-    border-radius: 4px;
-    border: rgb(238, 238, 238) 1px solid;
+.index-posts-list-excerpt{
+    color: #757575;
 }
 
-.height-100{
-    height: 100%;
+.little-section{
+    padding:15px;
+    border: rgb(220, 220, 220) 1px solid;
 }
 
 .font-size-small{
-    font-size: 0.75em; color: rgb(160, 160, 160);margin: 0px 10px;
-}
-.font-size-small a{
-    color: rgb(160, 160, 160);
-}
-.font-size-small a:hover{
-    color: #ff5c00;
+    color: #BDBDBD;
+    font-size: 0.75em;
 }
 
-.font-size-small-14 , .support_menu_ul li a , .post-tags-badge a{
-    font-size: 14px; color: rgb(160, 160, 160);
+.font-size-small a{
+    color: #BDBDBD;
 }
-.support_menu_ul li a:hover{
-    color: #ff5c00;
+
+.font-size-small a:hover , .support_menu_ul li a:hover , .support_menu_ul .current-menu-item a{
+    color: #ff5722;
 }
+
+.font-size-small-14 , .support_menu_ul li a{
+    font-size: 14px;
+    color: #757575;
+}
+
 .badge-tags{
     background-color:rgb(248, 248, 248);
     padding: 2px 6px;
@@ -266,7 +278,7 @@ main{
 }
 
 .badge-tags:hover{
-    background-color:#ff5c00;
+    background-color:#ff5722;
     color: #fff;
 }
 
@@ -275,14 +287,14 @@ main{
 }
 
 .all-post-btn{
-    background-color: #ff5c00;
+    background-color: #ff5722;
     margin: 20px 0px;
     color: #fff;
     transition: all 0.1s ease-in-out;
 }
 
 .all-post-btn:hover{
-    background-color: #f05800;
+    background-color: #E64A19;
     color: #fff;
 }
 
@@ -310,9 +322,20 @@ main{
     display: inline;
 }
 
+.view-all a{
+    padding: 2px 6px;
+    color: #757575;
+}
+
 .post-list-tags a{
-    margin: 0px 10px;
-    font-size: 14px;
+    padding: 2px 6px;
+    margin: 0px 4px;
+}
+.post-list-tags a:hover , .view-all a:hover{
+    color: #fff;
+    background-color: #FF5722;
+    border-radius: 4px;
+    padding: 2px 6px;
 }
 
 .back_top{
@@ -330,8 +353,8 @@ main{
 }
 
 .back_top:hover{
-    color: #ff5c00;
-    border: 1px solid #ff5c00;
+    color: #ff5722;
+    border: 1px solid #ff5722;
 }
 
 .post-info span{
@@ -339,9 +362,8 @@ main{
  }
 
 .post-content{
-    margin: 0px 90px;
+    margin: 0px 60px;
     padding: 20px;
-    border:1px solid rgb(235, 235, 235);
 }
 
 .post-content p{
@@ -359,14 +381,14 @@ main{
     
 }
 .post-content a:hover{
-    color: #ff5c00;
+    color: #ff5722;
     text-decoration: none;
 }
 
 .post-copyright-notice , .post-tags , .post-qr , .post-comments{
     margin: 30px 0px;
 }
-.post-copyright-notice p , .post-tags p , .post-qr p , .post-comments p{
+.post-copyright-notice p , .post-qr p , .post-comments p{
     margin-bottom: 20px;
 }
 
@@ -376,37 +398,42 @@ main{
 
 .post-icon{
     margin-right: 5px;
-    color:#ff5c00;
+    color:#ff5722;
+}
+
+.post-tags{
+    margin: 30px 0px;
+}
+
+.post-tags-badge{
+    margin: 5px;
 }
 
 .post-tags-badge a{
-    background-color: rgb(248, 248, 248);
+
+    background-color: rgb(244, 244, 244);
     border-radius:4px;
     padding: 7px 16px;
-    margin: 20px 5px;
     white-space: nowrap;/*强制不换行*/
 }
-.post-tags-badge a:hover , .ui-div:hover{
-    background-color: #ff5c00;
+.post-tags-badge a:hover , .ui-div:hover , .post-font-size-change a:hover{
+    background-color: #ff5722;
     color: #fff;
 }
 
 .single-tool , .sidebar-border{
+    background-color: #fff;
     margin-left: 10px;
     padding: 20px;
     border: rgb(238, 238, 238) 1px solid;
 }
 
 .post-font-size-change a{
-    margin: 0px 5px;
-    padding:2px 4px;
-    background-color: rgb(248, 248, 248);
+    font-size: 14px;
+    padding:2px 8px;
+    color: #757575;
+    background-color: rgb(240, 240, 240);
     border-radius:4px;
-}
-
-.post-font-size-change a:hover{
-    color: #fff;
-    background-color: #ff5c00;
 }
 
 .page-breadcrumb{
@@ -462,7 +489,7 @@ main{
 
 .index-thematic-info{
     margin-top: 90px;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 10px;
     color: #fff;
 }
 
@@ -481,9 +508,9 @@ main{
    display: inline;
 }
 
-.posts-list-info a{
+.posts-list-info , .posts-list-info a{
     font-size: 0.75em;
-    color: rgb(160, 160, 160);
+    color: #757575;
     margin: 0px 10px;
 }
 
@@ -499,8 +526,8 @@ main{
     transition: all 0.1s ease-in-out;
 }
 
-.sidebar-tags-div:hover{
-    background-color: #ff5c00;
+.sidebar-tags-div:hover , .all-tags-btn:hover{
+    background-color: #ff5722;
     color: #fff;
 }
 
@@ -509,19 +536,6 @@ main{
     border-radius: 4px;
     background-color: rgba(248, 248, 248);
     transition: all 0.1s ease-in-out;
-}
-
-.all-tags-btn:hover{
-    background-color: #ff5c00;
-    color: #fff;
-}
-
-.xiaolanmu{
-    padding: 0px 10px;
-    margin: 0px 5px;
-    background: #fff;
-    border-radius: 4px;
-    border: rgb(238, 238, 238) 1px solid;
 }
 
 .registered-landing-img-div-1 , .registered-landing-img-div-2 , .registered-landing-img-div-3{
@@ -556,7 +570,7 @@ main{
 }
 
 .post_tags li:hover{
-    background-color: #ff5c00;
+    background-color: #ff5722;
 }
 
 .footer_menu ul{
@@ -566,26 +580,26 @@ main{
 }
 
 /*首页——网址导航*/
-.marketing {
+.marketing{
     height: 100%;
     overflow: hidden;
 }
 
-.mark-main {
+.mark-main{
     width: 100%;
     overflow: hidden;
     position: relative;
     height: 240px;
 }
 
-.click_con {
+.click_con{
     width: 100%;
     padding-top: 40px;
     overflow: hidden;
     margin-left: -133px;
 }
 
-.system_list {
+.system_list{
     width: 360px;
     height: 240px;
     position: relative;
@@ -598,7 +612,7 @@ main{
     -o-transition: All 0.4s ease-in-out;
 }
 
-.layer-mask {
+.layer-mask{
     width: 100%;
     height: 240px;
     opacity: 0.3;
@@ -631,20 +645,18 @@ main{
 .click-copy-link{
     font-size: 12px;
     padding: 4px;
-    border:1px solid #ff5c00;
+    border:1px solid #ff5722;
     border-radius: 4px;
-    color: #ff5c00;
+    color: #ff5722;
 }
 
-
-.index-navigation a:hover{
-    color: #333;
-}
-
-.support_menu_ul .current-menu-item a{
-    color: #ff5c00;
-}
 
 .post-title{
     margin: 20px 0px;
+}
+
+.footer-copyright{
+    background-color: #000;
+    font-size: 10px;
+    padding: 6px 30px;
 }

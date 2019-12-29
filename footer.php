@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-4 footer-about-us">
                 <p>关于我们</p>
-                <p style="font-size: 14px;color: rgb(170, 169, 169);"><?php echo of_get_option('footer-about-us', ''); ?></p>
+                <p class="font-size-small-14 font-divider-color"><?php echo of_get_option('footer-about-us', ''); ?></p>
             </div>
             <div class="col-lg-5 footer-about-us hide-768px" style="padding: 0px 60px;">
                 <div class="row">
@@ -73,7 +73,7 @@
 
         </div>
         <div class="text-center">
-            <span style="background-color: #000; font-size: 10px; padding: 6px 30px;border-radius:4px;color: rgb(170, 169, 169);">
+            <span class="footer-copyright border-radius-4 font-divider-color">
                 Copyright © 2019 <?php bloginfo('name'); ?> &nbsp; 
                 <span class="hide-768px"><?php echo of_get_option('icp-bei', ''); ?> &nbsp; <?php echo of_get_option('gongwang-bei', ''); ?></span>
             </span>

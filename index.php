@@ -12,10 +12,10 @@
 
             <!--软件教程--> 
             <div class="col-lg-3 col-sm-6">
-                <div class="little-section">
+                <div class="little-section border-radius-4">
                     <i class="iconfont icon-drgspingtairuanjianxitong37 post-icon"></i>
                     <span>软件教程</span>
-                    <span  class="font-size-small">常用软件自学路径</span>
+                    <span  class="font-size-small ">常用软件自学路径</span>
                     <div class="dropdown-divider"></div>
 
                     <div class="row text-center">
@@ -55,7 +55,7 @@
 
             <!--设计师必备--> 
             <div class="col-lg-3 col-sm-6">
-                <div class="little-section height-100">
+                <div class="little-section border-radius-4 h-100">
                     <img src="<?php bloginfo('template_url'); ?>/images/photoshop_16-16.png" style="margin-right: 5px;">
                     <span>设计师必备</span>
                     <span  class="font-size-small">优设倾心推荐</span>
@@ -71,7 +71,7 @@
 
             <!--软件教程--> 
             <div class="col-lg-3 col-sm-6">
-                <div class="little-section height-100">
+                <div class="little-section border-radius-4 h-100">
                     <img src="<?php bloginfo('template_url'); ?>/images/software_16-16.png" style="margin-right: 5px;">
                     <span>软件教程</span>
                     <span  class="font-size-small">常用软件自学路径</span>
@@ -99,7 +99,7 @@
 
             <!-- 软件教程 --> 
             <div class="col-lg-3 col-sm-6">
-                <div class="little-section height-100">
+                <div class="little-section border-radius-4 h-100">
                     <img src="<?php bloginfo('template_url'); ?>/images/software_16-16.png" style="margin-right: 5px;">
                     <span>软件教程</span>
                     <span  class="font-size-small">常用软件自学路径</span>
@@ -148,7 +148,7 @@
     </div>
 
 
-    <div class="col-12 hide-768px index-navigation" style="margin:30px 0px">
+    <div class="col-12 hide-768px" style="margin:30px 0px">
         <?php include( 'index/index-navigation.php' ); ?>
     </div>
 </div>

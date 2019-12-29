@@ -12,8 +12,6 @@
         <?php if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();?>
 
         <h1 class="post-title"><?php the_title(); ?></h1>
-        
-
         <p class="font-size-small-14 post-info">
             <span>
                 <?php
@@ -41,7 +39,7 @@
     <div class="col-lg-9 col-sm-12 container">
         <?php if (have_posts()) : the_post(); update_post_caches($posts); ?>
             <!--文章内容-->
-            <div class="post-content border-radius-4">
+            <div class="post-content">
                 <?php the_content(); ?>
             </div>
         <?php else : ?>
@@ -54,7 +52,7 @@
         <div class="post-content-bottom">
             <!-- 二维码引流 -->
             <div class="post-qr">
-                <p>扫码关注公众号</p>
+                <h5>扫码关注公众号</h5>
                 <img src="<?php echo of_get_option('weixin_qr_uploader', ''); ?>" width="120px">
             </div>
 
@@ -66,9 +64,11 @@
                     if($article_type == "original") {
                         $the_permalink = get_permalink();
                         $the_title = get_the_title();
-                        echo "转载请注明出处：<a href='" . $the_permalink ."'>《".$the_title."》</a>";
-                        echo "<a href='javascript:void(0)' onclick='copy_code('" .$the_permalink. "'); return false;' class='click-copy-link'><i class='iconfont icon-link' aria-hidden='true'></i><span>点击复制链接</span></a>";
-                        echo "<br /><i class='iconfont icon-yuanchuang post-icon'></i><span>文章为作者独立观点不代表本网站立场</span>";
+
+                        echo "<p><i class='iconfont icon-yuanchuang post-icon'></i>
+                              本作品采用<a href='https://creativecommons.org/licenses/by-nc-nd/3.0/cn/'>知识共享BY-NC-ND许可协议</a>进行许可。</p>
+                              <p>转载请注明出处：<a href='" . $the_permalink ."'>《".$the_title."》</a>
+                              <a href='javascript:void(0)' onclick='copy_code('" .$the_permalink. "'); return false;' class='click-copy-link'><i class='iconfont icon-link' aria-hidden='true'></i>点击复制链接</a></p>";
                     } elseif ($article_type == "reproduced") {
                         echo "<span>转载自：<a href='" . $reprinted_url ."'>" . $reprinted_from . "</a></span>";
                         echo "<br /><i class='iconfont icon-azhuanzai post-icon'></i><span>本文转载自其他网站，请勿再次转载本文</span>";
@@ -82,15 +82,17 @@
 
             <!-- 文章标签 -->
             <div class="post-tags">
-                <p><i class="iconfont icon-biaoqian post-icon"></i>继续阅读与本文标签相同的文章</p>
-                <?php the_tags('<span class="post-tags-badge">','</span><span class="post-tags-badge">','</span>'); ?>
+                <h5><i class="iconfont icon-biaoqian post-icon"></i>继续阅读与本文标签相同的文章</h5>
+                <div style="margin-top:20px;">
+                    <?php the_tags('<span class="post-tags-badge font-size-small-14">','</span><span class="post-tags-badge font-size-small-14">','</span>'); ?>
+                </div>
             </div>
 
             <div class="dropdown-divider"></div>
 
             <!-- 评论 -->
             <div class="post-comments">
-                <p><i class="iconfont icon-pinglun post-icon"></i>评论</p>
+                <h5><i class="iconfont icon-pinglun post-icon"></i>评论</h5>
                 <?php comments_template(); ?>
             </div>
 
@@ -107,15 +109,16 @@
             <div class="dropdown-divider"></div>
             <p class="font-size-small-14">《<?php the_title(); ?>》</p>
             <p class="font-size-small-14">
-                <i class="iconfont icon-shijian post-icon"></i><?php echo count_words_read_time(); ?>
+                <i class="iconfont icon-shijian post-icon"></i>
+                <?php echo count_words_read_time(); ?>
             </p>
             <div class="post-font-size-change">
-                <a href="javascript:void(0);" class="font-size-small-14"><span class="smaller">A-</span></a>
-                <a href="javascript:void(0);" class="font-size-small-14"><span>14</span></a>
-                <a href="javascript:void(0);" class="font-size-small-14"><span>16</span></a>
-                <a href="javascript:void(0);" class="font-size-small-14"><span>18</span></a>
-                <a href="javascript:void(0);" class="font-size-small-14"><span>20</span></a>
-                <a href="javascript:void(0);" class="font-size-small-14"><span class="bigger">A+</span></a>
+                <a href="javascript:void(0);"><span class="smaller">A-</span></a>
+                <a href="javascript:void(0);"><span>14</span></a>
+                <a href="javascript:void(0);"><span>16</span></a>
+                <a href="javascript:void(0);"><span>18</span></a>
+                <a href="javascript:void(0);"><span>20</span></a>
+                <a href="javascript:void(0);"><span class="bigger">A+</span></a>
             </div>
         </div>
         <div class="single-tool border-radius-4">
