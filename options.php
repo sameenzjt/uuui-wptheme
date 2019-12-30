@@ -319,6 +319,13 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
+		'name' => __( '网站导航栏Logo', 'uuui' ),
+		'desc' => __( '上传图片则使用图片作为Logo，不填写则默认使用网站标题作为Logo（设置——常规——标题）。图片高度建议60px。', 'uuui' ),
+		'id' => 'site_logo',
+		'type' => 'upload'
+	);
+
+	$options[] = array(
 		'name' => __( '网站描述', 'uuui' ),
 		'desc' => __( '网站描述description，有利于SEO。', 'uuui' ),
 		'id' => 'website_description',
@@ -337,12 +344,14 @@ function optionsframework_options() {
 		'desc' => __( '工信部备案号，例：X ICP备XXXXXX号', 'uuui' ),
 		'id' => 'icp-bei',
 		'type' => 'text',
+		'class' => 'mini'
 	);
 
 	$options[] = array(
 		'desc' => __( '公网安备，例：X 公网安备 XXXXXX号', 'uuui' ),
 		'id' => 'gongwang-bei',
 		'type' => 'text',
+		'class' => 'small'
 	);
 
 	$options[] = array(
@@ -368,47 +377,110 @@ function optionsframework_options() {
 		'name' => __( '首页设置', 'uuui' ),
 		'type' => 'heading'
 	);
-	
-		if ( $options_categories ) {
-			$options[] = array(
-				'name' => __( '首页专题栏目', 'uuui' ),
-				'desc' => __( '第一个专题', 'uuui' ),
-				'id' => 'index_thematic_1',
-				'type' => 'select',
-				'class' => 'mini', //mini, tiny, small
-				'options' => $options_categories
-			);
-			$options[] = array(
-				'desc' => __( '第二个专题', 'uuui' ),
-				'id' => 'index_thematic_2',
-				'type' => 'select',
-				'class' => 'mini', //mini, tiny, small
-				'options' => $options_categories
-			);
-			$options[] = array(
-				'desc' => __( '第三个专题', 'uuui' ),
-				'id' => 'index_thematic_3',
-				'type' => 'select',
-				'class' => 'mini', //mini, tiny, small
-				'options' => $options_categories
-			);
-			$options[] = array(
-				'desc' => __( '第四个专题', 'uuui' ),
-				'id' => 'index_thematic_4',
-				'type' => 'select',
-				'class' => 'mini', //mini, tiny, small
-				'options' => $options_categories
-			);
-		}
 
-/* —— 页面设置 —— */
+	$options[] = array(
+		'name' => __( '轮播图1', 'uuui' ),
+		'desc' => __( '轮播图1的描述文字', 'uuui' ),
+		'id' => 'index_arousel_1_text',
+		'placeholder' => 'Placeholder',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'desc' => __( '轮播图1的链接', 'uuui' ),
+		'id' => 'index_arousel_1_link',
+		'placeholder' => 'Placeholder',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'desc' => __( '上传首页第一张轮播图像，建议1200*350或等比例大小。', 'uuui' ),
+		'id' => 'index_arousel_1_img',
+		'type' => 'upload'
+	);
+
+	$options[] = array(
+		'name' => __( '轮播图2', 'uuui' ),
+		'desc' => __( '轮播图2的描述文字', 'uuui' ),
+		'id' => 'index_arousel_2_text',
+		'placeholder' => 'Placeholder',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'desc' => __( '轮播图2的链接', 'uuui' ),
+		'id' => 'index_arousel_2_link',
+		'placeholder' => 'Placeholder',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'desc' => __( '上传首页第二张轮播图像，建议1200*350或等比例大小。', 'uuui' ),
+		'id' => 'index_arousel_2_img',
+		'type' => 'upload'
+	);
+
+	$options[] = array(
+		'name' => __( '轮播图3', 'uuui' ),
+		'desc' => __( '轮播图3的描述文字', 'uuui' ),
+		'id' => 'index_arousel_3_text',
+		'placeholder' => 'Placeholder',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'desc' => __( '轮播图3的链接', 'uuui' ),
+		'id' => 'index_arousel_3_link',
+		'placeholder' => 'Placeholder',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'desc' => __( '上传首页第三张轮播图像，建议1200*350或等比例大小。', 'uuui' ),
+		'id' => 'index_arousel_3_img',
+		'type' => 'upload'
+	);
+	
+	if ( $options_categories ) {
+		$options[] = array(
+			'name' => __( '首页专题栏目', 'uuui' ),
+			'desc' => __( '第一个专题', 'uuui' ),
+			'id' => 'index_thematic_1',
+			'type' => 'select',
+			'class' => 'mini', //mini, tiny, small
+			'options' => $options_categories
+		);
+		$options[] = array(
+			'desc' => __( '第二个专题', 'uuui' ),
+			'id' => 'index_thematic_2',
+			'type' => 'select',
+			'class' => 'mini', //mini, tiny, small
+			'options' => $options_categories
+		);
+		$options[] = array(
+			'desc' => __( '第三个专题', 'uuui' ),
+			'id' => 'index_thematic_3',
+			'type' => 'select',
+			'class' => 'mini', //mini, tiny, small
+			'options' => $options_categories
+		);
+		$options[] = array(
+			'desc' => __( '第四个专题', 'uuui' ),
+			'id' => 'index_thematic_4',
+			'type' => 'select',
+			'class' => 'mini', //mini, tiny, small
+			'options' => $options_categories
+		);
+	}
+
+/* —— 页面选择 —— */
 	$options[] = array(
 		'name' => __( '页面选择', 'uuui' ),
 		'type' => 'heading'
 	);
 		$options[] = array(
 			'name' => __( '注册', 'uuui' ),
-			'desc' => __( '需要先发布页面', 'uuui' ),
+			'desc' => __( '需要先发布页面,可以使用插件创建', 'uuui' ),
 			'id' => 'select_pages_registered',
 			'class' => 'mini',
 			'type' => 'select',
@@ -416,7 +488,7 @@ function optionsframework_options() {
 		);
 		$options[] = array(
 			'name' => __( '登录', 'uuui' ),
-			'desc' => __( '需要先发布页面', 'uuui' ),
+			'desc' => __( '需要先发布页面,可以使用插件创建', 'uuui' ),
 			'id' => 'select_pages_login',
 			'class' => 'mini',
 			'type' => 'select',
@@ -424,7 +496,7 @@ function optionsframework_options() {
 		);
 		$options[] = array(
 			'name' => __( '全部文章', 'uuui' ),
-			'desc' => __( '先发布页面，模板必须选择“全部文章”', 'uuui' ),
+			'desc' => __( '请发布页面：标题自定，页面模板选择“全部文章”', 'uuui' ),
 			'id' => 'select_pages_allposts',
 			'class' => 'mini',
 			'type' => 'select',
@@ -433,7 +505,7 @@ function optionsframework_options() {
 
 		$options[] = array(
 			'name' => __( '全部专题', 'uuui' ),
-			'desc' => __( '先发布页面，模板必须选择“全部专题”', 'uuui' ),
+			'desc' => __( '请先发布页面：标题自定，页面模板择“全部专题”', 'uuui' ),
 			'id' => 'select_pages_allthematic',
 			'class' => 'mini',
 			'type' => 'select',

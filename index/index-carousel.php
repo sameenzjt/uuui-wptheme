@@ -11,13 +11,22 @@
     <!-- 轮播图片 -->
     <div class="carousel-inner border-radius-4">
         <div class="carousel-item active">
-            <img src="http://localhost/sameen/wp-content/uploads/2019/12/未标题-3.png" width="100%" height="100%">
+            <img src="<?php echo of_get_option('index_arousel_1_img',''); ?>" width="100%" height="100%">
+            <div class="carousel-caption">
+                <p><?php echo of_get_option('index_arousel_1_text',''); ?></p>
+            </div>
         </div>
         <div class="carousel-item">
-            <img src="http://localhost/sameen/wp-content/uploads/2019/12/未标题-3.png" width="100%" height="100%">
+            <img src="<?php echo of_get_option('index_arousel_2_img',''); ?>" width="100%" height="100%">
+            <div class="carousel-caption">
+                <p><?php echo of_get_option('index_arousel_2_text',''); ?></p>
+            </div>
         </div>
         <div class="carousel-item">
-            <img src="http://localhost/sameen/wp-content/uploads/2019/12/未标题-3.png" width="100%" height="100%">
+            <img src="<?php echo of_get_option('index_arousel_3_img',''); ?>" width="100%" height="100%">
+            <div class="carousel-caption">
+                <p><?php echo of_get_option('index_arousel_3_text',''); ?></p>
+            </div>
         </div>
     </div>
 

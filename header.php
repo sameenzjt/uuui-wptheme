@@ -100,7 +100,17 @@
 <body>
     <nav class="left">
         <a href="<?php echo get_option('home'); ?>/">
-            <img src="<?php bloginfo('template_url'); ?>/images/083456tqzn4xxw99f1999w.jpg" class="logo_img left">
+            <?php 
+                $site_logo = of_get_option('site_logo', '');
+                $blog_title = get_bloginfo('name');
+                $blog_title2 = get_bloginfo('description');
+
+                if(empty($site_logo)){
+                    echo "<h1 class='float-left' title='" . $blog_title2 . "'>" . $blog_title . "</h1>";
+                }else{
+                    echo "<img src='" . $site_logo . "' class='logo_img left'>";
+            }?>
+            
         </a>
         <div class="nav-link hide-768px left">
             <?php 
