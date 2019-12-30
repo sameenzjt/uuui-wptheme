@@ -440,6 +440,27 @@ function optionsframework_options() {
 		'id' => 'index_arousel_3_img',
 		'type' => 'upload'
 	);
+
+	if ( $options_categories ) {
+		$options[] = array(
+			'name' => __( '选择“软件教程”分类', 'uuui' ),
+			'desc' => __( 'Ps分类', 'uuui' ),
+			'id' => 'categories_ps',
+			'type' => 'select',
+			'class' => 'mini',
+			'options' => $options_categories
+		);
+	}
+
+	if ( $options_categories ) {
+		$options[] = array(
+			'desc' => __( 'Ai分类', 'uuui' ),
+			'id' => 'categories_ai',
+			'type' => 'select',
+			'class' => 'mini',
+			'options' => $options_categories
+		);
+	}
 	
 	if ( $options_categories ) {
 		$options[] = array(

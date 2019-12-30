@@ -11,7 +11,7 @@
                         <li class="post-breadcrumb-item font-size-small"><a href="#">热门专题</a></li>
                         <li class="post-breadcrumb-item font-size-small"><a href="#">设计史太浓</a></li>     
                     </ol> 
-                    <h1 class="category-title"><?php the_category(); ?></h1>
+                    <h1 class="category-title"><?php single_cat_title() ?></h1>
                     <p  class="font-size-small-14" style="margin-top: 50px;">
                         <span>
                         <?php

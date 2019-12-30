@@ -8,12 +8,19 @@
             <span  class="font-size-small ">常用软件自学路径</span>
             <div class="dropdown-divider"></div>
 
+            <?php $categories_ps = of_get_option('categories_ps','');
+                $categories_ai = of_get_option('categories_ai','');
+            ?>
             <div class="row text-center">
                 <div class="col-3">
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ps.png" width="36px" style="margin:5px 0px;">
+                    <a href="<?php echo get_category_link($categories_ps) ?>">
+                        <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ps.png" width="36px" style="margin:5px 0px;">
+                    </a>
                 </div>
                 <div class="col-3">
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ai.png"  width="36px" style="margin:5px 0px;">
+                    <a href="<?php echo get_category_link($categories_ai) ?>">
+                        <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ai.png"  width="36px" style="margin:5px 0px;">
+                    </a>
                 </div>
                 <div class="col-3">
                     <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ae.png"  width="36px" style="margin:5px 0px;">
@@ -110,4 +117,4 @@
         </div>
     </div>
 
-</div><!--row--> 
+</div><!--row-->

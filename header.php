@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>
         <?php if ( is_home() ) {
-            bloginfo('name'); echo " - "; bloginfo('description');
+            bloginfo('name'); echo " | "; bloginfo('description');
             } elseif ( is_category() ) {
-                single_cat_title(); echo " - "; bloginfo('name');
+                single_cat_title(); echo " | "; bloginfo('name');
             } elseif (is_single() || is_page() ) {
                 single_post_title();
             } elseif (is_search() ) {
-                echo "搜索结果"; echo " - "; bloginfo('name');
+                echo "搜索结果"; echo " | "; bloginfo('name');
             } elseif (is_404() ) {
                 echo '页面未找到!';
             } else {
@@ -34,9 +34,9 @@
             // 将以下引号中的内容改成你的主页keywords
             $keywords = of_get_option('website-keywords', '');
 
-            $title = get_bloginfo('name')."-".get_the_title();
+            $title = get_the_title()."|".get_bloginfo('name');
         }elseif (is_single()) {
-            $title = get_the_title()."-".get_bloginfo('name');
+            $title = get_the_title()."|".get_bloginfo('name');
             $description1 = get_post_meta($post->ID, "description", true);
             $description2 = str_replace("\n","",mb_strimwidth(strip_tags($post->post_content), 0, 200, "…", 'utf-8'));
             // 填写自定义字段description时显示自定义字段的内容，否则使用文章内容前200字作为描述
@@ -51,7 +51,7 @@
                 $keywords = rtrim($keywords, ', ');
         }
         }elseif (is_category()) {
-            $title = get_bloginfo('name')."-".single_cat_title('', false);
+            $title = single_cat_title('', false)." | ".get_bloginfo('name');
             // 分类的description可以到后台 - 文章 -分类目录，修改分类的描述
             $description = category_description();
             $keywords = single_cat_title('', false);
@@ -59,7 +59,7 @@
             // 标签的description可以到后台 - 文章 - 标签，修改标签的描述
             $description = tag_description();
             $keywords = single_tag_title('', false);
-            $title = get_bloginfo('name')."-".single_tag_title('', false);
+            $title = single_tag_title('', false)." | ".get_bloginfo('name');
         }
         $description = trim(strip_tags($description));
         $keywords = trim(strip_tags($keywords));

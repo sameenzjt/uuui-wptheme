@@ -7,10 +7,20 @@ function coolwp_remove_open_sans_from_wp_core() {
     wp_enqueue_style('open-sans','');
 }
 add_action( 'init', 'coolwp_remove_open_sans_from_wp_core' );
+/* —— 后台禁用谷歌字体 —— 结束 */
 
 
 /* —— 后台禁用古腾堡编辑器 —— */
 add_filter('use_block_editor_for_post', '__return_false');
+/* —— 后台禁用古腾堡编辑器 —— 结束 */
+
+
+/* —— 禁止加载默认jq库 —— */
+function my_enqueue_scripts() {
+	wp_deregister_script('jquery');
+	}
+	add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts', 1 );
+/* —— 禁止加载默认jq库 —— 结束 */
 
 
 /**
@@ -51,17 +61,7 @@ register_nav_menus( array(
 	'support_menu' => '支持与服务',
 ) );
 /* —— 注册菜单 —— 结束 */
-if ( function_exists('register_sidebar') ) {
-    register_sidebar( array(
-        'name' => __( 'Top Sidebar' ),
-        'description' => __( 'The top sidebar' ),
-        'id' => 'top-sidebar',
-        'before_widget' => '<li>',
-        'after_widget' => '</li>',
-        'before_title' => '<h2>',
-        'after_title' => '</h2>',
-    ) );
-}
+
 
 /* —— 启用特色图片 —— 
 if ( function_exists( 'add_theme_support' ) ) {
@@ -80,20 +80,15 @@ add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 // Define path and URL to the ACF plugin.
 define( 'MY_ACF_PATH', get_stylesheet_directory() . '/includes/acf/' );
 define( 'MY_ACF_URL', get_stylesheet_directory_uri() . '/includes/acf/' );
-
 // Include the ACF plugin.
 include_once( MY_ACF_PATH . 'acf.php' );
-
 // Customize the url setting to fix incorrect asset URLs.
 add_filter('acf/settings/url', 'my_acf_settings_url');
 function my_acf_settings_url( $url ) {
     return MY_ACF_URL;
 }
-
 //add_filter('acf/settings/show_admin', '__return_false');//隐藏 ACF 前端菜单
-
 //include( 'functions/acf.php' );//本地字段组
-
 /* —— ACF插件 —— 结束 */
 
 
