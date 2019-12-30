@@ -51,7 +51,17 @@ register_nav_menus( array(
 	'support_menu' => '支持与服务',
 ) );
 /* —— 注册菜单 —— 结束 */
-
+if ( function_exists('register_sidebar') ) {
+    register_sidebar( array(
+        'name' => __( 'Top Sidebar' ),
+        'description' => __( 'The top sidebar' ),
+        'id' => 'top-sidebar',
+        'before_widget' => '<li>',
+        'after_widget' => '</li>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ) );
+}
 
 /* —— 启用特色图片 —— 
 if ( function_exists( 'add_theme_support' ) ) {

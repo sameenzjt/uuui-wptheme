@@ -2,7 +2,7 @@
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
 Description: 设计资源分享网站
-Version: v0.15.1
+Version: v0.15.2
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 设计,UI
@@ -85,7 +85,6 @@ body{
 a{
     text-decoration: none;
     color: #212121;
-    transition: all 0.1s ease-in-out;
     cursor:url("images/aero-middle-finger.png"),auto;
 }
 
@@ -133,7 +132,6 @@ main{
     color: #BDBDBD;
     margin: 2px 5px;
     font-size: 14px;
-    transition: all 0.3s ease-in-out;
 }
 .footer a:hover , .friend-link a:hover , .weixin i:hover , .weibo i:hover , .toutiao i:hover , .category-title a , .post_tags li:hover a{
     color: #fff;
@@ -147,7 +145,6 @@ main{
     color: #757575;
     margin: 2px 5px;
     font-size: 12px;
-    transition: all 0.3s ease-in-out;
 }
 
 .logo_img{
@@ -176,7 +173,6 @@ main{
     height: 120px;
     margin: 0px 0px 10px 0px;
     filter:brightness(80%);
-    transition: all 0.2s ease-in-out;
 }
 
 .index-thematic-img:hover{
@@ -217,15 +213,12 @@ main{
     width: 260px;
     height: 166px;
     overflow: hidden;
-    transition: all 0.2s ease-in-out;
 }
 .post-img{
     width: 100%;
     height: 100%;
     max-width: 260px;
     max-height: 166px;
-    transition: all 0.2s ease-out; /*ease-out 减速、慢慢结束*/
-    -webkit-transition: all 0.2s ease-out;
 }
 .index-posts-list:hover .post-img{
     z-index: 5;
@@ -277,7 +270,7 @@ main{
     white-space: nowrap;/*强制不换行*/
 }
 
-.badge-tags:hover{
+.badge-tags:hover , .tag-cloud-link:hover , .post-tags-badge a:hover , .ui-div:hover , .post-font-size-change a:hover , .sidebar-tags-div:hover , .all-tags-btn:hover{
     background-color:#ff5722;
     color: #fff;
 }
@@ -290,7 +283,6 @@ main{
     background-color: #ff5722;
     margin: 20px 0px;
     color: #fff;
-    transition: all 0.1s ease-in-out;
 }
 
 .all-post-btn:hover{
@@ -304,7 +296,6 @@ main{
 }
 .weixin i , .weibo i , .toutiao i{
     font-size: 40px;
-    transition: all 0.3s ease;
 }
 
 .index-title{
@@ -377,7 +368,6 @@ main{
 
 .post-content a{
     color:#177cb0;
-    transition: all 0.1s ease-in-out;
     
 }
 .post-content a:hover{
@@ -416,10 +406,7 @@ main{
     padding: 7px 16px;
     white-space: nowrap;/*强制不换行*/
 }
-.post-tags-badge a:hover , .ui-div:hover , .post-font-size-change a:hover{
-    background-color: #ff5722;
-    color: #fff;
-}
+
 
 .single-tool , .sidebar-border{
     background-color: #fff;
@@ -523,19 +510,14 @@ main{
     background-color:blueviolet;
     border-radius: 4px;
     background-color: rgba(248, 248, 248);
-    transition: all 0.1s ease-in-out;
 }
 
-.sidebar-tags-div:hover , .all-tags-btn:hover{
-    background-color: #ff5722;
-    color: #fff;
-}
+
 
 .all-tags-btn{
     padding: 5px 0px;
     border-radius: 4px;
     background-color: rgba(248, 248, 248);
-    transition: all 0.1s ease-in-out;
 }
 
 .registered-landing-img-div-1 , .registered-landing-img-div-2 , .registered-landing-img-div-3{
@@ -606,17 +588,12 @@ main{
     background: #FaFafa;
     margin: 0 5px;
     float: left;
-    transition: All 0.4s ease-in-out;
-    -webkit-transition: All 0.4s ease-in-out;
-    -moz-transition: All 0.4s ease-in-out;
-    -o-transition: All 0.4s ease-in-out;
 }
 
 .layer-mask{
     width: 100%;
     height: 240px;
     opacity: 0.3;
-    transition: all 1s;
     background-color: #000;
     position: absolute;
     left: 0;
@@ -659,4 +636,21 @@ main{
     background-color: #000;
     font-size: 10px;
     padding: 6px 30px;
+}
+
+
+
+.sidebar_tag_cloud a{
+    height: 16px;
+    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 4px;
+    background-color:rgb(240, 240, 240);
+    border-radius: 4px;
+}
+
+.sidebar_tag_cloud a:hover{
+    color: #fff;
+    background-color:#ff5722;
 }

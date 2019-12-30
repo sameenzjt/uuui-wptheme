@@ -39,6 +39,4 @@
 
     </div><!-- row-end -->
 </div><!-- 细节看点-end -->
-<div class="tag_cloud">
- <?php wp_tag_cloud( array ( 'smallest' => '14', 'largest' => 14, 'unit' => 'px', 'order' => 'RAND', 'number' => 6 ) ); ?>
-</div>
+
