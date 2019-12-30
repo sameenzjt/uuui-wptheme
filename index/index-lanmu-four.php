@@ -48,7 +48,7 @@
     <!--设计师必备--> 
     <div class="col-lg-3 col-sm-6">
         <div class="little-section border-radius-4 h-100">
-            <img src="<?php bloginfo('template_url'); ?>/images/photoshop_16-16.png" style="margin-right: 5px;">
+            <i class="iconfont icon-drgspingtairuanjianxitong37 post-icon"></i>
             <span>设计师必备</span>
             <span  class="font-size-small">优设倾心推荐</span>
             <div class="dropdown-divider"></div>
@@ -64,7 +64,7 @@
     <!--软件教程--> 
     <div class="col-lg-3 col-sm-6">
         <div class="little-section border-radius-4 h-100">
-            <img src="<?php bloginfo('template_url'); ?>/images/software_16-16.png" style="margin-right: 5px;">
+            <i class="iconfont icon-drgspingtairuanjianxitong37 post-icon"></i>
             <span>软件教程</span>
             <span  class="font-size-small">常用软件自学路径</span>
             <div class="dropdown-divider"></div>
@@ -92,7 +92,7 @@
     <!-- 软件教程 --> 
     <div class="col-lg-3 col-sm-6">
         <div class="little-section border-radius-4 h-100">
-            <img src="<?php bloginfo('template_url'); ?>/images/software_16-16.png" style="margin-right: 5px;">
+            <i class="iconfont icon-drgspingtairuanjianxitong37 post-icon"></i>
             <span>软件教程</span>
             <span  class="font-size-small">常用软件自学路径</span>
             <div class="dropdown-divider"></div>
