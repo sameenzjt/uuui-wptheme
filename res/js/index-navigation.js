@@ -4,7 +4,7 @@ $(function() {
 　　
 		
 	var con_w = $(".mark-main").width()
-		, list_w = con_w / 4zhi
+		, list_w = con_w / 4
 		, mar_l = list_w / 2;
 	$(".system_list").css("width", list_w);
 	$(".click_con").css("margin-left", -mar_l);
