@@ -4,7 +4,7 @@ $(function() {
 　　
 		
 	var con_w = $(".mark-main").width()
-		, list_w = con_w / 4
+		, list_w = con_w / 4zhi
 		, mar_l = list_w / 2;
 	$(".system_list").css("width", list_w);
 	$(".click_con").css("margin-left", -mar_l);
@@ -33,9 +33,6 @@ $(function() {
 		lpttime=setInterval("nextp()",sj);
 	})
 
-	
-	
-	
 });
 
 function nextp(){

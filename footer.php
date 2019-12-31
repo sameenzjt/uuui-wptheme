@@ -90,19 +90,6 @@
     <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     
-    
-	
-    <!--<script>
-        $(".ds").mouseover(function()  //鼠标悬停执行函数
-        {
-            $(this).removeClass().addClass("col-2 ui-div ui-hover-bg"); //把class清空。再重新赋一个值给它！
-        });
-        $(".ds").mouseout(function() //鼠标移除执行函数
-        {
-            $(this).removeClass().addClass("col-2 ui-div"); //把class清空。再重新赋一个值给它！
-        });
-    </script>-->
-
 
     <!-- 返回顶部，按钮默认不可见，当滚动页面到一定高度后，按钮出现（低于500px不显示），500毫秒动画 -->
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/back-top.js"></script>
@@ -111,6 +98,7 @@
 
     <?php if (is_home()) { ?>
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/index-navigation.js"></script>
+        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/index-lanmu-soft.js"></script>
         
     <?php } elseif( is_single() ) { ?>
         <!--  更改文章内容字体大小 -->
