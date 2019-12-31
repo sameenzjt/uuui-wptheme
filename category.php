@@ -59,7 +59,7 @@
                 </div>
         
         <?php endwhile; ?>
-
+        <?php pagination($query_string); ?> <!-- 分页 -->
         <?php else : ?>
         <h3 class="title"><a href="#" rel="bookmark">未找到</a></h3>
         <p>没有找到任何文章！</p>

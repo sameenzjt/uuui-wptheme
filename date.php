@@ -1,20 +1,8 @@
-<div class="post-list">
-    <i class="iconfont icon-wenzhang post-icon"></i>
-    <h2 class="index-title d-inline">最新文章</h2>
-    <div class="post-list-tags hide-768px float-right font-size-small-14">
-        <a href="#">UI</a>
-        <a href="#">网页</a>
-        <a href="#">平面</a>      
-        <a href="#">手绘</a>
-        <a href="#">电商</a>
-        <a href="#">交互</a>
-        <a href="#">产品</a>
-        <a href="#">下载</a>
-    </div>
-    
-    <div class="dropdown-divider"></div>
-    
-    <?php if (have_posts()) : while (have_posts()) : the_post(); 
+
+<?php get_header(); ?>
+
+
+<?php if (have_posts()) : while (have_posts()) : the_post(); 
     /*    if (is_sticky()):
             global $more;    // 设置全局变量$more
             $more = 1;?>
@@ -66,14 +54,11 @@
     <!--< ?php endif; ?>-->
     <?php endwhile; ?>
     
-    <a href="<?php $select_pages_allposts = of_get_option('select_pages_allposts', ''); the_permalink($select_pages_allposts); ?>">
-        <button type="button" class="btn all-post-btn btn-block border-radius-4">查看全部文章</button>
-    </a>
-
+    <?php pagination($query_string); ?> <!-- 分页 -->
     <?php else : ?>
 
         <h3 class="title"><a href="#" rel="bookmark">未找到</a></h3>
         <p>没有找到任何文章！</p>
 
     <?php endif; ?>
-</div>
+<?php get_footer(); ?>
