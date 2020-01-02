@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-4 footer-about-us">
                 <p>关于我们</p>
-                <p class="font-size-small-14 font-divider-color"><?php echo of_get_option('footer-about-us', ''); ?></p>
+                <p class=" font-size-small-14" style="color:#BDBDBD"><?php echo of_get_option('footer-about-us', ''); ?></p>
             </div>
             <div class="col-lg-5 footer-about-us hide-768px" style="padding: 0px 60px;">
                 <div class="row">
@@ -36,27 +36,29 @@
                     
                 </div>
             </div>
-            <div class="col-lg-3 mx-auto text-center hide-768px" style="margin: 0px auto;padding-left: 60px; color: #fff;font-size: 12px;">
+            <div class="col-lg-3 text-center hide-768px">
                 
-                    <div style="margin: 0px auto; float: left; padding: 0px 10px;">
+                    <div class="float-left" style="width:33%;overflow: hidden;">
                         <a href="javascript:void(0);" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="<img src='<?php echo of_get_option('weixin_qr_uploader', ''); ?>' width='160px'>">
                             <div class="weixin mx-auto"><i class="iconfont icon-weixin"></i></div>
                             <p>微信</p>
                         </a>
                     </div>
-                    <div style="margin: 0px auto; float: left; padding: 0px 10px;">
+                    <div class="float-left" style="width:33%;overflow: hidden;">
                         <a href="javascript:void(0);" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="<img src='<?php echo of_get_option('weibo_qr_uploader', ''); ?>' width='160px'>">
                             <div class="weibo mx-auto"><i class="iconfont icon-weibo"></i></div>
                             <p>微博</p>
                         </a>
                     </div>
-                    <div style="margin: 0px auto; float: left; padding: 0px 10px;">
+                    <div class="float-left" style="width:33%;overflow: hidden;">
                         <a href="javascript:void(0);" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="<img src='<?php echo of_get_option('toutiao_qr_uploader', ''); ?>' width='160px'>">
                             <div class="toutiao mx-auto"><i class="iconfont icon-toutiao"></i></div>
                             <p>头条</p>
                         </a>
                     </div>
+                    <div class="float-left border-radius-4 w-100" style="background-color: #212121; padding:10px;"><a href="#"><i class="iconfont icon-qq"></i>&nbsp;&nbsp;官方QQ群</a></div>
             </div>
+            
             <div class="col-lg-12 hide-768px">
                 <p style="color: #fff;" class="friend-link">
                     <span>友情链接：</span>

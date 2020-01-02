@@ -66,9 +66,8 @@
                         $the_title = get_the_title();
 
                         echo "<p><i class='iconfont icon-yuanchuang post-icon'></i>
-                              本作品采用<a href='https://creativecommons.org/licenses/by-nc-nd/3.0/cn/'>知识共享BY-NC-ND许可协议</a>进行许可。</p>
-                              <p>转载请注明出处：<a href='" . $the_permalink ."'>《".$the_title."》</a>
-                              <a href='javascript:void(0)' onclick='copy_code('" .$the_permalink. "'); return false;' class='click-copy-link'><i class='iconfont icon-link' aria-hidden='true'></i>点击复制链接</a></p>";
+                              本作品采用<a href='https://creativecommons.org/licenses/by-nc-nd/3.0/cn/'>知识共享BY-NC-ND许可协议</a>进行许可。
+                              转载请注明出处：<a href='" . $the_permalink ."'>《".$the_title."》</a></p>";
                     } elseif ($article_type == "reproduced") {
                         echo "<span>转载自：<a href='" . $reprinted_url ."'>" . $reprinted_from . "</a></span>";
                         echo "<br /><i class='iconfont icon-azhuanzai post-icon'></i><span>本文转载自其他网站，请勿再次转载本文</span>";
@@ -108,10 +107,6 @@
             <h5 class="lanmu-title"><i class="iconfont icon-gongju" style="margin-right: 5px; color:#ff5c00;"></i>文章小工具</h5>
             <div class="dropdown-divider"></div>
             <p class="font-size-small-14">《<?php the_title(); ?>》</p>
-            <p class="font-size-small-14">
-                <i class="iconfont icon-shijian post-icon"></i>
-                <?php echo count_words_read_time(); ?>
-            </p>
             <div class="post-font-size-change">
                 <a href="javascript:void(0);"><span class="smaller">A-</span></a>
                 <a href="javascript:void(0);"><span>14</span></a>

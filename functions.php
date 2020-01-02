@@ -210,7 +210,7 @@ include( 'functions/breadcrumb.php' );//面包屑导航调用：if(function_exis
 
 
 
-/* —— 字数统计 —— */
+/* —— 字数统计 —— 使用echo count_words_read_time();调用
 //字数和预计阅读时间统计
 function count_words_read_time () {
 	global $post;
@@ -220,7 +220,7 @@ function count_words_read_time () {
 	   	$output .= '本文共' . $text_num . '个字，预计阅读时间' . $read_time  . '分钟。';
 	   	return $output;
 	}
-/* —— 字数统计 —— 结束 */
+ —— 字数统计 —— 结束 */
 
 
 /* —— 支持中文用户名 —— */

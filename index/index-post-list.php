@@ -2,15 +2,9 @@
     <i class="iconfont icon-wenzhang post-icon"></i>
     <h2 class="index-title d-inline">最新文章</h2>
     <div class="post-list-tags hide-768px float-right font-size-small-14">
-        <a href="#">UI</a>
-        <a href="#">网页</a>
-        <a href="#">平面</a>      
-        <a href="#">手绘</a>
-        <a href="#">电商</a>
-        <a href="#">交互</a>
-        <a href="#">产品</a>
-        <a href="#">下载</a>
+        <?php wp_tag_cloud( array ( 'smallest' => '14', 'largest' => 14, 'unit' => 'px', 'order' => 'RAND', 'number' => 8 ) ); ?>
     </div>
+    
     
     <div class="dropdown-divider"></div>
     
