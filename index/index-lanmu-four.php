@@ -3,7 +3,7 @@
     <!--软件教程-->
     <div class="col-lg-3 col-sm-6">
         <div class="little-section border-radius-4 h-100">
-            <i class="iconfont icon-drgspingtairuanjianxitong37 post-icon"></i>
+            <i class="iconfont icon-shejiruanjian post-icon"></i>
             <span>软件教程</span>
             <span  class="font-size-small ">常用软件自学路径</span>
             <div class="dropdown-divider"></div>
@@ -49,45 +49,53 @@
     <!--设计师必备--> 
     <div class="col-lg-3 col-sm-6">
         <div class="little-section border-radius-4 h-100">
-            <i class="iconfont icon-drgspingtairuanjianxitong37 post-icon"></i>
+            <i class="iconfont icon-gongju1 post-icon"></i>
             <span>设计师必备</span>
             <span  class="font-size-small">优设倾心推荐</span>
             <div class="dropdown-divider"></div>
-            <div>
-                <a href="#"><span class="font-size-small badge-tags border-radius-4">配色神器</span></a>
-                <a href="#"><span class="font-size-small badge-tags border-radius-4">一键抠图</span></a>
-                <a href="#"><span class="font-size-small badge-tags border-radius-4">iconfont</span></a>
-                <a href="#"><span class="font-size-small badge-tags border-radius-4">Sketch</span></a>
-                <a href="#"><span class="font-size-small badge-tags border-radius-4">阿里动效</span></a>
-                <a href="#"><span class="font-size-small badge-tags border-radius-4">PS 2020</span></a>
-                <a href="#"><span class="font-size-small badge-tags border-radius-4">找灵感</span></a>
+            <div class="designer-must-have">
+                <a href="#">配色神器</a>
+                <a href="#">一键抠图</a>
+                <a href="#">iconfont</a>
+                <a href="#">Sketch</a>
+                <a href="#">阿里动效</a>
+                <a href="#">PS 2020</a>
+                <a href="#">找灵感</a>
             </div>
         </div>
     </div>
 
-    <!--软件教程--> 
+    <!--热门频道--> 
     <div class="col-lg-3 col-sm-6">
         <div class="little-section border-radius-4 h-100">
-            <i class="iconfont icon-drgspingtairuanjianxitong37 post-icon"></i>
-            <span>软件教程</span>
+            <i class="iconfont icon-pindao1 post-icon"></i>
+            <span>热门频道</span>
             <span  class="font-size-small">常用软件自学路径</span>
             <div class="dropdown-divider"></div>
-            <div class="row text-center">
-                <div class="col-3">
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ps.png" width="36px">
-                    <span class="font-size-small">Ps</span>
+            <div class="lanmu-soft-tutorial">
+                <div class="text-center float-left">
+                    <a href="#">
+                        <i class="iconfont icon-Adobecreativecloud lanmu-icon" style="font-size:30px;"></i>
+                        <p class="font-size-small">Adobe2020</p>
+                    </a>
                 </div>
-                <div class="col-3">
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ai.png" width="36px">
-                    <span class="font-size-small">Ai</span>
+                <div class="text-center float-left">
+                    <a href="#">
+                        <i class="iconfont icon-Adobecreativecloud lanmu-icon" style="font-size:30px;"></i>
+                        <p class="font-size-small">Adobe</p>
+                    </a>
                 </div>
-                <div class="col-3">
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ae.png" width="36px">
-                    <span class="font-size-small">Ae</span>
+                <div class="text-center float-left">
+                    <a href="#">
+                        <i class="iconfont icon-Adobecreativecloud lanmu-icon" style="font-size:30px;"></i>
+                        <p class="font-size-small">Adobe</p>
+                    </a>
                 </div>
-                <div class="col-3">
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Pr.png" width="36px">
-                    <span class="font-size-small">Pr</span>
+                <div class="text-center float-left">
+                    <a href="#">
+                        <i class="iconfont icon-Adobecreativecloud lanmu-icon" style="font-size:30px;"></i>
+                        <p class="font-size-small">Adobe</p>
+                    </a>
                 </div>
             </div>
         </div>

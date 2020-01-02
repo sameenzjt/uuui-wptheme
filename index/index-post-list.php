@@ -8,7 +8,13 @@
     
     <div class="dropdown-divider"></div>
     
-    <?php if (have_posts()) : while (have_posts()) : the_post(); 
+    <?php
+        $args = array(
+            'ignore_sticky_posts' => 1 //取消文章置顶
+        );
+        $the_query = new WP_Query( $args );
+        if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
+ 
     /*    if (is_sticky()):
             global $more;    // 设置全局变量$more
             $more = 1;?>
@@ -60,9 +66,9 @@
     <!--< ?php endif; ?>-->
     <?php endwhile; ?>
     
-    <a href="<?php $select_pages_allposts = of_get_option('select_pages_allposts', ''); the_permalink($select_pages_allposts); ?>">
-        <button type="button" class="btn all-post-btn btn-block border-radius-4">查看全部文章</button>
-    </a>
+        <a href="<?php $select_pages_allposts = of_get_option('select_pages_allposts', ''); the_permalink($select_pages_allposts); ?>">
+            <button type="button" class="btn all-post-btn btn-block border-radius-4">查看全部文章</button>
+        </a>
 
     <?php else : ?>
 

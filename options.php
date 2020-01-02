@@ -340,6 +340,14 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
+		'name' => __( 'QQ群链接', 'uuui' ),
+		'desc' => __( '获取方式：打开群聊天窗口——群聊设置(右上角三条杠)——更多(右上角三个点)——分享群聊——复制链接', 'uuui' ),
+		'id' => 'qq-qun',
+		'type' => 'text',
+		'class' => 'small'
+	);
+
+	$options[] = array(
 		'name' => __( '网站备案信息', 'uuui' ),
 		'desc' => __( '工信部备案号，例：X ICP备XXXXXX号', 'uuui' ),
 		'id' => 'icp-bei',

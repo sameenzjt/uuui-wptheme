@@ -56,7 +56,11 @@
                             <p>头条</p>
                         </a>
                     </div>
-                    <div class="float-left border-radius-4 w-100" style="background-color: #212121; padding:10px;"><a href="#"><i class="iconfont icon-qq"></i>&nbsp;&nbsp;官方QQ群</a></div>
+                    <div class="float-left border-radius-4 w-100" style="background-color: #212121; padding:10px;">
+                        <a href="<?php echo of_get_option('qq-qun', ''); ?>" target="_blank">
+                            <i class="iconfont icon-qq"></i>&nbsp;&nbsp;官方QQ群
+                        </a>
+                    </div>
             </div>
             
             <div class="col-lg-12 hide-768px">

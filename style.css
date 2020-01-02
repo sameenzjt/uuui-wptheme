@@ -2,7 +2,7 @@
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
 Description: 设计资源分享网站
-Version: v0.15.8
+Version: v0.16.0
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 设计,UI
@@ -241,7 +241,7 @@ main{
 
 .little-section{
     padding:15px;
-    border: rgb(220, 220, 220) 1px solid;
+    border: rgb(232, 232, 232) 1px solid;
 }
 
 .font-size-small{
@@ -262,17 +262,11 @@ main{
     color: #757575;
 }
 
-.badge-tags{
-    background-color:rgb(246, 246, 246);
-    padding: 0px 4px;
-    margin:4px 0px;
-    display:inline-block;
-    white-space: nowrap;/*强制不换行*/
-}
 
-.badge-tags:hover , .tag-cloud-link:hover , .post-tags-badge a:hover , .ui-div:hover , .post-font-size-change a:hover , .sidebar-tags-div:hover , .all-tags-btn:hover{
-    background-color:#ff5722;
+
+.badge-tags:hover , .tag-cloud-link:hover , .post-tags-badge a:hover , .ui-div:hover , .post-font-size-change a:hover , .sidebar-tags-div:hover , .all-tags-btn:hover , .sidebar_tag_cloud a:hover , .lanmu-icon:hover ,.designer-must-have a:hover , .designer-must-have a:hover{
     color: #fff;
+    background-color:#ff5722;
 }
 
 .jj1 a{
@@ -390,6 +384,20 @@ main{
     margin-right: 5px;
     color:#ff5722;
 }
+
+.lanmu-soft-tutorial div{
+    width:25%;
+    margin:15px 0px;
+}
+
+.lanmu-icon{
+    padding: 4px;
+    border-radius: 100%;
+    color:#ff5722;
+    background-color:rgb(244,244,244);
+}
+
+
 
 .post-tags{
     margin: 30px 0px;
@@ -648,13 +656,24 @@ main{
     border-radius: 4px;
 }
 
-.sidebar_tag_cloud a:hover{
-    color: #fff;
-    background-color:#ff5722;
-}
 
 
 .hide{
     display: none;
+}
+
+.sidebar-box{
+    margin-top: 20px;
+}
+
+.designer-must-have a{
+    color: #BDBDBD;
+    font-size: 0.75em;
+    border-radius:4px;
+    background-color:rgb(246, 246, 246);
+    padding: 0px 4px;
+    margin:4px 0px;
+    display:inline-block;
+    white-space: nowrap;/*强制不换行*/
 }
 
