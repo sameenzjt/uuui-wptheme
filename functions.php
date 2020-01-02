@@ -15,13 +15,25 @@ add_filter('use_block_editor_for_post', '__return_false');
 /* —— 后台禁用古腾堡编辑器 —— 结束 */
 
 
-/* —— 禁止加载默认jq库 —— */
+/* —— 禁止加载默认jq库 —— 
 function my_enqueue_scripts() {
 	wp_deregister_script('jquery');
 	}
 	add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts', 1 );
-/* —— 禁止加载默认jq库 —— 结束 */
+—— 禁止加载默认jq库 —— 结束 */
 
+
+//移除jQuery Migrate脚本
+//https://blog.naibabiji.com/wang-zhan-zi-xun/jin-yong-jquery-migrate-min-js.html
+function dequeue_jquery_migrate( $scripts ) {
+    if ( ! is_admin() && ! empty( $scripts->registered['jquery'] ) ) {
+        $scripts->registered['jquery']->deps = array_diff(
+            $scripts->registered['jquery']->deps,
+            [ 'jquery-migrate' ]
+        );
+    }
+}
+add_action( 'wp_default_scripts', 'dequeue_jquery_migrate' );
 
 /**
   *WordPress 自定义文章编辑器的样式
@@ -346,5 +358,23 @@ function pagination($query_string){
 	}   
 	}  
 /* —— 文章列表分页 —— 结束 */
+
+
+
+/**显示页面查询次数、加载时间和内存占用
+ * 默认在页脚显示 From wpdaxue.com
+ * 调用：if(function_exists('performance')) performance(false) ;
+*/
+function performance( $visible = false ) {
+	$stat = sprintf(  '%d queries in %.3f seconds, using %.2fMB memory',
+		get_num_queries(),
+		timer_stop( 0, 3 ),
+		memory_get_peak_usage() / 1024 / 1024
+	);
+	echo $visible ? $stat : "<!-- {$stat} -->" ;
+};
+add_action( 'wp_footer', 'performance', 20 );
+
+/**显示页面查询次数、加载时间和内存占用 —— 结束*/
 
 ?>

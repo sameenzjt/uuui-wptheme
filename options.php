@@ -284,32 +284,7 @@ function optionsframework_options() {
 		'options' => $typography_options
 	);
 
-	$options[] = array(
-		'name' => __( 'Text Editor', 'uuui' ),
-		'type' => 'heading'
-	);
-
-	/**
-	 * For $settings options see:
-	 * http://codex.wordpress.org/Function_Reference/wp_editor
-	 *
-	 * 'media_buttons' are not supported as there is no post to attach items to
-	 * 'textarea_name' is set by the 'id' you choose
-	 */
-
-	$wp_editor_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 5,
-		'tinymce' => array( 'plugins' => 'wordpress,wplink' )
-	);
-
-	$options[] = array(
-		'name' => __( '默认文本编辑器', 'uuui' ),
-		'desc' => sprintf( __( '您也可以将设置传递给编辑器。 在<a href="%1$s" target="_blank"> WordPress Codex </a>中了解有关wp_editor的更多信息。', 'uuui' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
-		'id' => 'example_editor',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings
-	);
+	
 
 
 /* —— 基本设置 —— */
@@ -620,13 +595,18 @@ function optionsframework_options() {
 	);
 
 
+/* —— 高级选项 —— */
+$options[] = array(
+	'name' => __( '高级选项', 'uuui' ),
+	'type' => 'heading'
+);
 
 
-
-
-
-
-
+/* —— 支持 —— */
+$options[] = array(
+	'name' => __( '支持', 'uuui' ),
+	'type' => 'heading'
+);
 
 
 	return $options;
