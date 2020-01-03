@@ -90,17 +90,17 @@
     <div class="back_top hide-768px border-radius-4"><i class="iconfont icon-top"></i></div>
 
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
-    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     
 
     <!-- 返回顶部，按钮默认不可见，当滚动页面到一定高度后，按钮出现（低于500px不显示），500毫秒动画 -->
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/back-top.js"></script>
     <!-- 二维码弹出框 -->
-    <script src="<?php bloginfo('template_url'); ?>/res/js/qr-pop.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/qr-pop.js"></script>
 
     <?php if (is_home()) { ?>
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/index-navigation.js"></script>
@@ -110,22 +110,14 @@
         <!--  更改文章内容字体大小 -->
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/change-single-font-size.js"></script>
         <!-- 工具栏上滑至顶部后固定位置 -->
-        <script src="<?php bloginfo('template_url'); ?>/res/js/tool-slide-top-fixed.js"></script>
+        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/tool-slide-top-fixed.js"></script>
 
     <?php } elseif( is_page() ) { ?>
         <!-- 工具栏上滑至顶部后固定位置 -->
-        <script src="<?php bloginfo('template_url'); ?>/res/js/tool-slide-top-fixed.js"></script>
+        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/tool-slide-top-fixed.js"></script>
         
     <?php }?>
 
-
-    <!-- 自定义footer代码 -->
-    <?php $footer_code = of_get_option('footer_code');
-        if(empty($footer_code)){
-            echo "";
-        } else{
-            echo $footer_code;
-    } ?>
 
     
 <?php wp_footer(); ?>

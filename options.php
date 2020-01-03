@@ -571,28 +571,25 @@ function optionsframework_options() {
 
 
 /* —— 样式 —— */
+$options[] = array(
+	'name' => __( '样式', 'uuui' ),
+	'type' => 'heading'
+);
+
 	$options[] = array(
-		'name' => __( '样式', 'uuui' ),
-		'type' => 'heading'
-	);
-	$options[] = array(
-		'name' => __( 'header代码', 'uuui' ),
+		'name' => __( '自定义样式', 'uuui' ),
 		'desc' => __( '添加自定义的style，直接填写css选择器，无需额外添加&lt;style&gt;', 'uuui' ),
 		'id' => 'header_style',
 		'std' => '',
 		'type' => 'textarea'
 	);
+
 	$options[] = array(
-		'desc' => __( '全局变灰：html{overflow-y:scroll;filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(100%);}', 'uuui' ),
+		'desc' => __( '例如输入：#menu-box {background: #56bbdc;} 将固定的导航背景改为蓝色
+		<br>全局变灰：html{overflow-y:scroll;filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(100%);}', 'uuui' ),
 		'type' => 'info'
 	);
-	$options[] = array(
-		'name' => __( 'footer代码', 'uuui' ),
-		'desc' => __( '直接填写需要的代码，如引入js文件。需手动添加html标签', 'uuui' ),
-		'id' => 'footer_code',
-		'std' => '',
-		'type' => 'textarea'
-	);
+	
 
 
 /* —— 高级选项 —— */
@@ -609,6 +606,12 @@ $options[] = array(
 	);
 
 
+/* —— 广告位 —— */
+$options[] = array(
+	'name' => __( '广告位', 'uuui' ),
+	'type' => 'heading'
+);
+	
 
 /* —— 支持 —— */
 $options[] = array(
@@ -617,5 +620,7 @@ $options[] = array(
 );
 
 
+
 	return $options;
+
 }

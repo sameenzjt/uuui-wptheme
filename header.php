@@ -94,13 +94,14 @@
 
     <!-- 自定义style样式 -->
     <?php $header_style = of_get_option('header_style');
-        if(empty($header_style)){
-            echo "";
-        } else{
+        if(!empty($header_style)){
             echo "<style>\n";
             echo $header_style;
             echo "\n</style>";
+        } else{
+            echo "";
     } ?>
+
 
     <?php wp_head(); ?>
 </head>
