@@ -601,6 +601,14 @@ $options[] = array(
 	'type' => 'heading'
 );
 
+	$options[] = array(
+		'name' => __( 'Web 应用的名称', 'uuui' ),
+		'desc' => __( '仅当网站被用作为一个应用时才使用', 'uuui' ),
+		'id' => 'application-name',
+		'type' => 'text'
+	);
+
+
 
 /* —— 支持 —— */
 $options[] = array(

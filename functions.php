@@ -1,18 +1,28 @@
 <?php
 
-/* —— 后台禁用谷歌字体 —— */
-function coolwp_remove_open_sans_from_wp_core() {
-    wp_deregister_style( 'open-sans' );
-    wp_register_style( 'open-sans', false );
-    wp_enqueue_style('open-sans','');
-}
-add_action( 'init', 'coolwp_remove_open_sans_from_wp_core' );
-/* —— 后台禁用谷歌字体 —— 结束 */
+include( 'functions/optimization_reception.php' );//网站前台优化Reception
+include( 'functions/optimization_backstage.php' );//网站后台优化Backstage
 
 
 /* —— 后台禁用古腾堡编辑器 —— */
-add_filter('use_block_editor_for_post', '__return_false');
+//add_filter('use_block_editor_for_post', '__return_false');
+//remove_action( 'wp_enqueue_scripts', 'wp_common_block_scripts_and_styles' );
 /* —— 后台禁用古腾堡编辑器 —— 结束 */
+
+
+/**
+ * 加载古腾堡自定义模块
+ */
+function my_gutenberg_block(){
+	//注册古腾堡编辑器
+	wp_register_script( 'block-js', get_template_directory_uri() . '/src/js/blocks.js', array('wp-blocks', 'wp-element', 'wp-editor', 'wp-i18n'), '1.0.0' );
+	//插入模块
+	//fishtheme/block可自定义, 比如: demo/block
+	register_block_type( 'fishtheme/block', array(
+        'editor_script' => 'block-js'
+    ) );
+}
+add_action( 'init', 'my_gutenberg_block' );
 
 
 /* —— 禁止加载默认jq库 —— 
@@ -23,18 +33,6 @@ function my_enqueue_scripts() {
 —— 禁止加载默认jq库 —— 结束 */
 
 
-//移除jQuery Migrate脚本
-//https://blog.naibabiji.com/wang-zhan-zi-xun/jin-yong-jquery-migrate-min-js.html
-function dequeue_jquery_migrate( $scripts ) {
-    if ( ! is_admin() && ! empty( $scripts->registered['jquery'] ) ) {
-        $scripts->registered['jquery']->deps = array_diff(
-            $scripts->registered['jquery']->deps,
-            [ 'jquery-migrate' ]
-        );
-    }
-}
-add_action( 'wp_default_scripts', 'dequeue_jquery_migrate' );
-
 /**
   *WordPress 自定义文章编辑器的样式
   *自定义 CSS 文件
@@ -44,16 +42,7 @@ function Bing_add_editor_style(){
 	add_editor_style( 'https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css' );//引入外部的 CSS 文件
 	add_editor_style( 'res/css/custom-editor-style.css' );//这样就会调用主题目录 CSS 文件夹的 custom-editor-style.css 文件
   }
-  add_action( 'after_setup_theme', 'Bing_add_editor_style' );
-
-
-/* —— 禁用工具栏 —— */
-add_action("user_register", "set_user_admin_bar_false_by_default", 10, 1);
-function set_user_admin_bar_false_by_default($user_id) {
-    update_user_meta( $user_id, 'show_admin_bar_front', 'false' );
-    update_user_meta( $user_id, 'show_admin_bar_admin', 'false' );
-}
-/* —— 禁用工具栏 —— 结束 */
+add_action( 'after_setup_theme', 'Bing_add_editor_style' );
 
 
 /* —— 语言本地化 —— */
@@ -181,20 +170,16 @@ function cn_nf_url_parse( $content ) {
 				$tag = $matches[$i][0];
 				$tag2 = $matches[$i][0];
 				$url = $matches[$i][0];
- 
 				$noFollow = '';
- 
 				$pattern = '/target\s*=\s*"\s*_blank\s*"/';
 				preg_match($pattern, $tag2, $match, PREG_OFFSET_CAPTURE);
 				if( count($match) < 1 )
 					$noFollow .= ' target="_blank" ';
- 
-				$pattern = '/rel\s*=\s*"\s*[n|d]ofollow\s*"/';
+					$pattern = '/rel\s*=\s*"\s*[n|d]ofollow\s*"/';
 				preg_match($pattern, $tag2, $match, PREG_OFFSET_CAPTURE);
 				if( count($match) < 1 )
 					$noFollow .= ' rel="nofollow" ';
- 
-				$pos = strpos($url,$srcUrl);
+					$pos = strpos($url,$srcUrl);
 				if ($pos === false) {
 					$tag = rtrim ($tag,'>');
 					$tag .= $noFollow.'>';
@@ -211,15 +196,11 @@ function cn_nf_url_parse( $content ) {
 
 include( 'functions/categories-images.php' );//分类目录添加图像
 
-
 include( 'functions/custom-editor.php' );//向 WordPress 可视化编辑器添加自定义样式
-
 
 //include( 'functions/post-type-link.php' );//自定义文章类型
 
-
 include( 'functions/breadcrumb.php' );//面包屑导航调用：if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();
-
 
 
 /* —— 字数统计 —— 使用echo count_words_read_time();调用
@@ -256,7 +237,6 @@ function ludou_sanitize_user ($username, $raw_username, $strict) {
 /* —— 支持中文用户名 —— 结束 */
 
 
-
 /* —— 添加帮助面板 ——https://www.ludou.org/wordpress-customizing-the-dashboard-widgets.html */
 function ludou_dashboard_help() {
 	$file_get_contents = file_get_contents( "https://zhangjintao.art/version.txt" );
@@ -274,89 +254,64 @@ function ludou_dashboard_help() {
 /* —— 添加帮助面板 —— 结束 */
 
 
-/* 替换 Ultimate Member 加载的google字体文件*/
-function cmp_replace_google_webfont() {
-	if ( class_exists( 'reduxCoreEnqueue' ) ) {
-	  wp_enqueue_script('jquery');
-	  wp_deregister_script('webfontloader');
-	  wp_register_script('webfontloader', 'http://ajax.useso.com/ajax/libs/webfont/1.5.0/webfont.js',array('jquery'),'1.5.0',true);
-	  wp_enqueue_script('webfontloader');
-	}
-  }
-  add_action('admin_enqueue_scripts', 'cmp_replace_google_webfont',9);
-
-
-
 /* —— 阅读数postviews 使用get_post_views($post -> ID);调用 —— 结束 */
   //postviews   
-function get_post_views ($post_id) {   
-  
+function get_post_views ($post_id) {
     $count_key = 'views';   
-    $count = get_post_meta($post_id, $count_key, true);   
-  
+    $count = get_post_meta($post_id, $count_key, true); 
     if ($count == '') {   
         delete_post_meta($post_id, $count_key);   
         add_post_meta($post_id, $count_key, '0');   
         $count = '0';   
 	}
-	
     echo number_format_i18n($count);
-}   
-  
-function set_post_views () {   
-  
-    global $post;   
-  
+}
+function set_post_views () {
+    global $post;
     $post_id = $post -> ID;   
     $count_key = 'views';   
-    $count = get_post_meta($post_id, $count_key, true);   
-  
-    if (is_single() || is_page()) {   
-  
+    $count = get_post_meta($post_id, $count_key, true);
+    if (is_single() || is_page()) {
         if ($count == '') {   
             delete_post_meta($post_id, $count_key);   
             add_post_meta($post_id, $count_key, '0');   
         } else {   
             update_post_meta($post_id, $count_key, $count + 1);   
 		}
-		
 	}
-	
 }   
 add_action('get_header', 'set_post_views');  
 /* —— 阅读数postviews —— 结束 */
 
 
-
-
 /* —— 文章列表分页（知更鸟） —— */
-function pagination($query_string){   
-	global $posts_per_page, $paged;   
-	$my_query = new WP_Query($query_string ."&posts_per_page=-1");   
-	$total_posts = $my_query->post_count;   
-	if(empty($paged))$paged = 1;   
-	$prev = $paged - 1;   
-	$next = $paged + 1;   
-	$range = 2; // only edit this if you want to show more page-links   
-	$showitems = ($range * 2)+1;   
-	  
-	$pages = ceil($total_posts/$posts_per_page);   
-	if(1 != $pages){   
-	echo "<div class='pagination'>";   
-	echo ($paged > 2 && $paged+$range+1 > $pages && $showitems < $pages)? "<a href='".get_pagenum_link(1)."'>最前</a>":"";   
-	echo ($paged > 1 && $showitems < $pages)? "<a href='".get_pagenum_link($prev)."'>上一页</a>":"";   
-	  
-	for ($i=1; $i <= $pages; $i++){   
-	if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )){   
-	echo ($paged == $i)? "<span class='current'>".$i."</span>":"<a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a>";   
-	}   
-	}   
-	  
-	echo ($paged < $pages && $showitems < $pages) ? "<a href='".get_pagenum_link($next)."'>下一页</a>" :"";   
-	echo ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) ? "<a href='".get_pagenum_link($pages)."'>最后</a>":"";   
-	echo "</div>\n";   
-	}   
-	}  
+function pagination($query_string){
+	global $posts_per_page, $paged;
+	$my_query = new WP_Query($query_string ."&posts_per_page=-1");
+	$total_posts = $my_query->post_count;
+	if(empty($paged))$paged = 1;
+		$prev = $paged - 1;
+		$next = $paged + 1;
+		$range = 2; // only edit this if you want to show more page-links
+		$showitems = ($range * 2)+1;
+		$pages = ceil($total_posts/$posts_per_page);
+
+		if(1 != $pages){
+			echo "<div class='pagination'>";
+			echo ($paged > 2 && $paged+$range+1 > $pages && $showitems < $pages)? "<a href='".get_pagenum_link(1)."'>最前</a>":"";
+			echo ($paged > 1 && $showitems < $pages)? "<a href='".get_pagenum_link($prev)."'>上一页</a>":"";
+		
+			for ($i=1; $i <= $pages; $i++){
+				if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )){
+					echo ($paged == $i)? "<span class='current'>".$i."</span>":"<a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a>";
+				}
+		}
+		
+		echo ($paged < $pages && $showitems < $pages) ? "<a href='".get_pagenum_link($next)."'>下一页</a>" :"";
+		echo ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) ? "<a href='".get_pagenum_link($pages)."'>最后</a>":"";
+		echo "</div>\n";
+	}
+}
 /* —— 文章列表分页 —— 结束 */
 
 
