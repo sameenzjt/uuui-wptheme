@@ -275,19 +275,19 @@ function pagination($query_string){
 		$pages = ceil($total_posts/$posts_per_page);
 
 		if(1 != $pages){
-			echo "<div class='pagination'>";
-			echo ($paged > 2 && $paged+$range+1 > $pages && $showitems < $pages)? "<a href='".get_pagenum_link(1)."'>最前</a>":"";
-			echo ($paged > 1 && $showitems < $pages)? "<a href='".get_pagenum_link($prev)."'>上一页</a>":"";
+			echo "<div class='container'><ul class='pagination'>";
+			echo ($paged > 2 && $paged+$range+1 > $pages && $showitems < $pages)? "<li class='page-item'><a class='page-link' href='".get_pagenum_link(1)."'>最前</a></li>":"";
+			echo ($paged > 1 && $showitems < $pages)? "<li class='page-item'><a class='page-link' href='".get_pagenum_link($prev)."'>上一页</a></li>":"";
 		
 			for ($i=1; $i <= $pages; $i++){
 				if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )){
-					echo ($paged == $i)? "<span class='current'>".$i."</span>":"<a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a>";
+					echo ($paged == $i)? "<li class='page-item active'><a class='page-link' href='#'>".$i."</a></li>":"<li class='page-item'><a class='page-link' href='".get_pagenum_link($i)."' class='inactive' >".$i."</a></li>";
 				}
 		}
 		
-		echo ($paged < $pages && $showitems < $pages) ? "<a href='".get_pagenum_link($next)."'>下一页</a>" :"";
-		echo ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) ? "<a href='".get_pagenum_link($pages)."'>最后</a>":"";
-		echo "</div>\n";
+		echo ($paged < $pages && $showitems < $pages) ? "<li class='page-item'><a class='page-link' href='".get_pagenum_link($next)."'>下一页</a></li>" :"";
+		echo ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) ? "<li class='page-item'><a class='page-link' href='".get_pagenum_link($pages)."'>最后</a></li>":"";
+		echo "</ul></div>";
 	}
 }
 /* —— 文章列表分页 —— 结束 */

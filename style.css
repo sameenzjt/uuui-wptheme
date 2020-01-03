@@ -2,7 +2,7 @@
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
 Description: 设计资源分享网站
-Version: v0.16.5
+Version: v0.17.0
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 设计,UI
@@ -61,9 +61,9 @@ Tags: 设计,UI
         height:40px;
     }
 
-    .index-posts-list-title{
-        font-size: 16px;
-        font-weight: 400;
+    .index-posts-list-title , .page-thematic-list-title{
+        font-size: 20px;
+        font-weight: 600;
     }
 
     .page-support-content{
@@ -235,9 +235,6 @@ main{
     font-weight: 600;
 }
 
-.index-posts-list-excerpt{
-    color: #757575;
-}
 
 .little-section{
     padding:15px;
@@ -297,15 +294,6 @@ main{
     font-weight: 600;
 }
 
-.post-list ul{
-    list-style: none;
-    display: inline;
-}
-
-.post-list li{
-    margin: 0px 15px;
-    display: inline;
-}
 
 .view-all a{
     padding: 2px 6px;
@@ -431,25 +419,6 @@ main{
     border-radius:4px;
 }
 
-.page-breadcrumb{
-    padding: 10px 0px;
-}
-
-.page-breadcrumb li{
-    list-style:none;
-    display:inline;
-}
-
-.page-breadcrumb a{
-    color: rgb(160, 160, 160);
-}
-
-.page-breadcrumb-item + .page-breadcrumb-item::before {
-    display: inline;
-    padding-right: 0.5rem;
-    color: #6c757d;
-    content: "/";
-}
 
 .page-thematic-list:hover{
     background-color: rgba(250, 250, 250);
@@ -459,10 +428,7 @@ main{
     margin-right: 20px;
     width: 260px;
 }
-.page-thematic-list-title{
-    font-size: 20px;
-    font-weight: 600;
-}
+
 
 .page-support-content{
     padding: 0px 60px;
@@ -489,7 +455,7 @@ main{
 }
 
 .category-title{
-    padding-top: 50px;
+    padding-top: 60px;
     letter-spacing: 5px;
     font-weight: 600;
 }
@@ -676,3 +642,6 @@ main{
     display:inline-block;
     white-space: nowrap;/*强制不换行*/
 }
+
+
+

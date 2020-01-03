@@ -6,7 +6,7 @@
                 the_permalink($select_pages_allthematic); ?>">查看全部</a>
     </span>
 
-    <div class="row" style="margin-top:20px">
+    <div class="row">
         <?php $index_thematic_1 = of_get_option('index_thematic_1', '');
             $index_thematic_2 = of_get_option('index_thematic_2', '');
             $index_thematic_3 = of_get_option('index_thematic_3', '');

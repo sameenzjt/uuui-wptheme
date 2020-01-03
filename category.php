@@ -4,15 +4,10 @@
     <div class="col-12">
         
             <div style="background:url(<?php echo z_taxonomy_image_url(); ?>) no-repeat center; background-size: cover;background-attachment: fixed; width:100%;height:400px;border-radius: 4px;">
-                <div style="background: rgba(0,0,0,0.5); width:100%;height:400px;padding:0px 80px; color: #fff;">
-                    <ol class="page-breadcrumb" >
-                        <li class="post-breadcrumb-item font-size-small"><a href="#">首页</a></li>
-                        <li class="post-breadcrumb-item font-size-small"><a href="#">设计文章</a></li>
-                        <li class="post-breadcrumb-item font-size-small"><a href="#">热门专题</a></li>
-                        <li class="post-breadcrumb-item font-size-small"><a href="#">设计史太浓</a></li>     
-                    </ol> 
+                <div style="background: rgba(0,0,0,0.5); width:100%;height:400px;padding:20px 80px; color: #fff;">
+                    <?php if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();?>
                     <h1 class="category-title"><?php single_cat_title() ?></h1>
-                    <p  class="font-size-small-14" style="margin-top: 50px;">
+                    <p  class="font-size-small-14" style="margin-top: 60px;">
                         <span>
                         <?php
                             //获取当前分类文章数
@@ -26,7 +21,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <span>5</span>人评论
                     </p>
-                    <p class="font-size-small-14" style="margin-top: 20px;">
+                    <p class="font-size-small-14" style="margin-top: 40px;">
                         <?php echo category_description();?>
                     </p>
                 </div>
@@ -35,14 +30,15 @@
     </div>
 
     <div class="col-lg-9 col-sm-12 box">
-        <span class="index-title">全部文章</span>
         <div class="dropdown-divider"></div>
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             
                 <div class="page-thematic-list" style="margin: 20px 0px; padding: 10px 10px; overflow: hidden;" >
                     <a href="<?php the_permalink(); ?>">    
-                        <img src="<?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); echo $full_image_url[0]; ?>" class="page-thematic-list-img left  border-radius-4">
-                        <p class="page-thematic-list-title"><?php the_title(); ?></p>
+                        <div class="post-img-div left">
+                            <img class="post-img" src="<?php the_field('article-cover-images'); ?>">
+                        </div>
+                        <h3 class="index-thematic-list-title"><?php the_title(); ?></h3>
                         <p class="font-size-small-14 hide-768px" style="margin: 20px 0px;">
                             <?php if (has_excerpt()) {
                                 echo $description = get_the_excerpt(); //文章编辑中的摘要

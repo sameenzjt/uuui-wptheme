@@ -65,10 +65,21 @@
 
     <!--< ?php endif; ?>-->
     <?php endwhile; ?>
+
+        
+   
+
     
-        <a href="<?php $select_pages_allposts = of_get_option('select_pages_allposts', ''); the_permalink($select_pages_allposts); ?>">
-            <button type="button" class="btn all-post-btn btn-block border-radius-4">查看全部文章</button>
-        </a>
+    <?php pagination($query_string); ?> <!-- 分页 -->
+    
+<!--
+    <div class="float-right form-group" style="margin-top:0px">
+        <select class="form-control" name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'>
+            <option value=""><?php echo esc_attr(__('Select Month')); ?></option>
+            <?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?>
+        </select>
+    </div>
+        -->
 
     <?php else : ?>
 
