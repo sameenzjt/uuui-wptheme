@@ -5,32 +5,10 @@ include( 'functions/optimization_backstage.php' );//网站后台优化Backstage
 
 
 /* —— 后台禁用古腾堡编辑器 —— */
-//add_filter('use_block_editor_for_post', '__return_false');
-//remove_action( 'wp_enqueue_scripts', 'wp_common_block_scripts_and_styles' );
+add_filter('use_block_editor_for_post', '__return_false');
+remove_action( 'wp_enqueue_scripts', 'wp_common_block_scripts_and_styles' );
 /* —— 后台禁用古腾堡编辑器 —— 结束 */
 
-
-/**
- * 加载古腾堡自定义模块
- */
-function my_gutenberg_block(){
-	//注册古腾堡编辑器
-	wp_register_script( 'block-js', get_template_directory_uri() . '/src/js/blocks.js', array('wp-blocks', 'wp-element', 'wp-editor', 'wp-i18n'), '1.0.0' );
-	//插入模块
-	//fishtheme/block可自定义, 比如: demo/block
-	register_block_type( 'fishtheme/block', array(
-        'editor_script' => 'block-js'
-    ) );
-}
-add_action( 'init', 'my_gutenberg_block' );
-
-
-/* —— 禁止加载默认jq库 —— 
-function my_enqueue_scripts() {
-	wp_deregister_script('jquery');
-	}
-	add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts', 1 );
-—— 禁止加载默认jq库 —— 结束 */
 
 
 /**
