@@ -1,2 +1,8 @@
-# UUUI-wordpresstheme
-# UUUI-wordpresstheme
+#UUUI-wordpresstheme
+
+* **v0.17.0:**
+    > [删减]css样式\
+    > [优化]专题页面\
+    > [优化]分页功能\
+    > [修改]首页样式
+* 第二项
