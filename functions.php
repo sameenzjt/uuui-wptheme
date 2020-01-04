@@ -327,11 +327,4 @@ function move_author_to_publish_metabox() {
 
 
 
-
-
-
-
-
-
-
 ?>

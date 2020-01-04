@@ -2,84 +2,34 @@
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
 Description: 设计资源分享网站
-Version: v0.17.0
+Version: v0.17.1
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 设计,UI
 */
 
 
-@media only screen and (max-width: 1024px) {
-    main{
-        padding: 0px 10px;
-        margin: 0px auto;
-    }
-    .nav-link{
-        margin-left: 10px;
-
-    }
-    .nav-link ul {
-        display: inline;
-        list-style-type: none;
-        overflow: hidden;
-    }
-    .nav-link li {
-        float: left;
-        padding: 10px 8px;
-        font-size: 12px;
-    }
-    .logo_img{
-        float: left;
-        height:100%;
-    }
-    .index-posts-list-img{
-        float: left;
-        border-radius: 4px;
-        margin-right: 20px;
-        width: 160px;
-    }
-
-}
-
-@media only screen and (max-width: 768px) {
-    main{
-        padding: 0px 10px;
-        margin: 0px auto;
-    }
-    .hide-768px{
-        display: none;
-    }
-    nav{
-        font-size: 15px;
-        height: 40px;
-        padding: 0px 20px;
-        background-color: #fff;
-        box-shadow: 0px 1px 12px 1px #888;
-    }
-    
-    .logo_img{
-        height:40px;
-    }
-
-    .index-posts-list-title , .page-thematic-list-title{
-        font-size: 20px;
-        font-weight: 600;
-    }
-
-    .page-support-content{
-        padding: 0px 10px;
-    }
+html,
+body {
+	border: none;
+	margin: 0;
+    padding: 0;
     
 }
 
-
+html {
+	scroll-behavior: smooth;
+}
 body{
-    /*font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;  字体*/
     font-family: "PingFang SC", "Lantinghei SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", Arial, "Hiragino Sans GB", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
-    color: #212121;    /*字体颜色*/
+    color: #212121;
     line-height: 1.5em;
-    /*background-color: rgba(248, 248, 248);*/
     background-color: #fff;
+}
+main {
+    display: block;
+    padding: 0px 40px;
+    margin: 0px auto;
 }
 
 a{
@@ -105,10 +55,6 @@ nav{
     -moz-box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
     box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
 }
-main{
-    padding: 0px 40px;
-    margin: 0px auto;
-}
 
 .inline{display: inline;}
 
@@ -133,7 +79,13 @@ main{
     margin: 2px 5px;
     font-size: 14px;
 }
-.footer a:hover , .friend-link a:hover , .weixin i:hover , .weibo i:hover , .toutiao i:hover , .category-title a , .post_tags li:hover a{
+.footer a:hover,
+.friend-link a:hover,
+.weixin i:hover,
+.weibo i:hover,
+.toutiao i:hover,
+.category-title a,
+.post_tags li:hover a{
     color: #fff;
 }
 
@@ -141,7 +93,8 @@ main{
     border-radius: 4px;
 }
 
-.friend-link a , .friend-link span{
+.friend-link a,
+.friend-link span{
     color: #757575;
     margin: 2px 5px;
     font-size: 12px;
@@ -192,7 +145,8 @@ main{
     box-shadow: 0px 0px 8px 0px rgba(214,214,214,0.75);
 }
 
-.index-thematic-div a , .index-thematic-div a:hover{
+.index-thematic-div a,
+.index-thematic-div a:hover{
     color: #333;
 }
 
@@ -250,18 +204,31 @@ main{
     color: #BDBDBD;
 }
 
-.font-size-small a:hover , .support_menu_ul li a:hover , .support_menu_ul .current-menu-item a{
+.font-size-small a:hover,
+.support_menu_ul li a:hover,
+.support_menu_ul .current-menu-item a{
     color: #ff5722;
 }
 
-.font-size-small-14 , .support_menu_ul li a{
+.font-size-small-14,
+.support_menu_ul li a{
     font-size: 14px;
     color: #757575;
 }
 
 
 
-.badge-tags:hover , .tag-cloud-link:hover , .post-tags-badge a:hover , .ui-div:hover , .post-font-size-change a:hover , .sidebar-tags-div:hover , .all-tags-btn:hover , .sidebar_tag_cloud a:hover , .lanmu-icon:hover ,.designer-must-have a:hover , .designer-must-have a:hover{
+.badge-tags:hover,
+.tag-cloud-link:hover,
+.post-tags-badge a:hover,
+.ui-div:hover,
+.post-font-size-change a:hover,
+.sidebar-tags-div:hover,
+.all-tags-btn:hover,
+.sidebar_tag_cloud a:hover,
+.lanmu-icon:hover,
+.designer-must-have a:hover,
+.designer-must-have a:hover{
     color: #fff;
     background-color:#ff5722;
 }
@@ -285,7 +252,10 @@ main{
     padding-right: 40px;
     color: #fff;
 }
-.weixin i , .weibo i , .toutiao i{
+
+.weixin i,
+.weibo i,
+.toutiao i{
     font-size: 40px;
 }
 
@@ -293,7 +263,6 @@ main{
     font-size: 20px;
     font-weight: 600;
 }
-
 
 .view-all a{
     padding: 2px 6px;
@@ -304,7 +273,8 @@ main{
     padding: 2px 6px;
     margin: 0px 4px;
 }
-.post-list-tags a:hover , .view-all a:hover{
+.post-list-tags a:hover,
+.view-all a:hover{
     color: #fff;
     background-color: #FF5722;
     border-radius: 4px;
@@ -334,6 +304,10 @@ main{
     margin: 0px 10px;
  }
 
+
+/* 文章内容样式 */
+/* ------------------------------------------------------- */
+
 .post-content{
     margin: 0px 60px;
     padding: 20px;
@@ -343,24 +317,62 @@ main{
     line-height: 1.75em;
 }
 
-.post-content img , .post-content video{
-    width: 100%;
+.post-content img,
+.post-content video{
     margin: 10px 0px;
 }
 
 .post-content a{
     color:#177cb0;
-    
 }
+
 .post-content a:hover{
     color: #ff5722;
     text-decoration: none;
 }
 
-.post-copyright-notice , .post-tags , .post-qr , .post-comments{
+.post-content .wp-caption-text{
+    text-align: center;
+}
+
+/* Center */
+
+.aligncenter,
+.aligncenter img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Left and right */
+
+.alignleft,
+.alignright {
+	max-width: 50%;
+}
+
+.alignleft {
+	/*rtl:ignore*/
+	float: left;
+	margin: 0.3rem 2rem 2rem 2rem;
+}
+
+.alignright {
+	/*rtl:ignore*/
+	float: right;
+	margin: 0.3rem 2rem 2rem 2rem;
+}
+
+/* ------------------------------------------------------- */
+
+.post-copyright-notice,
+.post-tags,
+.post-qr,
+.post-comments{
     margin: 30px 0px;
 }
-.post-copyright-notice p , .post-qr p , .post-comments p{
+.post-copyright-notice p,
+.post-qr p,
+.post-comments p{
     margin-bottom: 20px;
 }
 
@@ -404,7 +416,8 @@ main{
 }
 
 
-.single-tool , .sidebar-border{
+.single-tool,
+.sidebar-border{
     background-color: #fff;
     margin-left: 10px;
     padding: 20px;
@@ -469,7 +482,8 @@ main{
    display: inline;
 }
 
-.posts-list-info , .posts-list-info a{
+.posts-list-info,
+.posts-list-info a{
     font-size: 0.75em;
     color: #757575;
     margin: 0px 10px;
@@ -494,11 +508,15 @@ main{
     background-color: rgba(248, 248, 248);
 }
 
-.registered-landing-img-div-1 , .registered-landing-img-div-2 , .registered-landing-img-div-3{
+.registered-landing-img-div-1,
+.registered-landing-img-div-2,
+.registered-landing-img-div-3{
     padding-left: 140px;
 }
 
-.registered-landing-img-div-4 , .registered-landing-img-div-5 , .registered-landing-img-div-6{
+.registered-landing-img-div-4,
+.registered-landing-img-div-5,
+.registered-landing-img-div-6{
     padding: 20px 0px 20px 100px;
 }
 
@@ -645,3 +663,66 @@ main{
 
 
 
+@media only screen and (max-width: 1024px) {
+    main{
+        padding: 0px 10px;
+        margin: 0px auto;
+    }
+    .nav-link{
+        margin-left: 10px;
+
+    }
+    .nav-link ul {
+        display: inline;
+        list-style-type: none;
+        overflow: hidden;
+    }
+    .nav-link li {
+        float: left;
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+    .logo_img{
+        float: left;
+        height:100%;
+    }
+    .index-posts-list-img{
+        float: left;
+        border-radius: 4px;
+        margin-right: 20px;
+        width: 160px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    main{
+        padding: 0px 10px;
+        margin: 0px auto;
+    }
+    .hide-768px{
+        display: none;
+    }
+    nav{
+        font-size: 15px;
+        height: 40px;
+        padding: 0px 20px;
+        background-color: #fff;
+        box-shadow: 0px 1px 12px 1px #888;
+    }
+    
+    .logo_img{
+        height:40px;
+    }
+
+    .index-posts-list-title,
+    .page-thematic-list-title{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .page-support-content{
+        padding: 0px 10px;
+    }
+    
+}
