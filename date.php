@@ -54,7 +54,7 @@
     <!--< ?php endif; ?>-->
     <?php endwhile; ?>
     
-    <?php pagination($query_string); ?> <!-- 分页 -->
+    <?php mo_paging(); ?> <!-- 分页 -->
     <?php else : ?>
 
         <h3 class="title"><a href="#" rel="bookmark">未找到</a></h3>

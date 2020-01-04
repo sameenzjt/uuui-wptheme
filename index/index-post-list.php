@@ -9,35 +9,14 @@
     <div class="dropdown-divider"></div>
     
     <?php
-        $args = array(
-            'ignore_sticky_posts' => 1 //取消文章置顶
+        $args=array(
+        'post_status' => 'publish',
+        'paged' => $paged,
+        'ignore_sticky_posts' => 1,
         );
-        $the_query = new WP_Query( $args );
-        if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
- 
-    /*    if (is_sticky()):
-            global $more;    // 设置全局变量$more
-            $more = 1;?>
-        <li>
-            <h3 class="index-posts-list-title">
-                <span class="badge badge-themecolor">置顶</span>
-                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark">
-                    <?php the_title(); ?>
-                </a>
-            </h3>
-            <p class="font-size-small-14 index-posts-list-excerpt hide-768px" style="margin: 20px 0px;">
-                <?php if (has_excerpt()) {
-                    echo $description = get_the_excerpt(); //文章编辑中的摘要
-                }else {
-                    echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 150,"......"); //文章编辑中若无摘要，自定截取文章内容字数做为摘要
-                } ?>
-            </p>
-        </li>
+        query_posts($args);
 
-    <?php else:
-        global $more;  
-        $more = 0;
-        */
+        if (have_posts()) : while (have_posts()) : the_post();
     ?>
 
         <div class="index-posts-list" style="margin: 20px 0px; padding: 10px 10px; overflow: hidden;" >
@@ -66,10 +45,9 @@
     <!--< ?php endif; ?>-->
     <?php endwhile; ?>
 
-        
+    <?php mo_paging(); ?><!-- 分页 -->
 
-    
-<!--
+    <!--
     <div class="float-right form-group" style="margin-top:0px">
         <select class="form-control" name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'>
             <option value="">< ?php echo esc_attr(__('Select Month')); ?></option>
@@ -83,7 +61,7 @@
         <h3 class="title"><a href="#" rel="bookmark">未找到</a></h3>
         <p>没有找到任何文章！</p>
 
-    <?php endif; ?><?php wp_reset_postdata(); ?>
+    <?php endif;  wp_reset_query(); ?>
     
 
 </div>

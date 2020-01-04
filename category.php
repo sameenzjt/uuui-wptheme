@@ -32,7 +32,6 @@
     <div class="col-lg-9 col-sm-12 box">
         <div class="dropdown-divider"></div>
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            
                 <div class="page-thematic-list" style="margin: 20px 0px; padding: 10px 10px; overflow: hidden;" >
                     <a href="<?php the_permalink(); ?>">    
                         <div class="post-img-div left">
@@ -55,11 +54,11 @@
                 </div>
         
         <?php endwhile; ?>
-        <?php pagination($query_string); ?> <!-- 分页 -->
+        <?php mo_paging(); ?> <!-- 分页 -->
         <?php else : ?>
         <h3 class="title"><a href="#" rel="bookmark">未找到</a></h3>
         <p>没有找到任何文章！</p>
-        <?php endif; ?>
+        <?php endif; wp_reset_query(); ?>
     </div>
 
     <div class="col-lg-3 box hide-768px"></div>
