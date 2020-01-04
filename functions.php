@@ -262,37 +262,6 @@ add_action('get_header', 'set_post_views');
 /* —— 阅读数postviews —— 结束 */
 
 
-/* —— 文章列表分页（知更鸟） —— */
-function pagination($query_string){
-	global $posts_per_page, $paged;
-	$my_query = new WP_Query($query_string ."&posts_per_page=-1");
-	$total_posts = $my_query->post_count;
-	if(empty($paged))$paged = 1;
-		$prev = $paged - 1;
-		$next = $paged + 1;
-		$range = 2; // only edit this if you want to show more page-links
-		$showitems = ($range * 2)+1;
-		$pages = ceil($total_posts/$posts_per_page);
-
-		if(1 != $pages){
-			echo "<div class='container'><ul class='pagination'>";
-			echo ($paged > 2 && $paged+$range+1 > $pages && $showitems < $pages)? "<li class='page-item'><a class='page-link' href='".get_pagenum_link(1)."'>最前</a></li>":"";
-			echo ($paged > 1 && $showitems < $pages)? "<li class='page-item'><a class='page-link' href='".get_pagenum_link($prev)."'>上一页</a></li>":"";
-		
-			for ($i=1; $i <= $pages; $i++){
-				if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )){
-					echo ($paged == $i)? "<li class='page-item active'><a class='page-link' href='#'>".$i."</a></li>":"<li class='page-item'><a class='page-link' href='".get_pagenum_link($i)."' class='inactive' >".$i."</a></li>";
-				}
-		}
-		
-		echo ($paged < $pages && $showitems < $pages) ? "<li class='page-item'><a class='page-link' href='".get_pagenum_link($next)."'>下一页</a></li>" :"";
-		echo ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) ? "<li class='page-item'><a class='page-link' href='".get_pagenum_link($pages)."'>最后</a></li>":"";
-		echo "</ul></div>";
-	}
-}
-/* —— 文章列表分页 —— 结束 */
-
-
 /**显示页面查询次数、加载时间和内存占用
  * 默认在页脚显示 From wpdaxue.com
  * 调用：if(function_exists('performance')) performance(false) ;

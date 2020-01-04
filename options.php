@@ -605,6 +605,13 @@ $options[] = array(
 		'type' => 'text'
 	);
 
+	$options[] = array(
+		'name' => __( '网站图标', 'uuui' ),
+		'desc' => __( '网站图标请到“外观 > 自定义 > 站点身份 > 站点图标”更改', 'uuui' ),
+		'type' => 'info'
+	);
+
+
 
 /* —— 广告位 —— */
 $options[] = array(

@@ -67,16 +67,13 @@
     <?php endwhile; ?>
 
         
-   
 
-    
-    <?php pagination($query_string); ?> <!-- 分页 -->
     
 <!--
     <div class="float-right form-group" style="margin-top:0px">
         <select class="form-control" name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'>
-            <option value=""><?php echo esc_attr(__('Select Month')); ?></option>
-            <?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?>
+            <option value="">< ?php echo esc_attr(__('Select Month')); ?></option>
+            < ?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?>
         </select>
     </div>
         -->
@@ -86,5 +83,7 @@
         <h3 class="title"><a href="#" rel="bookmark">未找到</a></h3>
         <p>没有找到任何文章！</p>
 
-    <?php endif; ?>
+    <?php endif; ?><?php wp_reset_postdata(); ?>
+    
+
 </div>
