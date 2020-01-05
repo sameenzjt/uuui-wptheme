@@ -5,28 +5,26 @@
     $reprinted_url = get_field('reprinted-url');
     $translation_from = get_field('translation-from');
     $translation_url = get_field('translation-url'); 
+    
 ?>
 
 <div class="row">
     <div class="col-12">
-        <?php if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();?>
+        <?php if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs(); ?>
 
         <h1 class="post-title"><?php the_title(); ?></h1>
         <p class="font-size-small-14 post-info">
-            <span>
-                <?php
-                    if($article_type == "original") {
-                        echo "<span class='badge badge-info'>原创</span>";
-                        echo "<span>作者：Lyudmil</span>";
-                    } elseif ($article_type == "reproduced") {
-                        echo "<span class='badge badge-info'>转载</span>";
-                        echo "<span>转载来源：" . $reprinted_from . "</span>";
-                    } elseif ($article_type == "translation") {
-                        echo "<span class='badge badge-info'>翻译</span>";
-                        echo "<span>原文来源：" . $translation_from . "</span>";
-                    }
-                ?>
-            </span>
+            <?php
+                if($article_type == "original") {
+                    echo "<span class='badge badge-info'>原创</span>";
+                } elseif ($article_type == "reproduced") {
+                    echo "<span class='badge badge-info'>转载</span>";
+                    echo "<span>转载来源：" . $reprinted_from . "</span>";
+                } elseif ($article_type == "translation") {
+                    echo "<span class='badge badge-info'>翻译</span>";
+                    echo "<span>原文来源：" . $translation_from . "</span>";
+                }
+            ?>
             <span><?php the_time('Y年n月j日') ?></span>
             <span>阅读 <?php get_post_views($post -> ID); ?></span>
             <span><?php comments_popup_link('评论 0', '评论 1', '评论 %', '', ''); ?></span>
@@ -52,8 +50,12 @@
         <div class="post-content-bottom">
             <!-- 二维码引流 -->
             <div class="post-qr">
-                <h5>扫码关注公众号</h5>
-                <img src="<?php echo of_get_option('weixin_qr_uploader', ''); ?>" width="120px">
+                <?php echo get_avatar( get_the_author_meta( 'user_email' ) ); ?>
+                <span><?php the_author_posts_link(); ?></span>
+                <span><?php the_author_meta('url'); ?></span>
+                <span><?php the_author_meta('email'); ?></span>
+                <span><?php the_author_meta('description'); ?></span>
+                
             </div>
 
             <div class="dropdown-divider"></div>

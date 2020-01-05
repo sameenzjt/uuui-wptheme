@@ -516,6 +516,15 @@ function optionsframework_options() {
 			'options' => $options_pages
 		);
 
+		$options[] = array(
+			'name' => __( '用户中心', 'uuui' ),
+			'desc' => __( '请先发布页面：标题自定，页面模板择“用户中心”', 'uuui' ),
+			'id' => 'select_pages_user',
+			'class' => 'mini',
+			'type' => 'select',
+			'options' => $options_pages
+		);
+
 
 	
 /* —— 页首页脚设置 —— */

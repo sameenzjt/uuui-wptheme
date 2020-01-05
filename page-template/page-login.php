@@ -89,7 +89,8 @@
                     echo '<p class="ludou-error">'.$error.'</p>';
                     }
                     if (!is_user_logged_in()) { ?>
-                    <form name="loginform" method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
+                    
+                    <form name="loginform" method="post" action="<?php echo home_url(); ?>">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">用户名</span>

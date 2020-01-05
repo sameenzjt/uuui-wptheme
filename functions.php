@@ -262,8 +262,7 @@ add_action('get_header', 'set_post_views');
 /* —— 阅读数postviews —— 结束 */
 
 
-
-
+/* —— 分页 —— */
 function mo_paging() {
     $p = 3;
     if ( is_singular() ) return;
@@ -288,11 +287,7 @@ function _paging_link( $i, $title = '' ) {
     if ( $title == '' ) $title = "第 {$i} 页";
     echo "<li><a href='", esc_html( get_pagenum_link( $i ) ), "'>{$i}</a></li>";
 }
-
-
-
-
-
+/* —— 分页 —— 结束 */
 
 
 /**显示页面查询次数、加载时间和内存占用
@@ -326,6 +321,27 @@ function move_author_to_publish_metabox() {
     echo '</div>';
 }
 /** —— 文章编辑页将作者模块移到发布模块内 —— 结束*/
+
+
+
+
+/**
+ * 自定义用户个人资料信息
+ * https://www.wpdaxue.com/add-remove-display-wordpress-user-profile-fields.html
+ */
+add_filter( 'user_contactmethods', 'wpdaxue_add_contact_fields' );
+function wpdaxue_add_contact_fields( $contactmethods ) {
+	$contactmethods['qq'] = 'QQ';
+	$contactmethods['qq_email'] = 'QQ邮箱';
+	$contactmethods['weibo'] = '微博';
+	$contactmethods['wechat'] = '微信';
+	//unset( $contactmethods['yim'] );
+	//unset( $contactmethods['aim'] );
+	//unset( $contactmethods['jabber'] );
+	return $contactmethods;
+}
+
+
 
 
 

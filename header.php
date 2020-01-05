@@ -130,12 +130,15 @@
         </div>
 
         <div class="right" style=" margin-top:16px;">
+            <?php $url_this = 'http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"]; //登录/登出（注销）后返回之前访问的页面 ?>
             <?php if ( is_user_logged_in() ) {?>
-                <?php global $current_user; //当前用户信息数组
+                <?php
+                    global $current_user; //当前用户信息数组
                     wp_get_current_user();
-                    echo ' '. $current_user->display_name .' ';
+
+                    echo "$current_user->display_name";
                     ?>
-                    <a href="<?php echo wp_logout_url( get_bloginfo('url') ); ?>"><span>登出</span></a>
+                    <a href="<?php echo wp_logout_url($url_this); ?>">登出</a>
             <?php } else { ?>
                 <a href="<?php $select_pages_login = of_get_option('select_pages_login', '');  the_permalink($select_pages_login); ?>">
                     <span>登录</span>
