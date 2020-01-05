@@ -12,7 +12,7 @@
             } elseif (is_single() || is_page() ) {
                 single_post_title();
             } elseif (is_search() ) {
-                echo "搜索结果"; echo " | "; bloginfo('name');
+                echo "搜索结果：".get_search_query(); echo " | "; bloginfo('name');
             } elseif (is_404() ) {
                 echo '页面未找到!';
             } else {
@@ -115,7 +115,7 @@
                 $blog_title2 = get_bloginfo('description');
 
                 if(empty($site_logo)){
-                    echo "<h1 class='float-left' title='" . $blog_title2 . "'>" . $blog_title . "</h1>";
+                    echo "<h1 style='margin-top: 4px;' class='float-left' title='" . $blog_title2 . "'>" . $blog_title . "</h1>";
                 }else{
                     echo "<img src='" . $site_logo . "' class='logo_img left'>";
             }?>
@@ -129,7 +129,7 @@
             ?>
         </div>
 
-        <div class="right" style=" margin-top:16px;">
+        <div class="right" style="margin-top:16px;">
             <?php $url_this = 'http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"]; //登录/登出（注销）后返回之前访问的页面 ?>
             <?php if ( is_user_logged_in() ) {?>
                 <?php
@@ -141,15 +141,23 @@
                     <a href="<?php echo wp_logout_url($url_this); ?>">登出</a>
             <?php } else { ?>
                 <a href="<?php $select_pages_login = of_get_option('select_pages_login', '');  the_permalink($select_pages_login); ?>">
-                    <span>登录</span>
+                <span class="font-size-small-14">登录</span>
                 </a>
-                <span>/</span>
+                <span class="font-size-small-14">/</span>
                 <a href="<?php $select_pages_login = of_get_option('select_pages_registered', '');  the_permalink($select_pages_login); ?>">
-                    <span>注册</span>
+                    <span class="font-size-small-14">注册</span>
                 </a>
             <?php 
                 } ?>
+
         </div>
+        <div class="right" style="margin-top:14px;margin-right:10px">
+        <form style="width:200px" class="input-group input-group-sm mb-3" method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
+            <input class="form-control" type="text" placeholder="输入关键字" name="s" id="s"/>
+            <div class="input-group-append">
+                <input class="btn btn-success" type="submit" value="搜 索" onClick="if(document.forms['search'].searchinput.value=='- Search -')document.forms['search'].searchinput.value='';" alt="Search" />
+            </div>
+        </form></div>
         
     </nav>
     <div style="clear:both;"></div>

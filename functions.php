@@ -269,23 +269,23 @@ function mo_paging() {
     global $wp_query, $paged;
     $max_page = $wp_query->max_num_pages;
     if ( $max_page == 1 ) return; 
-    echo '<div class="pagination"><ul>';
+    echo '<div class="pagination"><ul class="pagination">';
     if ( empty( $paged ) ) $paged = 1;
-    echo '<li class="prev-page">'; previous_posts_link('上一页'); echo '</li>';
-    if ( $paged > $p + 1 ) _paging_link( 1, '<li>第一页</li>' );
-    if ( $paged > $p + 2 ) echo "<li><span>···</span></li>";
+    echo '<li class="page-item"><span class="page-link">'; previous_posts_link('上一页'); echo '</span></li>';
+    if ( $paged > $p + 1 ) _paging_link( 1, '<li class="page-item">第一页</li>' );
+    if ( $paged > $p + 2 ) echo "<li class='page-item disabled'><span class='page-link'>···</span></li>";
     for( $i = $paged - $p; $i <= $paged + $p; $i++ ) { 
-        if ( $i > 0 && $i <= $max_page ) $i == $paged ? print "<li class=\"active\"><span>{$i}</span></li>" : _paging_link( $i );
+        if ( $i > 0 && $i <= $max_page ) $i == $paged ? print "<li class=\"page-item active\"><span class='page-link'>{$i}</span></li>" : _paging_link( $i );
     }
-    if ( $paged < $max_page - $p - 1 ) echo "<li><span> ... </span></li>";
-    echo '<li class="next-page">'; next_posts_link('下一页'); echo '</li>';
-    echo '<li><span>共 '.$max_page.' 页</span></li>';
+    if ( $paged < $max_page - $p - 1 ) echo "<li class='page-item disabled'><span class='page-link'> ... </span></li>";
+    echo '<li class="page-item"><span class="page-link">'; next_posts_link('下一页'); echo '</span></li>';
+    echo '<li class="page-item disabled"><span class="page-link">共 '.$max_page.' 页</span></li>';
     echo '</ul></div>';
 }
 
 function _paging_link( $i, $title = '' ) {
     if ( $title == '' ) $title = "第 {$i} 页";
-    echo "<li><a href='", esc_html( get_pagenum_link( $i ) ), "'>{$i}</a></li>";
+    echo "<li><a class='page-link' href='", esc_html( get_pagenum_link( $i ) ), "'>{$i}</a></li>";
 }
 /* —— 分页 —— 结束 */
 
@@ -342,7 +342,24 @@ function wpdaxue_add_contact_fields( $contactmethods ) {
 }
 
 
-
+//提高搜索结果相关性
+if(is_search()){
+	add_filter('posts_orderby_request', 'search_orderby_filter');
+	}
+	function search_orderby_filter($orderby = ''){
+		global $wpdb;
+		$keyword = $wpdb->prepare($_REQUEST['s']);
+		return "((CASE WHEN {$wpdb->posts}.post_title LIKE '%{$keyword}%' THEN 2 ELSE 0 END) + (CASE WHEN {$wpdb->posts}.post_content LIKE '%{$keyword}%' THEN 1 ELSE 0 END)) DESC,
+	{$wpdb->posts}.post_modified DESC, {$wpdb->posts}.ID ASC";
+	}
+//搜索结果排除所有页面
+function search_filter_page($query) {
+	if ($query->is_search) {
+		$query->set('post_type', 'post');
+	}
+	return $query;
+}
+add_filter('pre_get_posts','search_filter_page');
 
 
 ?>
