@@ -1,6 +1,8 @@
 div, p {
     padding: 0px 20px;
     line-height: 1.75em;
+    text-indent:2em;
+    letter-spacing: 0.08em;
 }
 
 a{
