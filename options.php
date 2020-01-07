@@ -627,7 +627,13 @@ $options[] = array(
 	'name' => __( '广告位', 'uuui' ),
 	'type' => 'heading'
 );
-	
+	$options[] = array(
+		'name' => __( '正文底部', 'uuui' ),
+		'desc' => __( '正文底部广告', 'uuui' ),
+		'id' => 'ads',
+		'std' => '',
+		'type' => 'textarea'
+	);
 
 /* —— 支持 —— */
 $options[] = array(

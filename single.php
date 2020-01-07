@@ -88,7 +88,12 @@
                     <?php the_tags('<span class="post-tags-badge font-size-small-14">','</span><span class="post-tags-badge font-size-small-14">','</span>'); ?>
                 </div>
             </div>
-
+            
+            <!-- 文章底部广告 -->
+            <?php if(of_get_option('ads', '')) {
+                echo "<div>"; echo of_get_option('ads', ''); echo "</div>";
+            } ?>
+            
             <div class="dropdown-divider"></div>
 
             <!-- 评论 -->
