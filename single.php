@@ -39,37 +39,39 @@
             <!--文章内容-->
             <div class="post-content">
                 <?php the_content(); ?>
+                <?php wp_link_pages(array(
+                    'before'           => '<div class="single-pagination alert alert-secondary">' . __( '文章分页:', 'uuui' ),//所有链接之前的文本
+                    'after'            => '</div>',//所有链接之后的文本
+                    'link_before'      => '',//单个链接文本之前的文本
+		            'link_after'       => '',//单个链接文本之后的文本
+                    'next_or_number'   => 'number',//选择使用数字分页还是上一页、下一页文本分页，可选number或next
+                    'separator'        => ' ',//页码分隔符
+                    'nextpagelink'     => __( 'Next page', 'uuui'),//下一页链接文本
+                    'previouspagelink' => __( 'Previous page', 'uuui' ),//上一页链接文本
+                    'pagelink'         => '%',//页码的字符串格式，百分号%会被替换成数字，如页%会生成 “页1”、“页2”这样的样式
+                    'echo'             => 1,//选择是要返回结果还是直接输出，默认为True，返回NULL或返回内容；设置为false，则直接输出HTML格式
+                )); ?>
             </div>
-        <?php else : ?>
+        <?php else: ?>
             <div class="errorbox">
                 没有文章！
             </div>
         <?php endif; ?>
-        
+
 
         <div class="post-content-bottom">
-            <!-- 二维码引流 -->
-            <div class="post-qr">
-                <?php echo get_avatar( get_the_author_meta( 'user_email' ) ); ?>
-                <span><?php the_author_posts_link(); ?></span>
-                <span><?php the_author_meta('url'); ?></span>
-                <span><?php the_author_meta('email'); ?></span>
-                <span><?php the_author_meta('description'); ?></span>
-                
-            </div>
-
             <div class="dropdown-divider"></div>
-
             <!-- 版权声明 -->
-            <div class="post-copyright-notice">
+            <div class="post-copyright-notice jumbotron">
                 <?php
                     if($article_type == "original") {
                         $the_permalink = get_permalink();
                         $the_title = get_the_title();
+                        $blog_title = get_bloginfo('name');
 
                         echo "<p><i class='iconfont icon-yuanchuang post-icon'></i>
                               本作品采用<a href='https://creativecommons.org/licenses/by-nc-nd/3.0/cn/'>知识共享BY-NC-ND许可协议</a>进行许可。
-                              转载请注明出处：<a href='" . $the_permalink ."'>《".$the_title."》</a></p>";
+                              <br /><br />转载请注明出处：<a href='" . $the_permalink ."'>《".$the_title."》 | " . $blog_title . "</a></p>";
                     } elseif ($article_type == "reproduced") {
                         echo "<span>转载自：<a href='" . $reprinted_url ."'>" . $reprinted_from . "</a></span>";
                         echo "<br /><i class='iconfont icon-azhuanzai post-icon'></i><span>本文转载自其他网站，请勿再次转载本文</span>";
@@ -107,9 +109,9 @@
         </div>
     </div>
 
-    <!-- 右 -->
+    <!-- 右 id="fixed-tool" -->
     <div class="col-lg-3 hide-768px">
-        <div class="single-tool border-radius-4" id="fixed-tool">
+        <div class="single-tool border-radius-4">
             
             <h5 class="lanmu-title"><i class="iconfont icon-gongju" style="margin-right: 5px; color:#ff5c00;"></i>文章小工具</h5>
             <div class="dropdown-divider"></div>
@@ -122,7 +124,22 @@
                 <a href="javascript:void(0);"><span>20</span></a>
                 <a href="javascript:void(0);"><span class="bigger">A+</span></a>
             </div>
+             <!-- 作者 -->
+             <div class="font-size-small-14" style="margin-top:20px;">
+                <div class="float-left" style="margin-right:10px;overflow:hidden;">
+                    <?php echo get_avatar( get_the_author_meta( 'user_email' ) ,60); ?>
+                </div>
+                <span><?php the_author_posts_link(); ?></span>
+                <span>
+                    <a href=" <?php the_author_meta('url'); ?> "><i class="iconfont icon-difangwangzhi"></i></a>
+                    <a href="mailto:<?php the_author_meta('email'); ?>"><i class="iconfont icon-mail"></i></a>
+                </span>
+                <br />
+                <span class="font-divider-color"><?php the_author_meta('description'); ?></span>
+                
+            </div>
         </div>
+
         <div class="single-tool border-radius-4" style="margin-top:20px">
             <h5 class="lanmu-title"><i class="iconfont icon-xiangsichanpin post-icon"></i>相似文章</h5>
             <div class="dropdown-divider"></div>

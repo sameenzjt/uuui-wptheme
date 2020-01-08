@@ -1,5 +1,5 @@
 $(function(){
-    $("span").click(function(){
+    $(".post-font-size-change span").click(function(){
         var thisEle = $(".post-content").css("font-size"); 
         var textFontSize = parseFloat(thisEle , 10);
         var unit = thisEle.slice(-2); //获取单位

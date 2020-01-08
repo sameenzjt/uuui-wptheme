@@ -68,7 +68,7 @@
     <!--热门频道--> 
     <div class="col-lg-3 col-sm-6">
         <div class="little-section border-radius-4 h-100">
-            <i class="iconfont icon-pindao1 post-icon"></i>
+            <i class="iconfont icon-hot_light post-icon"></i>
             <span>热门频道</span>
             <span  class="font-size-small">常用软件自学路径</span>
             <div class="dropdown-divider"></div>
