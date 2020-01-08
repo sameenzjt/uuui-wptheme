@@ -92,8 +92,11 @@
     <!-- style.css -->
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
     <!-- single_style.css -->
-    <?php if(is_single() || is_page()){?>
+    <?php if( is_single() ){?>
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/single_style.css" type="text/css"/>
+    <?php } elseif( is_page() ){ ?>
+        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/single_style.css" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style-login-registered.css" type="text/css"/>
     <?php } ?>
 
     <!-- 自定义style样式 -->

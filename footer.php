@@ -115,7 +115,7 @@
     <?php } elseif( is_page() ) { ?>
         <!-- 工具栏上滑至顶部后固定位置 -->
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/tool-slide-top-fixed.js"></script>
-        
+        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/page-login-registered.js"></script>
     <?php }?>
 
 
