@@ -1,5 +1,5 @@
 <div class="post-list">
-    <i class="iconfont icon-wenzhang post-icon"></i>
+    <i class="iconfont icon-wenzhang icon"></i>
     <h2 class="index-title d-inline">最新文章</h2>
     <div class="post-list-tags hide-768px float-right font-size-small-14">
         <?php wp_tag_cloud( array ( 'smallest' => '14', 'largest' => 14, 'unit' => 'px', 'order' => 'RAND', 'number' => 8 ) ); ?>
@@ -21,7 +21,7 @@
 
         <div class="index-posts-list" style="margin: 20px 0px; padding: 10px 10px; overflow: hidden;" >
             <a href="<?php the_permalink(); ?>">
-                <div class="post-img-div left">
+                <div class="post-img-div float-left">
                     <img class="post-img" src="<?php the_field('article-cover-images'); ?>">
                 </div>
                 <!--<img src="< ?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); echo $full_image_url[0]; ?>" class="index-posts-list-img">-->

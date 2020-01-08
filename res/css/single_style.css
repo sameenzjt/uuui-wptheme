@@ -1,0 +1,152 @@
+.post-content{
+    max-width: 100%;
+    margin-right: 100px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.post-content p{
+    line-height: 1.75em;
+    text-indent:2em;
+    letter-spacing: 0.08em;
+}
+
+.post-content img,
+.post-content video{
+    margin: 10px 0px;
+    max-width: 100%;
+    height: auto;
+}
+
+.post-content a{
+    color:#177cb0;
+}
+
+.post-content a:hover{
+    color: #ff5722;
+    text-decoration: none;
+}
+
+.post-content .wp-caption-text{
+    text-align: center;
+}
+
+/* 图片居中 */
+img.alignright {float:right; margin:0 0 1em 1em}
+img.alignleft {float:left; margin:0 1em 1em 0}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+a img.alignright {float:right; margin:0 0 1em 1em}
+a img.alignleft {float:left; margin:0 1em 1em 0}
+a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+
+/* Center */
+.aligncenter,
+.aligncenter img {
+    margin: 0px auto;
+	margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    display:inline-block;
+}
+
+/* Left and right */
+
+.alignleft,
+.alignright {
+	max-width: 50%;
+}
+
+.alignleft {
+	/*rtl:ignore*/
+	float: left;
+	margin: 0.3rem 2rem 2rem 2rem;
+}
+
+.alignright {
+	/*rtl:ignore*/
+	float: right;
+	margin: 0.3rem 2rem 2rem 2rem;
+}
+
+.post-copyright-notice,
+.post-tags,
+.post-comments{
+    margin: 30px 0px;
+}
+
+.post-copyright-notice p,
+.post-comments p{
+    margin-bottom: 20px;
+}
+
+.post-content-bottom{
+    margin: 30px 100px 30px 30px;
+}
+
+.post-icon{
+    margin-right: 5px;
+    color:#ff5722;
+}
+
+.post-title{
+    margin: 20px 0px;
+}
+
+.post-info span{
+    margin: 0px 10px;
+ }
+
+
+ 
+.single-pagination span,
+.single-pagination a{
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 4px;
+    padding: 4px 12px;
+    color:#177cb0;
+}
+
+.single-pagination a:hover{
+    color:#177cb0;
+    background-color: rgb(240, 240, 240);
+}
+
+.single-pagination .current{
+    color: white;
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 4px;
+    background-color: #FF5722;
+    padding: 4px 12px;
+}
+
+.post-tags{
+    margin: 30px 0px;
+}
+
+.post-tags-badge{
+    margin: 5px;
+}
+
+.post-tags-badge a{
+
+    background-color: rgb(244, 244, 244);
+    border-radius:4px;
+    padding: 7px 16px;
+    white-space: nowrap;/*强制不换行*/
+}
+
+.post-tags-badge a:hover {
+    color: #fff;
+    background-color:#ff5722;
+}
+
+.single-tool{
+    background-color: #fff;
+    margin-left: 10px;
+    padding: 20px;
+    border: rgb(238, 238, 238) 1px solid;
+}
+
+.single_sidebar_title{
+    font-weight: 600;
+}

@@ -113,7 +113,7 @@
     <div class="col-lg-3 hide-768px">
         <div class="single-tool border-radius-4">
             
-            <h5 class="lanmu-title"><i class="iconfont icon-gongju" style="margin-right: 5px; color:#ff5c00;"></i>文章小工具</h5>
+            <h5 class="single_sidebar_title"><i class="iconfont icon-gongju" style="margin-right: 5px; color:#ff5c00;"></i>文章小工具</h5>
             <div class="dropdown-divider"></div>
             <p class="font-size-small-14">《<?php the_title(); ?>》</p>
             <div class="post-font-size-change">
@@ -141,7 +141,7 @@
         </div>
 
         <div class="single-tool border-radius-4" style="margin-top:20px">
-            <h5 class="lanmu-title"><i class="iconfont icon-xiangsichanpin post-icon"></i>相似文章</h5>
+            <h5 class="single_sidebar_title"><i class="iconfont icon-xiangsichanpin post-icon"></i>相似文章</h5>
             <div class="dropdown-divider"></div>
             <ul style="list-style-type:none; margin: 0px; padding: 0px; font-size: 14px;">
                 <?php $i=1;

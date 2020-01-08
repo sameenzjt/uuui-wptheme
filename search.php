@@ -9,7 +9,7 @@
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <div class="page-thematic-list" style="margin: 20px 0px; padding: 10px 10px; overflow: hidden;" >
                     <a href="<?php the_permalink(); ?>">    
-                        <div class="post-img-div left">
+                        <div class="post-img-div float-left">
                             <img class="post-img" src="<?php the_field('article-cover-images'); ?>">
                         </div>
                         <h3 class="index-thematic-list-title"><?php the_title(); ?></h3>

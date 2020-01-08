@@ -42,7 +42,7 @@
 
 
 <div class="sidebar-border border-radius-4 sidebar-box"><!-- 置顶文章 -->
-    <h5 class="lanmu-title"><i class="iconfont icon-zhiding5 post-icon"></i>置顶文章</h5>
+    <h5 class="lanmu-title"><i class="iconfont icon-zhiding5 icon"></i>置顶文章</h5>
     <div class="dropdown-divider"></div>
     <ol style="display: block; padding-left:20px">
         <?php

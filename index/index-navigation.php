@@ -1,4 +1,4 @@
-<i class="iconfont icon-daohanghaiwaigou post-icon"></i>
+<i class="iconfont icon-daohanghaiwaigou icon"></i>
 <span class="index-title">设计导航</span>
 <span class="font-size-small">每周更新</span>
 <a href="javascript:;" class="hover_L"><i class="iconfont icon-zuo"></i></a>

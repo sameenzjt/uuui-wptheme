@@ -91,7 +91,10 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/5.12.0-1/css/all.min.css" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_m3txwnks2fo.css" type="text/css"/>
 
+    <?php if(is_single() || is_page()){?>
+        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/single_style.css" type="text/css"/>
 
+    <?php } ?>
 
     <!-- 自定义style样式 -->
     <?php $header_style = of_get_option('header_style');
@@ -118,11 +121,11 @@
                 if(empty($site_logo)){
                     echo "<h1 style='margin-top: 4px;' class='float-left' title='" . $blog_title2 . "'>" . $blog_title . "</h1>";
                 }else{
-                    echo "<img src='" . $site_logo . "' class='logo_img left'>";
+                    echo "<img src='" . $site_logo . "' class='logo_img float-left'>";
             }?>
             
         </a>
-        <div class="nav-link hide-768px left">
+        <div class="nav-link hide-768px float-left">
             <?php 
             if(function_exists('wp_nav_menu')) {
                 wp_nav_menu(array( 'theme_location' => 'nav_menu','container_id'=>'menu_left') ); 
@@ -130,7 +133,7 @@
             ?>
         </div>
 
-        <div class="right" style="margin-top:16px;">
+        <div class="float-right" style="margin-top:16px;">
             <?php $url_this = 'http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"]; //登录/登出（注销）后返回之前访问的页面 ?>
             <?php if ( is_user_logged_in() ) {?>
                 <?php
@@ -152,7 +155,7 @@
                 } ?>
 
         </div>
-        <div class="right" style="margin-top:14px;margin-right:10px">
+        <div class="float-right" style="margin-top:14px;margin-right:10px">
         <form style="width:200px" class="input-group input-group-sm mb-3" method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
             <input class="form-control" type="text" placeholder="输入关键字" name="s" id="s"/>
             <div class="input-group-append">
