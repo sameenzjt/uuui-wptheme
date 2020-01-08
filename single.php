@@ -125,7 +125,7 @@
                 <a href="javascript:void(0);"><span class="bigger">A+</span></a>
             </div>
              <!-- 作者 -->
-             <div class="font-size-small-14" style="margin-top:20px;">
+             <div class="font-size-small-14" style="margin-top:20px;overflow:hidden;">
                 <div class="float-left" style="margin-right:10px;overflow:hidden;">
                     <?php echo get_avatar( get_the_author_meta( 'user_email' ) ,60); ?>
                 </div>
