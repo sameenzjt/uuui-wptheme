@@ -6,8 +6,8 @@
             <div style="background:url(<?php echo z_taxonomy_image_url(); ?>) no-repeat center; background-size: cover;background-attachment: fixed; width:100%;height:400px;border-radius: 4px;">
                 <div style="background: rgba(0,0,0,0.5); width:100%;height:400px;padding:20px 80px; color: #fff;">
                     <?php if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();?>
-                    <h1 class="category-title"><?php single_cat_title() ?></h1>
-                    <p  class="font-size-small-14" style="margin-top: 60px;">
+                    <h1 class="category-title animated bounceInLeft"><?php single_cat_title() ?></h1>
+                    <p  class="font-size-small-14 animated bounceInUp" style="margin-top: 60px;">
                         <span>
                         <?php
                             //获取当前分类文章数

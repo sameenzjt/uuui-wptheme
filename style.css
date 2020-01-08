@@ -2,7 +2,7 @@
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
 Description: 设计资源分享网站
-Version: v0.19.3
+Version: v0.20.0
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 设计,UI
@@ -36,11 +36,19 @@ a{
     text-decoration: none;
     color: #212121;
     /*cursor:url("images/aero-middle-finger.png"),auto;*/
+    transition: all 0.14s ease-out;
+    -moz-transition: all 0.14s ease-out; /* Firefox 4 */
+    -webkit-transition: all 0.14s ease-out; /* Safari 和 Chrome */
+    -o-transition: all 0.14s ease-out; /* Opera */
 }
 
 a:hover{
     text-decoration:none; 
     color: #ff5722;
+    transition: all 0.14s ease-in;
+    -moz-transition: all 0.14s ease-in; /* Firefox 4 */
+    -webkit-transition: all 0.14s ease-in; /* Safari 和 Chrome */
+    -o-transition: all 0.14s ease-in; /* Opera */
 }
 
 nav{
@@ -173,11 +181,18 @@ nav{
     height: 100%;
     max-width: 260px;
     max-height: 166px;
+    transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out; /* Firefox 4 */
+    -webkit-transition: all 0.1s ease-out; /* Safari 和 Chrome */
+    -o-transition: all 0.1s ease-out; /* Opera */
 }
 .index-posts-list:hover .post-img{
     z-index: 5;
     transform: scale(1.05); /*把图片放大1.05倍*/
-    -webkit-transform: scale(1.05);
+    transition: all 0.1s ease-in;
+    -moz-transition: all 0.1s ease-in; /* Firefox 4 */
+    -webkit-transition: all 0.1s ease-in; /* Safari 和 Chrome */
+    -o-transition: all 0.1s ease-in; /* Opera */
 }
 
 .index-posts-list:hover{

@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <div class="row">
 
 
@@ -12,10 +13,6 @@
     </div>
 
 
-    
-   
-
-
     <div class="col-lg-9 col-sm-12">
         <div style="margin-top:20px;">
             <?php include( 'index/index-post-list.php' ); ?>
@@ -26,16 +23,18 @@
         </div>
     </div>
 
-    
 
     <div class="col-3 hide-768px">
         <?php include( 'index/index-sidebar.php' ); ?>
     </div>
 
-    
+
     <div class="col-12 hide-768px" style="margin-top:20px;">
         <div class="dropdown-divider" style="margin-bottom:20px;"></div>
         <?php include( 'index/index-navigation.php' ); ?>
     </div>
+
+
 </div>
+
 <?php get_footer(); ?>

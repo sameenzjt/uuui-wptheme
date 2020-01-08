@@ -78,22 +78,22 @@
     <!-- 确定用于构建页面的软件（如 - WordPress、Dreamweaver）-->
     <meta name="generator" content="WordPress">
 
-
-
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="<?php echo get_bloginfo('rss2_url'); ?>" />
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有评论" href="<?php bloginfo('comments_rss2_url'); ?>" />
 
-    <!-- 新 Bootstrap4 核心 CSS 文件 -->
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-    
+    <!-- font-awesome -->
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/5.12.0-1/css/all.min.css" type="text/css"/>
+    <!-- https://github.com/daneden/animate.css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/animate.css/3.7.2/animate.min.css" type="text/css"/>
+    <!-- iconfont -->
     <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_m3txwnks2fo.css" type="text/css"/>
-
+    <!-- style.css -->
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+    <!-- single_style.css -->
     <?php if(is_single() || is_page()){?>
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/single_style.css" type="text/css"/>
-
     <?php } ?>
 
     <!-- 自定义style样式 -->
