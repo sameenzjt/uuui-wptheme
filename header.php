@@ -136,25 +136,24 @@
             ?>
         </div>
 
-        <div class="float-right" style="margin-top:16px;">
-            <?php $url_this = 'http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"]; //登录/登出（注销）后返回之前访问的页面 ?>
+        <div class="float-right nav-login">
+            <?php $url_this = 'https://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"]; //登录/登出（注销）后返回之前访问的页面 ?>
             <?php if ( is_user_logged_in() ) {?>
                 <?php
                     global $current_user; //当前用户信息数组
                     wp_get_current_user();
 
+                    echo get_avatar( $current_user->user_email, 32);
                     echo "$current_user->display_name";
                     ?>
-                    <a href="<?php echo wp_logout_url($url_this); ?>">登出</a>
+                    <a href="<?php echo wp_logout_url($url_this); ?>" class="font-size-small">登出</a>
             <?php } else { ?>
-                <a href="<?php $select_pages_login = of_get_option('select_pages_login', '');  the_permalink($select_pages_login); ?>">
-                <span class="font-size-small-14">登录</span>
+                <a href="<?php $select_pages_login = of_get_option('page_login', '');  the_permalink($select_pages_login); ?>">
+                
+                
+                    <img src="<?php bloginfo('template_url'); ?>/images/avatar/giraffe.png" width="32px">
                 </a>
-                <span class="font-size-small-14">/</span>
-                <a href="<?php $select_pages_login = of_get_option('select_pages_registered', '');  the_permalink($select_pages_login); ?>">
-                    <span class="font-size-small-14">注册</span>
-                </a>
-            <?php 
+            <?php
                 } ?>
 
         </div>

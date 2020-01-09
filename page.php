@@ -8,7 +8,7 @@
 	<div class="grid_8">
 		没有找到你想要的页面！
 	</div>
-	<?php endif; ?>
+<?php endif; ?>
         
 
 

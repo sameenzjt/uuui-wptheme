@@ -483,25 +483,9 @@ function optionsframework_options() {
 		'type' => 'heading'
 	);
 		$options[] = array(
-			'name' => __( '注册', 'uuui' ),
-			'desc' => __( '需要先发布页面,可以使用插件创建', 'uuui' ),
-			'id' => 'select_pages_registered',
-			'class' => 'mini',
-			'type' => 'select',
-			'options' => $options_pages
-		);
-		$options[] = array(
 			'name' => __( '登录', 'uuui' ),
-			'desc' => __( '需要先发布页面,可以使用插件创建', 'uuui' ),
-			'id' => 'select_pages_login',
-			'class' => 'mini',
-			'type' => 'select',
-			'options' => $options_pages
-		);
-		$options[] = array(
-			'name' => __( '全部文章', 'uuui' ),
-			'desc' => __( '请发布页面：标题自定，页面模板选择“全部文章”', 'uuui' ),
-			'id' => 'select_pages_allposts',
+			'desc' => __( '登录页面内含注册模块', 'uuui' ),
+			'id' => 'page_login',
 			'class' => 'mini',
 			'type' => 'select',
 			'options' => $options_pages
