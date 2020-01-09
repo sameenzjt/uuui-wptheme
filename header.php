@@ -148,7 +148,7 @@
                     ?>
                     <a href="<?php echo wp_logout_url($url_this); ?>" class="font-size-small">登出</a>
             <?php } else { ?>
-                <a href="<?php $select_pages_login = of_get_option('page_login', '');  the_permalink($select_pages_login); ?>">
+                <a href="<?php the_permalink( of_get_option('page_login', '') ); ?>">
                 
                 
                     <img src="<?php bloginfo('template_url'); ?>/images/avatar/giraffe.png" width="32px">
