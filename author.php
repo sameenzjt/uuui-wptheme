@@ -1,12 +1,15 @@
 <?php get_header(); ?>
 
 <div class="row">
-    <div class="col-lg-3">
-        <?php include( 'author_sidebar.php' );//网站后台优化Backstage  //右侧主体 ?>
+    <div class="col-3">
+        <img >
+        <?php if ( get_the_author_meta( 'qq' ) ){
+            echo '作者QQ：'.get_the_author_meta( 'qq' );
+        }?>
     </div>
 
-    <div class="clo-lg-8">
-        <?php include( 'author_main.php' );//网站后台优化Backstage  //右侧主体 ?>
+    <div class="col-9">
+        h 
     </div>
 </div>
     
