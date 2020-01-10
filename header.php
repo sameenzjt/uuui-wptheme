@@ -158,12 +158,13 @@
 
         </div>
         <div class="float-right" style="margin-top:14px;margin-right:10px">
-        <form style="width:200px" class="input-group input-group-sm mb-3" method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
-            <input class="form-control" type="text" placeholder="输入关键字" name="s" id="s"/>
-            <div class="input-group-append">
-                <input class="btn btn-success" type="submit" value="搜 索" onClick="if(document.forms['search'].searchinput.value=='- Search -')document.forms['search'].searchinput.value='';" alt="Search" />
-            </div>
-        </form></div>
+            <form style="width:200px" class="input-group input-group-sm mb-3" method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
+                <input class="form-control" type="text" placeholder="输入关键字" name="s" id="s"/>
+                <div class="input-group-append">
+                    <input class="btn btn-success" type="submit" value="搜 索" onClick="if(document.forms['search'].searchinput.value=='- Search -')document.forms['search'].searchinput.value='';" alt="Search" />
+                </div>
+            </form>
+        </div>
         
     </nav>
     <div style="clear:both;"></div>

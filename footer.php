@@ -66,15 +66,8 @@
             <div class="col-lg-12 hide-768px">
                 <p style="color: #fff;" class="friend-link">
                     <span>友情链接：</span>
-                    <a href="#">申请优设友链</a><a href="#">hao123上网导航</a><a href="#">设计师网址导航</a>
-                    <a href="#">psd素材</a><a href="#">优优教程 </a><a href="#">腾讯CDC</a><a href="#">设计导航</a>
-                    <a href="#">优设导航</a><a href="#">图片素材</a><a href="#">UI设计培训</a><a href="#">红动中国设计网 </a>   
-                    <a href="#">网页模板</a><a href="#">360安全网址导航</a><a href="#">优设</a><a href="#">在线设计</a>
-                    <a href="#">WordPress主题定制 </a><a href="#">Nav80网址导航</a><a href="#">网页设计</a><a href="#">视觉同盟</a>
-                    <a href="#">腾讯ISUX</a><a href="#">iconfont</a><a href="#">设计达人 </a><a href="#">腾讯TGideas</a><a href="#">PConline创意设计</a>
-                    <a href="#">uiiiuiii</a><a href="#">优优网</a><a href="#">U站</a><a href="#">灵感网站</a>
-                    <a href="#">ps下载</a><a href="#">正版图片</a><a href="#">c4d教程</a><a href="#">免费软件教程</a> 
-                </p>
+                    <?php if (function_exists('wpjam_blogroll')) wpjam_blogroll();?>
+                   </p>
             </div>
 
         </div>

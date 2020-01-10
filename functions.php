@@ -66,8 +66,8 @@ if ( function_exists( 'add_theme_support' ) ) {
 	function my_acf_settings_url( $url ) {
 		return MY_ACF_URL;
 	}
-	add_filter('acf/settings/show_admin', '__return_false');//隐藏 ACF 前端菜单
-	include( 'functions/acf.php' );//本地字段组
+	//add_filter('acf/settings/show_admin', '__return_false');//隐藏 ACF 前端菜单
+	//include( 'functions/acf.php' );//本地字段组
 /* —— ACF插件 —— 结束 */
 
 
@@ -164,7 +164,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 /* —— 显示时间为几天前 —— 结束 */
 
 
-/* —— 自动添加nofollow属性和新窗口打开WordPress文章/页面的站外链接 —— */
+/* —— WordPress文章/页面的站外链接自动添加nofollow属性和新窗口打开 —— */
 	add_filter( 'the_content', 'cn_nf_url_parse');
 	function cn_nf_url_parse( $content ) {
 		$regexp = "<a\s[^>]*href=(\"??)([^\" >]*?)\\1[^>]*>";
@@ -197,7 +197,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 		$content = str_replace(']]>', ']]>', $content);
 		return $content;
 	}
-/* —— 自动添加nofollow属性和新窗口打开WordPress文章/页面的站外链接 —— 结束 */
+/* —— WordPress文章/页面的站外链接自动添加nofollow属性和新窗口打开 —— 结束 */
 
 
 include( 'functions/categories-images.php' );//分类目录添加图像
@@ -208,6 +208,7 @@ include( 'functions/custom-editor.php' );//向 WordPress 可视化编辑器添�
 
 include( 'functions/breadcrumb.php' );//面包屑导航调用：if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();
 
+include( 'functions/WPJAM-Blogroll.php' );//快速添加友情链接（设置——阅读）按照 链接 |标题 的方式输入 调用：if (function_exists(wpjam_blogroll)) wpjam_blogroll();
 
 /* —— 字数统计 —— 使用echo count_words_read_time();调用
 //字数和预计阅读时间统计

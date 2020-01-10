@@ -7,18 +7,18 @@ add_action('init', 'my_custom_init');
 function my_custom_init()
 {
 	$labels = array(
-		'name' => '网址',	//文章类型的名称，这个可以用中文
-		'singular_name' => '网址',	//单篇文章对象的名称
-		'add_new' => '添加网址',	//对应于默认文章类型中的“写文章”
-		'add_new_item' => '新建一个网址',
-		'edit_item' => '编辑网址',	//编辑
+		'name' => '导航',	//文章类型的名称，这个可以用中文
+		'singular_name' => '导航',	//单篇文章对象的名称
+		'add_new' => '添加导航网址',	//对应于默认文章类型中的“写文章”
+		'add_new_item' => '新建一个导航网址',
+		'edit_item' => '编辑导航网址',	//编辑
 		'new_item' => 'new_item',
 		'view_item' => 'view_item',
 		'search_items' => '搜索',
 		'not_found' =>  '没有找到',
 		'not_found_in_trash' => 'not_found_in_trash',  
 		'parent_item_colon' => '',
-		'menu_name' => '设计导航'
+		'menu_name' => '导航'
 	);
 	$args = array(
 		'labels' => $labels,
