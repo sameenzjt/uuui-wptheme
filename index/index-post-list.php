@@ -25,7 +25,7 @@
                     <img class="post-img" src="<?php the_field('article-cover-images'); ?>">
                 </div>
                 <!--<img src="< ?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); echo $full_image_url[0]; ?>" class="index-posts-list-img">-->
-                <h3 class="index-posts-list-title"><?php the_title(); ?></h3>
+                <h4 class="index-posts-list-title"><?php the_title(); ?></h4>
                 <p class="font-size-small-14 index-posts-list-excerpt hide-768px" style="margin: 20px 0px;">
                     <?php if (has_excerpt()) {
                         echo $description = get_the_excerpt(); //文章编辑中的摘要
