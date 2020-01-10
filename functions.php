@@ -66,8 +66,8 @@ if ( function_exists( 'add_theme_support' ) ) {
 	function my_acf_settings_url( $url ) {
 		return MY_ACF_URL;
 	}
-	//add_filter('acf/settings/show_admin', '__return_false');//隐藏 ACF 前端菜单
-	//include( 'functions/acf.php' );//本地字段组
+	add_filter('acf/settings/show_admin', '__return_false');//隐藏 ACF 前端菜单
+	include( 'functions/acf.php' );//本地字段组
 /* —— ACF插件 —— 结束 */
 
 
