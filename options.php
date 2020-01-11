@@ -423,6 +423,12 @@ function optionsframework_options() {
 		'id' => 'index_arousel_3_img',
 		'type' => 'upload'
 	);
+	$options[] = array(
+		'name' => __( '设计师必备栏目', 'uuui' ),
+		'desc' => __( '示例：&lt;a href="此处填写链接" target="_blank"&gt;此处填写名称&lt;/a&gt;', 'uuui' ),
+		'id' => 'designer-must-have',
+		'type' => 'textarea'
+	);
 
 	if ( $options_categories ) {
 		$options[] = array(

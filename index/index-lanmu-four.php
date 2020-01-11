@@ -51,16 +51,11 @@
         <div class="little-section border-radius-4 h-100">
             <i class="iconfont icon-gongju1 icon"></i>
             <span>设计师必备</span>
-            <span  class="font-size-small">优设倾心推荐</span>
+            <span  class="font-size-small">倾心推荐</span>
             <div class="dropdown-divider"></div>
             <div class="designer-must-have">
-                <a href="#">配色神器</a>
-                <a href="#">一键抠图</a>
-                <a href="#">iconfont</a>
-                <a href="#">Sketch</a>
-                <a href="#">阿里动效</a>
-                <a href="#">PS 2020</a>
-                <a href="#">找灵感</a>
+                
+                <?php echo of_get_option('designer-must-have', ''); ?>
             </div>
         </div>
     </div>

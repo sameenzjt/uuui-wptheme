@@ -18,7 +18,7 @@
             <?php include( 'index/index-post-list.php' ); ?>
         </div>
         <div class="dropdown-divider"></div>
-        <div style="margin-top:20px;">
+        <div style="margin-top:20px;margin-bottom:20px;">
             <?php include( 'index/index-thematic.php' ); ?>
         </div>
     </div>
