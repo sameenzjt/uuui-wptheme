@@ -39,8 +39,8 @@ remove_action('wp_head', 'rest_output_link_wp_head', 10 );
 remove_action('template_redirect', 'rest_output_link_header', 11 );
 
 
-// 关闭 XML-RPC 功能 
-add_filter('xmlrpc_enabled', '__return_false');
+// 关闭 XML-RPC 功能 (wordpress APP需要)
+//add_filter('xmlrpc_enabled', '__return_false');
 
 
 

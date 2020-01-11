@@ -96,7 +96,7 @@
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/qr-pop.js"></script>
 
     <?php if (is_home()) { ?>
-        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/index-navigation.js"></script>
+        <!--<script type="text/javascript" src="< ?php bloginfo('template_url'); ?>/res/js/index-navigation.js"></script>-->
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/index-lanmu-soft.js"></script>
         
     <?php } elseif( is_single() ) { ?>

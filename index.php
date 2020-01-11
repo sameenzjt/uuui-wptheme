@@ -29,10 +29,12 @@
     </div>
 
 
+    <!--
     <div class="col-12 hide-768px" style="margin-top:20px;">
         <div class="dropdown-divider" style="margin-bottom:20px;"></div>
-        <?php include( 'index/index-navigation.php' ); ?>
+        < ?php include( 'index/index-navigation.php' ); ?>
     </div>
+    -->
 
 
 </div>
