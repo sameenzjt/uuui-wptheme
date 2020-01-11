@@ -14,7 +14,8 @@
             } elseif (is_search() ) {
                 echo "搜索结果：".get_search_query(); echo " | "; bloginfo('name');
             } elseif (is_404() ) {
-                echo '页面未找到!';
+                $title_404 = get_option('404_title', '');
+                echo $title_404;
             } else {
                 wp_title('',true);
             } ?>
