@@ -416,30 +416,14 @@ function count_words_read_time () {
     *自动添加图片 alt 和 title 属性|boke112 导航
     *https://boke112.com/2912.html
 */
-	function image_alttitle( $imgalttitle ){
-		global $post;
-		$category = get_the_category();
-		$flname=$category[0]->cat_name;
-		$btitle = get_bloginfo();
-		$imgtitle = $post->post_title;
-		$imgUrl = "<img\s[^>]*src=(\"??)([^\" >]*?)\\1[^>]*>";
-		if(preg_match_all("/$imgUrl/siU",$imgalttitle,$matches,PREG_SET_ORDER)){
-				if( !empty($matches) ){
-						for ($i=0; $i < count($matches); $i++){
-								$tag = $url = $matches[$i][0];
-								$j=$i+1;
-								$judge = '/title=/';
-								preg_match($judge,$tag,$match,PREG_OFFSET_CAPTURE);
-								if( count($match) < 1 )
-								$altURL = ' alt="'.$imgtitle.' '.$flname.' 第'.$j.'张" title="'.$imgtitle.' '.$flname.' 第'.$j.'张-'.$btitle.'" ';
-								$url = rtrim($url,'>');
-								$url .= $altURL.'>';
-								$imgalttitle = str_replace($tag,$url,$imgalttitle);
-						}
-				}
-		}
-		return $imgalttitle;
-	}
-	add_filter( 'the_content','image_alttitle');
+	//文章图片自动添加alt和title属性
+function image_alt_tag($content){
+    global $post;preg_match_all('/<img (.*?)\/>/', $content, $images);
+    if(!is_null($images)) {foreach($images[1] as $index => $value)
+    {$new_img = str_replace('<img', '<img alt="'.get_the_title().'-'.get_bloginfo('name').'" title="'.get_the_title().'-'.get_bloginfo('name').'"', $images[0][$index]);
+    $content = str_replace($images[0][$index], $new_img, $content);}}
+    return $content;
+}
+add_filter('the_content', 'image_alt_tag', 99999);
   
 ?>

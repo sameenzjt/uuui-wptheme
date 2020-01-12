@@ -91,24 +91,18 @@
     
 
     <!-- 返回顶部，按钮默认不可见，当滚动页面到一定高度后，按钮出现（低于500px不显示），500毫秒动画 -->
-    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/back-top.js"></script>
-    <!-- 二维码弹出框 -->
-    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/qr-pop.js"></script>
-
+    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/uuui.min.js"></script>
+    
     <?php if (is_home()) { ?>
         <!--<script type="text/javascript" src="< ?php bloginfo('template_url'); ?>/res/js/index-navigation.js"></script>-->
-        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/index-lanmu-soft.js"></script>
-        
+        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/index-lanmu-soft.min.js"></script>
     <?php } elseif( is_single() ) { ?>
         <!--  更改文章内容字体大小 -->
-        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/change-single-font-size.js"></script>
-        <!-- 工具栏上滑至顶部后固定位置 -->
-        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/tool-slide-top-fixed.js"></script>
-
+        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/change-single-font-size.min.js"></script>
     <?php } elseif( is_page() ) { ?>
         <!-- 工具栏上滑至顶部后固定位置 -->
-        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/tool-slide-top-fixed.js"></script>
-        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/page-login-registered.js"></script>
+        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/tool-slide-top-fixed.min.js"></script>
+        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/page-login-registered.min.js"></script>
     <?php }?>
 
 

@@ -14,31 +14,31 @@
             <ul class="row text-center" style="list-style-type: none; margin:0px;padding:0px;">
                 <li class="col-3">
                     <a href="<?php echo get_category_link($categories_ps) ?>">
-                        <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ps.png" width="36px" style="margin:10px 0px;">
+                        <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ps.png" width="36px" height="36px" height="36px" style="margin:10px 0px;">
                     </a>
                 </li>
                 <li class="col-3" >
                     <a href="<?php echo get_category_link($categories_ai) ?>">
-                        <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ai.png"  width="36px" style="margin:10px 0px;">
+                        <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ai.png"  width="36px" height="36px" style="margin:10px 0px;">
                     </a>
                 </li>
                 <li class="col-3" >
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ae.png"  width="36px" style="margin:10px 0px;">
+                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ae.png"  width="36px" height="36px" style="margin:10px 0px;">
                 </li>
                 <li class="col-3" >
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Pr.png"  width="36px" style="margin:10px 0px;">
+                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Pr.png"  width="36px" height="36px" style="margin:10px 0px;">
                 </li>
                 <li class="col-3 hide" >
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ps.png"  width="36px" style="margin:10px 0px;">
+                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ps.png"  width="36px" height="36px" style="margin:10px 0px;">
                 </li>
                 <li class="col-3 hide" >
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ae.png"  width="36px" style="margin:10px 0px;">
+                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ae.png"  width="36px" height="36px" style="margin:10px 0px;">
                 </li>
                 <li class="col-3 hide" >
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ai.png"  width="36px" style="margin:10px 0px;">
+                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ai.png"  width="36px" height="36px" style="margin:10px 0px;">
                 </li>
                 <li class="col-3 hide" >
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Pr.png"  width="36px" style="margin:10px 0px;">
+                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Pr.png"  width="36px" height="36px" style="margin:10px 0px;">
                 </li>
                 <div class="look_more_soft w-100"><a href="javascript:void(0)" class="text-center"><i class="iconfont icon-zhankai show font-size-small"></i><i class="iconfont icon-shouqishang hide font-size-small"></i></a></div>
 
@@ -105,19 +105,19 @@
             <div class="dropdown-divider"></div>
             <div class="row text-center">
                 <div class="col-3">
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ps.png" width="36px">
+                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ps.png" width="36px" height="36px">
                     <span class="font-size-small">Ps</span>
                 </div>
                 <div class="col-3">
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ai.png" width="36px">
+                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ai.png" width="36px" height="36px">
                     <span class="font-size-small">Ai</span>
                 </div>
                 <div class="col-3">
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ae.png" width="36px">
+                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ae.png" width="36px" height="36px">
                     <span class="font-size-small">Ae</span>
                 </div>
                 <div class="col-3">
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Pr.png" width="36px">
+                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Pr.png" width="36px" height="36px">
                     <span class="font-size-small">Pr</span>
                 </div>
             </div>

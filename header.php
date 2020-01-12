@@ -91,7 +91,7 @@
     <!-- iconfont -->
     <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_m3txwnks2fo.css" type="text/css"/>
     <!-- style.css -->
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>?ver=<?php $my_theme = wp_get_theme(); echo $my_theme->get('Version'); ?>" type="text/css" media="screen" />
     <!-- single_style.css -->
     <?php if( is_single() ){?>
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/single_style.css" type="text/css"/>
@@ -152,7 +152,7 @@
                 <a href="<?php the_permalink( of_get_option('page_login', '') ); ?>">
                 
                 
-                    <img src="<?php bloginfo('template_url'); ?>/images/avatar/giraffe.png" width="32px">
+                    <img src="<?php bloginfo('template_url'); ?>/images/avatar/giraffe.png" width="32px" height="32px">
                 </a>
             <?php
                 } ?>
