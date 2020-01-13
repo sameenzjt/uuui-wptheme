@@ -426,4 +426,38 @@ function image_alt_tag($content){
 }
 add_filter('the_content', 'image_alt_tag', 99999);
   
+
+/**
+ * WordPress 更改文章密码保护后显示的提示内容
+ * https://www.wpdaxue.com/change-password-protected-text.html
+ */
+function password_protected_change( $content ) {
+	global $post;
+    if ( ! empty( $post->post_password ) ) {
+		$output = '
+			<div class="alert alert-info">
+				<strong>信息!</strong> '.__( "这是一篇受密码保护的文章，您需要提供访问密码","uuui").'
+			</div>
+			<form action="' . get_option( 'siteurl' ) . '/wp-login.php?action=postpass" method="post" class="form-group">
+				<label for="post_password">密码：</label>
+				<input type="password" name="post_password" class="form-control" size="20" />
+				<input type="submit" name="Submit" class="btn btn-primary" value="' . __( "提交","uuui" ) . '" />
+			</form>
+        ';
+        return $output;
+    } else {
+        return $content;
+    }
+}
+add_filter( 'the_password_form','password_protected_change' );
+/** WordPress 更改文章密码保护后显示的提示内容 —— 结束*/
+
+
+
+
+
+
+
+
+
 ?>

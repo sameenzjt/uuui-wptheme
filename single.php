@@ -103,7 +103,6 @@
                 <h5><i class="iconfont icon-pinglun post-icon"></i>评论</h5>
                 <?php comments_template(); ?>
             </div>
-
             <div class="dropdown-divider"></div>
 
         </div>
@@ -168,11 +167,7 @@
         </div>
 
 
-
-
-        
     </div>
-
 </div>
     
 
