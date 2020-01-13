@@ -24,26 +24,22 @@
         // If the user wants ssl but the session is not ssl, force a secure cookie.
         if ( !empty($user_name) && !force_ssl_admin() ) {
             if ( $user = get_user_by('login', $user_name) ) {
-                if ( get_user_option('use_ssl', $user->ID) ) {
-                    $secure_cookie = true;
-                    force_ssl_admin(true);
-                }
+            if ( get_user_option('use_ssl', $user->ID) ) {
+                $secure_cookie = true;
+                force_ssl_admin(true);
+            }
             }
         }
-        
+            
         if ( isset( $_GET['r'] ) ) {
             $redirect_to = $_GET['r'];
-        // Redirect to https if user wants ssl
-        if ( $secure_cookie && false !== strpos($redirect_to, 'wp-admin') )
+            // Redirect to https if user wants ssl
+            if ( $secure_cookie && false !== strpos($redirect_to, 'wp-admin') )
             $redirect_to = preg_replace('|^http://|', 'https://', $redirect_to);
-        }
-        else {
-            $redirect_to = admin_url();
         }
         
         if ( !$secure_cookie && is_ssl() && force_ssl_login() && !force_ssl_admin() && ( 0 !== strpos($redirect_to, 'https') ) && ( 0 === strpos($redirect_to, 'http') ) )
             $secure_cookie = false;
-            
             $creds = array();
             $creds['user_login'] = $user_name;
             $creds['user_password'] = $user_password;
@@ -82,7 +78,7 @@ if( !empty($_POST['ludou_reg']) ) {
     }
     // Check the e-mail address
     if ( $user_email == '' ) {
-        $error .= '<div class="alert alert-alert-warning"><strong>警告!</strong> 请填写电子邮件地址。</div>';
+        $error .= '<div class="alert alert-warning"><strong>警告!</strong> 请填写电子邮件地址。</div>';
     } elseif ( ! is_email( $user_email ) ) {
         $error .= '<div class="alert alert-danger"><strong>错误!</strong> 电子邮件地址不正确。</div>';
         $user_email = '';
@@ -116,32 +112,34 @@ if( !empty($_POST['ludou_reg']) ) {
 }?>
 
 <?php get_header(); ?>
+<?php if (have_posts()) : the_post(); update_post_caches($posts); ?>
 <div style="margin-bottom: 600px;">
     <div class="dowebok">
         <div class="form sign-in" style="text-align:center;margin-bottom: 40px;">
             <div class="page-support-content">
+                <?php the_content(); ?>
                 <?php if(!empty($error)) {
                     echo '<p class="ludou-error">'.$error.'</p>';
                 }
                 if (!is_user_logged_in()) { ?>
-                    <form name="loginform" method="post" action="<?php echo home_url(); ?>">
+                    <form name="loginform" method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
                         <h2>登录</h2>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">用户名</span>
+                                <span class="input-group-text" for="log">用户名</span>
                             </div>
                             <input type="text" name="log" class="form-control" value="<?php if(!empty($user_name)) echo $user_name; ?>" />
                         </div>
 
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">密码</span>
+                                <span class="input-group-text" for="pwd">密码</span>
                             </div>
-                            <input class="form-control" type="password" value="" name="pwd" />
+                            <input id="pwd" class="form-control" type="password" value="" name="pwd" />
                         </div>
                         
                         <label for="form-check-label">
-                            <input name="rememberme" type="checkbox" value="1" <?php checked( $rememberme ); ?> />
+                            <input name="rememberme" type="checkbox" id="rememberme" value="1" <?php checked( $rememberme ); ?> />
                             记住我
                         </label>
                         <br />
@@ -150,9 +148,11 @@ if( !empty($_POST['ludou_reg']) ) {
                         <button class="btn btn-primary" type="submit">登录</button>
                     </form>
                 <?php } else {
-                echo '<div class="alert alert-info"><strong>您已登录！</strong> <a href="'.wp_logout_url().'" title="登出">登出？</a></div>';
+                echo '<div class="alert alert-info"><strong>您已登录！</strong> <a href="'.wp_logout_url(home_url()).'" title="登出">登出？</a></div>';
                 } ?>
             </div><!-- End——page-support-content -->
+
+
         </div><!-- End——form sign-in -->
 
         <div class="sub-cont">
@@ -225,4 +225,9 @@ if( !empty($_POST['ludou_reg']) ) {
         </div><!--sub-cont-->
     </div><!--dowebok-->
 </div>
+<?php else : ?>
+	<div class="grid_8">
+		没有找到你想要的页面！
+	</div>
+<?php endif; ?>
 <?php get_footer(); ?>

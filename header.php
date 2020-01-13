@@ -93,7 +93,7 @@
     <!-- style.css -->
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>?ver=<?php $my_theme = wp_get_theme(); echo $my_theme->get('Version'); ?>" type="text/css" media="screen" />
     <!-- single_style.css -->
-    <?php if( is_single() ){?>
+    <?php if( is_single() ) { ?>
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/single_style.css" type="text/css"/>
     <?php } elseif( is_page() ){ ?>
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/single_style.css" type="text/css"/>
@@ -139,7 +139,11 @@
 
         <div class="float-right nav-login">
             <?php $url_this = 'https://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"]; //登录/登出（注销）后返回之前访问的页面 ?>
-            <?php if ( is_user_logged_in() ) {?>
+            <?php if ( !is_user_logged_in() ) {?>
+                <a href="<?php the_permalink( of_get_option('page_login', '') ); ?>">
+                    <img src="<?php bloginfo('template_url'); ?>/images/avatar/giraffe.png" width="32px" height="32px">
+                </a>
+            <?php } else { ?>
                 <?php
                     global $current_user; //当前用户信息数组
                     wp_get_current_user();
@@ -148,14 +152,8 @@
                     echo "$current_user->display_name";
                     ?>
                     <a href="<?php echo wp_logout_url($url_this); ?>" class="font-size-small">登出</a>
-            <?php } else { ?>
-                <a href="<?php the_permalink( of_get_option('page_login', '') ); ?>">
                 
-                
-                    <img src="<?php bloginfo('template_url'); ?>/images/avatar/giraffe.png" width="32px" height="32px">
-                </a>
-            <?php
-                } ?>
+            <?php } ?>
 
         </div>
         <div class="float-right" style="margin-top:14px;margin-right:10px">

@@ -24,14 +24,15 @@ remove_action('wp_head', 'adjacent_posts_rel_link');
 
 
 // 禁用 Emoji 功能 
-remove_action('admin_print_scripts',    'print_emoji_detection_script');
-remove_action('admin_print_styles', 'print_emoji_styles');
-remove_action('wp_head',       'print_emoji_detection_script', 7);//表情js，如果需要表情请添加#屏蔽
-remove_action('wp_print_styles',    'print_emoji_styles');
-remove_action('embed_head',     'print_emoji_detection_script');
-remove_filter('the_content_feed',   'wp_staticize_emoji');
-remove_filter('comment_text_rss',   'wp_staticize_emoji');
-remove_filter('wp_mail',        'wp_staticize_emoji_for_email');
+remove_action('admin_print_scripts','print_emoji_detection_script');
+remove_action('admin_print_styles','print_emoji_styles');
+remove_action('wp_head','print_emoji_detection_script', 7);//表情js，如果需要表情请添加#屏蔽
+remove_action('wp_print_styles','print_emoji_styles');
+remove_action('embed_head','print_emoji_detection_script');
+remove_filter('the_content_feed','wp_staticize_emoji');
+remove_filter('comment_text_rss','wp_staticize_emoji');
+remove_filter('wp_mail','wp_staticize_emoji_for_email');
+add_filter( 'emoji_svg_url','__return_false' );
 
 
 //移除头部 wp-json 标签和 HTTP header 中的 link 
@@ -42,6 +43,15 @@ remove_action('template_redirect', 'rest_output_link_header', 11 );
 // 关闭 XML-RPC 功能 (wordpress APP需要)
 //add_filter('xmlrpc_enabled', '__return_false');
 
+
+//禁止WordPress头部加载s.w.org
+function remove_dns_prefetch( $hints, $relation_type ) {
+    if ( 'dns-prefetch' === $relation_type ) {
+    return array_diff( wp_dependencies_unique_hosts(), $hints );
+    }
+    return $hints;
+    }
+add_filter( 'wp_resource_hints', 'remove_dns_prefetch', 10, 2 );
 
 
 //移除jQuery Migrate脚本
