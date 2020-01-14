@@ -115,7 +115,7 @@
 </head>
 <?php flush(); ?>
 <body>
-    <nav class="left">
+    <nav>
         <a href="<?php echo get_option('home'); ?>/">
             <?php 
                 $site_logo = of_get_option('site_logo', '');
@@ -156,7 +156,7 @@
             <?php } ?>
 
         </div>
-        <div class="float-right" style="margin-top:14px;margin-right:10px">
+        <div class="float-right header-search">
             <form style="width:200px" class="input-group input-group-sm mb-3" method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
                 <input class="form-control" type="text" placeholder="输入关键字" name="s" id="s"/>
                 <div class="input-group-append">

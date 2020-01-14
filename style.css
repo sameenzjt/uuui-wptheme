@@ -2,7 +2,7 @@
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
 Description: 设计资源分享网站
-Version: v0.22.3
+Version: v0.22.4
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 设计,UI
@@ -30,6 +30,12 @@ main {
     padding: 0px 40px;
     margin: 0px auto;
 }
+@media only screen and (max-width: 768px) {
+    main{
+        padding: 0px 10px;
+        margin: 0px auto;
+    }
+}
 
 a{
     text-decoration: none;
@@ -51,6 +57,7 @@ a:hover{
 }
 
 nav{
+    float: left;
     width:100%;
     position: fixed;
     top:0px;
@@ -61,6 +68,18 @@ nav{
     -webkit-box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
     -moz-box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
     box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
+}
+
+@media only screen and (max-width: 768px) {
+    nav{
+        width:100%;
+        top:0px;
+        height: 60px;
+        background-color: #fff;
+        -webkit-box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
+        -moz-box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
+        box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
+    }
 }
 
 .inline{display: inline;}
@@ -86,6 +105,16 @@ nav{
     -webkit-box-shadow: 0px 0px 7px 0px rgba(171,171,171,0.75);
     -moz-box-shadow: 0px 0px 7px 0px rgba(171,171,171,0.75);
     box-shadow: 0px 0px 7px 0px rgba(171,171,171,0.75);
+}
+
+.header-search{
+    margin-top:14px;
+    margin-right:10px
+}
+@media only screen and (max-width: 768px) {
+    .header-search{
+        display: none;
+    }
 }
 
 .footer{
@@ -126,7 +155,11 @@ nav{
 
 .nav-link{
     margin-left: 40px;
-  
+}
+@media only screen and (max-width: 768px) {
+    .nav-link{
+        display: none;
+    }
 }
 .nav-link ul {
     display: inline;
@@ -182,12 +215,20 @@ nav{
 }
 
 .post-img-div{
+    float: left;
     border-radius: 4px;
     margin-right: 20px;
     width: 296px;
     height: 166px;
     overflow: hidden;
 }
+
+.index-posts-list{
+    margin: 20px 0px;
+    padding: 10px 10px;
+    overflow: hidden;
+}
+
 .post-img{
     width: 100%;
     height: 100%;
@@ -197,6 +238,16 @@ nav{
     -moz-transition: all 0.1s ease-out; /* Firefox 4 */
     -webkit-transition: all 0.1s ease-out; /* Safari 和 Chrome */
     -o-transition: all 0.1s ease-out; /* Opera */
+}
+@media only screen and (max-width: 768px) {
+    .post-img-div{
+        border-radius: 4px;
+        width: 100%;
+        overflow: hidden;
+    }
+    .post-img{
+        width: 100%;
+    }
 }
 .index-posts-list:hover .post-img{
     z-index: 5;
@@ -215,7 +266,13 @@ nav{
 .index-posts-list-title{
     font-weight: 600;
 }
-
+@media only screen and (max-width: 768px) {
+    .index-posts-list-title{
+        text-align: center;
+        padding-top: 40px;
+        font-weight: 600;
+    }
+}
 
 .little-section{
     padding:15px;
@@ -404,12 +461,26 @@ nav{
    list-style: none;
    display: inline;
 }
-
+.index-posts-list-excerpt{
+    margin: 20px 0px;
+}
 .posts-list-info,
 .posts-list-info a{
     font-size: 0.75em;
     color: #757575;
     margin: 0px 10px;
+}
+@media only screen and (max-width: 768px) {
+    .posts-list-info{
+        text-align: center;
+        font-size: 0.75em;
+        color: #757575;
+        margin: 0px 10px;
+    }
+    .index-posts-list-excerpt{
+        text-align: center;
+        margin: 10px 0px;
+    }
 }
 
 .lanmu-title{
@@ -560,6 +631,11 @@ nav{
 .sidebar-box{
     margin-top: 20px;
 }
+@media only screen and (max-width: 768px) {
+    .sidebar-box{
+        display: none;
+    }
+}
 
 .designer-must-have a{
     color: #BDBDBD;
@@ -572,7 +648,7 @@ nav{
     white-space: nowrap;/*强制不换行*/
 }
 
-
+/*
 @media only screen and (max-width: 1024px) {
     main{
         padding: 0px 10px;
@@ -635,4 +711,4 @@ nav{
         padding: 0px 10px;
     }
     
-}
+}*/
