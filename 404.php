@@ -13,11 +13,9 @@
 <body>
     <nav>
         <div class="menu">
-            <p class="website_name"><?php bloginfo('name'); ?></p>
+            <p class="website_name"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></p>
             <div class="menu_links">
-                <a href="#" class="link">about</a>
-                <a href="#" class="link">projects</a>
-                <a href="#" class="link">contacts</a>
+                <a href="<?php echo home_url(); ?>" class="link">HOME</a>
             </div>
             <div class="menu_icon">
                 <span class="icon"></span>
@@ -44,8 +42,26 @@
                     fclose  ($fp);
                 }
             }?>
-    <?php endwhile; else: ?>  
-    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>  
+    <?php endwhile; else: ?> 
+        <?php
+            //https://zhangzifan.com/wordpress-badlink.html
+            //WordPress实现自动记录死链地址（防重复）
+            if(is_404() && strpos($_SERVER['HTTP_USER_AGENT'],'Baiduspider') !== false){
+                $file = @file("badlink.txt");//badlink.txt
+                $check = true;
+                if(is_array($file) && !empty($file))
+                foreach($file as &$f){
+                    if($f == home_url($_SERVER['REQUEST_URI'])."\n")
+                    $check = false;
+                }
+                if($check){
+                    $fp =   fopen("badlink.txt","a");//badlink.txt就是在网站根目录的记录死链的文件
+                    flock   ($fp, LOCK_EX) ;
+                    fwrite  ($fp, home_url($_SERVER['REQUEST_URI'])."\n");
+                    flock   ($fp, LOCK_UN);
+                    fclose  ($fp);
+                }
+            }?>
     <?php endif; ?>  
 
     <section class="wrapper">
