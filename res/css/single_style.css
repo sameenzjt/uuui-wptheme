@@ -4,7 +4,6 @@
     margin: 20px 0px;
 }
 
-
 .post-content{
     font-family: Source Han Sans,Hiragino Sans GB, MicroSoft YaHei;
     max-width: 100%;
@@ -12,7 +11,14 @@
     margin-top: 20px;
     margin-left: 40px;
 }
-
+@media only screen and (max-width: 768px) {
+    .post-content{
+        max-width: 100%;
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
 
 .post-content h2{
     font-size: 2em;
@@ -114,6 +120,11 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 .post-content-bottom{
     margin: 30px 100px 30px 30px;
 }
+@media only screen and (max-width: 768px) {
+    .post-content-bottom{
+        margin: 30px 0px 30px 0px;
+    }
+}
 
 .post-icon{
     margin-right: 5px;
@@ -175,7 +186,13 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
     padding: 20px;
     border: rgb(238, 238, 238) 1px solid;
 }
-
+@media only screen and (max-width: 768px) {
+    .single-tool{
+        background-color: #fff;
+        margin-left: 0px;
+        border: rgb(238, 238, 238) 1px solid;
+    }
+}
 .post-title,
 .single-tool p{
     -ms-word-wrap: break-word;
@@ -184,4 +201,40 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 .single_sidebar_title{
     font-weight: 600;
+}
+
+
+
+
+/** --------------- 页面 ------------------ */
+
+.page-content{
+    max-width: 100%;
+    padding: 0px 60px;
+}
+.page-content p{
+    line-height: 1.75em;
+    text-indent:1em;
+    letter-spacing: 0.05em;
+}
+.page-content a{
+    text-decoration: underline;
+}
+.page-content img{
+    max-width: 100%;
+    height: auto;
+}
+
+.page-tool ul{
+    list-style: none;
+}
+
+.page-tool ul li{
+    padding: 5px 0px;
+}
+
+@media only screen and (max-width: 768px) {
+    .page-support-content{
+        padding: 0px 10px;
+    }
 }

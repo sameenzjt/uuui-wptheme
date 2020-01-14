@@ -34,7 +34,7 @@
     </div>
 
 
-    <div class="col-lg-9 col-sm-12 container">
+    <div class="col-lg-9 col-sm-12 col-md-12 container">
         <?php if (have_posts()) : the_post(); update_post_caches($posts); ?>
             <!--文章内容-->
             <div class="post-content">
@@ -109,7 +109,7 @@
     </div>
 
     <!-- 右 id="fixed-tool" -->
-    <div class="col-lg-3 hide-768px">
+    <div class="col-lg-3">
         <div class="single-tool border-radius-4">
             
             <h5 class="single_sidebar_title"><i class="iconfont icon-gongju" style="margin-right: 5px; color:#ff5c00;"></i>文章小工具</h5>

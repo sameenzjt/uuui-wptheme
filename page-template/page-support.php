@@ -13,7 +13,7 @@
                 <h2 style="font-weight: 600; margin: 20px 0px;"><?php the_title(); ?></h2>
                 <div class="dropdown-divider"></div>
             </div>
-            <div class="col-lg-2 hide-768px">
+            <div class="col-lg-2 hide-768">
                 <div id="fixed-tool" class="page-tool">
                     <?php if(function_exists('wp_nav_menu')) {
                         wp_nav_menu(array( 'theme_location' => 'support_menu','menu_class'=>'support_menu_ul') ); 
@@ -22,7 +22,7 @@
             </div>
             <div class="col-lg-8 col-sm-12">
                 <?php if (have_posts()) : the_post(); update_post_caches($posts); ?>
-                <div class="page-support-content" >
+                <div class="page-content" >
                     <?php the_content(); ?> 
                 </div>
                 <?php else : ?>

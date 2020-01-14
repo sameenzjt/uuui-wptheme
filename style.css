@@ -2,13 +2,17 @@
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
 Description: 设计资源分享网站
-Version: v0.22.4
+Version: v0.22.5
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 设计,UI
 */
 @charset "UTF-8";
-
+@media only screen and (max-width: 768px) {
+    .hide-768{
+        display: none;
+    }
+}
 html,
 body {
 	border: none;
@@ -75,6 +79,7 @@ nav{
         width:100%;
         top:0px;
         height: 60px;
+        padding: 0px 10px;
         background-color: #fff;
         -webkit-box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
         -moz-box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
@@ -122,7 +127,13 @@ nav{
     margin: 0px auto;
     background-color: #2a2a32;
 }
-
+@media only screen and (max-width: 768px) {
+    .footer{
+        padding: 20px;
+        margin: 0px auto;
+        background-color: #2a2a32;
+    }
+}
 .footer a{
     color: #BDBDBD;
     margin: 2px 5px;
@@ -356,6 +367,12 @@ nav{
     padding: 2px 6px;
     margin: 0px 4px;
 }
+
+@media only screen and (max-width: 768px) {
+    .post-list-tags{
+        display: none;
+    }
+}
 .post-list-tags a:hover,
 .view-all a:hover{
     color: #fff;
@@ -429,17 +446,8 @@ nav{
 }
 
 
-.page-support-content{
-    padding: 0px 60px;
-}
 
-.page-tool ul{
-    list-style: none;
-}
 
-.page-tool li{
-    padding: 5px 0px;
-}
 
 .index-thematic-info{
     margin-top: 90px;

@@ -1,7 +1,7 @@
 <div class="post-list">
     <i class="iconfont icon-wenzhang icon"></i>
     <h2 class="index-title d-inline">最新文章</h2>
-    <div class="post-list-tags hide-768px float-right font-size-small-14">
+    <div class="post-list-tags float-right font-size-small-14">
         <?php wp_tag_cloud( array ( 'smallest' => '14', 'largest' => 14, 'unit' => 'px', 'order' => 'RAND', 'number' => 8 ) ); ?>
     </div>
     

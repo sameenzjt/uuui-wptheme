@@ -95,7 +95,7 @@
     
     <?php if (is_home()) { ?>
         <!--<script type="text/javascript" src="< ?php bloginfo('template_url'); ?>/res/js/index-navigation.js"></script>-->
-        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/index-lanmu-soft.min.js"></script>
+        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/index-lanmu-soft.js"></script>
     <?php } elseif( is_single() ) { ?>
         <!--  更改文章内容字体大小 -->
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/change-single-font-size.min.js"></script>
