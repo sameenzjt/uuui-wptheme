@@ -1,11 +1,12 @@
 .post-title{
+    font-family:  -apple-system, BlinkMacSystemFont,"Source Han Serif CN","Source Han Sans","Hiragino Sans GB", "MicroSoft YaHei",微软雅黑;
     font-weight: 700;
     letter-spacing:0.04em;
     margin: 20px 0px;
 }
 
 .post-content{
-    font-family: Source Han Sans,Hiragino Sans GB, MicroSoft YaHei;
+    font-family:  -apple-system, BlinkMacSystemFont,"PingFang SC","Source Han Sans","Hiragino Sans GB","MicroSoft YaHei",微软雅黑;
     max-width: 100%;
     margin-right: 100px;
     margin-top: 20px;
@@ -44,7 +45,7 @@
 }
 
 .post-content p{
-    line-height: 1.5em;
+    line-height: 1.75em;
     text-indent:1em;
     letter-spacing: 0.08em;
 }
@@ -68,23 +69,30 @@
 .post-content .wp-caption-text{
     text-align: center;
 }
+.wp-caption-text {
+	color: #757575;
+	font-size: 0.8rem;
+	margin-bottom: 1.5rem;
+}
 
 /* 图片居中 */
-img.alignright {float:right; margin:0 0 1em 1em}
-img.alignleft {float:left; margin:0 1em 1em 0}
-img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+img.alignright,
 a img.alignright {float:right; margin:0 0 1em 1em}
+
+img.alignleft,
 a img.alignleft {float:left; margin:0 1em 1em 0}
+
+img.aligncenter,
 a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+
+
+
 
 /* Center */
 .aligncenter,
 .aligncenter img {
-    margin: 0px auto;
 	margin-left: auto;
     margin-right: auto;
-    text-align:center;
-    display:inline-block;
 }
 
 /* Left and right */
@@ -134,7 +142,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 .post-info span{
     margin: 0px 10px;
- }
+}
 
 
  
@@ -238,3 +246,5 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
         padding: 0px 10px;
     }
 }
+
+

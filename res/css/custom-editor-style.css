@@ -1,23 +1,35 @@
-div,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
+h2{
+    font-size: 2em;
+    margin: 10px -20px 10px -25px;
+    padding: 0 20px;
+    border-left: 5px solid #e40000;
+}
+h3{
+    font-size: 1.75em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+}
+h4{
+    font-size: 1.5em;
+}
+h5{
+    font-size: 1.25em;
+}
 h6{
-    padding: 0px 20px;
+    font-size: 1em;
 }
 
-div, p {
+div, p{
+    padding: 0px 20px;
     line-height: 1.75em;
-    text-indent:2em;
+    text-indent:1em;
     letter-spacing: 0.08em;
 }
 
+
 a{
     color:#177cb0;
-    transition: all 0.1s ease-in-out;
 }
 a:hover{
     color: #ff5c00;
@@ -26,4 +38,12 @@ a:hover{
 
 img , video{
     margin: 10px 0px;
+    max-width: 100%;
+    height: auto;
+}
+
+.wp-caption-text {
+	color: #757575;
+	font-size: 0.8rem;
+	margin-bottom: 1.5rem;
 }
