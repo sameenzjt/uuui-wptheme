@@ -377,7 +377,7 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'desc' => __( '上传首页第一张轮播图像，建议1200*350或等比例大小。', 'uuui' ),
+		'desc' => __( '上传首页第一张轮播图像，建议1200*345或等比例大小。', 'uuui' ),
 		'id' => 'index_arousel_1_img',
 		'type' => 'upload'
 	);
@@ -398,7 +398,7 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'desc' => __( '上传首页第二张轮播图像，建议1200*350或等比例大小。', 'uuui' ),
+		'desc' => __( '上传首页第二张轮播图像，建议1200*345或等比例大小。', 'uuui' ),
 		'id' => 'index_arousel_2_img',
 		'type' => 'upload'
 	);
@@ -419,7 +419,7 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'desc' => __( '上传首页第三张轮播图像，建议1200*350或等比例大小。', 'uuui' ),
+		'desc' => __( '上传首页第三张轮播图像，建议1200*345或等比例大小。', 'uuui' ),
 		'id' => 'index_arousel_3_img',
 		'type' => 'upload'
 	);
@@ -482,6 +482,20 @@ function optionsframework_options() {
 			'options' => $options_categories
 		);
 	}
+
+	$options[] = array(
+		'name' => __( '首页侧边栏banner', 'uuui' ),
+		'id' => 'index_sidebar_banner',
+		'desc' => __( '填写banner图片链接', 'uuui' ),
+		'placeholder' => 'banner图片链接',
+		'type' => 'text'
+	);
+	$options[] = array(
+		'id' => 'index_sidebar_banner_link',
+		'desc' => __( '填写banner跳转链接', 'uuui' ),
+		'placeholder' => 'banner跳转链接',
+		'type' => 'text'
+	);
 
 /* —— 页面选择 —— */
 	$options[] = array(

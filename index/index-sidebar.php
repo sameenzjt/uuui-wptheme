@@ -1,3 +1,8 @@
+<div class="border-radius-4 sidebar-box" style="margin-left: 10px;"><!-- 首页侧边栏banner -->
+    <img src="<?php echo of_get_option('index_sidebar_banner',''); ?>" width="100%">
+</div><!-- 首页侧边栏banner-end -->
+
+
 <div class="sidebar-border border-radius-4 sidebar-box"><!-- 细节看点 -->
     <h5 class="lanmu-title">细节看点</h5>
     <div class="dropdown-divider"></div>
@@ -44,7 +49,7 @@
 <div class="sidebar-border border-radius-4 sidebar-box"><!-- 置顶文章 -->
     <h5 class="lanmu-title"><i class="iconfont icon-zhiding5 icon"></i>置顶文章</h5>
     <div class="dropdown-divider"></div>
-    <ol style="display: block; padding-left:20px">
+    <ol class="sticky_posts">
         <?php
             /* 获取所有置顶文章 */
             $sticky = get_option( 'sticky_posts' );
@@ -53,7 +58,7 @@
             $sticky = array_slice( $sticky, 0, 6 );
             /* 输出这些文章 */
             query_posts( array( 'post__in' => $sticky, 'ignore_sticky_posts' => 1 ) );
-            while ( have_posts() ) : the_post();  
+            while ( have_posts() ) : the_post();
         ?>
 
         <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
