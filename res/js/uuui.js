@@ -15,4 +15,4 @@
 /**  bootstrap弹出框  */
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover({html : true });   
-})(jQuery);
+});
