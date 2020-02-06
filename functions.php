@@ -246,7 +246,7 @@ function count_words_read_time () {
 
 /* —— 添加帮助面板 ——https://www.ludou.org/wordpress-customizing-the-dashboard-widgets.html */
 	function ludou_dashboard_help() {
-		$file_get_contents = file_get_contents( "https://zhangjintao.art/version.txt" );
+		$file_get_contents = file_get_contents( "https://sameenzjt.github.io/version.txt" );
 		$my_theme = wp_get_theme();
 		echo "当前主题版本：" . $my_theme->get( 'Name' ) . "&nbsp;" . $my_theme->get( 'Version' ) . "<br />";
 		echo "最新版本：" . $file_get_contents;
