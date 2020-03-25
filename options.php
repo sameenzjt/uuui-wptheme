@@ -654,12 +654,28 @@ $options[] = array(
 	'type' => 'heading'
 );
 	$options[] = array(
+		'name' => __( '声明', 'uuui' ),
+		'desc' => __( '主题仅提供广告插入位置，任何由此产生的商业行为均与本主题无关。', 'uuui' ),
+		'type' => 'info'
+	);
+
+	$options[] = array(
 		'name' => __( '正文底部', 'uuui' ),
 		'desc' => __( '正文底部广告', 'uuui' ),
-		'id' => 'ads',
+		'id' => 'text-bottom-ads',
 		'std' => '',
 		'type' => 'textarea'
 	);
+
+	$options[] = array(
+		'name' => __( '正文顶部', 'uuui' ),
+		'desc' => __( '正文顶部广告', 'uuui' ),
+		'id' => 'text-top-ads',
+		'std' => '',
+		'type' => 'textarea'
+	);
+
+
 
 /* —— 支持 —— */
 $options[] = array(

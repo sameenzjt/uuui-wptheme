@@ -99,28 +99,7 @@
     <!-- 软件教程 --> 
     <div class="col-lg-3 col-sm-6">
         <div class="little-section border-radius-4 h-100">
-            <i class="iconfont icon-drgspingtairuanjianxitong37 icon"></i>
-            <span>软件教程</span>
-            <span  class="font-size-small">常用软件自学路径</span>
-            <div class="dropdown-divider"></div>
-            <div class="row text-center">
-                <div class="col-3">
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ps.png" width="36px" height="36px">
-                    <span class="font-size-small">Ps</span>
-                </div>
-                <div class="col-3">
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ai.png" width="36px" height="36px">
-                    <span class="font-size-small">Ai</span>
-                </div>
-                <div class="col-3">
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Ae.png" width="36px" height="36px">
-                    <span class="font-size-small">Ae</span>
-                </div>
-                <div class="col-3">
-                    <img src="<?php bloginfo('template_url'); ?>/images/Adobe-Pr.png" width="36px" height="36px">
-                    <span class="font-size-small">Pr</span>
-                </div>
-            </div>
+            
         </div>
     </div>
 

@@ -32,7 +32,12 @@
         </p>
         <div class="dropdown-divider"></div>
     </div>
-
+    <!-- 文章顶部广告 -->
+    <?php $text_top_ads = of_get_option('text-top-ads', '');
+        if (!empty($tex_bottom_tads)) {
+            echo "<div>" . $tex_bottom_tads . "</div>";
+        }
+    ?>
 
     <div class="col-lg-9 col-sm-12 col-md-12 container">
         <?php if (have_posts()) : the_post(); update_post_caches($posts); ?>
@@ -57,6 +62,13 @@
                 没有文章！
             </div>
         <?php endif; ?>
+
+        
+        <!-- 文章底部广告 -->
+        <?php $text_bottom_ads = of_get_option('text-bottom-ads', '');
+             if (!empty($text_bottom_ads)) {
+                echo '<div style="text-align: center;width:100%;height:200px;min-width:200px;background-color:red;">' . $text_bottom_ads . '</div>';
+            } ?>
 
 
         <div class="post-content-bottom">
@@ -83,6 +95,12 @@
 
             <div class="dropdown-divider"></div>
 
+            <div style="margin-right:100px;width:100%;border-radius: 4px;">
+                <?php include( 'ads/text-bottom-ads.php' ); ?>
+            </div>
+
+            <div class="dropdown-divider"></div>
+
             <!-- 文章标签 -->
             <div class="post-tags">
                 <h5><i class="iconfont icon-biaoqian post-icon"></i>继续阅读与本文标签相同的文章</h5>
@@ -90,11 +108,6 @@
                     <?php the_tags('<span class="post-tags-badge font-size-small-14">','</span><span class="post-tags-badge font-size-small-14">','</span>'); ?>
                 </div>
             </div>
-            
-            <!-- 文章底部广告 -->
-            <?php if(of_get_option('ads', '')) {
-                echo "<div>"; echo of_get_option('ads', ''); echo "</div>";
-            } ?>
             
             <div class="dropdown-divider"></div>
 
