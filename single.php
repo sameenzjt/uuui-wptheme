@@ -5,41 +5,40 @@
     $reprinted_url = get_field('reprinted-url');
     $translation_from = get_field('translation-from');
     $translation_url = get_field('translation-url'); 
-    
 ?>
 
 <div class="row">
-    <div class="col-12">
-        <?php if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs(); ?>
+    <div class="col-lg-9 col-sm-12 col-md-12">
+        <div style="margin-left:40px;">
+            <?php if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs(); ?>
 
-        <h1 class="post-title"><?php the_title(); ?></h1>
-        <p class="font-size-small-14 post-info">
-            <?php
-                if($article_type == "original") {
-                    echo "<span class='badge badge-info'>原创</span>";
-                } elseif ($article_type == "reproduced") {
-                    echo "<span class='badge badge-info'>转载</span>";
-                    echo "<span>转载来源：" . $reprinted_from . "</span>";
-                } elseif ($article_type == "translation") {
-                    echo "<span class='badge badge-info'>翻译</span>";
-                    echo "<span>原文来源：" . $translation_from . "</span>";
-                }
-            ?>
-            <span><?php the_time('Y年n月j日') ?></span>
-            <span>阅读 <?php get_post_views($post -> ID); ?></span>
-            <span><?php comments_popup_link('评论 0', '评论 1', '评论 %', '', ''); ?></span>
-            <span><?php edit_post_link('编辑', '[', ']'); ?></span>
-        </p>
-        <div class="dropdown-divider"></div>
-    </div>
+            <h1 class="post-title text-center"><?php the_title(); ?></h1>
+            <p class="font-size-small-14 post-info text-center">
+                <span><?php the_author_posts_link(); ?></span>
+                <?php
+                    if($article_type == "original") {
+                        echo "<span class='badge badge-info'>原创</span>";
+                    } elseif ($article_type == "reproduced") {
+                        echo "<span class='badge badge-info'>转载</span>";
+                        echo "<span>转载来源：" . $reprinted_from . "</span>";
+                    } elseif ($article_type == "translation") {
+                        echo "<span class='badge badge-info'>翻译</span>";
+                        echo "<span>原文来源：" . $translation_from . "</span>";
+                    }
+                ?>
+                <span><?php the_time('Y年n月j日') ?></span>
+                <span>阅读 <?php get_post_views($post -> ID); ?></span>
+                <span><?php comments_popup_link('评论 0', '评论 1', '评论 %', '', ''); ?></span>
+                <span><?php edit_post_link('编辑', '[', ']'); ?></span>
+            </p>
+            <div class="dropdown-divider"></div>
+        </div>
+   
+    
     <!-- 文章顶部广告 -->
-    <?php $text_top_ads = of_get_option('text-top-ads', '');
-        if (!empty($tex_bottom_tads)) {
-            echo "<div>" . $tex_bottom_tads . "</div>";
-        }
-    ?>
+    
 
-    <div class="col-lg-9 col-sm-12 col-md-12 container">
+    <div class="container">
         <?php if (have_posts()) : the_post(); update_post_caches($posts); ?>
             <!--文章内容-->
             <div class="post-content">
@@ -120,10 +119,67 @@
 
         </div>
     </div>
-
+</div>
     <!-- 右 id="fixed-tool" -->
     <div class="col-lg-3">
-        <div class="single-tool border-radius-4">
+
+        <div class="single-tool border-radius-4" style="margin-top: 20px; margin-right: 40px;"><!-- 社交分享 -->
+            <div class="share">
+                <div class="share-list-1">
+                    <div class="share-icon">
+                        <a title="分享到微信" href="javascript:void(0)" class="bds_weixin">
+                            <i class="iconfont icon-weixin1"></i>
+                        </a>
+                        <div class="wechat-share-qr text-center">
+                            <div id="weixin-qr"></div>
+                            <div class="bd_weixin_popup_foot text-center">使用微信“扫一扫”<br>分享至朋友圈</div>
+                        </div>
+                        
+                    </div>
+                    <div class="share-icon">
+                        <a title="分享到QQ空间" href="javascript:void(0)" class="share_qzone" onclick="shareToQzone(event)">
+                            <i class="iconfont icon-qzone1"></i>
+                        </a>
+                    </div>
+                    <div class="share-icon">
+                        <a title="分享到新浪微博" href="javascript:void(0)" class="share_xlwb" onclick="shareToSinaWB(event)">
+                            <i class="iconfont icon-weibo1"></i>
+                            <!--<img src="http://images.cnblogs.com/cnblogs_com/a-cat/1193051/o_img_xlwb.png" />-->
+                        </a>
+                    </div>
+                    <div class="share-icon">
+                        <a title="分享到豆瓣" href="javascript:void(0)" class="share_db" onclick="shareToDouban(event)">
+                            <i class="iconfont icon-douban1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="share-list-2">
+                    <div class="share-icon">
+                        <a title="分享到QQ好友" href="javascript:void(0)" class="share_qq" onclick="shareToqq(event)">
+                            <i class="iconfont icon-qq1"></i>
+                        </a>
+                    </div>
+                    <div class="share-icon">
+                        <a title="分享到百度贴吧" href="javascript:void(0)" class="share_bdtb" onclick="shareToTieba(event)">
+                            <i class="iconfont icon-baidutieba1"></i>
+                        </a>
+                    </div>
+                    <div class="share-icon">
+                        <a title="分享到人人网" href="javascript:void(0)" class="share_rrw" onclick="shareToRenren(event)">
+                            <i class="iconfont icon-renrenwang1"></i>
+                        </a>
+                    </div>
+                    <div class="share-icon">
+                        <a title="分享到开心网" href="javascript:void(0)" class="share_kx" onclick="shareToKaixin(event)">
+                            <i class="iconfont icon-kaixinwang1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="single-tool border-radius-4" style="margin-top:20px">
             
             <h5 class="single_sidebar_title"><i class="iconfont icon-gongju" style="margin-right: 5px; color:#ff5c00;"></i>文章小工具</h5>
             <div class="dropdown-divider"></div>
@@ -135,20 +191,6 @@
                 <a href="javascript:void(0);"><span>18</span></a>
                 <a href="javascript:void(0);"><span>20</span></a>
                 <a href="javascript:void(0);"><span class="bigger">A+</span></a>
-            </div>
-             <!-- 作者 -->
-             <div class="font-size-small-14" style="margin-top:20px;overflow:hidden;">
-                <div class="float-left" style="margin-right:10px;overflow:hidden;">
-                    <?php echo get_avatar( get_the_author_meta( 'user_email' ) ,60); ?>
-                </div>
-                <span><?php the_author_posts_link(); ?></span>
-                <span>
-                    <a href=" <?php the_author_meta('url'); ?> "><i class="iconfont icon-difangwangzhi"></i></a>
-                    <a href="mailto:<?php the_author_meta('email'); ?>"><i class="iconfont icon-mail"></i></a>
-                </span>
-                <br />
-                <span class="font-divider-color"><?php the_author_meta('description'); ?></span>
-                
             </div>
         </div>
 
@@ -183,5 +225,10 @@
     </div>
 </div>
     
-
+<script type="text/javascript">//社交分享
+    var _title,_source,_sourceUrl,_pic,_showcount,_desc,_site,
+        _url = '<?php the_permalink(); ?>',
+        _pic = '<?php the_field('article-cover-images'); ?>',
+        _summary = '<?php echo get_post_meta($post->ID, "description", true); ?>'
+</script>
 <?php get_footer(); ?>

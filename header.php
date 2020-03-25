@@ -98,7 +98,7 @@
     <!-- https://github.com/daneden/animate.css -->
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/animate.css/3.7.2/animate.min.css" />
     <!-- iconfont -->
-    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_m3txwnks2fo.css" />
+    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_61d2rh3x1sa.css" />
     <!-- style.css -->
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>?ver=<?php $my_theme = wp_get_theme(); echo $my_theme->get('Version'); ?>" type="text/css" media="screen" />
     <!-- single_style.css -->

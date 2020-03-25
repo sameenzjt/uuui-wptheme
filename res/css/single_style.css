@@ -1,3 +1,57 @@
+/** ************************** 社交分享 ************************** */
+
+.share{
+    width: 100%;
+}
+.share-list-1{
+    margin-bottom: 25px;
+}
+.share-list-2{
+    margin-top: 25px;
+}
+.share-icon{
+    display: inline;
+    padding: 15px;
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease; /* Safari */
+}
+.share-icon:hover{
+    border-radius: 4px;
+    background-color: #e6e4e4;
+    transition: 0.2s ease;
+    -webkit-transition: 0.2s ease; /* Safari */
+}
+.share-icon:active{
+    background-color: #c0c0c0;
+    transition: 0.1s ease;
+    -webkit-transition: 0.1s ease; /* Safari */
+}
+.share i{
+    font-size: 24px;
+    color: #000;
+}
+.share a{
+    text-decoration: none;
+}
+
+.weixin-qr,
+.bd_weixin_popup_foot,
+.wechat-share-qr{
+    display: none;
+}
+.wechat-share-qr{
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 99;
+
+    padding: 20px;
+    border: 1px solid #c0c0c0;
+}
+
+/** ************************** 社交分享 ************************** */
 .post-title{
     font-family:  -apple-system, BlinkMacSystemFont,"Source Han Serif CN","Source Han Sans","Hiragino Sans GB", "MicroSoft YaHei",微软雅黑;
     font-weight: 700;
@@ -8,7 +62,7 @@
 .post-content{
     font-family:  -apple-system, BlinkMacSystemFont,"PingFang SC","Source Han Sans","Hiragino Sans GB","MicroSoft YaHei",微软雅黑;
     max-width: 100%;
-    margin-right: 100px;
+    margin-right: 40px;
     margin-top: 20px;
     margin-left: 40px;
 }
@@ -186,7 +240,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 .single-tool{
     background-color: #fff;
-    margin-left: 10px;
+    margin-right: 40px;
     padding: 20px;
     border: rgb(238, 238, 238) 1px solid;
 }

@@ -243,6 +243,16 @@ function count_words_read_time () {
 	add_filter ('sanitize_user', 'ludou_sanitize_user', 10, 3);
 /* —— 支持中文用户名 —— 结束 */
 
+/** —— 自定义 WordPress 的默认 Gravatar 头像 ——https://www.wpdaxue.com/change-wordpress-default-gravatar.html */
+add_filter( 'avatar_defaults', 'newgravatar' );
+function newgravatar ($avatar_defaults) {
+    $myavatar = get_bloginfo('template_directory') . '/images/wpdaxue-gravatar.jpg';  
+    $avatar_defaults[$myavatar] = "WordPress大学 默认头像";  
+    return $avatar_defaults;  
+}
+/** —— 自定义 WordPress 的默认 Gravatar 头像 —— 结束 */
+
+
 
 /* —— 添加帮助面板 ——https://www.ludou.org/wordpress-customizing-the-dashboard-widgets.html */
 	function ludou_dashboard_help() {
