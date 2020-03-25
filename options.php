@@ -624,6 +624,28 @@ $options[] = array(
 		'type' => 'info'
 	);
 
+	$options[] = array(
+		'name' => __( '站点验证(使用第三方服务验证站点所有权)', 'uuui' ),
+		'desc' => __( '支持的验证服务：<a href="https://www.google.com/webmasters/tools/">Google Search Console</a>、<a href="https://www.bing.com/webmaster/">Bing Webmaster Center</a>。<br><br>要使用这些高级搜索引擎工具并使用某服务验证您的站点，请将 HTML 标签代码复制粘贴到以下相应位置。', 'uuui' ),
+		'type' => 'info'
+	);
+	$options[] = array(
+		'desc' => __( 'Google Search Console', 'uuui' ),
+		'placeholder' => '<mate name="google-site-verification" content="1234">',
+		'id' => 'google-search-console',
+		'type' => 'text',
+		'class' => 'small'
+	);
+	$options[] = array(
+		'desc' => __( 'Bing Webmaster Center', 'uuui' ),
+		'placeholder' => '<mate name="msvalidate" content="1234">',
+		'id' => 'bing-webmaster-center',
+		'type' => 'text',
+		'class' => 'small'
+	);
+
+	
+	
 
 
 /* —— 广告位 —— */
