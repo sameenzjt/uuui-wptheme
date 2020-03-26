@@ -128,9 +128,8 @@
         </div>
 
         <div class="float-right nav-login">
-            <?php $url_this = 'https://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"]; //登录/登出（注销）后返回之前访问的页面 ?>
             <?php if ( !is_user_logged_in() ) {?>
-                <a href="<?php the_permalink( of_get_option('page_login', '') ); ?>">
+                <a href="<?php echo wp_login_url( home_url(add_query_arg(array(),$wp->request)) ); ?>&page=login">
                     <img src="<?php bloginfo('template_url'); ?>/images/avatar/giraffe.png" width="32px" height="32px">
                 </a>
             <?php } else { ?>

@@ -3,12 +3,18 @@
 	include( 'functions/optimization_reception.php' );//网站前台优化Reception
 	include( 'functions/optimization_backstage.php' );//网站后台优化Backstage
 
+/* —— 保护后台登录 —— */
+	add_action('login_enqueue_scripts','login_protection');  
+	function login_protection(){
+		if($_GET['page'] != 'login')header('Location:'.home_url());
+	}
+/* —— 保护后台登录 —— 结束 */
+
 
 /* —— 后台禁用古腾堡编辑器 —— */
 	add_filter('use_block_editor_for_post', '__return_false');
 	remove_action( 'wp_enqueue_scripts', 'wp_common_block_scripts_and_styles' );
 /* —— 后台禁用古腾堡编辑器 —— 结束 */
-
 
 
 /**
@@ -200,15 +206,24 @@ if ( function_exists( 'add_theme_support' ) ) {
 /* —— WordPress文章/页面的站外链接自动添加nofollow属性和新窗口打开 —— 结束 */
 
 
-include( 'functions/categories-images.php' );//分类目录添加图像
+//分类目录添加图像
+include( 'functions/categories-images.php' );
 
-include( 'functions/custom-editor.php' );//向 WordPress 可视化编辑器添加自定义样式
+//向 WordPress 可视化编辑器添加自定义样式
+include( 'functions/custom-editor.php' );
 
-//include( 'functions/post-type-link.php' );//自定义文章类型
+//自定义文章类型
+//include( 'functions/post-type-link.php' );
 
-include( 'functions/breadcrumb.php' );//面包屑导航调用：if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();
+//面包屑导航调用：if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();
+include( 'functions/breadcrumb.php' );
 
-include( 'functions/WPJAM-Blogroll.php' );//快速添加友情链接（设置——阅读）按照 链接 |标题 的方式输入 调用：if (function_exists(wpjam_blogroll)) wpjam_blogroll();
+//快速添加友情链接（设置——阅读）按照 链接 |标题 的方式输入 调用：if (function_exists(wpjam_blogroll)) wpjam_blogroll();
+include( 'functions/WPJAM-Blogroll.php' );
+
+//自定义登录页面
+include( 'functions/custom_login.php' );
+
 
 /* —— 字数统计 —— 使用echo count_words_read_time();调用
 //字数和预计阅读时间统计
@@ -461,8 +476,6 @@ function password_protected_change( $content ) {
 }
 add_filter( 'the_password_form','password_protected_change' );
 /** WordPress 更改文章密码保护后显示的提示内容 —— 结束*/
-
-
 
 
 

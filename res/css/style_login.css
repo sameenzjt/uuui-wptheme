@@ -1,0 +1,50 @@
+/** 背景及字体 **/    
+html,
+body.login{   
+    background:#f2f2f2;   
+    font-family: "PingFang SC", "Lantinghei SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", Arial, "Hiragino Sans GB", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
+}   
+/** 去掉链接下划线 **/    
+html a{   
+    text-decoration: none;   
+}   
+/** 登录DIV **/    
+#login {   
+    background:#fff;    
+    margin: 40px auto 0;   
+    padding: 10px 10px 10px 10px;   
+    border-radius:6px;     
+    box-shadow:0 3px 8px rgba(0, 0, 0, .3);
+    border:0 solid;
+}   
+  
+/** 提示 **/    
+.updated, .login .message {   
+    background:#fff;   
+    border: none;   
+    text-align: center;   
+}   
+/** 表单 **/    
+.login form {   
+    box-shadow:none;   
+    border: none;   
+}   
+#loginform, #registerform, #lostpasswordform{   
+    background:transparent;   
+    border:none;   
+}   
+/** 按钮 **/    
+.button-primary,.submit .button-primary,#login form .submit input {   
+    width:83px;   
+    height:25px;   
+    font-weight: bold;   
+    border:none;   
+}  
+
+#login #nav a{
+    font-size: 12px;
+}
+
+.login #login_error{
+    box-shadow:0 1px 3px 0 rgba(0, 0, 0, .2);
+}
