@@ -361,68 +361,7 @@ function optionsframework_options() {
 		'type' => 'heading'
 	);
 
-	$options[] = array(
-		'name' => __( '轮播图1', 'uuui' ),
-		'desc' => __( '轮播图1的描述文字', 'uuui' ),
-		'id' => 'index_arousel_1_text',
-		'placeholder' => 'Placeholder',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'desc' => __( '轮播图1的链接', 'uuui' ),
-		'id' => 'index_arousel_1_link',
-		'placeholder' => 'Placeholder',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'desc' => __( '上传首页第一张轮播图像，建议1200*345或等比例大小。', 'uuui' ),
-		'id' => 'index_arousel_1_img',
-		'type' => 'upload'
-	);
-
-	$options[] = array(
-		'name' => __( '轮播图2', 'uuui' ),
-		'desc' => __( '轮播图2的描述文字', 'uuui' ),
-		'id' => 'index_arousel_2_text',
-		'placeholder' => 'Placeholder',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'desc' => __( '轮播图2的链接', 'uuui' ),
-		'id' => 'index_arousel_2_link',
-		'placeholder' => 'Placeholder',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'desc' => __( '上传首页第二张轮播图像，建议1200*345或等比例大小。', 'uuui' ),
-		'id' => 'index_arousel_2_img',
-		'type' => 'upload'
-	);
-
-	$options[] = array(
-		'name' => __( '轮播图3', 'uuui' ),
-		'desc' => __( '轮播图3的描述文字', 'uuui' ),
-		'id' => 'index_arousel_3_text',
-		'placeholder' => 'Placeholder',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'desc' => __( '轮播图3的链接', 'uuui' ),
-		'id' => 'index_arousel_3_link',
-		'placeholder' => 'Placeholder',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'desc' => __( '上传首页第三张轮播图像，建议1200*345或等比例大小。', 'uuui' ),
-		'id' => 'index_arousel_3_img',
-		'type' => 'upload'
-	);
+	
 	$options[] = array(
 		'name' => __( '设计师必备栏目', 'uuui' ),
 		'desc' => __( '示例：&lt;a href="此处填写链接" target="_blank"&gt;此处填写名称&lt;/a&gt;', 'uuui' ),
@@ -612,24 +551,23 @@ $options[] = array(
 );
 
 	$options[] = array(
-		'name' => __( 'SEO', 'uuui' ),
+		'name' => __( '网站SEO', 'uuui' ),
 		'desc' => __( '主题自带SEO功能，如已启用第三方SEO插件，请不要勾选此选项。', 'uuui' ),
 		'id' => 'site-seo',
 		'std' => '1',
 		'type' => 'checkbox'
 	);
+	$options[] = array(
+		'desc' => __( '主题自带SEO功能包括：网页关键字、网页描述、网页标题', 'uuui' ),
+		'type' => 'info'
+	);
+
 
 	$options[] = array(
 		'name' => __( 'Web 应用的名称', 'uuui' ),
 		'desc' => __( '仅当网站被用作为一个应用时才使用', 'uuui' ),
 		'id' => 'application-name',
 		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => __( '网站图标', 'uuui' ),
-		'desc' => __( '网站图标请到“外观 > 自定义 > 站点身份 > 站点图标”更改', 'uuui' ),
-		'type' => 'info'
 	);
 
 	$options[] = array(
@@ -690,6 +628,34 @@ $options[] = array(
 	'name' => __( '支持', 'uuui' ),
 	'type' => 'heading'
 );
+	$options[] = array(
+		'name' => __( '我们用到的技术', 'uuui' ),
+		'desc' => __( '本主题所使用的所有文件', 'uuui' ),
+		'type' => 'info'
+	);
+	$options[] = array(
+		'desc' => __( '<a href="https://www.staticfile.org/">Staticfile CDN<a>：免费、快速、开放的 CDN 服务', 'uuui' ),
+		'type' => 'info',
+	);
+	$options[] = array(
+		'desc' => __( '<a href="https://getbootstrap.com/">Bootstrap 4<a>：全球最受欢迎的前端组件库', 'uuui' ),
+		'type' => 'info',
+	);
+	$options[] = array(
+		'desc' => __( '<a href="https://fontawesome.com/">FontAwesome<a>：网络上最受欢迎的图标集和工具包', 'uuui' ),
+		'type' => 'info',
+	);
+	$options[] = array(
+		'desc' => __( '<a href="https://github.com/hustcc/placeholder.js">placeholder.js<a>：<1Kb的Javascript库，可在客户端生成图像占位符', 'uuui' ),
+		'type' => 'info',
+	);
+	$options[] = array(
+		'desc' => __( '<a href="https://jquery.com/">jquery<a>：一个快速、小型且功能丰富的 JavaScript 库', 'uuui' ),
+		'type' => 'info',
+	);
+
+
+
 
 
 

@@ -1,5 +1,9 @@
+@media screen and (max-width: 768px) {
 .hide-768{
     display: none;
+}
+h4{
+    font-size: 1.2rem;
 }
 main{
     padding: 0px 10px;
@@ -27,13 +31,29 @@ nav{
 .nav-link{
     display: none;
 }
+
+.little-section{
+    display: none;
+}
+
+.icon-wenzhang{
+    margin-left: 10px;
+}
+
 .post-img-div{
     border-radius: 4px;
-    width: 100%;
     overflow: hidden;
+    margin-bottom: 10px;
+    width: 100%;
+    /** img横向100%填充div */
+    display:flex;
+	align-items:center; 
+	justify-content:center;
 }
 .post-img{
-    width: 100%;
+    /** img横向100%填充div */
+    width:100%;
+	height:auto;
 }
 .index-posts-list-title{
     text-align: center;
@@ -58,4 +78,6 @@ nav{
 
 .sidebar-box{
     display: none;
+}
+
 }

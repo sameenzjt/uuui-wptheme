@@ -7,20 +7,28 @@
     <title><?php 
             if ( is_home() ) {
                 bloginfo('name');
-                echo " | ";
+                echo " - ";
                 bloginfo('description');
+
             } elseif ( is_category() ) {
                 single_cat_title();
-                echo " | ";
+                echo " - ";
                 bloginfo('name');
+
             } elseif (is_single() || is_page() ) {
                 single_post_title();
+                echo " - ";
+                bloginfo('name');
+
             } elseif (is_search() ) {
                 echo "搜索结果：".get_search_query();
-                echo " | "; bloginfo('name');
+                echo " - "; 
+                bloginfo('name');
+
             } elseif (is_404() ) {
                 $title_404 = get_option('404_title', '');
                 echo $title_404;
+
             } else {
                 wp_title('',true);
             } ?></title>
@@ -68,13 +76,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/animate.css/3.7.2/animate.min.css" />
     <!-- iconfont -->
     <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_61d2rh3x1sa.css" />
-   
     <!-- style.css -->
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>?ver=<?php $my_theme = wp_get_theme(); echo $my_theme->get('Version'); ?>" type="text/css" media="screen" />
+    <!-- 移动端样式 -->
     <?php if(wp_is_mobile()){ ?>
-        <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>/res/css/screen_768.css" media="screen and (min-width:768px)"/>
+        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_screen_768.css"/>
     <?php } ?>
-    <!-- style_single.css -->
+    <!-- 独立样式 -->
     <?php if( is_single() ) { ?>
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_single.css" type="text/css"/>
     <?php } elseif( is_page() ){ ?>
