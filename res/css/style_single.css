@@ -11,7 +11,7 @@
 }
 .share-icon{
     display: inline;
-    padding: 15px;
+    padding: 5%;
     transition: 0.3s ease;
     -webkit-transition: 0.3s ease; /* Safari */
 }

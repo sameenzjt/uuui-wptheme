@@ -612,6 +612,14 @@ $options[] = array(
 );
 
 	$options[] = array(
+		'name' => __( 'SEO', 'uuui' ),
+		'desc' => __( '主题自带SEO功能，如已启用第三方SEO插件，请不要勾选此选项。', 'uuui' ),
+		'id' => 'site-seo',
+		'std' => '1',
+		'type' => 'checkbox'
+	);
+
+	$options[] = array(
 		'name' => __( 'Web 应用的名称', 'uuui' ),
 		'desc' => __( '仅当网站被用作为一个应用时才使用', 'uuui' ),
 		'id' => 'application-name',

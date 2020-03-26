@@ -34,96 +34,86 @@
             <div class="dropdown-divider"></div>
         </div>
    
-    
-    <!-- 文章顶部广告 -->
-    
-
-    <div class="container">
-        <?php if (have_posts()) : the_post(); update_post_caches($posts); ?>
-            <!--文章内容-->
-            <div class="post-content">
-                <?php the_content(); ?>
-                <?php wp_link_pages(array(
-                    'before'           => '<div class="single-pagination alert alert-secondary">' . __( '文章分页:', 'uuui' ),//所有链接之前的文本
-                    'after'            => '</div>',//所有链接之后的文本
-                    'link_before'      => '',//单个链接文本之前的文本
-		            'link_after'       => '',//单个链接文本之后的文本
-                    'next_or_number'   => 'number',//选择使用数字分页还是上一页、下一页文本分页，可选number或next
-                    'separator'        => ' ',//页码分隔符
-                    'nextpagelink'     => __( 'Next page', 'uuui'),//下一页链接文本
-                    'previouspagelink' => __( 'Previous page', 'uuui' ),//上一页链接文本
-                    'pagelink'         => '%',//页码的字符串格式，百分号%会被替换成数字，如页%会生成 “页1”、“页2”这样的样式
-                    'echo'             => 1,//选择是要返回结果还是直接输出，默认为True，返回NULL或返回内容；设置为false，则直接输出HTML格式
-                )); ?>
-            </div>
-        <?php else: ?>
-            <div class="errorbox">
-                没有文章！
-            </div>
-        <?php endif; ?>
-
-        
-        <!-- 文章底部广告 -->
-        <?php $text_bottom_ads = of_get_option('text-bottom-ads', '');
-             if (!empty($text_bottom_ads)) {
-                echo '<div style="text-align: center;width:100%;height:200px;min-width:200px;background-color:red;">' . $text_bottom_ads . '</div>';
-            } ?>
-
-
-        <div class="post-content-bottom">
-            <div class="dropdown-divider"></div>
-            <!-- 版权声明 -->
-            <div class="post-copyright-notice jumbotron">
-                <?php
-                    if($article_type == "original") {
-                        $the_permalink = get_permalink();
-                        $the_title = get_the_title();
-                        $blog_title = get_bloginfo('name');
-
-                        echo "<p><i class='iconfont icon-yuanchuang post-icon'></i>
-                              本作品采用<a href='https://creativecommons.org/licenses/by-nc-nd/3.0/cn/'>知识共享BY-NC-ND许可协议</a>进行许可。
-                              <br /><br />转载请注明出处：<a href='" . $the_permalink ."'>《".$the_title."》 | " . $blog_title . "</a></p>";
-                    } elseif ($article_type == "reproduced") {
-                        echo "<span>转载自：<a href='" . $reprinted_url ."'>" . $reprinted_from . "</a></span>";
-                        echo "<br /><i class='iconfont icon-azhuanzai post-icon'></i><span>本文转载自其他网站，请勿再次转载本文</span>";
-                    } elseif ($article_type == "translation") {
-                        echo "<span>原文：<a href='" . $translation_url ."'>" . $translation_from . "</a></span>";
-                        echo "<br /><i class='iconfont icon-fanyiline post-icon'></i><span>本文翻译自其他文章，可能存在翻译错误，本网站不保证文章准确性</span>";
-                }?>
-            </div>
-
-            <div class="dropdown-divider"></div>
-
-            <div style="margin-right:100px;width:100%;border-radius: 4px;">
-                <?php include( 'ads/text-bottom-ads.php' ); ?>
-            </div>
-
-            <div class="dropdown-divider"></div>
-
-            <!-- 文章标签 -->
-            <div class="post-tags">
-                <h5><i class="iconfont icon-biaoqian post-icon"></i>继续阅读与本文标签相同的文章</h5>
-                <div style="margin-top:20px;">
-                    <?php the_tags('<span class="post-tags-badge font-size-small-14">','</span><span class="post-tags-badge font-size-small-14">','</span>'); ?>
+        <div class="container">
+            <?php if (have_posts()) : the_post(); update_post_caches($posts); ?>
+                <!--文章内容-->
+                <div class="post-content">
+                    <?php the_content(); ?>
+                    <?php wp_link_pages(array(
+                        'before'           => '<div class="single-pagination alert alert-secondary">' . __( '文章分页:', 'uuui' ),//所有链接之前的文本
+                        'after'            => '</div>',//所有链接之后的文本
+                        'link_before'      => '',//单个链接文本之前的文本
+                        'link_after'       => '',//单个链接文本之后的文本
+                        'next_or_number'   => 'number',//选择使用数字分页还是上一页、下一页文本分页，可选number或next
+                        'separator'        => ' ',//页码分隔符
+                        'nextpagelink'     => __( 'Next page', 'uuui'),//下一页链接文本
+                        'previouspagelink' => __( 'Previous page', 'uuui' ),//上一页链接文本
+                        'pagelink'         => '%',//页码的字符串格式，百分号%会被替换成数字，如页%会生成 “页1”、“页2”这样的样式
+                        'echo'             => 1,//选择是要返回结果还是直接输出，默认为True，返回NULL或返回内容；设置为false，则直接输出HTML格式
+                    )); ?>
                 </div>
-            </div>
-            
-            <div class="dropdown-divider"></div>
+            <?php else: ?>
+                <div class="errorbox">
+                    没有文章！
+                </div>
+            <?php endif; ?>
 
-            <!-- 评论 -->
-            <div class="post-comments">
-                <h5><i class="iconfont icon-pinglun post-icon"></i>评论</h5>
-                <?php comments_template(); ?>
-            </div>
-            <div class="dropdown-divider"></div>
+            <div class="post-content-bottom">
+                <div class="dropdown-divider"></div>
+                <!-- 版权声明 -->
+                <div class="post-copyright-notice jumbotron">
+                    <?php
+                        if($article_type == "original") {
+                            $the_permalink = get_permalink();
+                            $the_title = get_the_title();
+                            $blog_title = get_bloginfo('name');
 
+                            echo "<p><i class='iconfont icon-yuanchuang post-icon'></i>
+                                本作品采用<a href='https://creativecommons.org/licenses/by-nc-nd/3.0/cn/'>知识共享BY-NC-ND许可协议</a>进行许可。
+                                <br /><br />转载请注明出处：<a href='" . $the_permalink ."'>《".$the_title."》 | " . $blog_title . "</a></p>";
+                        } elseif ($article_type == "reproduced") {
+                            echo "<span>转载自：<a href='" . $reprinted_url ."'>" . $reprinted_from . "</a></span>";
+                            echo "<br /><i class='iconfont icon-azhuanzai post-icon'></i><span>本文转载自其他网站，请勿再次转载本文</span>";
+                        } elseif ($article_type == "translation") {
+                            echo "<span>原文：<a href='" . $translation_url ."'>" . $translation_from . "</a></span>";
+                            echo "<br /><i class='iconfont icon-fanyiline post-icon'></i><span>本文翻译自其他文章，可能存在翻译错误，本网站不保证文章准确性</span>";
+                    }?>
+                </div>
+
+                <div class="dropdown-divider"></div>
+
+                <!-- 文章底部广告 -->
+                <div style="margin-right:100px;width:100%;border-radius: 4px;">
+                    <?php include( 'ads/text-bottom-ads.php' ); ?>
+                </div>
+
+                <div class="dropdown-divider"></div>
+
+                <!-- 文章标签 -->
+                <div class="post-tags">
+                    <h5><i class="iconfont icon-biaoqian post-icon"></i>继续阅读与本文标签相同的文章</h5>
+                    <div style="margin-top:20px;">
+                        <?php the_tags('<span class="post-tags-badge font-size-small-14">','</span><span class="post-tags-badge font-size-small-14">','</span>'); ?>
+                    </div>
+                </div>
+                
+                <div class="dropdown-divider"></div>
+
+                <!-- 评论 -->
+                <div class="post-comments">
+                    <h5><i class="iconfont icon-pinglun post-icon"></i>评论</h5>
+                    <?php comments_template(); ?>
+                </div>
+
+                <div class="dropdown-divider"></div>
+            </div>
         </div>
-    </div>
-</div>
-    <!-- 右 id="fixed-tool" -->
-    <div class="col-lg-3">
+    </div><!-- col-lg-9 col-sm-12 col-md-12 -->
 
-        <div class="single-tool border-radius-4" style="margin-top: 20px; margin-right: 40px;"><!-- 社交分享 -->
+<!-- 右 id="fixed-tool" -->
+    <div class="col-3">
+        <!-- 社交分享 -->
+        <div class="single-tool border-radius-4" style="margin-top: 20px; margin-right: 40px;">
             <div class="share">
                 <div class="share-list-1">
                     <div class="share-icon">
@@ -179,21 +169,7 @@
             </div>
         </div>
 
-        <div class="single-tool border-radius-4" style="margin-top:20px">
-            
-            <h5 class="single_sidebar_title"><i class="iconfont icon-gongju" style="margin-right: 5px; color:#ff5c00;"></i>文章小工具</h5>
-            <div class="dropdown-divider"></div>
-            <p class="font-size-small-14">《<?php the_title(); ?>》</p>
-            <div class="post-font-size-change">
-                <a href="javascript:void(0);"><span class="smaller">A-</span></a>
-                <a href="javascript:void(0);"><span>14</span></a>
-                <a href="javascript:void(0);"><span>16</span></a>
-                <a href="javascript:void(0);"><span>18</span></a>
-                <a href="javascript:void(0);"><span>20</span></a>
-                <a href="javascript:void(0);"><span class="bigger">A+</span></a>
-            </div>
-        </div>
-
+        <!-- 相似文章 -->
         <div class="single-tool border-radius-4" style="margin-top:20px">
             <h5 class="single_sidebar_title"><i class="iconfont icon-xiangsichanpin post-icon"></i>相似文章</h5>
             <div class="dropdown-divider"></div>
@@ -220,10 +196,9 @@
                     <?php endif; wp_reset_query(); } ?>                                                        
             </ul>
         </div>
+    </div><!-- col-3 -->
 
-
-    </div>
-</div>
+</div><!-- row -->
     
 <script type="text/javascript">//社交分享
     var _title,_source,_sourceUrl,_pic,_showcount,_desc,_site,
