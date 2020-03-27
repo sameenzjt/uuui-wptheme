@@ -9,7 +9,7 @@
 
 <div class="row">
     <div class="col-lg-9 col-sm-12 col-md-12">
-        <div style="margin-left:40px;">
+        <div class="post-title-div">
             <?php if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs(); ?>
 
             <h1 class="post-title text-center"><?php the_title(); ?></h1>
@@ -111,7 +111,7 @@
     </div><!-- col-lg-9 col-sm-12 col-md-12 -->
 
 <!-- 右 id="fixed-tool" -->
-    <div class="col-3">
+    <div class="col-3 single-right-side">
         <!-- 社交分享 -->
         <div class="single-tool border-radius-4" style="margin-top: 20px; margin-right: 40px;">
             <div class="share">

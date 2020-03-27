@@ -52,6 +52,10 @@
 }
 
 /** ************************** 社交分享 ************************** */
+.post-title-div{
+    margin-left:40px;
+}
+
 .post-title{
     font-family:  -apple-system, BlinkMacSystemFont,"Source Han Serif CN","Source Han Sans","Hiragino Sans GB", "MicroSoft YaHei",微软雅黑;
     font-weight: 700;
@@ -66,14 +70,7 @@
     margin-top: 20px;
     margin-left: 40px;
 }
-@media only screen and (max-width: 768px) {
-    .post-content{
-        max-width: 100%;
-        margin-top: 20px;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-}
+
 
 .post-content h2{
     font-size: 1.6em;

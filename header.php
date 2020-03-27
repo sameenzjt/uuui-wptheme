@@ -79,10 +79,6 @@
     <!-- style.css -->
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>?ver=<?php $my_theme = wp_get_theme(); echo $my_theme->get('Version'); ?>" type="text/css" media="screen" />
     
-    <!-- 移动端样式 -->
-    <?php if(wp_is_mobile()){ ?>
-        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_screen_768.css"/>
-    <?php } ?>
     
     <!-- 独立样式 -->
     <?php if( is_single() ) { ?>
@@ -91,6 +87,11 @@
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_single.css" type="text/css"/>
     <?php } elseif( is_page() ){ ?>
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_single.css" type="text/css"/>
+    <?php } ?>
+
+    <!-- 移动端样式 -->
+    <?php if(wp_is_mobile()){ ?>
+        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_screen_768.css"/>
     <?php } ?>
 
     <!-- 自定义style样式 -->
@@ -117,7 +118,6 @@
 </head>
 <?php flush(); ?>
 <body>
-
     <nav>
         <a href="<?php echo get_option('home'); ?>/">
             <?php 

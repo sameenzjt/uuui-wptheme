@@ -1,7 +1,3 @@
-@media screen and (max-width: 768px) {
-.hide-768{
-    display: none;
-}
 h4{
     font-size: 1.2rem;
 }
@@ -13,7 +9,7 @@ nav{
     width:100%;
     top:0px;
     height: 60px;
-    padding: 0px 10px;
+    padding: 0px 20px;
     background-color: #fff;
     -webkit-box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
     -moz-box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
@@ -60,6 +56,48 @@ nav{
     */
 }
 
+.post-title-div{
+    margin-left:0px;
+}
+
+.post-title-div h1{
+    font-size: 1.6em;
+}
+
+.post-content{
+    max-width: 100%;
+    margin: 20px 0px 0px;
+}
+
+.post-content h2{
+    font-size: 1.4em;
+    margin: 10px -20px 10px 0px;
+    padding: 0 20px;
+    border-left: 5px solid #e40000;
+}
+
+.post-content h3{
+    font-size: 1.3em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+}
+.post-content h4{
+    font-size: 1.2em;
+}
+.post-content h5{
+    font-size: 1.1em;
+}
+.post-content h6{
+    font-size: 1em;
+}
+
+.post-content p{
+    line-height: 1.7em;
+    text-indent:1em;
+    letter-spacing: 0.07em;
+}
+
 .post-img-div{
     border-radius: 4px;
     overflow: hidden;
@@ -97,4 +135,11 @@ nav{
     display: none;
 }
 
+.single-right-side{
+    display: none;
+}
+
+/** ********************************************** 页脚 ********************************************** */
+.footer-about-us {
+    display: none;
 }
