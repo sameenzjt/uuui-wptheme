@@ -1,3 +1,7 @@
+.hide-768{
+    display: none;
+}
+
 h4{
     font-size: 1.2rem;
 }
