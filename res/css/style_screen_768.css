@@ -32,12 +32,32 @@ nav{
     display: none;
 }
 
+.index-lanmu-four-div{
+    margin:0px;
+}
+
 .little-section{
     display: none;
 }
 
 .icon-wenzhang{
     margin-left: 10px;
+}
+
+.index-posts-list:hover{
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.index-posts-list:hover .post-img{
+    z-index: 5;
+    transform: scale(1); /*移动端图片不放大*/
+    /*
+    transition: all 0.15s ease-in;
+    -moz-transition: all 0.15s ease-in;
+    -webkit-transition: all 0.15s ease-in;
+    -o-transition: all 0.15s ease-in; 
+    */
 }
 
 .post-img-div{
@@ -53,7 +73,7 @@ nav{
 .post-img{
     /** img横向100%填充div */
     width:100%;
-	height:auto;
+    height:auto;
 }
 .index-posts-list-title{
     text-align: center;
@@ -66,10 +86,7 @@ nav{
 }
 
 .posts-list-info{
-    text-align: center;
-    font-size: 0.75em;
-    color: #757575;
-    margin: 0px 10px;
+    display: none;
 }
 .index-posts-list-excerpt{
     text-align: center;

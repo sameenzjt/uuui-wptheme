@@ -2,7 +2,7 @@
 
 <div class="row">
 
-    <div class="col-12">
+    <div class="col-12 index-lanmu-four-div">
         <?php include( 'index/index-lanmu-four.php' ); ?>
     </div>
 

@@ -436,19 +436,12 @@ function optionsframework_options() {
 		'type' => 'text'
 	);
 
+	
 /* —— 页面选择 —— */
 	$options[] = array(
 		'name' => __( '页面选择', 'uuui' ),
 		'type' => 'heading'
 	);
-		$options[] = array(
-			'name' => __( '登录', 'uuui' ),
-			'desc' => __( '登录页面内含注册模块', 'uuui' ),
-			'id' => 'page_login',
-			'class' => 'mini',
-			'type' => 'select',
-			'options' => $options_pages
-		);
 
 		$options[] = array(
 			'name' => __( '全部专题', 'uuui' ),
@@ -458,18 +451,8 @@ function optionsframework_options() {
 			'type' => 'select',
 			'options' => $options_pages
 		);
-
-		$options[] = array(
-			'name' => __( '用户中心', 'uuui' ),
-			'desc' => __( '请先发布页面：标题自定，页面模板择“用户中心”', 'uuui' ),
-			'id' => 'select_pages_user',
-			'class' => 'mini',
-			'type' => 'select',
-			'options' => $options_pages
-		);
-
-
 	
+
 /* —— 页首页脚设置 —— */
 	$options[] = array(
 		'name' => __( '页首页脚', 'uuui' ),

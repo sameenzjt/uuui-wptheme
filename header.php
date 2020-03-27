@@ -66,28 +66,31 @@
         }
     ?>
 
+    <!-- RSS -->
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="<?php echo get_bloginfo('rss2_url'); ?>" />
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有评论" href="<?php bloginfo('comments_rss2_url'); ?>" />
 
+    <!-- bootstrap -->
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
-    <!-- font-awesome -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/5.12.0-1/css/all.min.css" />
     <!-- https://github.com/daneden/animate.css -->
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/animate.css/3.7.2/animate.min.css" />
     <!-- iconfont -->
-    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_61d2rh3x1sa.css" />
+    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_hsli0wgq2cu.css" />
     <!-- style.css -->
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>?ver=<?php $my_theme = wp_get_theme(); echo $my_theme->get('Version'); ?>" type="text/css" media="screen" />
+    
     <!-- 移动端样式 -->
     <?php if(wp_is_mobile()){ ?>
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_screen_768.css"/>
     <?php } ?>
+    
     <!-- 独立样式 -->
     <?php if( is_single() ) { ?>
+        <!-- font-awesome -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/5.12.0-1/css/all.min.css" />
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_single.css" type="text/css"/>
     <?php } elseif( is_page() ){ ?>
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_single.css" type="text/css"/>
-        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style-login-registered.css" type="text/css"/>
     <?php } ?>
 
     <!-- 自定义style样式 -->
@@ -100,11 +103,21 @@
             echo "";
     } ?>
 
+    <!-- img图片src错误时加载默认图片 -->
+    <script type="text/javascript">
+        function nofind(){
+            var img=event.srcElement;
+            img.src="<?php bloginfo('template_url'); ?>/images/1col.png";
+            img.onerror=null; //控制不要一直跳动
+        }
+    </script>
+
 
     <?php wp_head(); ?>
 </head>
 <?php flush(); ?>
 <body>
+
     <nav>
         <a href="<?php echo get_option('home'); ?>/">
             <?php 
@@ -126,25 +139,33 @@
             }
             ?>
         </div>
+        <div class="float-right nav-login clearfix">
+            
+                <?php if ( !is_user_logged_in() ) {?>
+                    <a href="<?php echo wp_login_url( home_url(add_query_arg(array(),$wp->request)) ); ?>&page=login">
+                        <i class="iconfont icon-denglu" style="font-size: 16px; font-weight: 600; padding-left:10px;"></i>
+                    </a>
+                <?php } else { ?>
+                    <i class="iconfont icon-yidenglu" style="font-size: 16px; font-weight: 600; padding-left:10px;"></i>
+                    <div class="nav-user-div animated fadeInDown faster">
+                        <?php
+                            global $current_user; //当前用户信息数组
+                            wp_get_current_user();
+                            ?>
+                            <div class="nav-user-item w-100 text-center">
+                                <?php echo get_avatar( $current_user->user_email, 64); ?>
+                            </div>
+                            <div class="nav-user-item w-100 text-center">
+                                <?php echo $current_user->display_name; ?>
+                            </div>
+                            <a href="<?php echo wp_logout_url($url_this); ?>" class="font-size-small">
+                                <div class="nav-user-item w-100 text-center">登出<i class="iconfont icon-dengchu font-size-small" style="padding-left:10px;"></i></div>
+                            </a>
+                        <?php } ?>
+                    </div>
+                </div>
 
-        <div class="float-right nav-login">
-            <?php if ( !is_user_logged_in() ) {?>
-                <a href="<?php echo wp_login_url( home_url(add_query_arg(array(),$wp->request)) ); ?>&page=login">
-                    <img src="<?php bloginfo('template_url'); ?>/images/avatar/giraffe.png" width="32px" height="32px">
-                </a>
-            <?php } else { ?>
-                <?php
-                    global $current_user; //当前用户信息数组
-                    wp_get_current_user();
-
-                    echo get_avatar( $current_user->user_email, 32);
-                    echo "$current_user->display_name";
-                    ?>
-                    <a href="<?php echo wp_logout_url($url_this); ?>" class="font-size-small">登出</a>
-                
-            <?php } ?>
-
-        </div>
+        
         <div class="float-right header-search">
             <form style="width:200px" class="input-group input-group-sm mb-3" method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
                 <input class="form-control" type="text" placeholder="输入关键字" name="s" id="s"/>

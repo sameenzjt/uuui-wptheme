@@ -22,10 +22,10 @@
         <div class="index-posts-list">
             <a href="<?php the_permalink(); ?>">
                 <div class="post-img-div">
-                    <img class="post-img" src="<?php the_field('article-cover-images'); ?>">
+                    <img class="post-img" src="<?php the_field('article-cover-images'); ?>" onerror="nofind();">
                 </div>
                 <!--<img src="< ?php $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); echo $full_image_url[0]; ?>" class="index-posts-list-img">-->
-                <h4 class="index-posts-list-title"><?php the_title(); ?></h4>
+                <h2 class="index-posts-list-title"><?php the_title(); ?></h2>
                 <p class="font-size-small-14 index-posts-list-excerpt">
                     <?php if (has_excerpt()) {
                         echo $description = get_the_excerpt(); //文章编辑中的摘要

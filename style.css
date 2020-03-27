@@ -1,11 +1,11 @@
 /*
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
-Version: v0.23.3
+Version: v0.24.0
 Author: 张金涛
 Author URI: https://www.sameen.art
-Tags: 设计,UI
-Description: 设计资源分享网站 v0.23.3：【新增】后台登录保护；【更换】登陆页面为默认页；【美化】新登录页界面。  v0.23.2：【优化】网页标题；【优化】首页样式；【优化】主题设置。v0.23.1：【优化】社交软件分享文章功能；【优化】网站SEO功能；【优化】样式文件；【新增】自动判断移动端浏览器；【移除】文章小工具。
+Tags: 博客、主题选项、文章置顶、自定义标志
+Description: 设计资源分享网站 v0.24.0：【修改】页脚显示样式；【美化】首页样式，采用更多阴影；【修复】图片url错误时样式；【优化】移动端显示。
 */
 @charset "UTF-8";
 
@@ -25,6 +25,17 @@ body{
     line-height: 1.5em;
     background-color: #fff;
 }
+
+.index-posts-list h2{
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.5rem;
+}
+
+img[src=""],img:not([src]){/* img的标签src为空时避免谷歌浏览器有边框 */
+    opacity:0;
+}
+
 main {
     display: block;
     padding: 0px 40px;
@@ -50,18 +61,25 @@ a:hover{
     -o-transition: all 0.14s ease-in; /* Opera */
 }
 
+.index-posts-list a:hover{
+    text-decoration:none; 
+    color: #212121;
+    
+}
+
 nav{
     float: left;
     width:100%;
     position: fixed;
     top:0px;
-    z-index:999;
+    z-index:99;
     height: 60px;
     padding: 0px 40px;
     background-color: #fff;
-    -webkit-box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
-    -moz-box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
-    box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
+    -webkit-box-shadow: 0px 1px 10px 0px rgba(207,207,207,0.33);
+    -moz-box-shadow: 0px 1px 10px 0px rgba(207,207,207,0.33);
+    box-shadow: 0px 1px 10px 0px rgba(207,207,207,0.33);
+    border: 0px solid;
 }
 
 .inline{display: inline;}
@@ -80,18 +98,30 @@ nav{
     margin-top: 16px;
 }
 
-.nav-login img{
-    padding: 1px;
-    border-radius: 100%;
-    margin: 0px 10px;
-    -webkit-box-shadow: 0px 0px 7px 0px rgba(171,171,171,0.75);
-    -moz-box-shadow: 0px 0px 7px 0px rgba(171,171,171,0.75);
-    box-shadow: 0px 0px 7px 0px rgba(171,171,171,0.75);
-}
-
 .header-search{
     margin-top:14px;
     margin-right:10px
+}
+
+.nav-user-div{
+    display: none;
+}
+
+.nav-login:hover .nav-user-div{
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 160px;
+    z-index: 99;
+    background-color: #fff;
+    box-shadow: 1px 1px 8px 2px rgba(207,207,207,0.33);
+    border: 0px solid;
+}
+
+.nav-user-item{
+    margin: 5px 0px;
+    padding: 5px 10px;
 }
 
 .footer{
@@ -162,7 +192,8 @@ nav{
     margin-top: 10px;
     padding: 0px 0px;
     border-radius: 4px;
-    border:1px solid rgb(240, 240, 240);
+    box-shadow: 2px 4px 6px 2px rgba(207,207,207,0.33);
+    border: 0px solid;
 }
 
 .index-thematic-div:hover{
@@ -187,6 +218,10 @@ nav{
     -webkit-margin-after: 0;
 }
 
+.index-lanmu-four-div{
+    margin:20px 0px;
+}
+
 .post-img-div{
     float: left;
     border-radius: 4px;
@@ -200,6 +235,19 @@ nav{
     margin: 20px 0px;
     padding: 10px 10px;
     overflow: hidden;
+    transition: all 0.1s ease-in;
+    -moz-transition: all 0.1s ease-in; /* Firefox 4 */
+    -webkit-transition: all 0.1s ease-in; /* Safari 和 Chrome */
+    -o-transition: all 0.1s ease-in; /* Opera */
+}
+
+.index-posts-list:hover{
+    border-radius: 6px;
+    background-color: rgba(240, 240, 240);
+    transition: all 0.15s ease-in;
+    -moz-transition: all 0.15s ease-in; /* Firefox 4 */
+    -webkit-transition: all 0.15s ease-in; /* Safari 和 Chrome */
+    -o-transition: all 0.15s ease-in; /* Opera */
 }
 
 .post-img{
@@ -215,17 +263,14 @@ nav{
 
 .index-posts-list:hover .post-img{
     z-index: 5;
-    transform: scale(1.05); /*把图片放大1.05倍*/
-    transition: all 0.1s ease-in;
-    -moz-transition: all 0.1s ease-in; /* Firefox 4 */
-    -webkit-transition: all 0.1s ease-in; /* Safari 和 Chrome */
-    -o-transition: all 0.1s ease-in; /* Opera */
+    transform: scale(1.04); /*把图片放大1.05倍*/
+    transition: all 0.15s ease-in;
+    -moz-transition: all 0.15s ease-in; /* Firefox 4 */
+    -webkit-transition: all 0.15s ease-in; /* Safari 和 Chrome */
+    -o-transition: all 0.15s ease-in; /* Opera */
 }
 
-.index-posts-list:hover{
-    border-radius: 4px;
-    background-color: rgba(240, 240, 240);
-}
+
 
 .index-posts-list-title{
     font-weight: 600;
@@ -234,7 +279,8 @@ nav{
 
 .little-section{
     padding:15px;
-    border: rgb(232, 232, 232) 1px solid;
+    box-shadow: 1px 1px 8px 2px rgba(207,207,207,0.33);
+    border: 0px solid;
 }
 
 .font-size-small{
@@ -322,14 +368,44 @@ nav{
     padding: 2px 6px;
 }
 
+.btn_qq_qun{
+    
+    padding:10px;
+    background: linear-gradient(
+        270deg,
+        rgba(241, 187, 73, 1) 0%,
+        rgba(241, 154, 73, 1) 44%,
+        rgba(241, 131, 73, 1) 100%
+    );
+    cursor: pointer;
+}
+
+.btn_qq_qun:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+    display: inline-block;
+    width: 100%;
+    border-radius: 6px;
+    background: inherit;
+    filter: blur(3px) brightness(0.95);
+}
+
+.btn_qq_qun a{
+    color: #fff;
+}
+
 .back_top{
     padding: 8px 10px;
-    border: 1px solid rgb(236, 236, 236);
+    border: 0px solid;
     position: fixed;/*固定位置*/
     z-index: 99;/*设置优先级显示，保证不会被覆盖*/	
     right: 10px;
     bottom: 100px;
     color: rgb(160, 160, 160);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .back_top i{
@@ -338,7 +414,6 @@ nav{
 
 .back_top:hover{
     color: #ff5722;
-    border: 1px solid #ff5722;
 }
 
 

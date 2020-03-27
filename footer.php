@@ -56,7 +56,7 @@
                             <p>头条</p>
                         </a>
                     </div>
-                    <div class="float-left border-radius-4 w-100" style="background-color: #212121; padding:10px;">
+                    <div class="float-left btn_qq_qun border-radius-4 w-100">
                         <a href="<?php echo of_get_option('qq-qun', ''); ?>" target="_blank">
                             <i class="iconfont icon-qq"></i>&nbsp;&nbsp;官方QQ群
                         </a>
@@ -66,6 +66,7 @@
             <div class="col-lg-12 hide-768px">
                 <p style="color: #fff;" class="friend-link">
                     <span>友情链接：</span>
+                    <a target="_blank" href="https://www.sameen.art/" title="sameen">Sameen</a>
                     <?php if (function_exists('wpjam_blogroll')) wpjam_blogroll();?>
                    </p>
             </div>
@@ -80,7 +81,10 @@
         
     </footer>
     
-    <div class="back_top hide-768px border-radius-4"><i class="iconfont icon-top"></i></div>
+    <div class="back_top hide-768px border-radius-4"><i class="iconfont icon-zhiding5"></i></div>
+
+    
+
 
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
@@ -89,8 +93,6 @@
     <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
     <script type="text/javascript" src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     
-
-    <!-- 返回顶部，按钮默认不可见，当滚动页面到一定高度后，按钮出现（低于500px不显示），500毫秒动画 -->
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/uuui.min.js"></script>
     
     <?php if (is_home()) { ?>
@@ -107,6 +109,8 @@
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/page-login-registered.min.js"></script>
     
     <?php }?>
+
+    
 
 
     
