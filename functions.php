@@ -259,12 +259,12 @@ function count_words_read_time () {
 /* —— 支持中文用户名 —— 结束 */
 
 /** —— 自定义 WordPress 的默认 Gravatar 头像 ——https://www.wpdaxue.com/change-wordpress-default-gravatar.html */
-add_filter( 'avatar_defaults', 'newgravatar' );
+/**add_filter( 'avatar_defaults', 'newgravatar' );
 function newgravatar ($avatar_defaults) {
     $myavatar = get_bloginfo('template_directory') . '/images/wpdaxue-gravatar.jpg';  
     $avatar_defaults[$myavatar] = "WordPress大学 默认头像";  
     return $avatar_defaults;  
-}
+}*/
 /** —— 自定义 WordPress 的默认 Gravatar 头像 —— 结束 */
 
 
@@ -416,6 +416,17 @@ function newgravatar ($avatar_defaults) {
 	}
 	add_filter('pre_get_posts','search_filter_page');
 /** —— 搜索相关代码 —— 结束*/
+
+
+/** —— 更改搜索结果URL ——*/
+function change_search_url_rewrite() {
+	if ( is_search() && ! empty( $_GET['s'] ) ) {
+		wp_redirect( home_url( '/search/' ) . urlencode( get_query_var( 's' ) ) . '/');
+		exit();
+	}
+}
+add_action( 'template_redirect', 'change_search_url_rewrite' );
+/** —— 更改搜索结果URL —— 结束*/
 
 
 /** —— WordPress支持WebP格式的图片 —— */

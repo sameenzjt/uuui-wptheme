@@ -75,7 +75,7 @@
     <!-- https://github.com/daneden/animate.css -->
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/animate.css/3.7.2/animate.min.css" />
     <!-- iconfont -->
-    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_hsli0wgq2cu.css" />
+    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_qd20a7v4ab.css" />
     <!-- style.css -->
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>?ver=<?php $my_theme = wp_get_theme(); echo $my_theme->get('Version'); ?>" type="text/css" media="screen" />
     
@@ -113,6 +113,11 @@
         }
     </script>
 
+<script type="text/javascript">
+$(".icon-denglu").click(function(){
+  $(".search-form").hide();
+});
+</script>
 
     <?php wp_head(); ?>
 </head>
@@ -139,41 +144,54 @@
             }
             ?>
         </div>
-        <div class="float-right nav-login clearfix">
-            
-                <?php if ( !is_user_logged_in() ) {?>
-                    <a href="<?php echo wp_login_url( home_url(add_query_arg(array(),$wp->request)) ); ?>&page=login">
-                        <i class="iconfont icon-denglu" style="font-size: 16px; font-weight: 600; padding-left:10px;"></i>
-                    </a>
-                <?php } else { ?>
-                    <i class="iconfont icon-yidenglu" style="font-size: 16px; font-weight: 600; padding-left:10px;"></i>
-                    <div class="nav-user-div animated fadeInDown faster">
-                        <?php
-                            global $current_user; //当前用户信息数组
-                            wp_get_current_user();
-                            ?>
-                            <div class="nav-user-item w-100 text-center">
-                                <?php echo get_avatar( $current_user->user_email, 64); ?>
-                            </div>
-                            <div class="nav-user-item w-100 text-center">
-                                <?php echo $current_user->display_name; ?>
-                            </div>
-                            <a href="<?php echo wp_logout_url($url_this); ?>" class="font-size-small">
-                                <div class="nav-user-item w-100 text-center">登出<i class="iconfont icon-dengchu font-size-small" style="padding-left:10px;"></i></div>
-                            </a>
-                        <?php } ?>
-                    </div>
-                </div>
 
+        <!-- 登录/未登录 -->
+        <div class="float-right nav-login clearfix">
+            <?php if ( !is_user_logged_in() ) {?>
+                <a href="<?php echo wp_login_url( home_url(add_query_arg(array(),$wp->request)) ); ?>&page=login">
+                    <i class="iconfont icon-denglu" style="font-size: 16px; font-weight: 600; padding-left:10px;"></i>
+                </a>
+            <?php } else { ?>
+                <i class="iconfont icon-yidenglu" style="font-size: 16px; font-weight: 600; padding-left:10px;"></i>
+                <div class="nav-user-div animated fadeInDown faster">
+                    <?php
+                        global $current_user; //当前用户信息数组
+                        wp_get_current_user();
+                        ?>
+                        <div class="nav-user-item w-100 text-center">
+                            <?php echo get_avatar( $current_user->user_email, 64); ?>
+                        </div>
+                        <div class="nav-user-item w-100 text-center">
+                            <?php echo $current_user->display_name; ?>
+                        </div>
+                        <a href="<?php echo wp_logout_url($url_this); ?>" class="font-size-small">
+                            <div class="nav-user-item w-100 text-center">登出<i class="iconfont icon-dengchu font-size-small" style="padding-left:10px;"></i></div>
+                        </a>
+                    <?php } ?>
+                </div>
+        </div>
         
         <div class="float-right header-search">
-            <form style="width:200px" class="input-group input-group-sm mb-3" method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
-                <input class="form-control" type="text" placeholder="输入关键字" name="s" id="s"/>
-                <div class="input-group-append">
-                    <input class="btn btn-success" type="submit" value="搜 索" onClick="if(document.forms['search'].searchinput.value=='- Search -')document.forms['search'].searchinput.value='';" alt="Search" />
-                </div>
-            </form>
+            <a id="kl" href="javascript:void(0);" title="搜索">
+                <i class="iconfont icon-sousuo" style="font-size: 16px; font-weight: 600; padding-left:10px;"></i>
+            </a>
+            <div id="search-form" class="search-form">
+                <a id="jk" href="javascript:void(0);" title="关闭搜索框">
+                    <i class="iconfont icon-guanbi float-right" style="font-size: 16px;"></i>
+                </a>
+                <form style="width:80%" class="input-group input-group-sm mb-3 mx-auto" method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
+                    <input class="form-control" type="text" placeholder="输入关键字" name="s" id="s"/>
+                    <div class="input-group-append">
+                        <input class="btn btn-success" type="submit" value="搜 索" onClick="if(document.forms['search'].searchinput.value=='- Search -')document.forms['search'].searchinput.value='';" alt="Search" />
+                    </div>
+                </form>
+                
+            </div>
         </div>
+        
+        
+
+        
         
     </nav>
     <div style="clear:both;"></div>

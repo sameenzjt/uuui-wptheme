@@ -85,8 +85,6 @@
     <div class="back_top hide-768px border-radius-4"><i class="iconfont icon-zhiding5"></i></div>
 
     
-
-
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
@@ -107,11 +105,21 @@
     <?php } elseif( is_page() ) { ?>
         <!-- 工具栏上滑至顶部后固定位置 -->
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/tool-slide-top-fixed.min.js"></script>
-        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/page-login-registered.min.js"></script>
     
     <?php }?>
 
-    
+    <script>//搜索框显示与隐藏
+        var search_form = document.getElementById("search-form");
+        var search_form_show = document.getElementById("kl");
+        var search_form_hidden = document.getElementById("jk");
+        search_form_show.onclick = function () {
+            search_form.style.display = "block";
+        }
+        search_form_hidden.onclick = function () {
+            search_form.style.display = "none";
+        }
+    </script>
+
 
 
     

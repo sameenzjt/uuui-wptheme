@@ -1,11 +1,11 @@
 /*
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
-Version: v0.24.2
+Version: v0.24.3
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 博客、主题选项、文章置顶、自定义标志
-Description: 设计资源分享网站 v0.24.1：【精简】主题包无用文件；【优化】样式文件引入顺序；【优化】移动端显示。v0.24.0：【修改】页脚显示样式；【美化】首页样式，采用更多阴影；【修复】图片url错误时样式；【优化】移动端显示。
+Description: 设计资源分享网站 v0.24.3：【美化】搜索框；【更改】搜索结果URL。v0.24.1：【精简】主题包无用文件；【优化】样式文件引入顺序；【优化】移动端显示。v0.24.0：【修改】页脚显示样式；【美化】首页样式，采用更多阴影；【修复】图片url错误时样式；【优化】移动端显示。
 
 */
 @charset "UTF-8";
@@ -123,6 +123,23 @@ nav{
 .nav-user-item{
     margin: 5px 0px;
     padding: 5px 10px;
+}
+
+.search-form{
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 25%;
+    width: 50%;
+    padding: 20px;
+    z-index: 99;
+    background-color: #fff;
+    box-shadow: 1px 10px 10px 6px rgba(207,207,207,0.33);
+    border: 0px solid;
+}
+
+.search-form #searchform{
+   margin-top: 40px;
 }
 
 .footer{
