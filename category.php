@@ -17,8 +17,6 @@
                             ?>
                         </span>篇文章
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <span>550398</span>位观众
-                        &nbsp;&nbsp;&nbsp;&nbsp;
                         <span>5</span>人评论
                     </p>
                     <p class="font-size-small-14" style="margin-top: 40px;">

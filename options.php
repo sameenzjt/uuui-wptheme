@@ -363,8 +363,9 @@ function optionsframework_options() {
 
 	
 	$options[] = array(
-		'name' => __( '设计师必备栏目', 'uuui' ),
+		'name' => __( '必备网站栏目', 'uuui' ),
 		'desc' => __( '示例：&lt;a href="此处填写链接" target="_blank"&gt;此处填写名称&lt;/a&gt;', 'uuui' ),
+		'std' => '<a href="https://sameen.art" target="_blank">sameen.art</a>',
 		'id' => 'designer-must-have',
 		'type' => 'textarea'
 	);

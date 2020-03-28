@@ -75,7 +75,7 @@
     <!-- https://github.com/daneden/animate.css -->
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/animate.css/3.7.2/animate.min.css" />
     <!-- iconfont -->
-    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_qd20a7v4ab.css" />
+    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_4zzzlieuj55.css" />
     <!-- style.css -->
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>?ver=<?php $my_theme = wp_get_theme(); echo $my_theme->get('Version'); ?>" type="text/css" media="screen" />
     
@@ -147,13 +147,9 @@ $(".icon-denglu").click(function(){
 
         <!-- 登录/未登录 -->
         <div class="float-right nav-login clearfix">
-            <?php if ( !is_user_logged_in() ) {?>
-                <a href="<?php echo wp_login_url( home_url(add_query_arg(array(),$wp->request)) ); ?>&page=login">
-                    <i class="iconfont icon-denglu" style="font-size: 16px; font-weight: 600; padding-left:10px;"></i>
-                </a>
-            <?php } else { ?>
+            <?php if ( is_user_logged_in() ) {?>
                 <i class="iconfont icon-yidenglu" style="font-size: 16px; font-weight: 600; padding-left:10px;"></i>
-                <div class="nav-user-div animated fadeInDown faster">
+                <div class="nav-user-div animated fadeInDown faster clearfix">
                     <?php
                         global $current_user; //当前用户信息数组
                         wp_get_current_user();
@@ -164,11 +160,21 @@ $(".icon-denglu").click(function(){
                         <div class="nav-user-item w-100 text-center">
                             <?php echo $current_user->display_name; ?>
                         </div>
-                        <a href="<?php echo wp_logout_url($url_this); ?>" class="font-size-small">
-                            <div class="nav-user-item w-100 text-center">登出<i class="iconfont icon-dengchu font-size-small" style="padding-left:10px;"></i></div>
+                        <?php if( $current_user->roles[0] == 'administrator' ) { ?>
+                            <a href="<?php echo home_url(); ?>/wp-admin/" class="font-size-small float-left" target="_blank">
+                                <div class="nav-user-item w-100 text-center"><i class="iconfont icon-shezhi font-size-small" style="padding:0 3px 0 10px;"></i>后台</div>
+                            </a>
+                        <?php } ?>
+                        <a href="<?php echo wp_logout_url($url_this); ?>" class="font-size-small float-right">
+                            <div class="nav-user-item w-100 text-center">登出<i class="iconfont icon-dengchu font-size-small" style="padding:0 10px 0 3px;"></i></div>
                         </a>
-                    <?php } ?>
                 </div>
+                
+            <?php } else{ ?>
+                <a href="<?php echo wp_login_url( home_url(add_query_arg(array(),$wp->request)) ); ?>&page=login">
+                    <i class="iconfont icon-denglu" style="font-size: 16px; font-weight: 600; padding-left:10px;"></i>
+                </a>
+            <?php } ?>
         </div>
         
         <div class="float-right header-search">

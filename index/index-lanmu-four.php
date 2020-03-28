@@ -46,11 +46,11 @@
         </div>
     </div>
 
-    <!--设计师必备--> 
+    <!--必备网站--> 
     <div class="col-lg-3 col-sm-6">
         <div class="little-section border-radius-4 h-100">
             <i class="iconfont icon-gongju1 icon"></i>
-            <span>设计师必备</span>
+            <span>必备网站</span>
             <span  class="font-size-small">倾心推荐</span>
             <div class="dropdown-divider"></div>
             <div class="designer-must-have">
