@@ -99,7 +99,7 @@
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/index-lanmu-soft.js"></script>
     
     <?php } elseif( is_single() ) { ?>
-        <script type="text/javascript" src="http://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+        <script type="text/javascript" src="https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/share.js"></script>
         
     <?php } elseif( is_page() ) { ?>

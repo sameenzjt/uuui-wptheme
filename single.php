@@ -83,7 +83,7 @@
                 <div class="dropdown-divider"></div>
 
                 <!-- 文章底部广告 -->
-                <div style="margin-right:100px;width:100%;border-radius: 4px;">
+                <div style="margin-right:100px;width:100%;height: auto;border-radius: 4px;">
                     <?php include( 'ads/text-bottom-ads.php' ); ?>
                 </div>
 
@@ -173,7 +173,7 @@
         <div class="single-tool border-radius-4" style="margin-top:20px">
             <h5 class="single_sidebar_title"><i class="iconfont icon-xiangsichanpin post-icon"></i>相似文章</h5>
             <div class="dropdown-divider"></div>
-            <ul style="list-style-type:none; margin: 0px; padding: 0px; font-size: 14px;">
+            <ul class="font-size-small-14" style="list-style-type:none; margin: 0px; padding: 0px;">
                 <?php $i=1;
                     $cats = wp_get_post_categories($post->ID);
                     if ($cats) {
@@ -185,7 +185,7 @@
                     query_posts($args);
                     if (have_posts()) :
                         while (have_posts()) : the_post(); update_post_caches($posts); ?>
-                            <li style="list-style-type: none; display: block;">
+                            <li style="display: block;">
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                     <span class="num"><?php echo $i;$i++; ?></span>
                                     <?php the_title(); ?>

@@ -42,16 +42,16 @@
 .wechat-share-qr{
     background-color: #fff;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 70px;
+    left: 80px;
     overflow: hidden;
-    z-index: 99;
+    z-index: 9;
 
     padding: 20px;
     border: 1px solid #c0c0c0;
 }
 
-/** ************************** 社交分享 ************************** */
+/** ************************** 社交分享↑ ************************** */
 
 .post-title-div{
     margin-left:40px;
@@ -70,6 +70,10 @@
     margin-right: 40px;
     margin-top: 20px;
     margin-left: 40px;
+}
+
+.post-title-div h1{
+    font-size: 2rem;
 }
 
 
@@ -276,10 +280,6 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 .page-content a{
     text-decoration: underline;
 }
-.page-content img{
-    max-width: 100%;
-    height: auto;
-}
 
 .page-tool ul{
     list-style: none;
@@ -289,10 +289,57 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
     padding: 5px 0px;
 }
 
-@media only screen and (max-width: 768px) {
-    .page-support-content{
-        padding: 0px 10px;
+/** ************************** 深色模式 ************************** */
+
+@media (prefers-color-scheme: dark) {
+    .single-tool{
+        background-color: #2a2a2a;
+        box-shadow: 2px 4px 6px 2px rgba(30,30,30,0.33);
+        border: 0px solid;
     }
+
+    .share i{
+        color: #dedede;
+    }
+
+    .share-icon:hover{
+        background-color: #313131;
+    }
+
+    .share-icon:active{
+        background-color: #383838;
+    }
+
+    .post-copyright-notice{
+        background-color: #2a2a2a;
+        box-shadow: 2px 4px 6px 2px rgba(30,30,30,0.33);
+    }
+
+    .post-tags-badge a{
+        background-color: #2a2a2a;
+        box-shadow: 2px 4px 6px 2px rgba(30,30,30,0.33);
+    }
+    
+    .post-tags-badge a:hover {
+        color: #dedede;
+        background-color:#ff5722;
+    }
+
+    .wechat-share-qr{
+        background-color: #313131;
+        box-shadow: 1px 1px 8px 2px rgba(10,10,10,0.33);
+        border: 0px solid;
+    }
+
+    .post-content img{
+        -webkit-filter: brightness(0.8);
+        filter: brightness(0.8);
+    }
+
+
+    
 }
+
+
 
 

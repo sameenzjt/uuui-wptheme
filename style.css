@@ -1,11 +1,11 @@
 /*
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
-Version: v0.24.4
+Version: v0.24.5
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 博客、主题选项、文章置顶、自定义标志
-Description: 设计资源分享网站 v0.24.4：【增加】前台管理员进入后台入口；【优化】必备网站栏目；【删除】专题浏览人数文本。 v0.24.3：【美化】搜索框；【更改】搜索结果URL。v0.24.1：【精简】主题包无用文件；【优化】样式文件引入顺序；【优化】移动端显示。v0.24.0：【修改】页脚显示样式；【美化】首页样式，采用更多阴影；【修复】图片url错误时样式；【优化】移动端显示。
+Description: 设计资源分享网站 v0.24.5：【新增】前台页面深色模式(Material Design)；【修复】二维码无法生成的bug；【修复】样式文件错误代码；【删除】多余的错误代码；【优化】二维码显示位置。 v0.24.4：【增加】前台管理员进入后台入口；【优化】必备网站栏目；【删除】专题浏览人数文本。 v0.24.3：【美化】搜索框；【更改】搜索结果URL。v0.24.1：【精简】主题包无用文件；【优化】样式文件引入顺序；【优化】移动端显示。v0.24.0：【修改】页脚显示样式；【美化】首页样式，采用更多阴影；【修复】图片url错误时样式；【优化】移动端显示。
 
 */
 @charset "UTF-8";
@@ -331,7 +331,6 @@ nav{
 .all-tags-btn:hover,
 .sidebar_tag_cloud a:hover,
 .lanmu-icon:hover,
-.designer-must-have a:hover,
 .designer-must-have a:hover{
     color: #fff;
     background-color:#ff5722;
@@ -511,8 +510,7 @@ nav{
 }
 
 .sidebar-tags-div{
-    padding:10px 10px;
-    background-color:blueviolet;
+    padding:10px;
     border-radius: 4px;
     background-color: rgba(248, 248, 248);
 }
@@ -620,3 +618,97 @@ nav{
     display: inline-block;
     white-space: nowrap;/*强制不换行*/
 }
+
+
+/** ************************** 深色模式 ************************** */
+
+@media (prefers-color-scheme: dark) {
+    body{
+        color: #dedede;
+        background-color: #212121;
+    }
+    a{
+        color: #dedede;
+    }
+    nav{
+        background-color: #2a2a2a;
+        -webkit-box-shadow: 0px 1px 10px 0px rgba(10,10,10,0.33);
+        -moz-box-shadow: 0px 1px 10px 0px rgba(10,10,10,0.33);
+        box-shadow: 0px 1px 10px 0px rgba(10,10,10,0.33);
+    }
+
+    .post-img,
+    .sidebar-box img,
+    .index-thematic-img{
+        -webkit-filter: brightness(0.8);
+        filter: brightness(0.8);
+    }
+
+    .font-size-small-14,
+    .support_menu_ul li a,
+    .font-size-small,
+    .font-size-small a,
+    .sticky_posts li a{
+        color: #999999;
+    }
+    
+    .font-size-small a:hover,
+    .support_menu_ul li a:hover,
+    .support_menu_ul .current-menu-item a{
+        color: #ff5722;
+    }
+
+    .index-thematic-div,
+    .little-section,
+    .index-posts-list:hover,
+    .sidebar-border{
+        background-color: #2a2a2a;
+        box-shadow: 2px 4px 6px 2px rgba(30,30,30,0.33);
+    }
+
+    .sidebar-border{
+        border: 0px solid;
+    }
+
+    .index-thematic-div:hover{
+        -webkit-box-shadow: 0px 0px 8px 0px rgba(10, 10, 10, 0.75);
+        -moz-box-shadow: 0px 0px 8px 0px rgba(10,10,10,0.75);
+        box-shadow: 0px 0px 8px 0px rgba(10,10,10,0.75);
+    }
+
+    .index-posts-list a:hover,
+    .index-thematic-div a,
+    .index-thematic-div a:hover{
+        color: #dedede;
+        
+    }
+
+    .sidebar-tags-div,
+    .all-tags-btn{
+        color: #999999;
+        background-color: #313131;
+    }
+
+    .search-form{
+        background-color: #2a2a2a;
+        box-shadow: 1px 10px 10px 6px rgba(10,10,10,0.33);
+    }
+    .nav-login:hover .nav-user-div{
+        background-color: #2a2a2a;
+        box-shadow: 1px 1px 8px 2px rgba(10,10,10,0.33);
+    }
+
+    .designer-must-have a{
+        color: #999999;
+        background-color: #313131;
+    }
+
+    .dropdown-divider{
+        border-top: 1px solid #404040;
+    }
+
+
+}
+
+
+/** ************************** 深色模式 ************************** */

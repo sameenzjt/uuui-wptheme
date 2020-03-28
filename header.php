@@ -78,7 +78,7 @@
     <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_4zzzlieuj55.css" />
     <!-- style.css -->
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>?ver=<?php $my_theme = wp_get_theme(); echo $my_theme->get('Version'); ?>" type="text/css" media="screen" />
-    
+
     
     <!-- 独立样式 -->
     <?php if( is_single() ) { ?>
@@ -113,11 +113,7 @@
         }
     </script>
 
-<script type="text/javascript">
-$(".icon-denglu").click(function(){
-  $(".search-form").hide();
-});
-</script>
+
 
     <?php wp_head(); ?>
 </head>
