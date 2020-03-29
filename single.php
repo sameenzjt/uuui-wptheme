@@ -61,7 +61,7 @@
             <div class="post-content-bottom">
                 <div class="dropdown-divider"></div>
                 <!-- 版权声明 -->
-                <div class="post-copyright-notice jumbotron">
+                <div class="post-copyright-notice jumbotron w-100">
                     <?php
                         if($article_type == "original") {
                             $the_permalink = get_permalink();

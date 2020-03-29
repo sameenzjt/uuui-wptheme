@@ -1,7 +1,7 @@
 <div class="row">
 
     <!--软件教程-->
-    <div class="col-lg-3 col-sm-6">
+    <div class="col-lg-3 col-sm-6 little-section-father">
         <div class="little-section border-radius-4 h-100">
             <i class="iconfont icon-shejiruanjian icon"></i>
             <span>软件教程</span>
@@ -47,7 +47,7 @@
     </div>
 
     <!--必备网站--> 
-    <div class="col-lg-3 col-sm-6">
+    <div class="col-lg-3 col-sm-6 little-section-father">
         <div class="little-section border-radius-4 h-100">
             <i class="iconfont icon-gongju1 icon"></i>
             <span>必备网站</span>
@@ -61,7 +61,7 @@
     </div>
 
     <!--热门频道--> 
-    <div class="col-lg-3 col-sm-6">
+    <div class="col-lg-3 col-sm-6 little-section-father">
         <div class="little-section border-radius-4 h-100">
             <i class="iconfont icon-hot_light icon"></i>
             <span>热门频道</span>
@@ -97,7 +97,7 @@
     </div>
 
     <!-- 软件教程 --> 
-    <div class="col-lg-3 col-sm-6">
+    <div class="col-lg-3 col-sm-6 little-section-father">
         <div class="little-section border-radius-4 h-100">
             
         </div>

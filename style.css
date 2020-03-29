@@ -1,11 +1,11 @@
 /*
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
-Version: v0.24.7
+Version: v0.24.8
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 博客、主题选项、文章置顶、自定义标志
-Description: 设计资源分享网站 v0.24.7：【新增】短码插入站内文章；【移除】响应式(暂时)。 v0.24.6：【新增】菜单未设置时的提示信息；【优化】PWA样式，【优化】网站社交联系方式的显示方式。 v0.24.5：【新增】前台页面深色模式(Material Design)；【修复】二维码无法生成的bug；【修复】样式文件错误代码；【删除】多余的错误代码；【优化】二维码显示位置。 v0.24.4：【增加】前台管理员进入后台入口；【优化】必备网站栏目；【删除】专题浏览人数文本。 v0.24.3：【美化】搜索框；【更改】搜索结果URL。v0.24.1：【精简】主题包无用文件；【优化】样式文件引入顺序；【优化】移动端显示。v0.24.0：【修改】页脚显示样式；【美化】首页样式，采用更多阴影；【修复】图片url错误时样式；【优化】移动端显示。
+Description: 设计资源分享网站 v0.24.8：【修复】qr.js无法获取数据的bug；【优化】样式重复问题；【优化】网页响应式。 v0.24.7：【新增】短码插入站内文章；【移除】响应式(暂时)。 v0.24.6：【新增】菜单未设置时的提示信息；【优化】PWA样式，【优化】网站社交联系方式的显示方式。 v0.24.5：【新增】前台页面深色模式(Material Design)；【修复】二维码无法生成的bug；【修复】样式文件错误代码；【删除】多余的错误代码；【优化】二维码显示位置。 v0.24.4：【增加】前台管理员进入后台入口；【优化】必备网站栏目；【删除】专题浏览人数文本。 v0.24.3：【美化】搜索框；【更改】搜索结果URL。v0.24.1：【精简】主题包无用文件；【优化】样式文件引入顺序；【优化】移动端显示。v0.24.0：【修改】页脚显示样式；【美化】首页样式，采用更多阴影；【修复】图片url错误时样式；【优化】移动端显示。
 
 */
 @charset "UTF-8";
@@ -140,6 +140,10 @@ nav{
 
 .search-form #searchform{
    margin-top: 40px;
+}
+
+footer{
+    margin-top: 20px;
 }
 
 .footer{
@@ -339,6 +343,9 @@ nav{
     color: #757575;
 }
 
+.support_menu_ul{
+    padding: 0px;
+}
 
 .badge-tags:hover,
 .tag-cloud-link:hover,
@@ -582,6 +589,11 @@ nav{
     background-color: #ff5722;
 }
 
+.footer-menu-div{
+    color: #fff;
+    padding: 0px 60px;
+}
+
 .footer_menu ul{
     list-style: none;
     padding: 0px;
@@ -622,6 +634,7 @@ nav{
 }
 
 .sticky_posts li a{
+    color: #999999;
     font-size: 14px;
 }
 
@@ -661,19 +674,9 @@ nav{
         filter: brightness(0.8);
     }
 
-    .font-size-small-14,
-    .support_menu_ul li a,
-    .font-size-small,
-    .font-size-small a,
-    .sticky_posts li a{
-        color: #999999;
-    }
     
-    .font-size-small a:hover,
-    .support_menu_ul li a:hover,
-    .support_menu_ul .current-menu-item a{
-        color: #ff5722;
-    }
+    
+   
 
     .index-thematic-div,
     .little-section,
@@ -736,12 +739,3 @@ nav{
 
 /** ************************** 深色模式 ************************** */
 
-
-@media screen and (max-width: 992px) {
-    .single-right-side{
-        display: none;
-    }
-    footer{
-        padding: 0px 80px;
-    }
-}

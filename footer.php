@@ -2,11 +2,11 @@
 
     <footer class="footer">
         <div class="row">
-            <div class="col-lg-4 col-sm-6 col-md-12 footer-about-us">
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-about-us">
                 <p>关于我们</p>
                 <p class=" font-size-small-14" style="color:#BDBDBD"><?php echo of_get_option('footer-about-us', ''); ?></p>
             </div>
-            <div class="col-lg-5 footer-about-us" style="padding: 0px 60px;">
+            <div class="col-lg-5 footer-menu-div">
                 <div class="row">
                     <div class="col-4 footer_menu">
                         <p><?php echo of_get_option('footer_menu_1_title', ''); ?></p>
@@ -36,7 +36,7 @@
                     
                 </div>
             </div>
-            <div class="col-lg-3 col-sm-6 col-md-12 text-center">
+            <div class="col-lg-3 col-md-6 col-sm-12 text-center">
                 
                     <div class="float-left" style="width:33%;overflow: hidden;">
                         <a title="微信二维码" href="javascript:void(0);" class="show_weixin">
@@ -88,6 +88,10 @@
     
     <div class="back_top border-radius-4"><i class="iconfont icon-zhiding5"></i></div>
 
+
+    <script type="text/javascript">//网站社交地址二维码，在jquery.qrcode.min.js之前引入
+        var _wechat_url = '<?php echo of_get_option('weixin_qr_uploader', ''); ?>';
+    </script>
     
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
@@ -135,25 +139,7 @@
         }
     </script>
 
-    <script type="text/javascript">//网站社交地址二维码
-        var _wechat_url = '<?php echo of_get_option('weixin_qr_uploader', ''); ?>';
-        
-        //网站微信二维码 css控制二维码隐藏和出现
-        $("#weixin-show-qr").qrcode({
-            text: _wechat_url, //设置二维码内容
-            //render: "table", //设置渲染方式 
-            width: 128, //设置宽度,默认生成的二维码大小是 256×256
-            height: 128, //设置高度 
-            typeNumber: -1, //计算模式 
-            background: "#ffffff", //背景颜色 
-            foreground: "#000000" //前景颜色 
-        });
-        $('.show_weixin').click(function(){
-            $('.wechat-show-qr').toggle();
-            $('.weixin-show-qr').toggle();
-            $('.show_weixin_popup_foot').toggle();
-        });
-    </script>
+    
 
 
 
