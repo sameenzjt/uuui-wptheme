@@ -40,11 +40,15 @@
 /* —— 注册菜单 —— */
 	register_nav_menus( array(
 		'nav_menu' => '导航栏菜单',
-		'footer_menu_1' => '页脚导航1',
-		'footer_menu_2' => '页脚导航2',
-		'footer_menu_3' => '页脚导航3',
+		'footer_menu_1' => '页脚导航左',
+		'footer_menu_2' => '页脚导航中',
+		'footer_menu_3' => '页脚导航右',
 		'support_menu' => '支持与服务',
 	) );
+	//菜单回调函数
+	function nav_menus_fallback(){
+		echo '<div class="menu-alert">'.__( '请在 “后台 - 外观 - 菜单” 设置导航菜单','uuui' ).'</div>';
+	}
 /* —— 注册菜单 —— 结束 */
 
 

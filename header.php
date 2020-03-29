@@ -58,9 +58,10 @@
 
     <?php //Web 应用的名称（仅当网站被用作为一个应用时才使用）//Chrome、Firefox OS 和 Opera 的主题颜色
         $application_name = of_get_option('application-name', ''); 
+        $application_color = of_get_option('application-color', '');
         if (!empty($application_name)){
             echo '<meta name="application-name"  content="' . $application_name. '">';
-            echo '<meta name="theme-color" content="#ff5722">';
+            echo '<meta name="theme-color" content="' . $application_color . '">';
         }else{
             echo "";
         }
@@ -136,7 +137,7 @@
         <div class="nav-link hide-768px float-left">
             <?php 
             if(function_exists('wp_nav_menu')) {
-                wp_nav_menu(array( 'theme_location' => 'nav_menu','container_id'=>'menu_left') ); 
+                wp_nav_menu(array( 'theme_location' => 'nav_menu','container_id'=>'menu_left','fallback_cb' => 'nav_menus_fallback') ); 
             }
             ?>
         </div>

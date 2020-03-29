@@ -16,3 +16,19 @@
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover({html : true });   
 });
+
+//网站微信二维码 css控制二维码隐藏和出现
+$("#weixin-show-qr").qrcode({
+    text: _wechat_url, //设置二维码内容
+    //render: "table", //设置渲染方式 
+    width: 128, //设置宽度,默认生成的二维码大小是 256×256
+    height: 128, //设置高度 
+    typeNumber: -1, //计算模式 
+    background: "#ffffff", //背景颜色 
+    foreground: "#000000" //前景颜色 
+});
+$('.show_weixin').click(function(){
+    $('.wechat-show-qr').toggle();
+    $('.weixin-show-qr').toggle();
+    $('.show_weixin_popup_foot').toggle();
+});

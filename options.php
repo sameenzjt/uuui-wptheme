@@ -469,19 +469,19 @@ function optionsframework_options() {
 	
 		$options[] = array(
 			'name' => __( '页脚导航标题', 'uuui' ),
-			'desc' => __( '页脚第一列导航', 'uuui' ),
+			'desc' => __( '页脚导航左', 'uuui' ),
 			'id' => 'footer_menu_1_title',
 			'class' => 'mini',
 			'type' => 'text'
 		);
 		$options[] = array(
-			'desc' => __( '页脚第二列导航', 'uuui' ),
+			'desc' => __( '页脚导航中', 'uuui' ),
 			'id' => 'footer_menu_2_title',
 			'class' => 'mini',
 			'type' => 'text'
 		);
 		$options[] = array(
-			'desc' => __( '页脚第三列导航', 'uuui' ),
+			'desc' => __( '页脚导航右', 'uuui' ),
 			'id' => 'footer_menu_3_title',
 			'class' => 'mini',
 			'type' => 'text'
@@ -489,19 +489,21 @@ function optionsframework_options() {
 
 		$options[] = array(
 			'name' => __( '页脚二维码', 'uuui' ),
-			'desc' => __( '微信二维码，支持外链', 'uuui' ),
+			'desc' => __( '用于生成二维码，需要微信网址(具体方式请百度)', 'uuui' ),
 			'id' => 'weixin_qr_uploader',
-			'type' => 'upload'
+			'type' => 'text'
 		);
 		$options[] = array(
-			'desc' => __( '微博二维码，支持外链', 'uuui' ),
-			'id' => 'weibo_qr_uploader',
-			'type' => 'upload'
+			'desc' => __( '微博用户地址', 'uuui' ),
+			'placeholder' => 'https://weibo.com/u/6027243059',
+			'id' => 'weibo_link',
+			'type' => 'text'
 		);
 		$options[] = array(
-			'desc' => __( '头条二维码，支持外链', 'uuui' ),
-			'id' => 'toutiao_qr_uploader',
-			'type' => 'upload'
+			'desc' => __( '头条用户地址', 'uuui' ),
+			'placeholder' => 'https://www.toutiao.com/c/user/52511973021/#mid=1646246823879692',
+			'id' => 'toutiao_link',
+			'type' => 'text'
 		);
 
 
@@ -511,6 +513,21 @@ $options[] = array(
 	'name' => __( '样式', 'uuui' ),
 	'type' => 'heading'
 );
+
+	$options[] = array(
+		'name' => __( 'Web应用的名称', 'uuui' ),
+		'desc' => __( '仅当网站被用作为一个应用安装时才使用，详情：<a href="https://www.ithome.com/0/459/353.htm">PWA应用</a>', 'uuui'),
+		'id' => 'application-name',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => __( 'Web应用的标签条颜色', 'uuui' ),
+		'desc' => __( '仅当网站被用作为一个应用安装时才使用，详情：<a href="https://www.ithome.com/0/471/471.htm">PWA应用</a>', 'uuui' ),
+		'id' => 'application-color',
+		'std' => '',
+		'type' => 'color'
+	);
 
 	$options[] = array(
 		'name' => __( '自定义样式', 'uuui' ),
@@ -546,13 +563,6 @@ $options[] = array(
 		'type' => 'info'
 	);
 
-
-	$options[] = array(
-		'name' => __( 'Web 应用的名称', 'uuui' ),
-		'desc' => __( '仅当网站被用作为一个应用时才使用', 'uuui' ),
-		'id' => 'application-name',
-		'type' => 'text'
-	);
 
 	$options[] = array(
 		'name' => __( '站点验证(使用第三方服务验证站点所有权)', 'uuui' ),

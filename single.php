@@ -200,10 +200,4 @@
 
 </div><!-- row -->
     
-<script type="text/javascript">//社交分享
-    var _title,_source,_sourceUrl,_pic,_showcount,_desc,_site,
-        _url = '<?php the_permalink(); ?>',
-        _pic = '<?php the_field('article-cover-images'); ?>',
-        _summary = '<?php echo get_post_meta($post->ID, "description", true); ?>'
-</script>
 <?php get_footer(); ?>

@@ -1,11 +1,11 @@
 /*
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
-Version: v0.24.5
+Version: v0.24.6
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 博客、主题选项、文章置顶、自定义标志
-Description: 设计资源分享网站 v0.24.5：【新增】前台页面深色模式(Material Design)；【修复】二维码无法生成的bug；【修复】样式文件错误代码；【删除】多余的错误代码；【优化】二维码显示位置。 v0.24.4：【增加】前台管理员进入后台入口；【优化】必备网站栏目；【删除】专题浏览人数文本。 v0.24.3：【美化】搜索框；【更改】搜索结果URL。v0.24.1：【精简】主题包无用文件；【优化】样式文件引入顺序；【优化】移动端显示。v0.24.0：【修改】页脚显示样式；【美化】首页样式，采用更多阴影；【修复】图片url错误时样式；【优化】移动端显示。
+Description: 设计资源分享网站 v0.24.6：【新增】菜单未设置时的提示信息；【优化】PWA样式，【优化】网站社交联系方式的显示方式。 v0.24.5：【新增】前台页面深色模式(Material Design)；【修复】二维码无法生成的bug；【修复】样式文件错误代码；【删除】多余的错误代码；【优化】二维码显示位置。 v0.24.4：【增加】前台管理员进入后台入口；【优化】必备网站栏目；【删除】专题浏览人数文本。 v0.24.3：【美化】搜索框；【更改】搜索结果URL。v0.24.1：【精简】主题包无用文件；【优化】样式文件引入顺序；【优化】移动端显示。v0.24.0：【修改】页脚显示样式；【美化】首页样式，采用更多阴影；【修复】图片url错误时样式；【优化】移动端显示。
 
 */
 @charset "UTF-8";
@@ -161,6 +161,23 @@ nav{
 .category-title a,
 .post_tags li:hover a{
     color: #fff;
+}
+
+.weixin-show-qr,
+.show_weixin_popup_foot,
+.wechat-show-qr{
+    display: none;
+}
+
+.wechat-show-qr{
+    background-color: #fff;
+    position: absolute;
+    bottom: 216px;
+    right: 40px;
+    overflow: hidden;
+    z-index: 9;
+    padding: 20px;
+    border: 1px solid #c0c0c0;
 }
 
 .border-radius-4{
@@ -705,6 +722,12 @@ nav{
 
     .dropdown-divider{
         border-top: 1px solid #404040;
+    }
+
+    .wechat-show-qr{
+        background-color: #313131;
+        box-shadow: 1px 1px 8px 2px rgba(10,10,10,0.33);
+        border: 0px solid;
     }
 
 
