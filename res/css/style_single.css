@@ -67,9 +67,7 @@
 .post-content{
     font-family:  -apple-system, BlinkMacSystemFont,"PingFang SC","Source Han Sans","Hiragino Sans GB","MicroSoft YaHei",微软雅黑;
     max-width: 100%;
-    margin-right: 40px;
-    margin-top: 20px;
-    margin-left: 40px;
+    margin: 0px 80px 20px 80px;
 }
 
 .post-title-div h1{
@@ -263,10 +261,45 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
     font-weight: 600;
 }
 
+/** ************************** 短代码 **************************--- */
+
+.insert-post-div{
+    width: 100%;
+    border: 1px solid #f2f2f2;
+    border-radius: 6px;
+}
+#insert-post-img{
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.insert-post-div a{
+    color: #212121;
+}
+
+.insert-post-div .insert-post-title{
+    color: #212121;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0px 0px 5px 0px;
+    margin: 0px;
+    border: 0px solid;
+    line-height: 1rem;
+    text-indent: 0;
+}
+
+.insert-post-div .insert-post-description{
+    font-size: 0.8rem;
+    line-height: 1rem;
+    text-indent: 0;
+}
 
 
+/** ************************** 短代码 **************************--- */
 
-/** --------------- 页面 ------------------ */
+/** ************************** 页面 **************************--- */
 
 .page-content{
     max-width: 100%;
@@ -288,6 +321,8 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 .page-tool ul li{
     padding: 5px 0px;
 }
+
+/** ************************** 页面 ************************** */
 
 /** ************************** 深色模式 ************************** */
 

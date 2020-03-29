@@ -3,10 +3,10 @@
     function appthemes_add_quicktags() {
         ?>
         <script type="text/javascript">
-            QTags.addButton( '键盘输入元素', '键盘输入元素', '\n<kbd>', '</kbd>\n' ); 
-            QTags.addButton( '引用', '引用', '\n<blockquote class="blockquote">', '</blockquote>\n' );
-            QTags.addButton( '引用来源', '引用来源', '\n<footer class="blockquote-footer">', '</footer>\n' );
-            QTags.addButton( '首字母大写', '首字母大写', '\n<span class="text-capitalize">', '</span>\n' );
+            QTags.addButton( '键盘输入元素', '键盘输入元素', '<kbd>', '</kbd>' ); 
+            QTags.addButton( '引用', '引用', '<blockquote class="blockquote">', '</blockquote>' );
+            QTags.addButton( '引用来源', '引用来源', '<footer class="blockquote-footer">', '</footer>' );
+            QTags.addButton( '首字母大写', '首字母大写', '<span class="text-capitalize">', '</span>' );
             QTags.addButton( '高亮', '高亮', '<mark>', '</mark>' ); 
         </script>
         <?php
@@ -50,7 +50,31 @@
 /** —— TinyMCE编辑器增强 —— 结束*/
 
 
-
+/** 后台编辑器添加下拉式按钮 */ 
+function QGG_select(){
+	echo '
+	<select id="short_code_select">
+		<option value="请选择一个短代码！！！">插入短代码</option>
+		<option value="[fa_insert_post ids=文章id,文章id][/fa_insert_post]">引用站内文章</option>
+		
+	</select>';
+	}
+	if (current_user_can('edit_posts') && current_user_can('edit_pages')) {
+		add_action('media_buttons', 'QGG_select', 11);
+	}
+	
+	function QGG_button() {
+	echo '<script type="text/javascript">
+		jQuery(document).ready(function(){
+			jQuery("#short_code_select").change(function(){
+				send_to_editor(jQuery("#short_code_select :selected").val());
+				return false;
+			});
+		});
+	</script>';
+	}
+	add_action('admin_head', 'QGG_button');
+/** 后台编辑器添加下拉式按钮 —— 结束 */ 
 
 
 ?>

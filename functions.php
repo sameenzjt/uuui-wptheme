@@ -490,7 +490,49 @@ function password_protected_change( $content ) {
     }
 }
 add_filter( 'the_password_form','password_protected_change' );
-/** WordPress 更改文章密码保护后显示的提示内容 —— 结束*/
+/** WordPress 更改文章密码保护后显示的提示内容 —— 结束 */
+
+
+/** 短代码--文章内链 */
+function fa_insert_posts( $atts, $content = null ){
+    extract( shortcode_atts( array(
+        'ids' => ''
+    ),
+        $atts ) );
+    global $post;
+    $content = '';
+	$postids =  explode(',', $ids);
+    $inset_posts = get_posts(array('post__in'=>$postids));
+    foreach ($inset_posts as $key => $post) {
+        setup_postdata( $post );
+		$article_image = get_field('article-cover-images',$post);
+		$content .=  '
+		<a target="_blank" class="label--thTitle" href="' . get_permalink() . '">
+			<div class="insert-post-div row" style="width: 100%; padding:20px;margin:15px 0px;">
+				<div class="col-lg-2 col-sm-3 col-md-2" id="insert-post-img" style="background-image:url(' . $article_image . ');"></div>
+				<div class="col-lg-8 col-sm-6 col-md-8">
+					<h2 class="insert-post-title">' . get_the_title() . '</h2>
+					<p class="insert-post-description font-size-small-14">' . mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 90,"......") . '</p>
+				</div>
+				<div class="col-lg-2 col-sm-3 col-md-2">
+					<div style="margin:0px auto;padding-top:20px;">》</div>
+				</div>
+				
+			</div>
+		</a>';
+    }
+    wp_reset_postdata();
+    return $content;
+}
+add_shortcode('fa_insert_post', 'fa_insert_posts');
+/** 短代码--文章内链 —— 结束 */
+
+
+
+
+
+
+
 
 
 

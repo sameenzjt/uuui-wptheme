@@ -41,20 +41,6 @@
     ?>
    
 
-    <?php $google_sc = of_get_option('google-search-console', ''); 
-        if (!empty($google_sc)){
-            echo $google_sc;
-        }else{
-            echo "";
-        }
-    ?>
-    <?php $bing_wc = of_get_option('bing-webmaster-center', ''); 
-        if (!empty($bing_wc)){
-            echo $bing_wc;
-        }else{
-            echo "";
-        }
-    ?>
 
     <?php //Web 应用的名称（仅当网站被用作为一个应用时才使用）//Chrome、Firefox OS 和 Opera 的主题颜色
         $application_name = of_get_option('application-name', ''); 
@@ -90,10 +76,9 @@
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_single.css" type="text/css"/>
     <?php } ?>
 
-    <!-- 移动端样式 -->
-    <?php if(wp_is_mobile()){ ?>
-        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_screen_768.css"/>
-    <?php } ?>
+    <link media="screen and (max-width:768px)" rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_screen_768.css"/>
+    <link media="screen and (min-width:768px) and (max-width:991px)" rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_screen_991.css"/>
+
 
     <!-- 自定义style样式 -->
     <?php $header_style = of_get_option('header_style');
@@ -134,7 +119,7 @@
             }?>
             
         </a>
-        <div class="nav-link hide-768px float-left">
+        <div class="nav-link float-left">
             <?php 
             if(function_exists('wp_nav_menu')) {
                 wp_nav_menu(array( 'theme_location' => 'nav_menu','container_id'=>'menu_left','fallback_cb' => 'nav_menus_fallback') ); 

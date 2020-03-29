@@ -12,7 +12,7 @@
                             <img class="post-img" src="<?php the_field('article-cover-images'); ?>">
                         </div>
                         <h4 class="index-thematic-list-title"><?php the_title(); ?></h4>
-                        <p class="font-size-small-14 hide-768px" style="margin: 20px 0px;">
+                        <p class="font-size-small-14" style="margin: 20px 0px;">
                             <?php if (has_excerpt()) {
                                 echo $description = get_the_excerpt(); //文章编辑中的摘要
                             }else {

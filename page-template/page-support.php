@@ -13,7 +13,7 @@
                 <h2 style="font-weight: 600; margin: 20px 0px;"><?php the_title(); ?></h2>
                 <div class="dropdown-divider"></div>
             </div>
-            <div class="col-lg-2 hide-768">
+            <div class="col-lg-2">
                 <div id="fixed-tool" class="page-tool">
                     <?php if(function_exists('wp_nav_menu')) {
                         wp_nav_menu(array( 'theme_location' => 'support_menu','menu_class'=>'support_menu_ul') ); 
@@ -31,7 +31,7 @@
                 </div>
                 <?php endif; ?>
             </div>
-            <div class="col-lg-2 hide-768px">
+            <div class="col-lg-2">
             </div>
         </div>
         

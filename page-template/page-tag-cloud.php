@@ -11,7 +11,7 @@
         <h2 style="font-weight: 600; margin: 20px 0px;"><?php the_title(); ?></h2>
         <div class="dropdown-divider"></div>
     </div>
-    <div class="col-lg-2 hide-768px"></div>
+    <div class="col-lg-2"></div>
     <div class="col-lg-8 col-sm-12" style="margin-bottom: 40px;">
         <?php 
         $html = '<ul class="post_tags">';
@@ -25,7 +25,7 @@
         $html .= '</ul>';
         echo $html; ?>
     </div>
-    <div class="col-lg-2 hide-768px"></div>
+    <div class="col-lg-2"></div>
 </div>
         
         

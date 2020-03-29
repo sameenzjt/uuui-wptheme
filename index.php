@@ -18,13 +18,13 @@
     </div>
 
 
-    <div class="col-3 hide-768px">
+    <div class="col-3">
         <?php include( 'index/index-sidebar.php' ); ?>
     </div>
 
 
     <!--
-    <div class="col-12 hide-768px" style="margin-top:20px;">
+    <div class="col-12" style="margin-top:20px;">
         <div class="dropdown-divider" style="margin-bottom:20px;"></div>
         < ?php include( 'index/index-navigation.php' ); ?>
     </div>

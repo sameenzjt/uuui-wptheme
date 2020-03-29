@@ -8,7 +8,7 @@
 		<div class="dropdown-divider"></div>
 	</div>
 
-	<div class="col-lg-2 hide-768">
+	<div class="col-lg-2">
 		
 	</div>
 
@@ -26,7 +26,7 @@
 		<?php endif; ?>
 	</div>
 
-	<div class="col-lg-2 hide-768px">
+	<div class="col-lg-2">
 	</div>
         
 

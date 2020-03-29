@@ -16,7 +16,6 @@
             <div class="index-thematic-div">
                 <a href="<?php echo get_category_link($cat->term_id); ?>">
                     <div class="index-thematic-img" style="background-image: url(<?php echo z_taxonomy_image_url($cat->term_id); ?>);">
-                        <span class="index-thematic-info float-left">2333人观看</span>
                         <span class="index-thematic-info float-right"><?php echo get_category($cat->term_id)->count; ?>篇文章</span>
                     </div>
                     <i style="background-color: #ff5c00;">&nbsp;</i>

@@ -2,11 +2,11 @@
 
     <footer class="footer">
         <div class="row">
-            <div class="col-lg-4 footer-about-us">
+            <div class="col-lg-4 col-sm-6 col-md-12 footer-about-us">
                 <p>关于我们</p>
                 <p class=" font-size-small-14" style="color:#BDBDBD"><?php echo of_get_option('footer-about-us', ''); ?></p>
             </div>
-            <div class="col-lg-5 footer-about-us hide-768px" style="padding: 0px 60px;">
+            <div class="col-lg-5 footer-about-us" style="padding: 0px 60px;">
                 <div class="row">
                     <div class="col-4 footer_menu">
                         <p><?php echo of_get_option('footer_menu_1_title', ''); ?></p>
@@ -36,7 +36,7 @@
                     
                 </div>
             </div>
-            <div class="col-lg-3 text-center hide-768px">
+            <div class="col-lg-3 col-sm-6 col-md-12 text-center">
                 
                     <div class="float-left" style="width:33%;overflow: hidden;">
                         <a title="微信二维码" href="javascript:void(0);" class="show_weixin">
@@ -67,7 +67,7 @@
                     </div>
             </div>
             
-            <div class="col-lg-12 hide-768px">
+            <div class="col-lg-12">
                 <p style="color: #fff;" class="friend-link">
                     <span>友情链接：</span>
                     <a target="_blank" href="https://www.sameen.art/" title="sameen">Sameen</a>
@@ -79,14 +79,14 @@
         <div class="text-center">
             <span class="footer-copyright border-radius-4 font-divider-color">
                 Copyright © 2019 <?php bloginfo('name'); ?> &nbsp; 
-                <span class="hide-768px"><?php echo of_get_option('icp-bei', ''); ?></span> 
+                <span><?php echo of_get_option('icp-bei', ''); ?></span> 
                 <?php echo of_get_option('gongwang-bei', ''); ?></span>
             </span>
         </div>
         
     </footer>
     
-    <div class="back_top hide-768px border-radius-4"><i class="iconfont icon-zhiding5"></i></div>
+    <div class="back_top border-radius-4"><i class="iconfont icon-zhiding5"></i></div>
 
     
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
