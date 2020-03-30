@@ -102,7 +102,7 @@
     <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
     <script type="text/javascript" src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     
-    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/uuui.min.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/uuui.js"></script>
     
 
     
@@ -120,10 +120,11 @@
                 _summary = '<?php echo get_post_meta($post->ID, "description", true); ?>'
         </script>
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/share.js"></script>
+        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/single.js"></script>
         
     <?php } elseif( is_page() ) { ?>
         <!-- 工具栏上滑至顶部后固定位置 -->
-        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/tool-slide-top-fixed.min.js"></script>
+        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/tool-slide-top-fixed.js"></script>
     
     <?php }?>
 

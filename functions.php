@@ -24,7 +24,7 @@
 */
 	function Bing_add_editor_style(){
 		add_editor_style( 'https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css' );//引入外部的 CSS 文件
-		add_editor_style( 'res/css/custom-editor-style.css' );//这样就会调用主题目录 CSS 文件夹的 custom-editor-style.css 文件
+		add_editor_style( '/res/css/custom-editor-style.css' );//这样就会调用主题目录 CSS 文件夹的 custom-editor-style.css 文件
 	}
 	add_action( 'after_setup_theme', 'Bing_add_editor_style' );
 

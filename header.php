@@ -32,6 +32,8 @@
             } else {
                 wp_title('',true);
             } ?></title>
+
+    <!-- 网站SEO，首页/文章/页面的描述和关键词 -->
     <?php if ( of_get_option('site-seo','') == "1" ){
         include('functions/site-seo.php');
     } else{
@@ -106,14 +108,18 @@
 <?php flush(); ?>
 <body>
     <nav>
-        <a href="<?php echo get_option('home'); ?>/">
+        <?php if(is_single()){?>
+            <h1 class="single-title float-left"><?php the_title(); ?></h1>
+        <?php }  ?>
+        
+        <a class="site-title" href="<?php echo get_option('home'); ?>/">
             <?php 
                 $site_logo = of_get_option('site_logo', '');
                 $blog_title = get_bloginfo('name');
                 $blog_title2 = get_bloginfo('description');
 
                 if(empty($site_logo)){
-                    echo "<h1 style='margin-top: 4px;' class='float-left' title='" . $blog_title2 . "'>" . $blog_title . "</h1>";
+                    echo "<h1 class='float-left' title='" . $blog_title2 . "'>" . $blog_title . "</h1>";
                 }else{
                     echo "<img src='" . $site_logo . "' class='logo_img float-left'>";
             }?>
@@ -158,7 +164,8 @@
                 </a>
             <?php } ?>
         </div>
-        
+
+        <!-- 搜索 -->
         <div class="float-right header-search">
             <a id="kl" href="javascript:void(0);" title="搜索">
                 <i class="iconfont icon-sousuo" style="font-size: 16px; font-weight: 600; padding-left:10px;"></i>
@@ -176,11 +183,8 @@
                 
             </div>
         </div>
-        
-        
-
-        
-        
     </nav>
+    
+
     <div style="clear:both;"></div>
-    <main style="margin-top: 80px;">
+    <main>

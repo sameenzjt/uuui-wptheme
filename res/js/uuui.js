@@ -12,6 +12,7 @@
     });
 })(jQuery);
 
+
 /**  bootstrap弹出框  */
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover({html : true });   
@@ -31,4 +32,8 @@ $('.show_weixin').click(function(){
     $('.wechat-show-qr').toggle();
     $('.weixin-show-qr').toggle();
     $('.show_weixin_popup_foot').toggle();
+});
+
+$('.single-share-icon').click(function(){
+    $('.share').toggle();
 });
