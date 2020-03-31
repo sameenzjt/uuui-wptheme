@@ -1,19 +1,18 @@
-$(document).ready(function(){//网页DOM加载完成时执行
+$(document).on("mousewheel DOMMouseScroll", function (e) {
+    var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
+        (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));
+        if (delta < 0) {// 向下滚
+           
+            $('.site-title').attr('id','nav-title-up');
+            $('.nav-link').attr('id','nav-title-up');
+            $('.single-title').attr('id','nav-title-up');
 
-    //文章页下滑超过500px时标题栏显示标题
-    function single_nav_toggle(){
-        $(window).scroll(function() {
-            if ($(window).scrollTop() > 500){
-                $('.site-title, .nav-link, .nav-login').hide();
-                $('.single-title').show();
-            }else{
-                $('.single-title').hide();
-                $('.site-title, .nav-link, .nav-login').show();
-            }
-        })
-    }
-
-    single_nav_toggle();
+        } else if (delta > 0) { // 向上滚
+            
+            $('.single-title').attr('id',"nav-title-down");
+            $('.site-title').attr('id',"nav-title-down");
+            $('.nav-link').attr('id',"nav-title-down");
+        }
 });
 
 

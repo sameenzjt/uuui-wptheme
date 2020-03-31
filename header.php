@@ -108,20 +108,17 @@
 <?php flush(); ?>
 <body>
     <nav>
-        <?php if(is_single()){?>
-            <h1 class="single-title float-left"><?php the_title(); ?></h1>
-        <?php }  ?>
         
-        <a class="site-title" href="<?php echo get_option('home'); ?>/">
+        <a class="" href="<?php echo get_option('home'); ?>/">
             <?php 
                 $site_logo = of_get_option('site_logo', '');
                 $blog_title = get_bloginfo('name');
                 $blog_title2 = get_bloginfo('description');
 
                 if(empty($site_logo)){
-                    echo "<h1 class='float-left' title='" . $blog_title2 . "'>" . $blog_title . "</h1>";
+                    echo "<h1 class='float-left site-title' title='" . $blog_title2 . "'>" . $blog_title . "</h1>";
                 }else{
-                    echo "<img src='" . $site_logo . "' class='logo_img float-left'>";
+                    echo "<img src='" . $site_logo . "' class='logo_img float-left site-title'>";
             }?>
             
         </a>
@@ -132,7 +129,7 @@
             }
             ?>
         </div>
-
+        
         <!-- 登录/未登录 -->
         <div class="float-right nav-login clearfix">
             <?php if ( is_user_logged_in() ) {?>
@@ -183,6 +180,10 @@
                 
             </div>
         </div>
+
+        <?php if(is_single()){?>
+            <h1 class="single-title"><?php the_title(); ?></h1>
+        <?php }  ?>
     </nav>
     
 

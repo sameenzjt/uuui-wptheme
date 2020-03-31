@@ -95,18 +95,36 @@ kbd{
 }
 
 .single-title{
-    display:none;
-    margin-top: 16px;
+    position: absolute;
+    display: block;
+    z-index: 99;
+    margin-top: 75px;
     margin-left: 100px;
     font-size: 24px;
     font-weight: 700;
-    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.site-title h1{
-    margin-top: 6px;
+
+@keyframes upkeyframes
+{
+from {transform: translateY(0px);}
+to {transform: translateY(-60px);}
+}
+
+#nav-title-up{
+    animation: upkeyframes 400ms ease-out 200ms;
+    animation-fill-mode: forwards;
+}
+@keyframes downkeyframes
+{
+from {transform: translateY(-60px);}
+to {transform: translateY(0px);}
+}
+#nav-title-down{
+    animation: downkeyframes 400ms ease-out;
+    animation-fill-mode: forwards;
 }
 
 .container{
