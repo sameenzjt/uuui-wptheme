@@ -105,27 +105,17 @@
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/uuui.js"></script>
     
 
-    
 
-    <?php if (is_home()) { ?>
-        <!--<script type="text/javascript" src="< ?php bloginfo('template_url'); ?>/res/js/index-navigation.js"></script>-->
-        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/index-lanmu-soft.js"></script>
-        
+    <?php if( is_single() ) { ?>
 
-    <?php } elseif( is_single() ) { ?>
         <script type="text/javascript">//社交分享
             var _title,_source,_sourceUrl,_pic,_showcount,_desc,_site,
                 _url = '<?php the_permalink(); ?>',
                 _pic = '<?php the_field('article-cover-images'); ?>',
                 _summary = '<?php echo get_post_meta($post->ID, "description", true); ?>'
         </script>
-        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/share.js"></script>
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/single.js"></script>
         
-    <?php } elseif( is_page() ) { ?>
-        <!-- 工具栏上滑至顶部后固定位置 -->
-        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/tool-slide-top-fixed.js"></script>
-    
     <?php }?>
 
     <script>//搜索框显示与隐藏
