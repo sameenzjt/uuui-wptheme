@@ -1,11 +1,11 @@
 /*
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
-Version: v0.25.0
+Version: v0.25.2
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: 博客、主题选项、文章置顶、自定义标志
-Description: 设计资源分享网站 v0.25.1：【合并】js文件；【优化】js执行条件。
+Description: 设计资源分享网站 v0.25.2：样式优化。 v0.25.1：【合并】js文件；【优化】js执行条件。
 
 */
 @charset "UTF-8";
@@ -21,10 +21,11 @@ html {
 	scroll-behavior: smooth;
 }
 body{
-    font-family: "PingFang SC", "Lantinghei SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", Arial, "Hiragino Sans GB", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
-    color: #212121;
+    font-family:  -apple-system, BlinkMacSystemFont,"PingFang SC","Lantinghei SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑","WenQuanYi Micro Hei",lucida,Arial,sans-serif;
+    color: #404040;
     font-size:16px;
-    line-height: 1.5em;;
+    line-height: 1.8;
+    font-feature-settings: "tnum";
 }
 
 .index-posts-list h2{
