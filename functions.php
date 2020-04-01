@@ -527,6 +527,15 @@ function fa_insert_posts( $atts, $content = null ){
 add_shortcode('fa_insert_post', 'fa_insert_posts');
 /** 短代码--文章内链 —— 结束 */
 
+/** 短代码--插入B站视频 */
+function video_bilibili($atts, $content = null) {   
+	extract(shortcode_atts(array("width"=>'100%',"height"=>''),$atts));
+	return'<iframe class="video-bilibili" height="'.$height.'" width="'.$width.'" src="'.$content.'" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>';
+	}  
+	add_shortcode('video_bilibili','video_bilibili');
+
+/** 短代码--插入B站视频 —— 结束 */
+
 
 
 

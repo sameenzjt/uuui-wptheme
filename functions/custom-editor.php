@@ -55,7 +55,8 @@ function QGG_select(){
 	echo '
 	<select id="short_code_select">
 		<option value="请选择一个短代码！！！">插入短代码</option>
-		<option value="[fa_insert_post ids=文章id,文章id][/fa_insert_post]">引用站内文章</option>
+        <option value="[fa_insert_post ids=文章id,文章id][/fa_insert_post]">引用站内文章</option>
+        <option value="[video_bilibili]src[/video_bilibili]">哔哩哔哩视频</option>
 		
 	</select>';
 	}
