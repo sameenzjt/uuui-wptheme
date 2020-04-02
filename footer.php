@@ -116,7 +116,21 @@
         </script>
         <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/single.js"></script>
         
-    <?php }?>
+    <?php } elseif( is_page() ){ ?>
+        <script>
+            $(".tab-item").click(function() {
+            $(this).addClass("btnss")
+                .siblings()
+                .removeClass("btnss");
+
+            var index = $(this).index();
+            $(".con .con-1").eq(index)
+                .addClass("active-tab")
+                .siblings()
+                .removeClass("active-tab");
+            });
+        </script>
+    <?php } ?>
 
     <script>//搜索框显示与隐藏
         var search_form = document.getElementById("search-form");

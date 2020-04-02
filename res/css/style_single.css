@@ -86,7 +86,7 @@
 
 /** ************************** 社交分享↑ ************************** */
 main{
-    padding: 60px 120px 20px 80px;
+    padding: 60px 80px 20px;
     background-color: #f9f9f9;
 }
 
@@ -429,30 +429,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 /** ************************** 短代码——结束 **************************--- */
 
-/** ************************** 页面 **************************--- */
 
-.page-content{
-    max-width: 100%;
-    padding: 0px 60px;
-}
-.page-content p{
-    line-height: 1.75em;
-    text-indent:1em;
-    letter-spacing: 0.05em;
-}
-.page-content a{
-    text-decoration: underline;
-}
-
-.page-tool ul{
-    list-style: none;
-}
-
-.page-tool ul li{
-    padding: 5px 0px;
-}
-
-/** ************************** 页面 ************************** */
 
 /** ************************** 深色模式 ************************** */
 

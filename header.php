@@ -75,7 +75,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/5.12.0-1/css/all.min.css" />
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_single.css" type="text/css"/>
     <?php } elseif( is_page() ){ ?>
-        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_single.css" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_page.css" type="text/css"/>
     <?php } ?>
 
     <link media="screen and (max-width:768px)" rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_screen_768.css"/>

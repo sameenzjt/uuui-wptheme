@@ -1,0 +1,88 @@
+.page-content{
+    max-width: 100%;
+    padding: 0px 60px;
+}
+.page-content p{
+    line-height: 1.75em;
+    text-indent:1em;
+    letter-spacing: 0.05em;
+}
+.page-content a{
+    text-decoration: underline;
+}
+
+.page-tool ul{
+    list-style: none;
+}
+
+.page-tool ul li{
+    padding: 5px 0px;
+}
+
+
+
+/** ************************** 用户中心 **************************--- */
+
+footer{
+    margin-top: 20px;
+    z-index: 999;
+}
+.uc-body{
+    padding: 0px 120px;
+    
+}
+
+.uc-header{
+    width: 100%;
+    height: 300px;
+    background: url('https://api.uixsj.cn/bing/bing.php') no-repeat center;
+    background-size: 100%;
+    margin-top: 40px;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.33);
+}
+.uc-header-content{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255,255,255,0), rgba(0, 0, 0, 0.8));
+}
+.uc-header-content img{
+    margin-top: 30px;
+    border-radius:50%
+}
+
+
+.tab-item-div{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #fff;
+    color: #000;
+}
+.tab-item{
+    display: inline;
+    margin: 0px 30px;
+}
+.tab-item:hover{
+    border-bottom: red 2px solid;
+}
+
+.tab {
+    width: 100%;
+    margin: 0;
+}
+
+.btnss {
+    border-bottom: red 4px solid;
+}
+
+.con-1 {
+    display:none;
+}
+.active-tab {
+    display:block;
+}
+
+/** ************************** 用户中心——结束 ************************** */
