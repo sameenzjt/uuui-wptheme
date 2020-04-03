@@ -71,31 +71,43 @@
                 </div>
                 <div class="float-left" style="width: 70%;padding-left: 10px;">
                     <div style="margin-top: 20px; padding: 20px; background-color: #fff;">
-                        <div class="media border p-3">
-                            <img src="https://static.runoob.com/images/mobile-icon.png" class="align-self-start rounded-circle mr-3" style="width:36px">
-                            <div class="media-body">
-                                <h5>菜鸟教程</h5>
-                                <p>学的不仅是技术，更是梦想！！！</p>
-                                <div class="media p-3">
-                                    <img src="https://static.runoob.com/images/mobile-icon.png" alt="Jane Doe" class="align-self-start rounded-circle mr-3" style="width:36px">
-                                    <div class="media-body">
-                                    <h5>菜鸟教程</h5>
-                                    <p>学的不仅是技术，更是梦想！！！</p>
-                                    </div>
-                                </div>  
-                            </div>
-                        </div>
+                        <ul>
+                            <?php
+                                $args = array(
+                                    'user_id' => $current_user->ID, // use user_id
+                                );
+                                $comments = get_comments($args);
+                                foreach($comments as $comment) :
+                            ?>
+                            <li style="border: #000 1px solid;">
+                                <?php echo($comment->comment_content); ?>
+                                <?php echo($comment->comment_date); ?>
+                                
+                                
+                            </li>
+                                
+                            <?php endforeach; ?>
+                        </ul>
                     </div>
+                    <?php echo $current_user->ID ?>
                     
                 </div>
             </div><!-- con-1 -->
                 
             <div class="con-1">
-               df
+                ch
             </div><!-- con-1 -->
 
             <div class="con-1 ">
-                df1
+                <?php if (have_posts()) : the_post(); update_post_caches($posts); ?>
+                    <div class="page-content" >
+                        <?php the_content(); ?> 
+                    </div>
+                <?php else : ?>
+                    <div class="grid_8">
+                        没有找到你想要的页面！
+                    </div>
+                <?php endif; ?>
             </div><!-- con-1 -->
         </div>
         
