@@ -590,7 +590,7 @@ $options[] = array(
 
 /* —— 广告位 —— */
 $options[] = array(
-	'name' => __( '广告位', 'uuui' ),
+	'name' => __( '广告与统计', 'uuui' ),
 	'type' => 'heading'
 );
 	$options[] = array(
@@ -613,6 +613,14 @@ $options[] = array(
 		'id' => 'text-top-ads',
 		'std' => '',
 		'type' => 'textarea'
+	);
+
+	$options[] = array(
+		'name' => __( '百度新版统计代码', 'uuui' ),
+		'desc' => __( '只输入https://hm.baidu.com/hm.js?后面的一串数字加英文的代码,无需标点符号', 'uuui' ),
+		'id' => 'baidu-tongji',
+		'placeholder' => '例：35104048fed03ae09d6c1abdc6a583a3',
+		'type' => 'text'
 	);
 
 

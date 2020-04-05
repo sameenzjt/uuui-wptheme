@@ -4,10 +4,10 @@
 	include( 'functions/optimization_backstage.php' );//网站后台优化Backstage
 
 /* —— 保护后台登录 —— */
-	add_action('login_enqueue_scripts','login_protection');  
+	/*add_action('login_enqueue_scripts','login_protection');  
 	function login_protection(){
 		if($_GET['page'] != 'login')header('Location:'.home_url());
-	}
+	}*/
 /* —— 保护后台登录 —— 结束 */
 
 

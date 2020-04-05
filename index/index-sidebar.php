@@ -1,5 +1,5 @@
 <div class="border-radius-4 sidebar-box" style="margin-left: 10px;"><!-- 首页侧边栏banner -->
-    <img src="<?php echo of_get_option('index_sidebar_banner',''); ?>" width="100%">
+    <img src="<?php echo of_get_option('index_sidebar_banner',''); ?>" width="100%"  style="max-width: 100%;">
 </div><!-- 首页侧边栏banner-end -->
 
 
