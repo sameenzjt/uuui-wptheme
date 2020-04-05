@@ -20,6 +20,12 @@
                 echo " - ";
                 bloginfo('name');
 
+            } elseif (is_tag() ) {
+                echo "标签：";
+                echo single_tag_title();
+                echo " - "; 
+                bloginfo('name');
+
             } elseif (is_search() ) {
                 echo "搜索结果：".get_search_query();
                 echo " - "; 

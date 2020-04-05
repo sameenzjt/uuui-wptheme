@@ -54,7 +54,6 @@
             <span  class="font-size-small">倾心推荐</span>
             <div class="dropdown-divider"></div>
             <div class="designer-must-have">
-                
                 <?php echo of_get_option('designer-must-have', ''); ?>
             </div>
         </div>

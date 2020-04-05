@@ -1,11 +1,11 @@
 /*
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
-Version: v0.25.8
+Version: v0.25.9
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: blog, one-column
-Description: 设计资源分享网站 v0.25.8：新增访客默认头像；美化“用户中心”页面。 v0.25.7：优化代码位置。 v0.25.6：优化用户中心。 v0.25.5：【新增】用户中心页面(未完成)。 v0.25.4：【新增】插入B站视频短代码；【修复】浏览器报错bug。 v0.25.3：【完善】文章页滑动页面时标题栏显示文章标题。 v0.25.2：样式优化。 v0.25.1：【合并】js文件；【优化】js执行条件。
+Description: 设计资源分享网站 v0.25.9：分类页面样式美化；标签页title优化；文章页面SEO优化；统一多处文章列表。 v0.25.8：新增访客默认头像；美化“用户中心”页面。 v0.25.7：优化代码位置。 v0.25.6：优化用户中心。 v0.25.5：【新增】用户中心页面(未完成)。 v0.25.4：【新增】插入B站视频短代码；【修复】浏览器报错bug。 v0.25.3：【完善】文章页滑动页面时标题栏显示文章标题。 v0.25.2：样式优化。 v0.25.1：【合并】js文件；【优化】js执行条件。
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: UUUI
@@ -82,7 +82,7 @@ a:hover{
 nav{
     overflow: hidden;
     float: left;
-    width:100%;
+    width: 100%;
     position: fixed;
     top:0px;
     z-index:99;
@@ -148,12 +148,12 @@ nav{
 
 .search-form{
     display: none;
-    position: absolute;
+    position: fixed;
     top: 60px;
     left: 25%;
     width: 50%;
     padding: 20px;
-    z-index: 99;
+    z-index: 999;
     background-color: #fff;
     box-shadow: 1px 10px 10px 6px rgba(207,207,207,0.33);
     border: 0px solid;
@@ -507,14 +507,7 @@ footer{
 }
 
 
-.page-thematic-list:hover{
-    background-color: rgba(250, 250, 250);
-}
 
-.page-thematic-list-img{
-    margin-right: 20px;
-    width: 260px;
-}
 
 .index-thematic-info{
     margin-top: 90px;
@@ -656,6 +649,10 @@ footer{
     color: #999999;
     font-size: 14px;
 }
+.designer-must-have{
+    word-break:keep-all;
+    word-wrap: break-word;
+}
 
 .designer-must-have a{
     color: #BDBDBD;
@@ -667,6 +664,44 @@ footer{
     display: inline-block;
     white-space: nowrap;/*强制不换行*/
 }
+
+/** ************************** 专题 ************************** */
+
+.zt-banner-div{
+    position: relative;
+    width: 100%;
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.zt-banner-bg{
+    height: 360px;
+    width: 100%;
+    transform: scale(2);
+    filter: blur(14px) brightness(80%);
+    -webkit-filter: blur(14px) brightness(80%);
+    -moz-filter: blur(14px) brightness(80%);
+    -o-filter: blur(14px) brightness(80%);
+    -ms-filter: blur(14px) brightness(80%);
+}
+.zt-banner-content{
+    position: absolute;
+    width: 100%;
+    padding: 0px 15%;
+    color: #fff;
+}
+.zt-banner-img{
+    float: left;
+    overflow: hidden;
+    margin-right: 20px;
+    border-radius: 4px;
+}
+.zt-banner-img img{
+    border: 4px solid white;
+}
+/** ************************** 专题 ************************** */
 
 
 /** ************************** 深色模式 ************************** */
@@ -747,7 +782,6 @@ footer{
         box-shadow: 1px 1px 8px 2px rgba(10,10,10,0.33);
         border: 0px solid;
     }
-
 
 }
 

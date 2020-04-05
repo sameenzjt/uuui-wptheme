@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Center</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+    <!-- https://github.com/daneden/animate.css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/animate.css/3.7.2/animate.min.css" />
+    <!-- iconfont -->
+    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_4zzzlieuj55.css" />
+    <!-- style.css -->
+    <link rel="stylesheet" type="text/css" href="https://sameen.art/wp-content/themes/UUUI-wordpresstheme/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="https://sameen.art/wp-content/themes/UUUI-wordpresstheme/res/css/style_single.css" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="https://sameen.art/wp-content/themes/UUUI-wordpresstheme/res/css/style_page.css" type="text/css"/>
+    <style>
+        .zt-banner-div{
+            position: relative;
+            width: 100%;
+            height: 360px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .zt-banner-bg{
+            height: 360px;
+            width: 100%;
+            transform: scale(2);
+            filter: blur(14px) brightness(80%);
+            -webkit-filter: blur(14px) brightness(80%);
+            -moz-filter: blur(14px) brightness(80%);
+            -o-filter: blur(14px) brightness(80%);
+            -ms-filter: blur(14px) brightness(80%);
+        }
+        .zt-banner-content{
+            position: absolute;
+            width: 100%;
+            padding: 0px 15%;
+            color: #fff;
+        }
+        .zt-banner-img{
+            float: left;
+            overflow: hidden;
+            margin-right: 20px;
+            border-radius: 4px;
+        }
+        .zt-banner-img img{
+            border: 4px solid white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a class="" href="#">
+            <h1 class='float-left site-title' title='" . $blog_title2 . "'>ch</h1>
+        </a>
+        <div class="nav-link float-left">
+            ghg
+        </div>
+        
+        <!-- 登录/未登录 -->
+        <div class="float-right nav-login clearfix">
+            <a href="#">
+                <i class="iconfont icon-denglu" style="font-size: 16px; font-weight: 600; padding-left:10px;"></i>
+            </a>
+        </div>
+
+        <!-- 搜索 -->
+        <div class="float-right header-search">
+            <a id="kl" href="javascript:void(0);" title="搜索">
+                <i class="iconfont icon-sousuo" style="font-size: 16px; font-weight: 600; padding-left:10px;"></i>
+            </a>
+            <div id="search-form" class="search-form">
+                <a id="jk" href="javascript:void(0);" title="关闭搜索框">
+                    <i class="iconfont icon-guanbi float-right" style="font-size: 16px;"></i>
+                </a>
+                <form style="width:80%" class="input-group input-group-sm mb-3 mx-auto" method="get" id="searchform" action="https://sameen.art">
+                    <input class="form-control" type="text" placeholder="输入关键字" name="s" id="s"/>
+                    <div class="input-group-append">
+                        <input class="btn btn-success" type="submit" value="搜 索" onClick="if(document.forms['search'].searchinput.value=='- Search -')document.forms['search'].searchinput.value='';" alt="Search" />
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+
+    </nav>
+    <div style="clear:both;"></div>
+
+
+
+
+    <main>
+        <div class="zt-banner-div">
+            <div  class="zt-banner-bg" style="background: url(https://www.sameen.art/wp-content/uploads/feedback.d9d37bf5.png) no-repeat center;"></div>
+            <div class="zt-banner-content">
+                <div class="zt-banner-img">
+                    <img src="https://www.sameen.art/wp-content/uploads/feedback.d9d37bf5.png" width="300px">
+                </div>
+                <h1>vgj</h1>
+                <p>1 篇文章5人评论</p>
+                <p>关注科技以及科技在生活中的应用,传播和普及科普知识。</p>
+            </div>
+        </div>
+    
+
+ll
+
+
+    </main>
+
+
+
+
+    <footer class="footer">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-about-us">
+                <p>关于我们</p>
+                <p class=" font-size-small-14" style="color:#BDBDBD">dxg</p>
+            </div>
+            <div class="col-lg-5 footer-menu-div">
+                <div class="row">
+                    <div class="col-4 footer_menu">
+                        <p>fgxfb</p>
+                        cbfbc
+                        
+                    </div>
+                    <div class="col-4 footer_menu">
+                        <p>dgdrx</p>
+                        bcfgbg
+                    </div>
+                    <div class="col-4 footer_menu">
+                        <p>cbgfb</p>
+                        ,hbkhubk
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+                
+                    <div class="float-left" style="width:33%;overflow: hidden;">
+                        <a title="微信二维码" href="javascript:void(0);" class="show_weixin">
+                            <div class="weixin mx-auto"><i class="iconfont icon-weixin"></i></div>
+                            <p>微信</p>
+                        </a>
+                        <div class="wechat-show-qr text-center">
+                            <div id="weixin-show-qr"></div>
+                            <div class="show_weixin_popup_foot text-center">使用“扫一扫”<br>关注官方微信</div>
+                        </div>
+                    </div>
+                    <div class="float-left" style="width:33%;overflow: hidden;">
+                        <a title="微博" href="#" target="_blank">
+                            <div class="weibo mx-auto"><i class="iconfont icon-weibo"></i></div>
+                            <p>微博</p>
+                        </a>
+                    </div>
+                    <div class="float-left" style="width:33%;overflow: hidden;">
+                        <a title="头条" href="#" target="_blank">
+                            <div class="toutiao mx-auto"><i class="iconfont icon-toutiao"></i></div>
+                            <p>头条</p>
+                        </a>
+                    </div>
+                    <div class="float-left btn_qq_qun border-radius-4 w-100">
+                        <a href="#" target="_blank">
+                            <i class="iconfont icon-qq"></i>&nbsp;&nbsp;官方QQ群
+                        </a>
+                    </div>
+            </div>
+            
+            <div class="col-lg-12">
+                <p style="color: #fff;" class="friend-link">
+                    <span>友情链接：</span>
+                    <a target="_blank" href="https://www.sameen.art/" title="sameen">Sameen</a>
+                    thtfhfhf
+                   </p>
+            </div>
+
+        </div>
+        <div class="text-center">
+            <span class="footer-copyright border-radius-4 font-divider-color">
+                Copyright © 2019 dffgf &nbsp; 
+                <span>cvbccb</span> 
+                cvnbcgn</span>
+            </span>
+        </div>
+        
+    </footer>
+
+    <div class="back_top border-radius-4"><i class="iconfont icon-zhiding5"></i></div>
+
+
+    <script type="text/javascript">//网站社交地址二维码，在jquery.qrcode.min.js之前引入
+        var _wechat_url = 'https://sameen.art';
+    </script>
+    
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <!-- jQuery生成二维码 -->
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
+    <script type="text/javascript" src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script type="text/javascript" src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="https://sameen.art/wp-content/themes/UUUI-wordpresstheme/res/js/uuui.js"></script>
+
+    <script>//搜索框显示与隐藏
+        var search_form = document.getElementById("search-form");
+        var search_form_show = document.getElementById("kl");
+        var search_form_hidden = document.getElementById("jk");
+        search_form_show.onclick = function () {
+            search_form.style.display = "block";
+        }
+        search_form_hidden.onclick = function () {
+            search_form.style.display = "none";
+        }
+    </script>
+
+
+</body>
+</html>
