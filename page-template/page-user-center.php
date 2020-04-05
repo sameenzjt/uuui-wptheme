@@ -4,7 +4,7 @@
     */
 ?>
 <?php get_header(); ?>
-<main style="background: url('https://api.uixsj.cn/bing/bing.php'); background-size: 100%;">
+<main style="background-image: url(<?php bloginfo('template_url'); ?>/images/bg_user_center.png); background-size: 100%;">
 
 <?php
     global $current_user; //当前用户信息数组
@@ -98,16 +98,15 @@
                 ch
             </div><!-- con-1 -->
 
-            <div class="con-1 ">
-                <?php if (have_posts()) : the_post(); update_post_caches($posts); ?>
-                    <div class="page-content" >
-                        <?php the_content(); ?> 
-                    </div>
-                <?php else : ?>
-                    <div class="grid_8">
+            <div class="con-1">
+                <div style="background-color:#fff;padding:20px 30px;max-width:100%;">
+                    <?php if (have_posts()) : the_post(); update_post_caches($posts); ?>
+                        <?php the_content(); ?>
+                    <?php else : ?>
                         没有找到你想要的页面！
-                    </div>
-                <?php endif; ?>
+                    <?php endif; ?>
+                </div>
+                
             </div><!-- con-1 -->
         </div>
         

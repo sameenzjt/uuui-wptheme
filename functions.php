@@ -263,12 +263,12 @@ function count_words_read_time () {
 /* —— 支持中文用户名 —— 结束 */
 
 /** —— 自定义 WordPress 的默认 Gravatar 头像 ——https://www.wpdaxue.com/change-wordpress-default-gravatar.html */
-/**add_filter( 'avatar_defaults', 'newgravatar' );
+add_filter( 'avatar_defaults', 'newgravatar' );
 function newgravatar ($avatar_defaults) {
-    $myavatar = get_bloginfo('template_directory') . '/images/wpdaxue-gravatar.jpg';  
-    $avatar_defaults[$myavatar] = "WordPress大学 默认头像";  
+    $myavatar = get_bloginfo('template_directory') . '/images/default_avatar_1.jpg';  
+    $avatar_defaults[$myavatar] = "默认头像1（主题）";
     return $avatar_defaults;  
-}*/
+}
 /** —— 自定义 WordPress 的默认 Gravatar 头像 —— 结束 */
 
 
@@ -382,7 +382,6 @@ function newgravatar ($avatar_defaults) {
 
 
 
-
 /**
  * 自定义用户个人资料信息
  * https://www.wpdaxue.com/add-remove-display-wordpress-user-profile-fields.html
@@ -398,6 +397,9 @@ function newgravatar ($avatar_defaults) {
 		//unset( $contactmethods['jabber'] );
 		return $contactmethods;
 	}
+/** 自定义用户个人资料信息 —— 结束 */
+
+
 
 
 /** —— 搜索相关代码 —— */
