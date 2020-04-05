@@ -188,4 +188,3 @@
     
 
     <div style="clear:both;"></div>
-    <main>

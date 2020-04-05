@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+<main>
+
+
 <div class="row">
 	<div class="col-12">
 		<?php if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();?>
@@ -30,5 +33,5 @@
 	</div>
         
 
-
+</main>
 <?php get_footer(); ?>

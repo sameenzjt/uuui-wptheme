@@ -4,12 +4,12 @@
     */
 ?>
 <?php get_header(); ?>
+<main style="background: url('https://api.uixsj.cn/bing/bing.php'); background-size: 100%;">
 
 <?php
     global $current_user; //当前用户信息数组
     wp_get_current_user();
 ?>
-
 
 <div class="uc-body">
         <div class="uc-header text-center">
@@ -28,7 +28,7 @@
         <div class="tab con">
             <div class="con-1 active-tab" style="overflow: hidden; clear: both;">
                 <div class="float-left" style="width: 30%;padding-right: 10px;">
-                    <div style="margin-top: 20px; padding: 20px 10px; background-color: #fff; overflow: hidden; ">
+                    <div style="padding: 20px 10px; background-color: #fff; overflow: hidden; ">
                         <div class="float-left text-center" style="width: 33.33%;">
                             <div><strong><?php echo get_comments('count=true&user_id='.$user_ID); ?></strong></div>
                             <div><small>评论数</small></div>
@@ -112,7 +112,7 @@
         </div>
         
     </div>
-
-
     
+
+</main>
 <?php get_footer(); ?>

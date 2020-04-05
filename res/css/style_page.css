@@ -23,6 +23,7 @@
 
 /** ************************** 用户中心 **************************--- */
 
+
 footer{
     margin-top: 20px;
     z-index: 999;
@@ -80,6 +81,7 @@ footer{
 
 .con-1 {
     display:none;
+    margin-top: 20px;
 }
 .active-tab {
     display:block;

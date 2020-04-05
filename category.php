@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<main>
         
 <div class="row">
     <div class="col-12">
@@ -62,5 +63,6 @@
     <div class="col-lg-3 box"></div>
 </div>
             
-        
+       
+</main>
 <?php get_footer(); ?>

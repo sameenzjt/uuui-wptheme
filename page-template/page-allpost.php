@@ -4,6 +4,7 @@
     */
 ?>
 <?php get_header(); ?>
+<main>
 
 
 <select name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'>
@@ -45,4 +46,6 @@
     </ul>
 <?php endwhile; ?>
 
+
+</main>
 <?php get_footer(); ?>

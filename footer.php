@@ -1,5 +1,3 @@
-</main>
-
     <footer class="footer">
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-12 footer-about-us">

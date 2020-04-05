@@ -5,6 +5,7 @@
 ?>
    
  <?php get_header(); ?>
+ <main>
 
 <div class="row">
     <div class="col-lg-12 col-sm-12 text-center" style="margin-bottom: 40px;">
@@ -30,5 +31,5 @@
         
         
 
-
+</main>
 <?php get_footer(); ?>

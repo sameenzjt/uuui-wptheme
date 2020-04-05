@@ -1,5 +1,6 @@
 
 <?php get_header(); ?>
+<main>
 
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); 
@@ -61,4 +62,7 @@
         <p>没有找到任何文章！</p>
 
     <?php endif; ?>
+
+
+</main>
 <?php get_footer(); ?>

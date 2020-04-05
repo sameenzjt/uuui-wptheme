@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<main>
 
 <?php $article_type = get_field('article-type');
     $reprinted_from = get_field('reprinted-from');
@@ -198,4 +199,5 @@
 
 </div><!-- row -->
     
+</main>
 <?php get_footer(); ?>

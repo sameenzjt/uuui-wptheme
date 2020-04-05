@@ -4,6 +4,7 @@
     */
 ?>
 <?php get_header(); ?>
+<main>
 <h1 class="category-title animated bounceInLeft"><?php single_tag_title() ?></h1>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <div class="page-thematic-list" style="margin: 20px 0px; padding: 10px 10px; overflow: hidden;" >
@@ -34,4 +35,5 @@
         <p>没有找到任何文章！</p>
         <?php endif; wp_reset_query(); ?>
  
+</main>
 <?php get_footer(); ?>

@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<main>
         
 <div class="row">
     <div class="col-lg-12 col-sm-12 box">
@@ -44,4 +45,5 @@
 </div>
             
         
+</main>
 <?php get_footer(); ?>
