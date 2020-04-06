@@ -5,7 +5,7 @@ Version: v0.25.11
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: blog, one-column
-Description: 设计资源分享网站 v0.25.11：分页显示页数，并在分页时避免权重流失。 v0.25.10：关闭后台登录保护；添加百度统计代码。 v0.25.9：分类页面样式美化；标签页title优化；文章页面SEO优化；统一多处文章列表。 v0.25.8：新增访客默认头像；美化“用户中心”页面。 v0.25.7：优化代码位置。 v0.25.6：优化用户中心。 v0.25.5：【新增】用户中心页面(未完成)。 v0.25.4：【新增】插入B站视频短代码；【修复】浏览器报错bug。 v0.25.3：【完善】文章页滑动页面时标题栏显示文章标题。 v0.25.2：样式优化。 v0.25.1：【合并】js文件；【优化】js执行条件。
+Description: 设计资源分享网站 v0.25.12：优化自动记录死链；美化化文章列表；禁用“几天前”时间；SEO优化；修改主题选项的提示信息；首页、文章页样式改进。 v0.25.11：分页显示页数，并在分页时避免权重流失。 v0.25.10：关闭后台登录保护；添加百度统计代码。 v0.25.9：分类页面样式美化；标签页title优化；文章页面SEO优化；统一多处文章列表。 v0.25.8：新增访客默认头像；美化“用户中心”页面。 v0.25.7：优化代码位置。 v0.25.6：优化用户中心。 v0.25.5：【新增】用户中心页面(未完成)。 v0.25.4：【新增】插入B站视频短代码；【修复】浏览器报错bug。 v0.25.3：【完善】文章页滑动页面时标题栏显示文章标题。 v0.25.2：样式优化。 v0.25.1：【合并】js文件；【优化】js执行条件。
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: UUUI
@@ -16,7 +16,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @charset "UTF-8";
 
 
-
+/** ************************** 首页文章列表 ************************** */
+/** ************************** 专题 ************************** */
+/** ************************** 深色模式 ************************** */
 
 
 html,
@@ -37,11 +39,7 @@ body{
     font-feature-settings: "tnum";
 }
 
-.index-posts-list h2{
-    margin: 0px;
-    padding: 0px;
-    font-size: 1.5rem;
-}
+
 
 img[src=""],img:not([src]){/* img的标签src为空时避免谷歌浏览器有边框 */
     opacity:0;
@@ -73,11 +71,7 @@ a:hover{
     -o-transition: all 0.14s ease-in; /* Opera */
 }
 
-.index-posts-list a:hover{
-    text-decoration:none; 
-    color: #212121;
-    
-}
+
 
 nav{
     overflow: hidden;
@@ -95,8 +89,13 @@ nav{
     border: 0px solid;
 }
 
-.site-title{
-    margin-top: 6px;
+.nav-logo__title{
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    font-size: 2.5rem;
+    line-height: 60px;
+    font-weight: 600;
 }
 
 .inline{display: inline;}
@@ -162,6 +161,75 @@ nav{
 .search-form #searchform{
    margin-top: 40px;
 }
+
+
+/** ************************** 首页文章列表 ************************** */
+.index-posts-list{
+    margin: 5px 0px;
+    padding: 25px 10px;
+    overflow: hidden;
+    transition: all 0.1s ease-in;
+    -moz-transition: all 0.1s ease-in;
+    -webkit-transition: all 0.1s ease-in;
+    -o-transition: all 0.1s ease-in; 
+}
+.index-posts-list:hover{
+    border-radius: 6px;
+    background-color: rgb(250, 250, 250);
+    transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in; 
+}
+
+.index-posts-list:hover .index-posts-list-img{
+    z-index: 5;
+    transform: scale(1.04); /*把图片放大1.04倍*/
+    transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in; 
+}
+
+.index-posts-list-img-div{
+    float: left;
+    border-radius: 4px;
+    margin-right: 20px;
+    width: 296px;
+    height: 166px;
+    overflow: hidden;
+}
+.index-posts-list-img{
+    width: 100%;
+    height: 100%;
+    max-width: 296px;
+    max-height: 166px;
+    transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -webkit-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+}
+
+.index-posts-list-title{
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.index-posts-list-info{
+    margin: 10px 0;
+}
+
+.index-posts-list-info span,
+.index-posts-list-info a{
+    margin-right:10px;
+}
+
+.index-posts-list-excerpt{
+    margin-top: 10px;
+}
+/** ************************** 首页文章列表 ************************** */
 
 footer{
     margin-top: 20px;
@@ -282,59 +350,11 @@ footer{
     margin:20px 0px;
 }
 
-.post-img-div{
-    float: left;
-    border-radius: 4px;
-    margin-right: 20px;
-    width: 296px;
-    height: 166px;
-    overflow: hidden;
-}
-
-.index-posts-list{
-    margin: 20px 0px;
-    padding: 10px 10px;
-    overflow: hidden;
-    transition: all 0.1s ease-in;
-    -moz-transition: all 0.1s ease-in; /* Firefox 4 */
-    -webkit-transition: all 0.1s ease-in; /* Safari 和 Chrome */
-    -o-transition: all 0.1s ease-in; /* Opera */
-}
-
-.index-posts-list:hover{
-    border-radius: 6px;
-    background-color: rgba(240, 240, 240);
-    transition: all 0.15s ease-in;
-    -moz-transition: all 0.15s ease-in; /* Firefox 4 */
-    -webkit-transition: all 0.15s ease-in; /* Safari 和 Chrome */
-    -o-transition: all 0.15s ease-in; /* Opera */
-}
-
-.post-img{
-    width: 100%;
-    height: 100%;
-    max-width: 296px;
-    max-height: 166px;
-    transition: all 0.1s ease-out;
-    -moz-transition: all 0.1s ease-out; /* Firefox 4 */
-    -webkit-transition: all 0.1s ease-out; /* Safari 和 Chrome */
-    -o-transition: all 0.1s ease-out; /* Opera */
-}
-
-.index-posts-list:hover .post-img{
-    z-index: 5;
-    transform: scale(1.04); /*把图片放大1.05倍*/
-    transition: all 0.15s ease-in;
-    -moz-transition: all 0.15s ease-in; /* Firefox 4 */
-    -webkit-transition: all 0.15s ease-in; /* Safari 和 Chrome */
-    -o-transition: all 0.15s ease-in; /* Opera */
-}
 
 
 
-.index-posts-list-title{
-    font-weight: 600;
-}
+
+
 
 
 .little-section{
@@ -343,26 +363,37 @@ footer{
     border: 0px solid;
 }
 
-.font-size-small{
+.font-size-small,
+.font-size-small a,
+.font-size-small span{
     color: #BDBDBD;
-    font-size: 0.75em;
+    font-size: 0.75rem;
 }
 
-.font-size-small a{
-    color: #BDBDBD;
+.font-size-small a:hover{
+    color: #ff5722;
+}
+.font-size-small-14,
+.font-size-small-14 a,
+.font-size-small-14 span{
+    color: #757575;
+    font-size: 0.875rem;
 }
 
-.font-size-small a:hover,
+.font-size-small-14 a:hover{
+    color: #ff5722;
+}
+
 .support_menu_ul li a:hover,
 .support_menu_ul .current-menu-item a{
     color: #ff5722;
 }
 
-.font-size-small-14,
 .support_menu_ul li a{
     font-size: 14px;
     color: #757575;
 }
+
 
 .support_menu_ul{
     padding: 0px;
@@ -529,15 +560,8 @@ footer{
    list-style: none;
    display: inline;
 }
-.index-posts-list-excerpt{
-    margin: 20px 0px;
-}
-.posts-list-info,
-.posts-list-info a{
-    font-size: 0.75em;
-    color: #757575;
-    margin: 0px 10px;
-}
+
+
 
 .lanmu-title{
     font-weight: 600;
@@ -730,12 +754,11 @@ footer{
 
     .index-thematic-div,
     .little-section,
-    .index-posts-list:hover,
     .sidebar-border{
         background-color: #2a2a2a;
         box-shadow: 2px 4px 6px 2px rgba(30,30,30,0.33);
     }
-
+    
     .sidebar-border{
         border: 0px solid;
     }
@@ -746,13 +769,13 @@ footer{
         box-shadow: 0px 0px 8px 0px rgba(10,10,10,0.75);
     }
 
-    .index-posts-list a:hover,
+    
     .index-thematic-div a,
     .index-thematic-div a:hover{
         color: #dedede;
         
     }
-
+    
     .sidebar-tags-div,
     .all-tags-btn{
         color: #999999;

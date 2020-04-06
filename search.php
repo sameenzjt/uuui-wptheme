@@ -7,38 +7,34 @@
             <?php printf( __( '关键字“%s”的搜索结果如下：', 'tanhaibonet' ), '<span>' . get_search_query() . '</span>' ); ?>
         </div>
         <div class="dropdown-divider"></div>
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <div class="page-thematic-list" style="margin: 20px 0px; padding: 10px 10px; overflow: hidden;" >
-                    <a href="<?php the_permalink(); ?>">    
-                        <div class="post-img-div float-left">
-                            <img class="post-img" src="<?php the_field('article-cover-images'); ?>">
-                        </div>
-                        <h3 class="index-thematic-list-title"><?php the_title(); ?></h3>
-                        <p class="font-size-small-14" style="margin: 20px 0px;">
-                            <?php if (has_excerpt()) {
-                                echo $description = get_the_excerpt(); //文章编辑中的摘要
-                            }else {
-                                echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 150,"......"); //文章编辑中若无摘要，自定截取文章内容字数做为摘要
-                            } ?></p>
-                    </a>
-                    <p class="font-size-small">
-                        <?php the_time('Y-n-j') ?>
-                        <?php the_author_posts_link(); ?>
-                        <?php comments_popup_link('0 条评论', '1 条评论', '% 条评论', '', '评论已关闭'); ?>
-                        <?php edit_post_link('编辑', ' • ', ''); ?>
-                    </p>
-                </div>
         
+        <?php if (have_posts()) : while (have_posts()) : the_post();?>
+            <div class="index-posts-list">
+                <a href="<?php the_permalink(); ?>">
+                    <div class="index-posts-list-img-div">
+                        <img class="index-posts-list-img" alt="<?php the_title(); ?>" src="<?php the_field('article-cover-images'); ?>" onerror="nofind();">
+                    </div>
+                    <h2 class="index-posts-list-title"><?php the_title(); ?></h2>
+                    <div class="font-size-small index-posts-list-info">
+                        <span><?php the_time('Y.m.d') ?></span>
+                        <?php the_author_posts_link(); ?>
+                        <?php edit_post_link('编辑', '', ''); ?>
+                    </div>
+                    <p class="font-size-small-14 index-posts-list-excerpt">
+                        <?php if (has_excerpt()) {
+                            echo get_the_excerpt(0, 150,"......"); //文章编辑中的摘要
+                        } else {
+                            echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 150,"......"); //文章编辑中若无摘要，自定截取文章内容字数做为摘要
+                        } ?>
+                    </p>
+                </a>
+            </div>
         <?php endwhile; ?>
-
-        <?php mo_paging(); ?> <!-- 分页 -->
-
+            <?php mo_paging(); ?><!-- 分页 -->
         <?php else : ?>
-
-            <h3 class="title"><a href="#" rel="bookmark">未找到</a></h3>
+            <h3>未找到</h3>
             <p>没有找到任何文章！</p>
-
-        <?php endif; wp_reset_query(); ?>
+        <?php endif;  wp_reset_query(); ?>
 
     </div>
 

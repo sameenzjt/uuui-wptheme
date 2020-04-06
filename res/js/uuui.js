@@ -38,17 +38,3 @@ $('.show_weixin').click(function(){
 
 
 
-window.onload=function(){//网页DOM加载完成时执行
-
-    
-    //首页第一个栏目第二行显示/隐藏
-    function index_lanmu_soft(){
-        $(document).ready(function(){
-            $(".look_more_soft").click(function(){
-                $(".hide,.show").toggle(500);
-            });
-        });
-    }
-
-    index_lanmu_soft();
-};

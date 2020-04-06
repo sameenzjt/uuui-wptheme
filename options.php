@@ -302,7 +302,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __( '网站描述', 'uuui' ),
-		'desc' => __( '网站描述description，有利于SEO。', 'uuui' ),
+		'desc' => __( '<strong>网站描述description，最好是25到160个字符之间。</strong>搜索引擎只显示该说明在搜索结果页中的前150-160个字符，因此如果说明过长，搜索者可能无法看到所有文本；如果说明过短，搜索引擎可能会添加页面其他位置找到的文本内容。', 'uuui' ),
 		'id' => 'website_description',
 		'type' => 'textarea',
 	);
@@ -316,7 +316,8 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __( 'QQ群链接', 'uuui' ),
-		'desc' => __( '获取方式：打开群聊天窗口——群聊设置(右上角三条杠)——更多(右上角三个点)——分享群聊——复制链接', 'uuui' ),
+		'desc' => __( '<strong>注意：不是QQ群号！</strong>链接获取方式：打开群聊聊天窗口——群聊设置(右上角)——更多(右上角)——分享群聊——复制链接。', 'uuui' ),
+		'placeholder' => __( 'ex：https://jq.qq.com/?_wv=1234&k=5A6B7C8', 'uuui' ),
 		'id' => 'qq-qun',
 		'type' => 'text',
 		'class' => 'small'

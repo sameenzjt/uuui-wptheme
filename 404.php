@@ -22,47 +22,26 @@
             </div>
         </div>
     </nav>
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> 
-        <?php
-            //https://zhangzifan.com/wordpress-badlink.html
-            //WordPress实现自动记录死链地址（防重复）
-            if(is_404() && strpos($_SERVER['HTTP_USER_AGENT'],'Baiduspider') !== false){
-                $file = @file("badlink.txt");//badlink.txt
-                $check = true;
-                if(is_array($file) && !empty($file))
-                foreach($file as &$f){
-                    if($f == home_url($_SERVER['REQUEST_URI'])."\n")
-                    $check = false;
-                }
-                if($check){
-                    $fp =   fopen("badlink.txt","a");//badlink.txt就是在网站根目录的记录死链的文件
-                    flock   ($fp, LOCK_EX) ;
-                    fwrite  ($fp, home_url($_SERVER['REQUEST_URI'])."\n");
-                    flock   ($fp, LOCK_UN);
-                    fclose  ($fp);
-                }
-            }?>
-    <?php endwhile; else: ?> 
-        <?php
-            //https://zhangzifan.com/wordpress-badlink.html
-            //WordPress实现自动记录死链地址（防重复）
-            if(is_404() && strpos($_SERVER['HTTP_USER_AGENT'],'Baiduspider') !== false){
-                $file = @file("badlink.txt");//badlink.txt
-                $check = true;
-                if(is_array($file) && !empty($file))
-                foreach($file as &$f){
-                    if($f == home_url($_SERVER['REQUEST_URI'])."\n")
-                    $check = false;
-                }
-                if($check){
-                    $fp =   fopen("badlink.txt","a");//badlink.txt就是在网站根目录的记录死链的文件
-                    flock   ($fp, LOCK_EX) ;
-                    fwrite  ($fp, home_url($_SERVER['REQUEST_URI'])."\n");
-                    flock   ($fp, LOCK_UN);
-                    fclose  ($fp);
-                }
-            }?>
-    <?php endif; ?>  
+   
+    <?php
+        //https://zhangzifan.com/wordpress-badlink.html
+        //WordPress实现自动记录死链地址（防重复）
+        if(is_404() && strpos($_SERVER['HTTP_USER_AGENT'],'Baiduspider') !== false){
+            $file = @file("badlink.txt");//badlink.txt
+            $check = true;
+            if(is_array($file) && !empty($file))
+            foreach($file as &$f){
+                if($f == home_url($_SERVER['REQUEST_URI'])."\n")
+                $check = false;
+            }
+            if($check){
+                $fp =   fopen("badlink.txt","a");//badlink.txt就是在网站根目录的记录死链的文件
+                flock   ($fp, LOCK_EX) ;
+                fwrite  ($fp, home_url($_SERVER['REQUEST_URI'])."\n");
+                flock   ($fp, LOCK_UN);
+                fclose  ($fp);
+            }
+        }?>
 
     <section class="wrapper">
         <div class="container">

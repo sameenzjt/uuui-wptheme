@@ -141,7 +141,7 @@
                 $blog_title2 = get_bloginfo('description');
 
                 if(empty($site_logo)){
-                    echo "<h1 class='float-left site-title' title='" . $blog_title2 . "'>" . $blog_title . "</h1>";
+                    echo "<span class='float-left site-title nav-logo__title' title='" . $blog_title2 . "'>" . $blog_title . "</span>";
                 }else{
                     echo "<img src='" . $site_logo . "' class='logo_img float-left site-title'>";
             }?>
@@ -207,7 +207,7 @@
         </div>
 
         <?php if(is_single()){?>
-            <h1 class="single-title"><?php the_title(); ?></h1>
+            <span class="single-title nav-logo__title"><?php the_title(); ?></span>
         <?php }  ?>
     </nav>
     

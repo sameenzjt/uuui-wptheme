@@ -139,8 +139,8 @@ if ( function_exists( 'add_theme_support' ) ) {
 /* —— 后台主题设置optionsframework —— 结束 */
 
 
-/* —— 显示时间为几天前 —— */
-	function Bing_filter_time() {
+/* —— 显示时间为几天前(存在Bug，最新发表的文章会显示“8小时前”) —— */
+/*	function Bing_filter_time() {
 		global $post ;
 		$to = time();
 		$from = get_the_time('U') ;
@@ -150,27 +150,28 @@ if ( function_exists( 'add_theme_support' ) ) {
 			if ($mins <= 1) {
 				$mins = 1;
 			}
-			$time = sprintf(_n('%s分钟', '%s分钟', $mins), $mins) . __('前' , 'uuui');
+			$time = sprintf(_n('%s', '%s', $mins), $mins) . __('分钟前' , 'uuui');
 		} else if (($diff <= 86400) && ($diff > 3600)) {
 			$hours = round($diff / 3600);
 			if ($hours <= 1) {
 				$hours = 1;
 			}
-			$time = sprintf(_n('%s小时', '%s小时', $hours), $hours) . __('前' , 'uuui');
+			$time = sprintf(_n('%s', '%s', $hours), $hours) . __('小时前' , 'uuui');
 		} elseif ($diff >= 86400) {
 			$days = round($diff / 86400);
 			if ($days <= 1) {
 				$days = 1;
-				$time = sprintf(_n('%s天', '%s天', $days), $days) . __('前' , 'uuui');
+				$time = sprintf(_n('%s', '%s', $days), $days) . __('天前' , 'uuui');
 			} elseif ($days > 29) {
 				$time = get_the_time(get_option('date_format'));
 			} else {
-				$time = sprintf(_n('%s天', '%s天', $days), $days) . __('前' , 'uuui');
+				$time = sprintf(_n('%s', '%s', $days), $days) . __('天前' , 'uuui');
 			}
 		}
 		return $time;
 	}
 	add_filter('the_time','Bing_filter_time');
+	*/
 /* —— 显示时间为几天前 —— 结束 */
 
 
