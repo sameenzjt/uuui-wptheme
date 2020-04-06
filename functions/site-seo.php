@@ -46,4 +46,9 @@
     <meta property="og:title" content="<?php echo $title; ?>">
     <meta property="og:description" content="<?php echo $description; ?>">
     <meta property="og:image" content="<?php the_field('article-cover-images'); ?>">
+    <?php if (get_query_var('page')) {//文章分页 避免权重流失 
+        echo '<link rel="canonical" href="';
+        echo the_permalink();
+        echo '"/>';
+    } ?>
 <?php } ?>

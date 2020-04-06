@@ -454,19 +454,6 @@ add_action( 'template_redirect', 'change_search_url_rewrite' );
 /** —— WordPress支持WebP格式的图片 —— 结束*/
 
 
-/**
-    *自动添加图片 alt 和 title 属性|boke112 导航
-    *https://boke112.com/2912.html
-*/
-	//文章图片自动添加alt和title属性
-function image_alt_tag($content){
-    global $post;preg_match_all('/<img (.*?)\/>/', $content, $images);
-    if(!is_null($images)) {foreach($images[1] as $index => $value)
-    {$new_img = str_replace('<img', '<img alt="'.get_the_title().'-'.get_bloginfo('name').'" title="'.get_the_title().'-'.get_bloginfo('name').'"', $images[0][$index]);
-    $content = str_replace($images[0][$index], $new_img, $content);}}
-    return $content;
-}
-add_filter('the_content', 'image_alt_tag', 99999);
   
 
 /**

@@ -17,6 +17,11 @@
 
             } elseif (is_single() || is_page() ) {
                 single_post_title();
+                if (get_query_var('page')) {//分页显示“第x页”
+                    echo ' - 第';
+                    echo get_query_var('page'); 
+                    echo '页';
+                }
                 echo " - ";
                 bloginfo('name');
 
