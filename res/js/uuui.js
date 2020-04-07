@@ -13,6 +13,20 @@
 })(jQuery);
 
 
+//搜索框显示与隐藏
+$(document).ready(function(){
+    var search_form = document.getElementById("search-form");
+    var search_form_show = document.getElementById("kl");
+    var search_form_hidden = document.getElementById("jk");
+    search_form_show.onclick = function () {
+        search_form.style.display = "block";
+    }
+    search_form_hidden.onclick = function () {
+        search_form.style.display = "none";
+    } 
+});
+
+
 /**  bootstrap弹出框  */
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover({html : true });   

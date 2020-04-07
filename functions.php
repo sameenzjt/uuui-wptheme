@@ -517,24 +517,54 @@ function fa_insert_posts( $atts, $content = null ){
 add_shortcode('fa_insert_post', 'fa_insert_posts');
 /** 短代码--文章内链 —— 结束 */
 
+
 /** 短代码--插入B站视频 */
 function video_bilibili($atts, $content = null) {   
 	extract(shortcode_atts(array("width"=>'100%',"height"=>''),$atts));
 	return'<iframe class="video-bilibili" height="'.$height.'" width="'.$width.'" src="'.$content.'" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>';
 	}  
 	add_shortcode('video_bilibili','video_bilibili');
-
 /** 短代码--插入B站视频 —— 结束 */
 
 
+/** 小工具区域代码 */
+
+add_filter('widget_text', 'do_shortcode');//让文本小工具支持简码
+
+function register_widget_areas() {
+
+	register_sidebar( array(
+		'name'          => 'Footer area one',	//小工具区域的名称，在WP后台中显示
+		'id'            => 'footer_area_one',	//小工具区域的唯一ID。必须全部为小写且不能有空格
+		'description'   => 'This widget area discription',	//将在管理后台显示的小工具区域的描述
+		'before_widget' => '',	//放置在小工具前面的一些html。通常，使用像div或section标签之类的开头的容器标签
+		'after_widget'  => '',	//放置在小工具后面的一些html。通常，关闭容器标签（例如div或section标签）
+		'before_title'  => '<h5 class="index-sidebar-title">',	//放置在小工具标题前面的一些html。通常是H标题标签
+		'after_title'   => '</h5><div class="dropdown-divider"></div>',	//放置在小工具标题后面的一些html。通常是一个关闭的H标题标签
+	));
+  
+  }
+  
+add_action( 'widgets_init', 'register_widget_areas' );
+
+
+/** 小工具区域代码 —— 结束 */
 
 
 
+/** 评论 */
 
+// 评论添加@，by Ludou
+function ludou_comment_add_at( $comment_text, $comment = '') {
+	if( $comment->comment_parent > 0) {
+	  $comment_text = '@<a href="#comment-' . $comment->comment_parent . '">'.get_comment_author( $comment->comment_parent ) . '</a> ' . $comment_text;
+	}
+  
+	return $comment_text;
+  }
+  add_filter( 'comment_text' , 'ludou_comment_add_at', 20, 2);
 
-
-
-
+/** 评论 —— 结束 */
 
 
 

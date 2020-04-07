@@ -1,11 +1,11 @@
 /*
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
-Version: v0.25.11
+Version: v0.25.13
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: blog, one-column
-Description: 设计资源分享网站 v0.25.12：优化自动记录死链；美化化文章列表；禁用“几天前”时间；SEO优化；修改主题选项的提示信息；首页、文章页样式改进。 v0.25.11：分页显示页数，并在分页时避免权重流失。 v0.25.10：关闭后台登录保护；添加百度统计代码。 v0.25.9：分类页面样式美化；标签页title优化；文章页面SEO优化；统一多处文章列表。 v0.25.8：新增访客默认头像；美化“用户中心”页面。 v0.25.7：优化代码位置。 v0.25.6：优化用户中心。 v0.25.5：【新增】用户中心页面(未完成)。 v0.25.4：【新增】插入B站视频短代码；【修复】浏览器报错bug。 v0.25.3：【完善】文章页滑动页面时标题栏显示文章标题。 v0.25.2：样式优化。 v0.25.1：【合并】js文件；【优化】js执行条件。
+Description: 设计资源分享网站 v0.25.13：美化原生评论表单；样式文件合并；增加小工具；样式改进。 v0.25.12：优化自动记录死链；美化化文章列表；禁用“几天前”时间；SEO优化；修改主题选项的提示信息；首页、文章页样式改进。 v0.25.11：分页显示页数，并在分页时避免权重流失。 v0.25.10：关闭后台登录保护；添加百度统计代码。 v0.25.9：分类页面样式美化；标签页title优化；文章页面SEO优化；统一多处文章列表。 v0.25.8：新增访客默认头像；美化“用户中心”页面。 v0.25.7：优化代码位置。 v0.25.6：优化用户中心。 v0.25.5：【新增】用户中心页面(未完成)。 v0.25.4：【新增】插入B站视频短代码；【修复】浏览器报错bug。 v0.25.3：【完善】文章页滑动页面时标题栏显示文章标题。 v0.25.2：样式优化。 v0.25.1：【合并】js文件；【优化】js执行条件。
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: UUUI
@@ -184,7 +184,7 @@ nav{
 
 .index-posts-list:hover .index-posts-list-img{
     z-index: 5;
-    transform: scale(1.04); /*把图片放大1.04倍*/
+    transform: translateZ(0) scale(1.04); /*把图片放大1.04倍*/
     transition: all 0.2s ease-in;
     -moz-transition: all 0.2s ease-in;
     -webkit-transition: all 0.2s ease-in;
@@ -196,14 +196,14 @@ nav{
     border-radius: 4px;
     margin-right: 20px;
     width: 296px;
-    height: 166px;
+    height: 166.5px;
     overflow: hidden;
 }
 .index-posts-list-img{
     width: 100%;
     height: 100%;
     max-width: 296px;
-    max-height: 166px;
+    max-height: 166.5px;
     transition: all 0.1s ease-out;
     -moz-transition: all 0.1s ease-out;
     -webkit-transition: all 0.1s ease-out;
@@ -522,23 +522,32 @@ footer{
     background-color:rgb(244,244,244);
 }
 
-.sidebar-border{
+/** ************************** 侧边栏sidebar ************************** */
+
+.index-sidebar-box{
+    border-radius: 4px;
     background-color: #fff;
-    margin-left: 10px;
+    margin-bottom: 20px;
     padding: 20px;
     border: rgb(238, 238, 238) 1px solid;
 }
 
-.post-font-size-change a{
-    font-size: 14px;
-    padding:2px 8px;
-    color: #757575;
-    background-color: rgb(240, 240, 240);
-    border-radius:4px;
+.index-sidebar-title:before{
+    position: absolute;
+    left: 16px;
+    content: ' ';
+    width: 4px;
+    height: 21px;
+    background-color: #ff5722;
 }
 
+/** ************************** 侧边栏sidebar ************************** */
+
+/** ************************** 小工具widget ************************** */
 
 
+
+/** ************************** 小工具widget ************************** */
 
 .index-thematic-info{
     margin-top: 90px;
@@ -559,12 +568,6 @@ footer{
 .category-title ul{
    list-style: none;
    display: inline;
-}
-
-
-
-.lanmu-title{
-    font-weight: 600;
 }
 
 .sidebar-tags-div{
@@ -656,9 +659,7 @@ footer{
     display: none;
 }
 
-.sidebar-box{
-    margin-top: 20px;
-}
+
 
 .sticky_posts{
     display: block;
@@ -753,14 +754,15 @@ footer{
     }
 
     .index-thematic-div,
-    .little-section,
-    .sidebar-border{
+    .little-section{
         background-color: #2a2a2a;
         box-shadow: 2px 4px 6px 2px rgba(30,30,30,0.33);
     }
     
     .sidebar-border{
         border: 0px solid;
+        background-color: #2a2a2a;
+        box-shadow: 2px 4px 6px 2px rgba(30,30,30,0.33);
     }
 
     .index-thematic-div:hover{

@@ -10,7 +10,7 @@ acf_add_local_field_group(array(
 			'label' => '封面',
 			'name' => 'article-cover-images',
 			'type' => 'text',
-			'instructions' => '填写图片URL，支持外链',
+			'instructions' => '填写图片URL，支持外链，推荐尺寸400*225',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(

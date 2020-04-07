@@ -1,10 +1,10 @@
-<div class="border-radius-4 sidebar-box" style="margin-left: 10px;"><!-- 首页侧边栏banner -->
+<div class="border-radius-4 index-sidebar-box" style="margin-left: 10px;"><!-- 首页侧边栏banner -->
     <img src="<?php echo of_get_option('index_sidebar_banner',''); ?>" width="100%"  style="max-width: 100%;">
 </div><!-- 首页侧边栏banner-end -->
 
 
-<div class="sidebar-border border-radius-4 sidebar-box"><!-- 细节看点 -->
-    <h5 class="lanmu-title">细节看点</h5>
+<div class="border-radius-4 index-sidebar-box"><!-- 细节看点 -->
+    <h5 class="index-sidebar-title">细节看点</h5>
     <div class="dropdown-divider"></div>
     <div class="row">
         <div class="col-lg-6" style="margin:6px 0px; padding: 0px 10px;">
@@ -46,8 +46,8 @@
 </div><!-- 细节看点-end -->
 
 
-<div class="sidebar-border border-radius-4 sidebar-box"><!-- 置顶文章 -->
-    <h5 class="lanmu-title"><i class="iconfont icon-zhiding5 icon"></i>置顶文章</h5>
+<div class="border-radius-4 index-sidebar-box"><!-- 置顶文章 -->
+    <h5 class="index-sidebar-title">置顶文章</h5>
     <div class="dropdown-divider"></div>
     <ol class="sticky_posts">
         <?php
@@ -66,3 +66,7 @@
         <?php endwhile; wp_reset_query();?>
     </ol>
 </div><!-- 置顶文章-end -->
+
+<div class="border-radius-4 index-sidebar-box">
+    <?php dynamic_sidebar( 'footer_area_one' ); ?>
+</div>

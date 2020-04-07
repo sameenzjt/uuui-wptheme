@@ -26,8 +26,18 @@ function disable_dashboard_widgets() {
 }  
 add_action('admin_menu', 'disable_dashboard_widgets');
 
+//屏蔽后台页脚信息
+function change_footer_admin () {return '';}
+add_filter('admin_footer_text', 'change_footer_admin', 9999);
+#function change_footer_version() {return '';}
+#add_filter( 'update_footer', 'change_footer_version', 9999);
 
-
-
+//屏蔽左上logo
+function annointed_admin_bar_remove() {
+    global $wp_admin_bar;
+    /* Remove their stuff */
+    $wp_admin_bar->remove_menu('wp-logo');
+}
+add_action('wp_before_admin_bar_render', 'annointed_admin_bar_remove', 0);
 
 ?>

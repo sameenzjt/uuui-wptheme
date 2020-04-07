@@ -21,7 +21,7 @@
                     echo ' - 第';
                     echo get_query_var('page'); 
                     echo '页';
-                }
+                };
                 echo " - ";
                 bloginfo('name');
 
@@ -46,11 +46,10 @@
 
     <!-- 网站SEO，首页/文章/页面的描述和关键词 -->
     <?php if ( of_get_option('site-seo','') == "1" ){
-        include('functions/site-seo.php');
-    } else{
-        echo '';
-    }
-    
+            include('functions/site-seo.php');
+        } else{
+            echo '';
+        }
     ?>
    
 
@@ -77,8 +76,8 @@
     <!-- iconfont -->
     <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_4zzzlieuj55.css" />
     <!-- style.css -->
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>?ver=<?php $my_theme = wp_get_theme(); echo $my_theme->get('Version'); ?>" type="text/css" media="screen" />
-
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>?ver=<?php echo wp_get_theme()->get('Version'); ?>" />
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_screen.css"/>
     
     <!-- 独立样式 -->
     <?php if( is_single() ) { ?>
@@ -89,8 +88,7 @@
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_page.css" type="text/css"/>
     <?php } ?>
 
-    <link media="screen and (max-width:768px)" rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_screen_768.css"/>
-    <link media="screen and (min-width:768px) and (max-width:991px)" rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_screen_991.css"/>
+    
 
 
     <!-- 自定义style样式 -->
@@ -114,7 +112,6 @@
             s.parentNode.insertBefore(hm, s);
             })();
         </script>
-
     <?php } ?>
 
     <!-- img图片src错误时加载默认图片 -->
@@ -125,7 +122,6 @@
             img.onerror=null; //控制不要一直跳动
         }
     </script>
-
 
 
     <?php wp_head(); ?>

@@ -4,58 +4,33 @@
  */
 
 
-//去除加载的css和js后面的版本号
-/*function _remove_script_version( $src ){
-*    $parts = explode( '?', $src );
-*    return $parts[0];
-*}
-*add_filter( 'script_loader_src', '_remove_script_version', 15, 1 );
-*add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
-*add_filter( 'pre_option_link_manager_enabled', '__return_true' );
-*/
-
-//删除 wp_head 中无关紧要的代码
-remove_action('wp_head', 'rsd_link');
-remove_action('wp_head', 'wlwmanifest_link');
-remove_action('wp_head', 'wp_generator');
-remove_action('wp_head', 'start_post_rel_link');
-remove_action('wp_head', 'index_rel_link');
-remove_action('wp_head', 'adjacent_posts_rel_link');
-
-
-// 禁用 Emoji 功能 
-remove_action('admin_print_scripts','print_emoji_detection_script');
-remove_action('admin_print_styles','print_emoji_styles');
-remove_action('wp_head','print_emoji_detection_script', 7);//表情js，如果需要表情请添加#屏蔽
-remove_action('wp_print_styles','print_emoji_styles');
-remove_action('embed_head','print_emoji_detection_script');
-remove_filter('the_content_feed','wp_staticize_emoji');
-remove_filter('comment_text_rss','wp_staticize_emoji');
-remove_filter('wp_mail','wp_staticize_emoji_for_email');
-add_filter( 'emoji_svg_url','__return_false' );
-
-
-//移除头部 wp-json 标签和 HTTP header 中的 link 
-remove_action('wp_head', 'rest_output_link_wp_head', 10 );
-remove_action('template_redirect', 'rest_output_link_header', 11 );
-
-
-// 关闭 XML-RPC 功能 (wordpress APP需要)
-//add_filter('xmlrpc_enabled', '__return_false');
+//移除 WordPress 加载的JS和CSS链接中的版本号,只移除添加WP的版本号,其他版本号不移除。
+function wpdaxue_remove_cssjs_ver( $src ) {
+	if( strpos( $src, 'ver='. get_bloginfo( 'version' ) ) )
+		$src = remove_query_arg( 'ver', $src );
+	return $src;
+}
+add_filter( 'style_loader_src', 'wpdaxue_remove_cssjs_ver', 999 );
+add_filter( 'script_loader_src', 'wpdaxue_remove_cssjs_ver', 999 );
 
 
 //禁止WordPress头部加载s.w.org
 function remove_dns_prefetch( $hints, $relation_type ) {
     if ( 'dns-prefetch' === $relation_type ) {
-    return array_diff( wp_dependencies_unique_hosts(), $hints );
+        return array_diff( wp_dependencies_unique_hosts(), $hints );
     }
-    return $hints;
+        return $hints;
     }
 add_filter( 'wp_resource_hints', 'remove_dns_prefetch', 10, 2 );
 
 
+// 禁止加载表情代码
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+add_filter( 'emoji_svg_url', '__return_false' );
+
+
 //移除jQuery Migrate脚本
-//https://blog.naibabiji.com/wang-zhan-zi-xun/jin-yong-jquery-migrate-min-js.html
 function dequeue_jquery_migrate( $scripts ) {
     if ( ! is_admin() && ! empty( $scripts->registered['jquery'] ) ) {
         $scripts->registered['jquery']->deps = array_diff(
@@ -76,8 +51,22 @@ function set_user_admin_bar_false_by_default($user_id) {
 /* —— 禁用工具栏 —— 结束 */
 
 
-/*禁用Embeds功能*/
-if ( !function_exists( 'disable_embeds_init' ) ) :
+remove_action('wp_head', 'wp_generator' ); //去除版本信息
+remove_action('wp_head', 'rsd_link' );//清除离线编辑器接口
+remove_action('wp_head', 'wlwmanifest_link' );
+remove_action('wp_head', 'feed_links',2 );//清除feed信息
+remove_action('wp_head', 'feed_links_extra',3 );//清除feed信息
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );//清除前后文信息
+remove_action('wp_head', 'wp_shortlink_wp_head',10,0 );//清除短链
+
+add_filter('json_enabled', '__return_false');//禁用 WordPress 的 JSON REST API
+add_filter('json_jsonp_enabled', '__return_false');//禁用 WordPress 的 JSON REST API
+remove_action('wp_head', 'rest_output_link_wp_head', 10 );// 移除头部 wp-json 标签
+remove_action('wp_head','wp_oembed_add_discovery_links', 10 );//移除HTTP header 中的 link 
+
+
+
+//wordpress 官方禁用 embeds
 function disable_embeds_init() {
     /* @var WP $wp */
     global $wp;
@@ -150,5 +139,5 @@ function disable_embeds_init() {
     }
      
     register_deactivation_hook( __FILE__, 'disable_embeds_flush_rewrite_rules' );
-endif;
+
 ?>

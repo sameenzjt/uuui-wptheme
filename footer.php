@@ -78,7 +78,7 @@
             <span class="footer-copyright border-radius-4 font-divider-color">
                 Copyright © 2019 <?php bloginfo('name'); ?> &nbsp; 
                 <span><?php echo of_get_option('icp-bei', ''); ?></span> 
-                <?php echo of_get_option('gongwang-bei', ''); ?></span>
+                <span><?php echo of_get_option('gongwang-bei', ''); ?></span>
             </span>
         </div>
         
@@ -130,20 +130,7 @@
         </script>
     <?php } ?>
 
-    <script>//搜索框显示与隐藏
-        var search_form = document.getElementById("search-form");
-        var search_form_show = document.getElementById("kl");
-        var search_form_hidden = document.getElementById("jk");
-        search_form_show.onclick = function () {
-            search_form.style.display = "block";
-        }
-        search_form_hidden.onclick = function () {
-            search_form.style.display = "none";
-        }
-    </script>
-
     
-
 
 
     
