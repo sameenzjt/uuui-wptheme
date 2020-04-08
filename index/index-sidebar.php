@@ -1,51 +1,3 @@
-<div class="border-radius-4 index-sidebar-box" style="margin-left: 10px;"><!-- 首页侧边栏banner -->
-    <img src="<?php echo of_get_option('index_sidebar_banner',''); ?>" width="100%"  style="max-width: 100%;">
-</div><!-- 首页侧边栏banner-end -->
-
-
-<div class="border-radius-4 index-sidebar-box"><!-- 细节看点 -->
-    <h5 class="index-sidebar-title">细节看点</h5>
-    <div class="dropdown-divider"></div>
-    <div class="row">
-        <div class="col-lg-6" style="margin:6px 0px; padding: 0px 10px;">
-            <a href="#">
-                <div class="sidebar-tags-div">
-                    <span>#用户引导</span>
-                </div>
-            </a>
-        </div>
-        <div class="col-lg-6" style="margin:6px 0px; padding: 0px 10px;">
-            <a href="#">
-                <div class="sidebar-tags-div">
-                    <span>#用户引导</span>
-                </div>
-            </a>
-        </div>
-        <div class="col-lg-6" style="margin:6px 0px; padding: 0px 10px;">
-            <a href="#">
-                <div class="sidebar-tags-div">
-                    <span>#用户引导</span>
-                </div>
-            </a>
-        </div>
-        <div class="col-lg-6" style="margin:6px 0px; padding: 0px 10px;">
-            <a href="#">
-                <div class="sidebar-tags-div">
-                    <span>#用户引导</span>
-                </div>
-            </a>
-        </div>
-        <div style="width: 100%; margin: 10px 0px; padding: 0px 10px;">
-            <a href="#">
-                <div class="text-center all-tags-btn font-size-small-14">全部细节&nbsp;&gt;</div>
-            </a>
-        </div>
-
-
-    </div><!-- row-end -->
-</div><!-- 细节看点-end -->
-
-
 <div class="border-radius-4 index-sidebar-box"><!-- 置顶文章 -->
     <h5 class="index-sidebar-title">置顶文章</h5>
     <div class="dropdown-divider"></div>
@@ -66,7 +18,3 @@
         <?php endwhile; wp_reset_query();?>
     </ol>
 </div><!-- 置顶文章-end -->
-
-<div class="border-radius-4 index-sidebar-box">
-    <?php dynamic_sidebar( 'footer_area_one' ); ?>
-</div>

@@ -221,6 +221,9 @@ to {transform: translateY(0px);}
 	font-size: 0.8rem;
 	margin-bottom: 1.5rem;
 }
+.wp-caption{
+    max-width: 100%;
+}
 
 /* 图片居中 */
 img.alignright,

@@ -1,11 +1,11 @@
 /*
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
-Version: v0.25.13
+Version: v0.25.14
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: blog, one-column
-Description: 设计资源分享网站 v0.25.13：美化原生评论表单；样式文件合并；增加小工具；样式改进。 v0.25.12：优化自动记录死链；美化化文章列表；禁用“几天前”时间；SEO优化；修改主题选项的提示信息；首页、文章页样式改进。 v0.25.11：分页显示页数，并在分页时避免权重流失。 v0.25.10：关闭后台登录保护；添加百度统计代码。 v0.25.9：分类页面样式美化；标签页title优化；文章页面SEO优化；统一多处文章列表。 v0.25.8：新增访客默认头像；美化“用户中心”页面。 v0.25.7：优化代码位置。 v0.25.6：优化用户中心。 v0.25.5：【新增】用户中心页面(未完成)。 v0.25.4：【新增】插入B站视频短代码；【修复】浏览器报错bug。 v0.25.3：【完善】文章页滑动页面时标题栏显示文章标题。 v0.25.2：样式优化。 v0.25.1：【合并】js文件；【优化】js执行条件。
+Description: 设计资源分享网站 v0.25.14：优化小工具样式；优化首页专题样式；语言本地化；改进前台优化；修复文章页图片超出的问题。 v0.25.13：美化原生评论表单；样式文件合并；增加小工具；样式改进。 v0.25.12：优化自动记录死链；美化化文章列表；禁用“几天前”时间；SEO优化；修改主题选项的提示信息；首页、文章页样式改进。 v0.25.11：分页显示页数，并在分页时避免权重流失。 v0.25.10：关闭后台登录保护；添加百度统计代码。 v0.25.9：分类页面样式美化；标签页title优化；文章页面SEO优化；统一多处文章列表。 v0.25.8：新增访客默认头像；美化“用户中心”页面。 v0.25.7：优化代码位置。 v0.25.6：优化用户中心。 v0.25.5：【新增】用户中心页面(未完成)。 v0.25.4：【新增】插入B站视频短代码；【修复】浏览器报错bug。 v0.25.3：【完善】文章页滑动页面时标题栏显示文章标题。 v0.25.2：样式优化。 v0.25.1：【合并】js文件；【优化】js执行条件。
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: UUUI
@@ -47,7 +47,7 @@ img[src=""],img:not([src]){/* img的标签src为空时避免谷歌浏览器有�
 
 main {
     display: block;
-    padding: 60px 40px 20px;
+    padding: 60px 60px 20px;
     margin: 0px auto;
     background-color: #fff;
 }
@@ -71,7 +71,11 @@ a:hover{
     -o-transition: all 0.14s ease-in; /* Opera */
 }
 
-
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
 nav{
     overflow: hidden;
@@ -81,7 +85,7 @@ nav{
     top:0px;
     z-index:99;
     height: 60px;
-    padding: 0px 40px;
+    padding: 0px 60px;
     background-color: #fff;
     -webkit-box-shadow: 0px 1px 10px 0px rgba(207,207,207,0.33);
     -moz-box-shadow: 0px 1px 10px 0px rgba(207,207,207,0.33);
@@ -166,7 +170,7 @@ nav{
 /** ************************** 首页文章列表 ************************** */
 .index-posts-list{
     margin: 5px 0px;
-    padding: 25px 10px;
+    padding: 20px 10px;
     overflow: hidden;
     transition: all 0.1s ease-in;
     -moz-transition: all 0.1s ease-in;
@@ -233,11 +237,7 @@ nav{
 
 footer{
     margin-top: 20px;
-}
-
-.footer{
-    padding: 40px 40px 20px 40px;
-    margin: 0px auto;
+    padding: 40px 60px 20px;
     background-color: #2a2a32;
 }
 
@@ -301,12 +301,12 @@ footer{
     float: left;
     padding: 10px 16px;
 }
- 
+/** ************************** 首页专题 ************************** */
 .index-thematic-img{
-    border-radius: 4px;
+    border-radius: 4px 4px 0 0;
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position: center center;
+    background-position: center;
     height: 120px;
     margin: 0px 0px 10px 0px;
     filter:brightness(80%);
@@ -317,8 +317,8 @@ footer{
 }
 
 .index-thematic-div{
-    margin-top: 10px;
-    padding: 0px 0px;
+    margin: 10px 0;
+    padding: 0 0 10px;
     border-radius: 4px;
     box-shadow: 2px 4px 6px 2px rgba(207,207,207,0.33);
     border: 0px solid;
@@ -334,26 +334,35 @@ footer{
 .index-thematic-div a:hover{
     color: #333;
 }
+.index_thematic_name::before{
+    position: absolute;
+    left: 14px;
+    content: ' ';
+    width: 4px;
+    height: 1.4rem;
+    line-height: 1.2rem;
+    background-color: #ff5722;
+}
+.index_thematic_name{
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0 10px;
+    max-width: 100%;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
 
 .index-category-description p{
-    padding:5px 0px 20px 12px;
-    display: block;
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
+    margin: 0;
+    padding: 0 10px;
+    overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
-
-.index-lanmu-four-div{
-    margin:20px 0px;
-}
-
-
-
-
-
+/** ************************** 首页专题 结束 ************************** */
 
 
 
@@ -525,6 +534,7 @@ footer{
 /** ************************** 侧边栏sidebar ************************** */
 
 .index-sidebar-box{
+    font-size: 14px;
     border-radius: 4px;
     background-color: #fff;
     margin-bottom: 20px;
@@ -540,12 +550,46 @@ footer{
     height: 21px;
     background-color: #ff5722;
 }
-
+.index-sidebar-box img{
+    width: 100%;
+    height: auto;
+}
+.index-sidebar-box ul li::before{
+    content: "\003E";
+    margin-right: 6px;
+    color: #ff5722;
+    line-height: 1.8rem;
+}
 /** ************************** 侧边栏sidebar ************************** */
 
 /** ************************** 小工具widget ************************** */
 
+/** 小工具——日历 */
+.calendar_wrap{
+    width:100%;
+}
+#wp-calendar {
+	width:100%;
+}
+#wp-calendar th,#wp-calendar td {
+	text-align:center;
+}
+#wp-calendar tbody a{
+    color: #ff5722;
+}
+#wp-calendar tbody #today{
+    text-align: center;
+    background-color: #ff5722;
+    color: #fff;
+    border-radius: 4px;
+}
+/** 小工具——日历 结束 */
+/** 小工具——文章归档 */
 
+.index-sidebar-box ul .post-count{
+    float: right;
+}
+/** 小工具——文章归档 结束 */
 
 /** ************************** 小工具widget ************************** */
 

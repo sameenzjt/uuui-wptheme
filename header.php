@@ -79,20 +79,17 @@
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>?ver=<?php echo wp_get_theme()->get('Version'); ?>" />
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_screen.css"/>
     
-    <!-- 独立样式 -->
+    
     <?php if( is_single() ) { ?>
-        <!-- font-awesome -->
+        <!-- 独立样式 -->
         <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/5.12.0-1/css/all.min.css" />
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_single.css" type="text/css"/>
     <?php } elseif( is_page() ){ ?>
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_page.css" type="text/css"/>
     <?php } ?>
 
-    
 
-
-    <!-- 自定义style样式 -->
-    <?php $header_style = of_get_option('header_style');
+    <?php $header_style = of_get_option('header_style');//自定义style样式
         if(!empty($header_style)){
             echo "<style>\n";
             echo $header_style;

@@ -5,14 +5,13 @@
 
 
 //移除 WordPress 加载的JS和CSS链接中的版本号,只移除添加WP的版本号,其他版本号不移除。
-function wpdaxue_remove_cssjs_ver( $src ) {
-	if( strpos( $src, 'ver='. get_bloginfo( 'version' ) ) )
-		$src = remove_query_arg( 'ver', $src );
-	return $src;
-}
-add_filter( 'style_loader_src', 'wpdaxue_remove_cssjs_ver', 999 );
-add_filter( 'script_loader_src', 'wpdaxue_remove_cssjs_ver', 999 );
-
+    function wpdaxue_remove_cssjs_ver( $src ) {
+        if( strpos( $src, 'ver='. get_bloginfo( 'version' ) ) )
+            $src = remove_query_arg( 'ver', $src );
+        return $src;
+    }
+    add_filter( 'style_loader_src', 'wpdaxue_remove_cssjs_ver', 999 );
+    add_filter( 'script_loader_src', 'wpdaxue_remove_cssjs_ver', 999 );
 
 //禁止WordPress头部加载s.w.org
 function remove_dns_prefetch( $hints, $relation_type ) {
@@ -25,6 +24,12 @@ add_filter( 'wp_resource_hints', 'remove_dns_prefetch', 10, 2 );
 
 
 // 禁止加载表情代码
+remove_action( 'admin_print_scripts' , 'print_emoji_detection_script');
+remove_action( 'admin_print_styles' , 'print_emoji_styles');
+remove_filter( 'the_content_feed' , 'wp_staticize_emoji');
+remove_filter( 'comment_text_rss' , 'wp_staticize_emoji');
+remove_filter( 'wp_mail' , 'wp_staticize_emoji_for_email');
+remove_action('embed_head',		'print_emoji_detection_script');
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 add_filter( 'emoji_svg_url', '__return_false' );
@@ -52,18 +57,28 @@ function set_user_admin_bar_false_by_default($user_id) {
 
 
 remove_action('wp_head', 'wp_generator' ); //去除版本信息
-remove_action('wp_head', 'rsd_link' );//清除离线编辑器接口
-remove_action('wp_head', 'wlwmanifest_link' );
-remove_action('wp_head', 'feed_links',2 );//清除feed信息
-remove_action('wp_head', 'feed_links_extra',3 );//清除feed信息
-remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );//清除前后文信息
+
+remove_action('wp_head', 'rsd_link' );//清除离线编辑器接口rsd
+remove_action('wp_head', 'wlwmanifest_link' );//清除离线编辑器接口wlwmanifest
+
+remove_action('wp_head', 'feed_links',2 );//文章和评论feed 
+remove_action('wp_head', 'feed_links_extra',3 );//分类等feed
+
+remove_action( 'wp_head', 'index_rel_link' ); //移除前后文、第一篇文章、主页meta信息
+remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); //移除前后文、第一篇文章、主页meta信息
+remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); //移除前后文、第一篇文章、主页meta信息
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );//清除前后文meta信息
+
 remove_action('wp_head', 'wp_shortlink_wp_head',10,0 );//清除短链
 
 add_filter('json_enabled', '__return_false');//禁用 WordPress 的 JSON REST API
 add_filter('json_jsonp_enabled', '__return_false');//禁用 WordPress 的 JSON REST API
+
 remove_action('wp_head', 'rest_output_link_wp_head', 10 );// 移除头部 wp-json 标签
+
 remove_action('wp_head','wp_oembed_add_discovery_links', 10 );//移除HTTP header 中的 link 
 
+#add_filter('xmlrpc_enabled', '__return_false');//关闭XML-RPC 功能 (wordpress APP需要)
 
 
 //wordpress 官方禁用 embeds

@@ -424,19 +424,6 @@ function optionsframework_options() {
 		);
 	}
 
-	$options[] = array(
-		'name' => __( '首页侧边栏banner', 'uuui' ),
-		'id' => 'index_sidebar_banner',
-		'desc' => __( '填写banner图片链接', 'uuui' ),
-		'placeholder' => 'banner图片链接',
-		'type' => 'text'
-	);
-	$options[] = array(
-		'id' => 'index_sidebar_banner_link',
-		'desc' => __( '填写banner跳转链接', 'uuui' ),
-		'placeholder' => 'banner跳转链接',
-		'type' => 'text'
-	);
 
 	
 /* —— 页面选择 —— */
@@ -584,9 +571,6 @@ $options[] = array(
 		'type' => 'text',
 		'class' => 'small'
 	);
-
-	
-	
 
 
 /* —— 广告位 —— */

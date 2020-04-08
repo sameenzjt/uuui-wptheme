@@ -528,45 +528,81 @@ function video_bilibili($atts, $content = null) {
 
 
 /** 小工具区域代码 */
-
 add_filter('widget_text', 'do_shortcode');//让文本小工具支持简码
-
 function register_widget_areas() {
 
 	register_sidebar( array(
-		'name'          => 'Footer area one',	//小工具区域的名称，在WP后台中显示
-		'id'            => 'footer_area_one',	//小工具区域的唯一ID。必须全部为小写且不能有空格
-		'description'   => 'This widget area discription',	//将在管理后台显示的小工具区域的描述
-		'before_widget' => '',	//放置在小工具前面的一些html。通常，使用像div或section标签之类的开头的容器标签
-		'after_widget'  => '',	//放置在小工具后面的一些html。通常，关闭容器标签（例如div或section标签）
+		'name'          => '首页侧边栏',	//小工具区域的名称，在WP后台中显示
+		'id'            => 'index_sidebar_widget',	//小工具区域的唯一ID。必须全部为小写且不能有空格
+		'description'   => '首页右侧侧边栏，页面宽度小于991px时会隐藏',	//将在管理后台显示的小工具区域的描述
+		'before_widget' => '<div class="border-radius-4 index-sidebar-box">',	//放置在小工具前面的一些html。通常，使用像div或section标签之类的开头的容器标签
+		'after_widget'  => '</div>',	//放置在小工具后面的一些html。通常，关闭容器标签（例如div或section标签）
 		'before_title'  => '<h5 class="index-sidebar-title">',	//放置在小工具标题前面的一些html。通常是H标题标签
 		'after_title'   => '</h5><div class="dropdown-divider"></div>',	//放置在小工具标题后面的一些html。通常是一个关闭的H标题标签
 	));
   
-  }
-  
+}
 add_action( 'widgets_init', 'register_widget_areas' );
-
-
 /** 小工具区域代码 —— 结束 */
 
+/** 修改WordPress自带标签云小工具的显示参数 */
+add_filter( 'widget_tag_cloud_args', 'theme_tag_cloud_args' );
+function theme_tag_cloud_args( $args ){
+	$newargs = array(
+		'smallest'    => 10,  //最小字号
+		'largest'     => 18, //最大字号
+		'unit'        => 'px',   //字号单位，可以是pt、px、em或%
+		'number'      => 45,     //显示个数
+		'format'      => 'flat',//列表格式，可以是flat、list或array
+		'separator'   => "\n",   //分隔每一项的分隔符
+		'orderby'     => 'name',//排序字段，可以是name或count
+		'order'       => 'ASC', //升序或降序，ASC或DESC
+		'exclude'     => null,   //结果中排除某些标签
+		'include'     => null,  //结果中只包含这些标签
+		'link'        => 'view', //taxonomy链接，view或edit
+		'taxonomy'    => 'post_tag', //调用哪些分类法作为标签云
+	);
+	$return = array_merge( $args, $newargs);
+	return $return;
+}
+/** 修改WordPress自带标签云小工具的显示参数 —— 结束 */
 
+/** 自定义get_search_form函数样式 get_search_form( $echo ); */
+function my_search_form( $form ) {
+ 
+    $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+	<div class="input-group mb-3">
+	<input type="text" class="form-control" placeholder="' . __('Search') . '" value="' . get_search_query() . '" name="s" id="s">
+	<div class="input-group-append">
+	<button class="btn btn-success"  id="searchsubmit" type="submit" value="'. esc_attr__('Search') .'">' . __('Search') . '</button>  
+	</div>
+	</div>
+	</form>
+	';
+ 
+    return $form;
+}
+ 
+add_filter( 'get_search_form', 'my_search_form' );
+/** 修改WordPress自带标签云小工具的显示参数 —— 结束 */
 
-/** 评论 */
+/** 为“分类目录”和“文章归档”小工具的文章数目添加span标签 —— */
+//为“分类目录”的文章数目添加span
+function wpkj_cat_count_span( $links ) {
+    $links = str_replace( '</a> (', '</a><span class="post-count">(', $links );
+    $links = str_replace( ')', ')</span>', $links );
+    return $links;
+}
+add_filter( 'wp_list_categories', 'wpkj_cat_count_span' );
 
-// 评论添加@，by Ludou
-function ludou_comment_add_at( $comment_text, $comment = '') {
-	if( $comment->comment_parent > 0) {
-	  $comment_text = '@<a href="#comment-' . $comment->comment_parent . '">'.get_comment_author( $comment->comment_parent ) . '</a> ' . $comment_text;
-	}
-  
-	return $comment_text;
-  }
-  add_filter( 'comment_text' , 'ludou_comment_add_at', 20, 2);
+//为“文章归档”的文章数目添加span
+function wpkj_archive_count_span( $links ) {
+    $links = str_replace( '</a>&nbsp;(', '</a><span class="post-count">(', $links );
+    $links = str_replace( ')', ')</span>', $links );
+    return $links;
+}
+add_filter( 'get_archives_link', 'wpkj_archive_count_span' );
 
-/** 评论 —— 结束 */
-
-
-
+/** 修改WordPress自带标签云小工具的显示参数 —— 结束 */
 
 ?>

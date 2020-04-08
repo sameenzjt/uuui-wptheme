@@ -3,24 +3,19 @@
 
 <div class="row">
 
-    <div class="col-12 index-lanmu-four-div">
+    <div class="col-12" style="margin:20px 0">
         <?php include( 'index/index-lanmu-four.php' ); ?>
     </div>
 
 
-    <div class="col-lg-9 col-sm-12">
-        <div style="margin-top:20px;">
-            <?php include( 'index/index-post-list.php' ); ?>
-        </div>
-        <div class="dropdown-divider"></div>
-        <div style="margin-top:20px;margin-bottom:20px;">
-            <?php include( 'index/index-thematic.php' ); ?>
-        </div>
+    <div class="col-lg-9 col-sm-12" style="margin:20px 0">
+        <?php include( 'index/index-post-list.php' ); ?>
     </div>
 
 
-    <div class="col-3">
+    <div class="col-3" style="margin:20px 0">
         <?php include( 'index/index-sidebar.php' ); ?>
+        <?php dynamic_sidebar( 'index_sidebar_widget' ); ?>
     </div>
 
 
@@ -30,7 +25,9 @@
         < ?php include( 'index/index-navigation.php' ); ?>
     </div>
     -->
-
+    <div class="col-12" style="margin:20px 0">
+        <?php include( 'index/index-thematic.php' ); ?>
+    </div>
 
 </div>
 
