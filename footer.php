@@ -75,7 +75,7 @@
 
         </div>
         <div class="text-center">
-            <span class="footer-copyright border-radius-4 font-divider-color">
+            <span class="footer-copyright border-radius-4">
                 Copyright © 2019 <?php bloginfo('name'); ?> &nbsp; 
                 <span><?php echo of_get_option('icp-bei', ''); ?></span> 
                 <span><?php echo of_get_option('gongwang-bei', ''); ?></span>
@@ -115,6 +115,6 @@
         </script>
     <?php } ?>
 
-<?php wp_footer(); ?>
+    <?php wp_footer(); ?>
 </body>
 </html>

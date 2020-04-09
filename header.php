@@ -164,7 +164,7 @@
                 <a id="jk" href="javascript:void(0);" title="关闭搜索框">
                     <i class="iconfont icon-guanbi float-right" style="font-size: 16px;"></i>
                 </a>
-                <form style="width:80%" class="input-group input-group-sm mb-3 mx-auto" method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
+                <form style="width:80%;box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);" class="input-group input-group-sm mb-3 mx-auto" method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
                     <input class="form-control" type="text" placeholder="输入关键字" name="s" id="s"/>
                     <div class="input-group-append">
                         <input class="btn btn-success" type="submit" value="搜 索" onClick="if(document.forms['search'].searchinput.value=='- Search -')document.forms['search'].searchinput.value='';" alt="Search" />

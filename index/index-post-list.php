@@ -1,6 +1,6 @@
 <div class="post-list">
     <i class="iconfont icon-wenzhang icon"></i>
-    <h2 class="index-title d-inline">最新文章</h2>
+    <h2 class="index-title">最新文章</h2>
     <div class="post-list-tags float-right font-size-small-14">
         <?php wp_tag_cloud( array ( 'smallest' => '14', 'largest' => 14, 'unit' => 'px', 'order' => 'RAND', 'number' => 8 ) ); ?>
     </div>
@@ -38,11 +38,15 @@
         </div>
 
     <?php endwhile; ?>
-        <?php mo_paging(); ?><!-- 分页 -->
+        <!-- < ?php mo_paging(); ?> 分页 -->
+        <div class="index-look-all-post w-100">
+            <a href="<?php the_permalink( of_get_option('index-look-all-post', '') ); ?>">
+                <button type="button" class="btn btn-block">查看全部文章</button>
+            </a>
+        </div>
     <?php else : ?>
         <h3>未找到</h3>
         <p>没有找到任何文章！</p>
     <?php endif;  wp_reset_query(); ?>
     
-
-</div>
+</div><!-- 分页 -->

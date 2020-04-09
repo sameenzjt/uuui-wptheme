@@ -145,24 +145,6 @@ if ( function_exists( 'add_theme_support' ) ) {
 	$optionsfile = locate_template( 'options.php' );
 	load_template( $optionsfile );
 
-	add_action( 'optionsframework_custom_scripts', 'optionsframework_custom_scripts' );
-
-	function optionsframework_custom_scripts() { ?>
-
-	<script type="text/javascript">
-	jQuery(document).ready(function() {
-		jQuery('#example_showhidden').click(function() {
-			jQuery('#section-example_text_hidden').fadeToggle(400);
-		});
-
-		if (jQuery('#example_showhidden:checked').val() !== undefined) {
-			jQuery('#section-example_text_hidden').show();
-		}
-	});
-	</script>
-	<?php
-	}
-
 	//让optionsframework支持js语句
 	add_action('admin_init','optionscheck_change_santiziation', 100);
 	
@@ -383,23 +365,23 @@ function newgravatar ($avatar_defaults) {
 		global $wp_query, $paged;
 		$max_page = $wp_query->max_num_pages;
 		if ( $max_page == 1 ) return; 
-		echo '<div class="pagination"><ul class="pagination">';
+		echo '<ul class="pagination">';
 		if ( empty( $paged ) ) $paged = 1;
 		echo '<li class="page-item"><span class="page-link">'; previous_posts_link('上一页'); echo '</span></li>';
-		if ( $paged > $p + 1 ) _paging_link( 1, '<li class="page-item">第一页</li>' );
+		if ( $paged > $p + 1 ) _paging_link( 1, '<li class="page-item"><span class="page-link">第一页</span></li>' );
 		if ( $paged > $p + 2 ) echo "<li class='page-item disabled'><span class='page-link'>···</span></li>";
 		for( $i = $paged - $p; $i <= $paged + $p; $i++ ) { 
-			if ( $i > 0 && $i <= $max_page ) $i == $paged ? print "<li class=\"page-item active\"><span class='page-link'>{$i}</span></li>" : _paging_link( $i );
+			if ( $i > 0 && $i <= $max_page ) $i == $paged ? print "<li class=\"page-item active\"><span class='page-link'> {$i} </span></li>" : _paging_link( $i );
 		}
 		if ( $paged < $max_page - $p - 1 ) echo "<li class='page-item disabled'><span class='page-link'> ... </span></li>";
 		echo '<li class="page-item"><span class="page-link">'; next_posts_link('下一页'); echo '</span></li>';
 		echo '<li class="page-item disabled"><span class="page-link">共 '.$max_page.' 页</span></li>';
-		echo '</ul></div>';
+		echo '</ul>';
 	}
 
 	function _paging_link( $i, $title = '' ) {
 		if ( $title == '' ) $title = "第 {$i} 页";
-		echo "<li><a class='page-link' href='", esc_html( get_pagenum_link( $i ) ), "'>{$i}</a></li>";
+		echo "<li><span class='page-link'><a href='", esc_html( get_pagenum_link( $i ) ), "'>{$i}</a></span></li>";
 	}
 /* —— 分页 —— 结束 */
 
