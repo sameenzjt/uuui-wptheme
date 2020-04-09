@@ -10,57 +10,7 @@
 
 <div class="row">
     <div class="col-1">
-        <a href="javascript:void(0);" class="single-share-icon rounded-circle">
-            <i class="iconfont icon-weixin1"></i>
-        </a>
-        <div class="share">
-            <div class="share-icon">
-                <a title="分享到微信" href="javascript:void(0)" class="bds_weixin">
-                    <i class="iconfont icon-weixin1"></i>
-                </a>
-                <div class="wechat-share-qr text-center">
-                    <div id="weixin-qr"></div>
-                    <div class="bd_weixin_popup_foot text-center">使用微信“扫一扫”<br>分享至朋友圈</div>
-                </div>
-                
-            </div>
-            <div class="share-icon">
-                <a title="分享到QQ空间" href="javascript:void(0)" class="share_qzone" onclick="shareToQzone(event)">
-                    <i class="iconfont icon-qzone1"></i>
-                </a>
-            </div>
-            <div class="share-icon">
-                <a title="分享到新浪微博" href="javascript:void(0)" class="share_xlwb" onclick="shareToSinaWB(event)">
-                    <i class="iconfont icon-weibo1"></i>
-                    <!--<img src="http://images.cnblogs.com/cnblogs_com/a-cat/1193051/o_img_xlwb.png" />-->
-                </a>
-            </div>
-            <div class="share-icon">
-                <a title="分享到豆瓣" href="javascript:void(0)" class="share_db" onclick="shareToDouban(event)">
-                    <i class="iconfont icon-douban1"></i>
-                </a>
-            </div>
-            <div class="share-icon">
-                <a title="分享到QQ好友" href="javascript:void(0)" class="share_qq" onclick="shareToqq(event)">
-                    <i class="iconfont icon-qq1"></i>
-                </a>
-            </div>
-            <div class="share-icon">
-                <a title="分享到百度贴吧" href="javascript:void(0)" class="share_bdtb" onclick="shareToTieba(event)">
-                    <i class="iconfont icon-baidutieba1"></i>
-                </a>
-            </div>
-            <div class="share-icon">
-                <a title="分享到人人网" href="javascript:void(0)" class="share_rrw" onclick="shareToRenren(event)">
-                    <i class="iconfont icon-renrenwang1"></i>
-                </a>
-            </div>
-            <div class="share-icon">
-                <a title="分享到开心网" href="javascript:void(0)" class="share_kx" onclick="shareToKaixin(event)">
-                    <i class="iconfont icon-kaixinwang1"></i>
-                </a>
-            </div>
-        </div>
+        
         
     </div>
     <div class="container col-lg-8 col-md-12 col-sm-12">
@@ -89,87 +39,86 @@
             <div class="dropdown-divider"></div>
         </div><!-- post-title-div -->
    
-            <?php if (have_posts()) : the_post(); update_post_caches($posts); ?>
-                <!--文章内容-->
-                <article class="post-content">
-                    <?php the_content(); ?>
-                    <?php wp_link_pages(array(
-                        'before'           => '<div class="single-pagination alert alert-secondary">' . __( '文章分页:', 'uuui' ),//所有链接之前的文本
-                        'after'            => '</div>',//所有链接之后的文本
-                        'link_before'      => '',//单个链接文本之前的文本
-                        'link_after'       => '',//单个链接文本之后的文本
-                        'next_or_number'   => 'number',//选择使用数字分页还是上一页、下一页文本分页，可选number或next
-                        'separator'        => ' ',//页码分隔符
-                        'nextpagelink'     => __( 'Next page', 'uuui'),//下一页链接文本
-                        'previouspagelink' => __( 'Previous page', 'uuui' ),//上一页链接文本
-                        'pagelink'         => '%',//页码的字符串格式，百分号%会被替换成数字，如页%会生成 “页1”、“页2”这样的样式
-                        'echo'             => 1,//选择是要返回结果还是直接输出，默认为True，返回NULL或返回内容；设置为false，则直接输出HTML格式
-                    )); ?>
-                </article><!-- post-content -->
-            <?php else: ?>
-                <div class="errorbox">
-                    没有文章！
+        <?php if (have_posts()) : the_post(); update_post_caches($posts); ?>
+            <!--文章内容-->
+            <article class="post-content">
+                <?php the_content(); ?>
+                <?php wp_link_pages(array(
+                    'before'           => '<div class="single-pagination alert alert-secondary">' . __( '文章分页:', 'uuui' ),//所有链接之前的文本
+                    'after'            => '</div>',//所有链接之后的文本
+                    'link_before'      => '',//单个链接文本之前的文本
+                    'link_after'       => '',//单个链接文本之后的文本
+                    'next_or_number'   => 'number',//选择使用数字分页还是上一页、下一页文本分页，可选number或next
+                    'separator'        => ' ',//页码分隔符
+                    'nextpagelink'     => __( 'Next page', 'uuui'),//下一页链接文本
+                    'previouspagelink' => __( 'Previous page', 'uuui' ),//上一页链接文本
+                    'pagelink'         => '%',//页码的字符串格式，百分号%会被替换成数字，如页%会生成 “页1”、“页2”这样的样式
+                    'echo'             => 1,//选择是要返回结果还是直接输出，默认为True，返回NULL或返回内容；设置为false，则直接输出HTML格式
+                )); ?>
+            </article><!-- post-content -->
+        <?php else: ?>
+            <div class="errorbox">
+                没有文章！
+            </div>
+        <?php endif; ?>
+
+        <div class="post-content-bottom">
+            <div class="dropdown-divider"></div>
+            <!-- 版权声明 -->
+            <div class="post-copyright-notice jumbotron w-100">
+                <?php
+                    if($article_type == "original") {
+                        $the_permalink = get_permalink();
+                        $the_title = get_the_title();
+                        $blog_title = get_bloginfo('name');
+
+                        echo "<p><i class='iconfont icon-yuanchuang post-icon'></i>
+                            本作品采用<a href='https://creativecommons.org/licenses/by-nc-nd/3.0/cn/'>知识共享BY-NC-ND许可协议</a>进行许可。
+                            <br /><br />转载请注明出处：<a href='" . $the_permalink ."'>《".$the_title."》 | " . $blog_title . "</a></p>";
+                    } elseif ($article_type == "reproduced") {
+                        echo "<span>转载自：<a href='" . $reprinted_url ."'>" . $reprinted_from . "</a></span>";
+                        echo "<br /><i class='iconfont icon-azhuanzai post-icon'></i><span>本文转载自其他网站，请勿再次转载本文</span>";
+                    } elseif ($article_type == "translation") {
+                        echo "<span>原文：<a href='" . $translation_url ."'>" . $translation_from . "</a></span>";
+                        echo "<br /><i class='iconfont icon-fanyiline post-icon'></i><span>本文翻译自其他文章，可能存在翻译错误，本网站不保证文章准确性</span>";
+                }?>
+            </div>
+
+            <div class="dropdown-divider"></div>
+
+            <!-- 文章底部广告 -->
+            <div style="margin-right:100px;width:100%;height: auto;border-radius: 4px;">
+                <?php include( 'ads/text-bottom-ads.php' ); ?>
+            </div>
+
+            <div class="dropdown-divider"></div>
+
+            <!-- 文章标签 -->
+            <div class="post-tags">
+                <h5><i class="iconfont icon-biaoqian post-icon"></i>继续阅读与本文标签相同的文章</h5>
+                <div style="margin-top:20px;">
+                    <?php the_tags('<span class="post-tags-badge font-size-small-14">','</span><span class="post-tags-badge font-size-small-14">','</span>'); ?>
                 </div>
-            <?php endif; ?>
+            </div>
+            
+            <div class="dropdown-divider"></div>
 
-            <div class="post-content-bottom">
-                <div class="dropdown-divider"></div>
-                <!-- 版权声明 -->
-                <div class="post-copyright-notice jumbotron w-100">
-                    <?php
-                        if($article_type == "original") {
-                            $the_permalink = get_permalink();
-                            $the_title = get_the_title();
-                            $blog_title = get_bloginfo('name');
+            <!-- 评论 -->
+            <div class="post-comments">
+                <h5><i class="iconfont icon-pinglun post-icon"></i>评论</h5>
+                <?php comments_template(); ?>
+            </div>
 
-                            echo "<p><i class='iconfont icon-yuanchuang post-icon'></i>
-                                本作品采用<a href='https://creativecommons.org/licenses/by-nc-nd/3.0/cn/'>知识共享BY-NC-ND许可协议</a>进行许可。
-                                <br /><br />转载请注明出处：<a href='" . $the_permalink ."'>《".$the_title."》 | " . $blog_title . "</a></p>";
-                        } elseif ($article_type == "reproduced") {
-                            echo "<span>转载自：<a href='" . $reprinted_url ."'>" . $reprinted_from . "</a></span>";
-                            echo "<br /><i class='iconfont icon-azhuanzai post-icon'></i><span>本文转载自其他网站，请勿再次转载本文</span>";
-                        } elseif ($article_type == "translation") {
-                            echo "<span>原文：<a href='" . $translation_url ."'>" . $translation_from . "</a></span>";
-                            echo "<br /><i class='iconfont icon-fanyiline post-icon'></i><span>本文翻译自其他文章，可能存在翻译错误，本网站不保证文章准确性</span>";
-                    }?>
-                </div>
-
-                <div class="dropdown-divider"></div>
-
-                <!-- 文章底部广告 -->
-                <div style="margin-right:100px;width:100%;height: auto;border-radius: 4px;">
-                    <?php include( 'ads/text-bottom-ads.php' ); ?>
-                </div>
-
-                <div class="dropdown-divider"></div>
-
-                <!-- 文章标签 -->
-                <div class="post-tags">
-                    <h5><i class="iconfont icon-biaoqian post-icon"></i>继续阅读与本文标签相同的文章</h5>
-                    <div style="margin-top:20px;">
-                        <?php the_tags('<span class="post-tags-badge font-size-small-14">','</span><span class="post-tags-badge font-size-small-14">','</span>'); ?>
-                    </div>
-                </div>
-                
-                <div class="dropdown-divider"></div>
-
-                <!-- 评论 -->
-                <div class="post-comments">
-                    <h5><i class="iconfont icon-pinglun post-icon"></i>评论</h5>
-                    <?php comments_template(); ?>
-                </div>
-
-                <div class="dropdown-divider"></div>
-            </div><!-- post-content-bottom -->
+            <div class="dropdown-divider"></div>
+        </div><!-- post-content-bottom -->
 
     </div><!-- col-lg-9 col-sm-12 col-md-12 container -->
 
 <!-- 右 id="fixed-tool" -->
-    <div class="col-3 single-right-side">
-
+    <div class="col-lg-3 single-right-side">
         <!-- 相似文章 -->
         <div class="single-tool border-radius-4">
-            <h5 class="single_sidebar_title"><i class="iconfont icon-xiangsichanpin post-icon"></i>相似文章</h5>
+            <h5 class="single_sidebar_title">相似文章</h5>
             <div class="dropdown-divider"></div>
             <ul class="font-size-small-14" style="list-style-type:none; margin: 0px; padding: 0px;">
                 <?php $i=1;
@@ -199,4 +148,57 @@
 </div><!-- row -->
     
 </main>
+
+<a href="javascript:void(0);" class="single-share-icon rounded-circle">
+    <i class="iconfont icon-weixin1"></i>
+</a>
+<div class="share">
+    <div class="share-icon">
+        <a title="分享到微信" href="javascript:void(0)" class="bds_weixin">
+            <i class="iconfont icon-weixin1"></i>
+        </a>
+        <div class="wechat-share-qr text-center">
+            <div id="weixin-qr"></div>
+            <div class="bd_weixin_popup_foot text-center">使用微信“扫一扫”<br>分享至朋友圈</div>
+        </div>
+        
+    </div>
+    <div class="share-icon">
+        <a title="分享到QQ空间" href="javascript:void(0)" class="share_qzone" onclick="shareToQzone(event)">
+            <i class="iconfont icon-qzone1"></i>
+        </a>
+    </div>
+    <div class="share-icon">
+        <a title="分享到新浪微博" href="javascript:void(0)" class="share_xlwb" onclick="shareToSinaWB(event)">
+            <i class="iconfont icon-weibo1"></i>
+            <!--<img src="http://images.cnblogs.com/cnblogs_com/a-cat/1193051/o_img_xlwb.png" />-->
+        </a>
+    </div>
+    <div class="share-icon">
+        <a title="分享到豆瓣" href="javascript:void(0)" class="share_db" onclick="shareToDouban(event)">
+            <i class="iconfont icon-douban1"></i>
+        </a>
+    </div>
+    <div class="share-icon">
+        <a title="分享到QQ好友" href="javascript:void(0)" class="share_qq" onclick="shareToqq(event)">
+            <i class="iconfont icon-qq1"></i>
+        </a>
+    </div>
+    <div class="share-icon">
+        <a title="分享到百度贴吧" href="javascript:void(0)" class="share_bdtb" onclick="shareToTieba(event)">
+            <i class="iconfont icon-baidutieba1"></i>
+        </a>
+    </div>
+    <div class="share-icon">
+        <a title="分享到人人网" href="javascript:void(0)" class="share_rrw" onclick="shareToRenren(event)">
+            <i class="iconfont icon-renrenwang1"></i>
+        </a>
+    </div>
+    <div class="share-icon">
+        <a title="分享到开心网" href="javascript:void(0)" class="share_kx" onclick="shareToKaixin(event)">
+            <i class="iconfont icon-kaixinwang1"></i>
+        </a>
+    </div>
+</div>
+
 <?php get_footer(); ?>

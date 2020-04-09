@@ -43,7 +43,6 @@
             } else {
                 wp_title('',true);
             } ?></title>
-
     <!-- 网站SEO，首页/文章/页面的描述和关键词 -->
     <?php if ( of_get_option('site-seo','') == "1" ){
             include('functions/site-seo.php');
@@ -51,9 +50,6 @@
             echo '';
         }
     ?>
-   
-
-
     <?php //Web 应用的名称（仅当网站被用作为一个应用时才使用）//Chrome、Firefox OS 和 Opera 的主题颜色
         $application_name = of_get_option('application-name', ''); 
         $application_color = of_get_option('application-color', '');
@@ -62,33 +58,13 @@
             echo '<meta name="theme-color" content="' . $application_color . '">';
         }else{
             echo "";
-        }
-    ?>
-
+    }?>
     <!-- RSS -->
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="<?php echo get_bloginfo('rss2_url'); ?>" />
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有评论" href="<?php bloginfo('comments_rss2_url'); ?>" />
-
-    <!-- bootstrap -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
-    <!-- https://github.com/daneden/animate.css -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/animate.css/3.7.2/animate.min.css" />
     <!-- iconfont -->
     <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_4zzzlieuj55.css" />
-    <!-- style.css -->
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>?ver=<?php echo wp_get_theme()->get('Version'); ?>" />
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_screen.css"/>
     
-    
-    <?php if( is_single() ) { ?>
-        <!-- 独立样式 -->
-        <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/5.12.0-1/css/all.min.css" />
-        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_single.css" type="text/css"/>
-    <?php } elseif( is_page() ){ ?>
-        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/res/css/style_page.css" type="text/css"/>
-    <?php } ?>
-
-
     <?php $header_style = of_get_option('header_style');//自定义style样式
         if(!empty($header_style)){
             echo "<style>\n";
@@ -119,7 +95,6 @@
             img.onerror=null; //控制不要一直跳动
         }
     </script>
-
 
     <?php wp_head(); ?>
 </head>

@@ -141,6 +141,11 @@
     .single-right-side{
         display: none;
     }
+    .single-tool{
+        background-color: #fff;
+        margin-left: 0px;
+        border: rgb(238, 238, 238) 1px solid;
+    }
 
 }
 /** ********************************************** <=768 ********************************************** */

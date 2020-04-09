@@ -91,29 +91,14 @@
         var _wechat_url = '<?php echo of_get_option('weixin_qr_uploader', ''); ?>';
     </script>
     
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-    <!-- jQuery生成二维码 -->
-    <script type="text/javascript" src="https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-    <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
-    <script type="text/javascript" src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
-    <script type="text/javascript" src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    
-    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/uuui.js"></script>
-    
-
 
     <?php if( is_single() ) { ?>
-
         <script type="text/javascript">//社交分享
             var _title,_source,_sourceUrl,_pic,_showcount,_desc,_site,
                 _url = '<?php the_permalink(); ?>',
                 _pic = '<?php the_field('article-cover-images'); ?>',
                 _summary = '<?php echo get_post_meta($post->ID, "description", true); ?>'
         </script>
-        <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/res/js/single.js"></script>
-        
     <?php } elseif( is_page() ){ ?>
         <script>
             $(".tab-item").click(function() {
@@ -130,10 +115,6 @@
         </script>
     <?php } ?>
 
-    
-
-
-    
 <?php wp_footer(); ?>
 </body>
 </html>

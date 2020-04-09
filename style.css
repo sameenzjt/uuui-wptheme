@@ -1,11 +1,11 @@
 /*
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
-Version: v0.25.14
+Version: v0.25.15
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: blog, one-column
-Description: 设计资源分享网站 v0.25.14：优化小工具样式；优化首页专题样式；语言本地化；改进前台优化；修复文章页图片超出的问题。 v0.25.13：美化原生评论表单；样式文件合并；增加小工具；样式改进。 v0.25.12：优化自动记录死链；美化化文章列表；禁用“几天前”时间；SEO优化；修改主题选项的提示信息；首页、文章页样式改进。 v0.25.11：分页显示页数，并在分页时避免权重流失。 v0.25.10：关闭后台登录保护；添加百度统计代码。 v0.25.9：分类页面样式美化；标签页title优化；文章页面SEO优化；统一多处文章列表。 v0.25.8：新增访客默认头像；美化“用户中心”页面。 v0.25.7：优化代码位置。 v0.25.6：优化用户中心。 v0.25.5：【新增】用户中心页面(未完成)。 v0.25.4：【新增】插入B站视频短代码；【修复】浏览器报错bug。 v0.25.3：【完善】文章页滑动页面时标题栏显示文章标题。 v0.25.2：样式优化。 v0.25.1：【合并】js文件；【优化】js执行条件。
+Description: 设计资源分享网站 v0.25.15:正确加载样式文件；改进文章页样式、首页栏目样式；优化动画。 v0.25.14：优化小工具样式；优化首页专题样式；语言本地化；改进前台优化；修复文章页图片超出的问题。 v0.25.13：美化原生评论表单；样式文件合并；增加小工具；样式改进。 v0.25.12：优化自动记录死链；美化化文章列表；禁用“几天前”时间；SEO优化；修改主题选项的提示信息；首页、文章页样式改进。 v0.25.11：分页显示页数，并在分页时避免权重流失。 v0.25.10：关闭后台登录保护；添加百度统计代码。 v0.25.9：分类页面样式美化；标签页title优化；文章页面SEO优化；统一多处文章列表。 v0.25.8：新增访客默认头像；美化“用户中心”页面。 v0.25.7：优化代码位置。 v0.25.6：优化用户中心。 v0.25.5：【新增】用户中心页面(未完成)。 v0.25.4：【新增】插入B站视频短代码；【修复】浏览器报错bug。 v0.25.3：【完善】文章页滑动页面时标题栏显示文章标题。 v0.25.2：样式优化。 v0.25.1：【合并】js文件；【优化】js执行条件。
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: UUUI
@@ -301,6 +301,34 @@ footer{
     float: left;
     padding: 10px 16px;
 }
+/** ************************** 首页四栏目 ************************** */
+.little-section{
+    padding:15px;
+    box-shadow: 1px 1px 8px 2px rgba(207,207,207,0.33);
+    border: 0px solid;
+    border-radius: 4px;
+}
+.designer-must-have{
+    word-break:keep-all;
+    word-wrap: break-word;
+}
+
+.designer-must-have a{
+    color: #BDBDBD;
+    font-size: 0.75em;
+    border-radius: 4px;
+    background-color: rgb(246, 246, 246);
+    padding: 0px 4px;
+    margin: 4px 0px;
+    display: inline-block;
+    white-space: nowrap;/*强制不换行*/
+}
+.designer-must-have a:hover{
+    color: #fff;
+    background-color:#ff5722;
+}
+/** ************************** 首页四栏目 结束 ************************** */
+
 /** ************************** 首页专题 ************************** */
 .index-thematic-img{
     border-radius: 4px 4px 0 0;
@@ -366,11 +394,7 @@ footer{
 
 
 
-.little-section{
-    padding:15px;
-    box-shadow: 1px 1px 8px 2px rgba(207,207,207,0.33);
-    border: 0px solid;
-}
+
 
 .font-size-small,
 .font-size-small a,
@@ -415,8 +439,7 @@ footer{
 .sidebar-tags-div:hover,
 .all-tags-btn:hover,
 .sidebar_tag_cloud a:hover,
-.lanmu-icon:hover,
-.designer-must-have a:hover{
+.lanmu-icon:hover{
     color: #fff;
     background-color:#ff5722;
 }
@@ -500,11 +523,11 @@ footer{
 }
 
 .back_top{
-    padding: 8px 10px;
+    padding: 2px 10px;
     border: 0px solid;
     position: fixed;/*固定位置*/
-    z-index: 99;/*设置优先级显示，保证不会被覆盖*/	
-    right: 10px;
+    z-index: 999;/*设置优先级显示，保证不会被覆盖*/	
+    right: 20px;
     bottom: 100px;
     color: rgb(160, 160, 160);
     background-color: rgba(0, 0, 0, 0.2);
@@ -718,23 +741,8 @@ footer{
     color: #999999;
     font-size: 14px;
 }
-.designer-must-have{
-    word-break:keep-all;
-    word-wrap: break-word;
-}
 
-.designer-must-have a{
-    color: #BDBDBD;
-    font-size: 0.75em;
-    border-radius: 4px;
-    background-color: rgb(246, 246, 246);
-    padding: 0px 4px;
-    margin: 4px 0px;
-    display: inline-block;
-    white-space: nowrap;/*强制不换行*/
-}
-
-/** ************************** 专题 ************************** */
+/** ************************** 专题页 ************************** */
 
 .zt-banner-div{
     position: relative;
@@ -770,7 +778,7 @@ footer{
 .zt-banner-img img{
     border: 4px solid white;
 }
-/** ************************** 专题 ************************** */
+/** ************************** 专题页 结束 ************************** */
 
 
 /** ************************** 深色模式 ************************** */

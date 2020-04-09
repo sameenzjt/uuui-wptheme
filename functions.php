@@ -1,10 +1,65 @@
 <?php
 
+
+
+
+//wp_register_script：样式表唯一名称,样式表的URL,依赖关系:脚本将在该数组所包含的其他脚本之后处理,指定版本号,移动到页脚
+//wp_register_style：样式表唯一名称,样式表的URL,依赖关系:脚本将在该数组所包含的其他脚本之后处理,指定版本号,CSS的媒体类型
+	function myScripts() {
+		wp_register_style( 'bootstrap_css', 'https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css', '', null, 'all' );
+		wp_register_style( 'style_css', get_template_directory_uri() . '/style.css', '', wp_get_theme()->get('Version'), 'all' );
+		wp_register_style( 'animate_css', 'https://cdn.staticfile.org/animate.css/3.7.2/animate.min.css', '', null, 'screen' );
+		wp_register_style( 'screen_css', get_template_directory_uri() . '/res/css/style_screen.css', 'style_css', wp_get_theme()->get('Version'), 'screen' );
+
+		wp_register_script( 'jquery_js', 'https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js', '', null, true );
+		wp_register_script( 'jquery_qrcode', 'https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js', 'jquery_js', null, true );
+		wp_register_script( 'jquery_popper', 'https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js', 'jquery_js', null, true );
+		wp_register_script( 'bootstrap_js', 'https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js', 'jquery_js', null, true );
+		wp_register_script( 'uuui_js', get_template_directory_uri() . '/res/js/uuui.js', 'jquery_js', wp_get_theme()->get('Version'), true );
+		if ( !is_admin() ) { /** Load Scripts and Style on Website Only */
+			wp_deregister_script( 'jquery' );
+			wp_enqueue_style( 'bootstrap_css' );
+			wp_enqueue_style( 'style_css' );
+			wp_enqueue_style( 'animate_css' );
+			wp_enqueue_style( 'screen_css' );
+
+			wp_enqueue_script( 'jquery_js' );
+			wp_enqueue_script( 'jquery_qrcode' );
+			wp_enqueue_script( 'jquery_popper' );
+			wp_enqueue_script( 'bootstrap_js' );
+			wp_enqueue_script( 'uuui_js' );
+		}
+	}
+	add_action( 'init', 'myScripts' );
+
+	function spScripts() {
+		if ( is_single() ) {
+			wp_register_style( 'fontawesome', 'https://cdn.staticfile.org/font-awesome/5.12.0-1/css/all.min.css', '', null, 'all' );
+			wp_register_style( 'single_css', get_template_directory_uri() . '/res/css/style_single.css', 'style_css', wp_get_theme()->get('Version'), 'screen' );
+			
+			wp_register_script( 'single_js', get_template_directory_uri() . '/res/js/single.js', 'jquery_js', wp_get_theme()->get('Version'), true );
+
+			wp_enqueue_style( 'fontawesome' );
+			wp_enqueue_style( 'single_css' );
+			wp_enqueue_script( 'single_js' );
+		}
+		if ( is_page() ) {
+			wp_register_style( 'page_css', get_template_directory_uri() . '/res/css/style_page.css', 'style_css', wp_get_theme()->get('Version'), 'screen' );
+			
+			wp_enqueue_style( 'page_css' );
+		}
+
+	}
+	add_action( 'wp_enqueue_scripts', 'spScripts' );
+
+
+
+
 	include( 'functions/optimization_reception.php' );//网站前台优化Reception
 	include( 'functions/optimization_backstage.php' );//网站后台优化Backstage
 
 /* —— 保护后台登录 —— */
-	/*add_action('login_enqueue_scripts','login_protection');  
+	/*add_action('login_enqueue_scripts','login_protection');
 	function login_protection(){
 		if($_GET['page'] != 'login')header('Location:'.home_url());
 	}*/
