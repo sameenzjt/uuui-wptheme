@@ -50,5 +50,24 @@ $('.show_weixin').click(function(){
 });
 
 
+//评论表单的按钮样式
+$(function(){
+    //表单样式
+    $("#commentform").addClass('');
+    //按钮样式
+    $("#commentform #submit").addClass('btn btn-block');
+    //评论必填项*样式
+    $(".required").addClass('text-danger');
+    //评论输入项p样式
+    $(".comment-form-author, .comment-form-email, .comment-form-url").addClass('form-group float-left col-lg-6 col-md-6 col-sm-12');
+    //评论输入项input样式
+    $(".comment-form-author input, .comment-form-email input, .comment-form-url input").addClass('form-control');
+    //评论复选框p样式
+    $(".comment-form-cookies-consent").addClass('custom-control custom-checkbox float-left col-12');
+    //评论复选框input样式
+    $("#wp-comment-cookies-consent").addClass('custom-control-input');
+    //评论复选框input样式
+    $(".comment-form-cookies-consent label").addClass('custom-control-label');
+});
 
 
