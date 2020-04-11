@@ -1,11 +1,11 @@
 /*
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
-Version: v0.25.17
+Version: v0.25.18
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: blog, one-column
-Description: 设计资源分享网站 v0.25.17:美化评论表单；ajax提交评论；文章页面版式调整。 v0.25.16：优化分页；优化全部文章页面；大量样式优化；面包屑优化； v0.25.15:正确加载样式文件；改进文章页样式、首页栏目样式；优化动画。 v0.25.14：优化小工具样式；优化首页专题样式；语言本地化；改进前台优化；修复文章页图片超出的问题。 v0.25.13：美化原生评论表单；样式文件合并；增加小工具；样式改进。 v0.25.12：优化自动记录死链；美化化文章列表；禁用“几天前”时间；SEO优化；修改主题选项的提示信息；首页、文章页样式改进。 v0.25.11：分页显示页数，并在分页时避免权重流失。 v0.25.10：关闭后台登录保护；添加百度统计代码。 v0.25.9：分类页面样式美化；标签页title优化；文章页面SEO优化；统一多处文章列表。 v0.25.8：新增访客默认头像；美化“用户中心”页面。 v0.25.7：优化代码位置。 v0.25.6：优化用户中心。 v0.25.5：【新增】用户中心页面(未完成)。 v0.25.4：【新增】插入B站视频短代码；【修复】浏览器报错bug。 v0.25.3：【完善】文章页滑动页面时标题栏显示文章标题。 v0.25.2：样式优化。 v0.25.1：【合并】js文件；【优化】js执行条件。
+Description: 设计资源分享网站 v0.25.18:优化评论ajax；增加文章代码高亮；优化移动端样式；细节优化。 v0.25.17:美化评论表单；ajax提交评论；文章页面版式调整。 v0.25.16：优化分页；优化全部文章页面；大量样式优化；面包屑优化； v0.25.15:正确加载样式文件；改进文章页样式、首页栏目样式；优化动画。 v0.25.14：优化小工具样式；优化首页专题样式；语言本地化；改进前台优化；修复文章页图片超出的问题。 v0.25.13：美化原生评论表单；样式文件合并；增加小工具；样式改进。 v0.25.12：优化自动记录死链；美化化文章列表；禁用“几天前”时间；SEO优化；修改主题选项的提示信息；首页、文章页样式改进。 v0.25.11：分页显示页数，并在分页时避免权重流失。 v0.25.10：关闭后台登录保护；添加百度统计代码。 v0.25.9：分类页面样式美化；标签页title优化；文章页面SEO优化；统一多处文章列表。 v0.25.8：新增访客默认头像；美化“用户中心”页面。 v0.25.7：优化代码位置。 v0.25.6：优化用户中心。 v0.25.5：【新增】用户中心页面(未完成)。 v0.25.4：【新增】插入B站视频短代码；【修复】浏览器报错bug。 v0.25.3：【完善】文章页滑动页面时标题栏显示文章标题。 v0.25.2：样式优化。 v0.25.1：【合并】js文件；【优化】js执行条件。
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: UUUI
@@ -32,7 +32,7 @@ html {
 	scroll-behavior: smooth;
 }
 body{
-    font-family:  -apple-system, BlinkMacSystemFont,"PingFang SC","Lantinghei SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑","WenQuanYi Micro Hei",lucida,Arial,sans-serif;
+    font-family:  -apple-system, BlinkMacSystemFont, "PingFang SC", "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "WenQuanYi Micro Hei", lucida, Arial, sans-serif;
     color: #404040;
     font-size:16px;
     line-height: 1.8;
@@ -43,6 +43,12 @@ body{
 
 img[src=""],img:not([src]){/* img的标签src为空时避免谷歌浏览器有边框 */
     opacity:0;
+}
+
+
+code,
+pre{
+    font-family: -apple-system, BlinkMacSystemFont, "Cascadia code", "Consolas", "Courier New", monospace, "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
 }
 
 main {
@@ -201,28 +207,28 @@ nav{
     display: inline;
 }
 
-.post-list-tags a{
+.index-post-list-tags a{
     padding: 2px 6px;
     margin: 0px 4px;
 }
 
-.post-list-tags a:hover{
+.index-post-list-tags a:hover{
     color: #fff;
     background-color: #FF5722;
     border-radius: 4px;
 }
 
 
-.post-list{
+.index-post{
     background-color: #fff;
     padding: 20px;
-    border-radius: 6px;
+    border-radius: 4px;
     box-shadow: 0px 3px 8px 0 rgba(219, 219, 219, 0.56);
 }
 .index-posts-list{
     margin: 10px 0px;
     padding: 15px;
-    border-radius: 6px;
+    border-radius: 4px;
     overflow: hidden;
     transition: all 0.1s ease-in;
     -moz-transition: all 0.1s ease-in;
@@ -308,6 +314,14 @@ nav{
 }
 /** 分页 */
 /** ************************** 首页文章列表 结束 ************************** */
+
+/** ************************** 首页侧边栏 ************************** */
+
+.index-sidebar{
+    margin: 20px 0;
+}
+
+/** ************************** 首页侧边栏 结束 ************************** */
 
 /** ************************** 首页专题 ************************** */
 .view-all a{
@@ -419,7 +433,23 @@ nav{
 	padding:12px 25px
 }
 /** ajax无刷新评论 结束 */
-
+.post-comments .border{
+    border-radius: 4px;
+}
+.comment-list .children{
+    margin-left: 56px;
+    border-top: 0;
+}
+.comment-list .children .comment{
+    background-color: rgb(250, 250, 250);
+}
+.post-comments p{
+    margin-bottom: 10px;
+}
+.comment-reply-link{
+    font-size: small;
+    float: right;
+}
 /** ************************** 评论 结束 ************************** */
 
 
@@ -591,7 +621,7 @@ footer{
     bottom: 0;
     display: inline-block;
     width: 100%;
-    border-radius: 6px;
+    border-radius: 4px;
     background: inherit;
     filter: blur(3px) brightness(0.95);
 }
@@ -877,8 +907,7 @@ footer{
         box-shadow: 0px 1px 10px 0px rgba(10,10,10,0.33);
     }
 
-    .post-img,
-    .sidebar-box img,
+    .index-sidebar-box img,
     .index-thematic-img{
         -webkit-filter: brightness(0.8);
         filter: brightness(0.8);

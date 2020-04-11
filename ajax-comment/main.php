@@ -45,24 +45,47 @@ if(!function_exists('fa_ajax_comment_callback')) :
         do_action('set_comment_cookies', $comment, $user);
         $GLOBALS['comment'] = $comment; //根据你的评论结构自行修改，如使用默认主题则无需修改
         ?>
-        <li <?php comment_class(); ?>>
-            <article class="comment-body">
-                <footer class="comment-meta">
-                    <div class="comment-author vcard">
-                        <?php echo get_avatar( $comment, $size = '56')?>
-                        <b class="fn">
-                            <?php echo get_comment_author_link();?>
-                        </b>
-                    </div>
-                    <div class="comment-metadata">
-                        <?php echo get_comment_date(); ?>
-                    </div>
-                </footer>
-                <div class="comment-content">
-                    <?php comment_text(); ?>
-                </div>
-            </article>
-        </li>
+        <li <?php comment_class('media border p-3'); ?> id="li-comment-<?php comment_ID(); ?>">
+			
+			<?php $comment_author = get_comment_author_link() ;
+			$comment_avatar = array(
+				'class' => 'mr-3 mt-3 align-self-start',
+			); ?>
+			<?php echo get_avatar( $comment, $size = '56', '', $comment_author, $comment_avatar )?>
+				
+			<?php if ( '0' == $comment->comment_approved ) : // 未审核的评论显示一行提示文字 ?>
+				<p class="comment-awaiting-moderation">
+				<?php _e( 'Your comment is awaiting moderation.', 'bootstrapwp' ); ?>
+				</p>
+			<?php endif; ?>
+			<div class="media-body">
+				<h4> <?php printf( '%1$s %2$s',// 显示评论作者名称 
+						get_comment_author_link(),
+						// 如果当前文章的作者也是这个评论的作者，那么会出现一个标签提示。
+						( $comment->user_id === $post->post_author ) ? '<span class="badge badge-pill badge-primary"> ' . __( 'Post author', 'uuui' ) . '</span>' : ''
+					); ?>
+				</h4>
+				<small>
+					<?php printf( '<time datetime="%1$s">%2$s</time>', get_comment_time( 'c' ), sprintf( __( '%1$s %2$s', 'fenikso' ), get_comment_date(), get_comment_time() ));?>
+					<?php  edit_comment_link( __( 'Edit', 'uuui' ), '<span class="edit-link">', '</span>' ); ?>
+				</small>
+
+				<?php  comment_text(); ?>
+				
+				<div class="reply">
+					<?php // 显示评论的回复链接 
+						comment_reply_link( array_merge( $args, array( 
+						'reply_text' =>  __( 'Reply'), 
+						'after'      =>  ' <span>&darr;</span>', 
+						'depth'      =>  $depth, 
+						'max_depth'  =>  $args['max_depth'] ) ) ); 
+					?>
+				</div>
+
+			</div>
+		</li>
+
+
         <?php die();
     }
 

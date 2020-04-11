@@ -17,6 +17,10 @@ $(document).on("mousewheel DOMMouseScroll", function (e) {
 
 
 
+    //<code><pre>添加代码高亮
+    $("code").addClass('prettyprint');
+    
+
     
     //分享至微信 css控制二维码隐藏和出现
     $("#weixin-qr").qrcode({

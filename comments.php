@@ -35,12 +35,11 @@ comment_form($defaults); ?>
         <p><a href="#addcomment">还没有任何评论，你来说两句吧</a></p>
     </li>
 <?php } else {?>
-    <ol class="comment-list">
-    <?php wp_list_comments(
-            // array(
-            //'callback'     =>  'bootstrapwp_comment',
-        //)
-        ); ?>
+    <ol class="comment-list container mt-3">
+        <?php wp_list_comments(
+            array(
+            'callback'     =>  'bootstrapwp_comment',
+        )); ?>
     </ol>
         
 <?php } ?>

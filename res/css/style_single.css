@@ -120,7 +120,7 @@ to {transform: translateY(0px);}
     animation-fill-mode: forwards;
 }
 
-.container{
+.post-container{
     margin-top: 20px;
     padding: 30px;
     background-color: #ffffff;
@@ -264,8 +264,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
     margin: 30px 0px;
 }
 
-.post-copyright-notice p,
-.post-comments p{
+.post-copyright-notice p{
     margin-bottom: 20px;
 }
 
@@ -422,6 +421,80 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 /** ************************** 短代码——结束 **************************--- */
 
 
+/** ************************** screen<768px **************************--- */
+@media screen and (max-width:768px) {
+    .single-title{
+        margin-left: 10px;
+        font-size: 16px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    main{
+        padding: 60px 20px 20px;
+    }
+    .post-container{
+        margin-top: 20px;
+        padding: 20px;
+    }
+    .post-title-div{
+        margin-left:0px;
+    }
+
+    .post-title-div h1{
+        font-size: 1.4em;
+    }
+
+    .post-content{
+        max-width: 100%;
+        margin: 20px 0px 0px;
+    }
+
+    .post-content h2{
+        font-size: 1.4em;
+        margin: 20px -20px 10px 0px;
+        padding: 0 20px;
+        border-left: 5px solid #e40000;
+    }
+
+    .post-content h3{
+        font-size: 1.3em;
+        margin-top: 30px;
+        margin-bottom: 10px;
+
+    }
+    .post-content h4{
+        font-size: 1.2em;
+    }
+    .post-content h5{
+        font-size: 1.1em;
+    }
+    .post-content h6{
+        font-size: 1em;
+    }
+    .post-content p{
+        margin-bottom: 15px;
+    }
+
+    .comment-list .children {
+        margin-left: 30px;
+    }
+
+    .single-right-side{
+        display: none;
+    }
+    .single-tool{
+        background-color: #fff;
+        margin-left: 0px;
+        border: rgb(238, 238, 238) 1px solid;
+    }
+    .single-share-icon{
+        display: none;
+    }
+
+
+}
+/** ************************** screen<768px ——结束 **************************--- */
+
 
 /** ************************** 深色模式 ************************** */
 
@@ -432,7 +505,7 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
         background-color: #212121;
     }
 
-    .container{
+    .post-container{
         background-color: #2a2a2a;
         box-shadow: 2px 4px 6px 2px rgba(30,30,30,0.33);
     }

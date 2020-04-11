@@ -13,7 +13,7 @@
         
         
     </div>
-    <div class="container col-lg-8 col-md-12 col-sm-12">
+    <div class="post-container col-lg-8 col-md-12 col-sm-12">
         <div class="post-title-div">
             <?php if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs(); ?>
             <h1 class="post-title"><?php the_title(); ?></h1>
@@ -72,9 +72,7 @@
                     $the_title = get_the_title();
                     $blog_title = get_bloginfo('name');
 
-                    echo "<p><i class='iconfont icon-yuanchuang post-icon'></i>
-                        本作品采用<a href='https://creativecommons.org/licenses/by-nc-nd/3.0/cn/'>知识共享BY-NC-ND许可协议</a>进行许可。
-                        <br /><br />转载请注明出处：<a href='" . $the_permalink ."'>《".$the_title."》 | " . $blog_title . "</a></p>";
+                    echo "<p>转载请注明出处：<a href='" . $the_permalink ."'>《".$the_title."》 | " . $blog_title . "</a></p>";
                 } elseif ($article_type == "reproduced") {
                     echo "<span>转载自：<a href='" . $reprinted_url ."'>" . $reprinted_from . "</a></span>";
                     echo "<br /><i class='iconfont icon-azhuanzai post-icon'></i><span>本文转载自其他网站，请勿再次转载本文</span>";
@@ -104,37 +102,42 @@
             <?php comments_template(); ?>
         </div>
 
-</div><!-- col-lg-9 col-sm-12 col-md-12 container -->
+    </div><!-- col-lg-9 col-sm-12 col-md-12 container -->
 
-<!-- 右 id="fixed-tool" -->
+    <!-- 右 id="fixed-tool" -->
     <div class="col-lg-3 single-right-side">
-        <!-- 相似文章 -->
-        <div class="single-tool border-radius-4">
-            <h5 class="single_sidebar_title">相似文章</h5>
-            <div class="dropdown-divider"></div>
-            <ul class="font-size-small-14" style="list-style-type:none; margin: 0px; padding: 0px;">
-                <?php $i=1;
-                    $cats = wp_get_post_categories($post->ID);
-                    if ($cats) {
-                        $args = array(
-                        'category__in' => array( $cats[0] ),                   
-                        'showposts' => 10,
-                        'ignore_sticky_posts' => 1
-                        );
-                    query_posts($args);
-                    if (have_posts()) :
-                        while (have_posts()) : the_post(); update_post_caches($posts); ?>
-                            <li style="display: block;">
-                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                    <span class="num"><?php echo $i;$i++; ?></span>
-                                    <?php the_title(); ?>
-                                </a>
-                            </li>
-                    <?php endwhile; else : ?>
-                        <li> 暂无文章</li>
-                    <?php endif; wp_reset_query(); } ?>                                                        
-            </ul>
-        </div>
+        <?php if(! wp_is_mobile()){ ?>
+            <!-- 相似文章 -->
+            <div class="single-tool border-radius-4">
+                <h5 class="single_sidebar_title">相似文章</h5>
+                <div class="dropdown-divider"></div>
+                <ul class="font-size-small-14" style="list-style-type:none; margin: 0px; padding: 0px;">
+                    <?php $i=1;
+                        $cats = wp_get_post_categories($post->ID);
+                        if ($cats) {
+                            $args = array(
+                            'category__in' => array( $cats[0] ),                   
+                            'showposts' => 10,
+                            'ignore_sticky_posts' => 1
+                            );
+                        query_posts($args);
+                        if (have_posts()) :
+                            while (have_posts()) : the_post(); update_post_caches($posts); ?>
+                                <li style="display: block;">
+                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                        <span class="num"><?php echo $i;$i++; ?></span>
+                                        <?php the_title(); ?>
+                                    </a>
+                                </li>
+                        <?php endwhile; else : ?>
+                            <li> 暂无文章</li>
+                        <?php endif; wp_reset_query(); } ?>                                                        
+                </ul>
+            </div>
+        <?php }else {
+            echo '';
+        } ?>
+        
     </div><!-- col-3 -->
 
 </div><!-- row -->

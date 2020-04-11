@@ -5,32 +5,22 @@
         font-size: 1.2rem;
     }
     main{
-        padding: 0px 10px;
+        padding: 10px 10px 0;
         margin: 0px auto;
     }
     nav{
-        width:100%;
-        top:0px;
         height: 60px;
-        padding: 0px 20px;
-        background-color: #fff;
-        -webkit-box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
-        -moz-box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
-        box-shadow: 0px 1px 16px 0px rgba(207,207,207,0.33);
+        padding: 0px 10px;
     }
-    .header-search{
-        display: none;
+    .search-form{
+        left: 5%;
+        width: 90%;
     }
-
-    .footer{
-        padding: 20px;
-        margin: 0px auto;
-        background-color: #2a2a32;
-    }
+    
     .nav-link{
         display: none;
     }
-
+/** 首页 */
     .index-lanmu-four-div{
         margin:0px;
     }
@@ -42,110 +32,77 @@
     .icon-wenzhang{
         margin-left: 10px;
     }
+    .index-post{
+        padding: 15px;
+    }
+    .index-post-list-tags{
+        display: none;
+    }
+    .index-posts-list{
+        padding: 10px 0;
+        border-bottom: 1px solid #e9ecef;
+    }
 
     .index-posts-list:hover{
-        border-radius: 6px;
         background-color: #fff;
     }
 
-    .index-posts-list:hover .post-img{
-        z-index: 5;
+    .index-posts-list:hover .index-posts-list-img{
         transform: scale(1); /*移动端图片不放大*/
-        /*
-        transition: all 0.15s ease-in;
-        -moz-transition: all 0.15s ease-in;
-        -webkit-transition: all 0.15s ease-in;
-        -o-transition: all 0.15s ease-in; 
-        */
     }
 
-    .post-title-div{
-        margin-left:0px;
-    }
-
-    .post-title-div h1{
-        font-size: 1.6em;
-    }
-
-    .post-content{
-        max-width: 100%;
-        margin: 20px 0px 0px;
-    }
-
-    .post-content h2{
-        font-size: 1.4em;
-        margin: 10px -20px 10px 0px;
-        padding: 0 20px;
-        border-left: 5px solid #e40000;
-    }
-
-    .post-content h3{
-        font-size: 1.3em;
-        margin-top: 30px;
-        margin-bottom: 10px;
-
-    }
-    .post-content h4{
-        font-size: 1.2em;
-    }
-    .post-content h5{
-        font-size: 1.1em;
-    }
-    .post-content h6{
-        font-size: 1em;
-    }
-
-    .post-content p{
-        line-height: 1.7em;
-        text-indent:1em;
-        letter-spacing: 0.07em;
-    }
-
-    .post-img-div{
-        border-radius: 4px;
+    .index-posts-list-img-div{
+        float: none;
+        width: 325px;
+        height: auto;
         overflow: hidden;
-        margin-bottom: 10px;
-        width: 100%;
-        /** img横向100%填充div */
-        display:flex;
-        align-items:center; 
-        justify-content:center;
+        text-align: center;
     }
-    .post-img{
-        /** img横向100%填充div */
-        width:100%;
-        height:auto;
+    .index-posts-list-img{
+        width: 100%;
     }
     .index-posts-list-title{
         text-align: center;
-        padding-top: 40px;
-        font-weight: 600;
+        margin-top: 5px;
+        font-size: 1.1rem;
+        font-weight: 500;
     }
-
-    .post-list-tags{
-        display: none;
+    .index-posts-list-info{
+        margin: 5px 0;
+        text-align: center;
     }
-
-    .posts-list-info{
-        display: none;
+    .index-posts-list-info span,
+    .index-posts-list-info a{
+        margin: 0 5px;
     }
     .index-posts-list-excerpt{
         text-align: center;
         margin: 10px 0px;
     }
+    .index-look-all-post {
+        padding: 0;
+        margin-top: 15px;
+    }
+    .index-sidebar{
+        display: none;
+    }
+    .index-thematic-img {
+        filter: brightness(100%);
+    }
 
-    .sidebar-box{
+
+    .footer{
+        padding: 20px;
+        margin: 0px auto;
+        background-color: #2a2a32;
+    }
+    .footer-copyright{
         display: none;
     }
 
-    .single-right-side{
-        display: none;
-    }
-    .single-tool{
-        background-color: #fff;
-        margin-left: 0px;
-        border: rgb(238, 238, 238) 1px solid;
-    }
+
+
+
 
 }
 /** ********************************************** <=768 ********************************************** */

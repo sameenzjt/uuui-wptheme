@@ -2,7 +2,6 @@
 
 
 
-
 //wp_register_script：样式表唯一名称,样式表的URL,依赖关系:脚本将在该数组所包含的其他脚本之后处理,指定版本号,移动到页脚
 //wp_register_style：样式表唯一名称,样式表的URL,依赖关系:脚本将在该数组所包含的其他脚本之后处理,指定版本号,CSS的媒体类型
 	function myScripts() {
@@ -38,10 +37,12 @@
 			wp_register_style( 'single_css', get_template_directory_uri() . '/res/css/style_single.css', 'style_css', wp_get_theme()->get('Version'), 'screen' );
 			
 			wp_register_script( 'single_js', get_template_directory_uri() . '/res/js/single.js', 'jquery_js', wp_get_theme()->get('Version'), true );
+			wp_register_script( 'code_prettify', 'https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js', '', null, true );
 
 			wp_enqueue_style( 'fontawesome' );
 			wp_enqueue_style( 'single_css' );
 			wp_enqueue_script( 'single_js' );
+			wp_enqueue_script( 'code_prettify' );
 		}
 		if ( is_page() ) {
 			wp_register_style( 'page_css', get_template_directory_uri() . '/res/css/style_page.css', 'style_css', wp_get_theme()->get('Version'), 'screen' );
@@ -266,8 +267,7 @@ include( 'functions/WPJAM-Blogroll.php' );
 //自定义登录页面
 include( 'functions/custom_login.php' );
 
-//ajax无刷新评论
-require('ajax-comment/main.php');
+
 
 
 /* —— 字数统计 —— 使用echo count_words_read_time();调用
@@ -533,6 +533,7 @@ function password_protected_change( $content ) {
 add_filter( 'the_password_form','password_protected_change' );
 /** WordPress 更改文章密码保护后显示的提示内容 —— 结束 */
 
+/** ***************************************短代码********************************************* */
 
 /** 短代码--文章内链 */
 function fa_insert_posts( $atts, $content = null ){
@@ -576,7 +577,9 @@ function video_bilibili($atts, $content = null) {
 	}  
 	add_shortcode('video_bilibili','video_bilibili');
 /** 短代码--插入B站视频 —— 结束 */
+/** ***************************************短代码 结束********************************************* */
 
+/** ***************************************小工具********************************************* */
 
 /** 小工具区域代码 */
 add_filter('widget_text', 'do_shortcode');//让文本小工具支持简码
@@ -653,11 +656,18 @@ function wpkj_archive_count_span( $links ) {
     return $links;
 }
 add_filter( 'get_archives_link', 'wpkj_archive_count_span' );
-
 /** 修改WordPress自带标签云小工具的显示参数 —— 结束 */
 
+/** ***************************************小工具 结束********************************************* */
+
+
+/** ***************************************评论********************************************* */
+
+//ajax无刷新评论
+require('ajax-comment/main.php');
+
 /*
- * 评论列表的显示
+ * 评论列表的显示样式 */
 
 if ( ! function_exists( 'bootstrapwp_comment' ) ) :
 	function bootstrapwp_comment( $comment, $args, $depth ) {
@@ -667,72 +677,103 @@ if ( ! function_exists( 'bootstrapwp_comment' ) ) :
 			case 'trackback' :
 		  // 用不同于其它评论的方式显示 trackbacks 。
 		?>
-		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-			<p><?php _e( 'Pingback:', 'bootstrapwp' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'bootstrapwp' ), '<span class="edit-link">', '</span>' ); ?>
-			</p>
-		<?php
-			break;
-			default :
-			// 开始正常的评论
-			global $post;
-		 ?>
-		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-			<article id="comment-<?php comment_ID(); ?>" class="media comment">
-				<div class="pull-left">
-				  <?php // 显示评论作者头像 
-					echo get_avatar( $comment, 64 ); 
-				  ?>
-				</div>
-				<?php // 未审核的评论显示一行提示文字
-				  if ( '0' == $comment->comment_approved ) : ?>
-				  <p class="comment-awaiting-moderation">
-					<?php _e( 'Your comment is awaiting moderation.', 'bootstrapwp' ); ?>
-				  </p>
+			<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+				<p><?php _e( 'Pingback:', 'uuui' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'uuui' ), '<span class="edit-link">', '</span>' ); ?>
+				</p>
+			</li>
+		<?php break; default :  global $post;// 开始正常的评论 ?>
+			<li <?php comment_class('media border p-3'); ?> id="comment-<?php comment_ID(); ?>">
+				
+				<?php $comment_author = get_comment_author_link() ;
+				$comment_avatar = array(
+					'class' => 'mr-3 mt-3 align-self-start',
+				); ?>
+				<?php echo get_avatar( $comment, $size = '56', '', $comment_author, $comment_avatar )?>
+					
+				<?php if ( '0' == $comment->comment_approved ) : // 未审核的评论显示一行提示文字 ?>
+					<p class="comment-awaiting-moderation">
+					<?php _e( 'Your comment is awaiting moderation.', 'uuui' ); ?>
+					</p>
 				<?php endif; ?>
 				<div class="media-body">
-					<h4 class="media-heading">
-					  <?php // 显示评论作者名称
-						  printf( '%1$s %2$s',
-							  get_comment_author_link(),
-							  // 如果当前文章的作者也是这个评论的作者，那么会出现一个标签提示。
-							  ( $comment->user_id === $post->post_author ) ? '<span class="label label-info"> ' . __( 'Post author', 'bootstrapwp' ) . '</span>' : ''
-						  );
-					  ?>
-				  <small>
-						<?php // 显示评论的发布时间
-							printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
-								esc_url( get_comment_link( $comment->comment_ID ) ),
-								get_comment_time( 'c' ),
-							  // 翻译: 1: 日期, 2: 时间
-								sprintf( __( '%1$s %2$s', 'fenikso' ), get_comment_date(), get_comment_time() )
-							);
-						?>
-					  </small>
-					</h4>
-					<?php // 显示评论内容
-					  comment_text(); 
-					?>
-					<?php // 显示评论的编辑链接 
-					  edit_comment_link( __( 'Edit', 'bootstrapwp' ), '<p class="edit-link">', '</p>' ); 
-					?>
-					<div class="reply">
-						<?php // 显示评论的回复链接 
-						  comment_reply_link( array_merge( $args, array( 
-							'reply_text' =>  __( 'Reply', 'bootstrapwp' ), 
-							'after'      =>  ' <span>&darr;</span>', 
-							'depth'      =>  $depth, 
-							'max_depth'  =>  $args['max_depth'] ) ) ); 
-						?>
-					</div>
-				</div>
-			</article>
-		<?php
-			break;
-		endswitch; // end comment_type check
-	}
-	endif;
+					<strong> <?php printf( '%1$s %2$s',// 显示评论作者名称 
+							get_comment_author_link(),
+							// 如果当前文章的作者也是这个评论的作者，那么会出现一个标签提示。
+							( $comment->user_id === $post->post_author ) ? '<span class="badge badge-pill badge-primary"> ' . __( 'Post author', 'uuui' ) . '</span>' : ''
+						); ?>
+					</strong>
+					<p class="font-size-small">
+						<?php printf( '<time datetime="%1$s">%2$s</time>', get_comment_time( 'c' ), sprintf( __( '%1$s %2$s', 'fenikso' ), get_comment_date(), get_comment_time() ));?>
+						<?php  edit_comment_link( __( 'Edit', 'uuui' ), '<span class="edit-link">', '</span>' ); ?>
+					</p>
 
+					<?php  comment_text(); ?>
+					
+					<?php // 显示评论的回复链接 
+						comment_reply_link( array_merge( $args, array( 
+						'reply_text' =>  __( 'Reply'), 
+						'depth'      =>  $depth, 
+						'max_depth'  =>  $args['max_depth'] ) ) ); 
+					?>
+
+				</div>
+			</li>
+		<?php break; endswitch; // end comment_type check
+			}
+			endif;
+
+
+/**
+ * 修改评论回复按钮链接
  */
+global $wp_version;
+if (version_compare($wp_version, '5.1.1', '>=')) {
+    add_filter('comment_reply_link', 'theme_replace_comment_reply_link', 10, 4);
+    function theme_replace_comment_reply_link($link, $args, $comment, $post)
+    {
+        if (get_option('comment_registration') && !is_user_logged_in()) {
+            $link = sprintf(
+                '<a rel="nofollow" class="comment-reply-login" href="%s">%s</a>',
+                esc_url(wp_login_url(get_permalink())),
+                $args['login_text']
+            );
+        } else {
+            $onclick = sprintf(
+                'return addComment.moveForm( "%1$s-%2$s", "%2$s", "%3$s", "%4$s" )',
+                $args['add_below'],
+                $comment->comment_ID,
+                $args['respond_id'],
+                $post->ID
+            );
+            $link = sprintf(
+                "<a rel='nofollow' class='comment-reply-link' href='%s' onclick='%s' aria-label='%s'>%s</a>",
+                esc_url(add_query_arg('replytocom', $comment->comment_ID, get_permalink($post->ID))) . "#" . $args['respond_id'],
+                $onclick,
+                esc_attr(sprintf($args['reply_to_text'], $comment->comment_author)),
+                $args['reply_text']
+            );
+        }
+        return $link;
+    }
+}
+
+// 评论添加@，by Ludou
+function ludou_comment_add_at( $comment_text, $comment = '') {
+	if( $comment->comment_parent > 0) {
+	  $comment_text = '@<a href="#comment-' . $comment->comment_parent . '">'.get_comment_author( $comment->comment_parent ) . '</a> ' . $comment_text;
+	}
+  
+	return $comment_text;
+  }
+  add_filter( 'comment_text' , 'ludou_comment_add_at', 20, 2);
+/** ***************************************评论 结束********************************************* */
+
+
+
+
+
+
+
 
 
 

@@ -13,9 +13,14 @@
     </div>
 
 
-    <div class="col-3" style="margin:20px 0">
-        <?php include( 'index/index-sidebar.php' ); ?>
-        <?php dynamic_sidebar( 'index_sidebar_widget' ); ?>
+    <div class="col-3 index-sidebar">
+        <?php if(! wp_is_mobile()){ ?>
+            <?php include( 'index/index-sidebar.php' ); ?>
+            <?php dynamic_sidebar( 'index_sidebar_widget' ); ?>
+        <?php }else {
+            echo '';
+        } ?>
+        
     </div>
 
 
