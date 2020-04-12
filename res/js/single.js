@@ -18,7 +18,7 @@ $(document).on("mousewheel DOMMouseScroll", function (e) {
 
 
     //<code><pre>添加代码高亮
-    $("code").addClass('prettyprint');
+    $("pre code").parent().addClass('prettyprint linenums');
     
 
     

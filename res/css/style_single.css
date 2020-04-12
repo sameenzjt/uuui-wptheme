@@ -9,8 +9,8 @@
     position: fixed;
     top:216px;
     left: 60px;
-    width:50px;
-    height:50px;
+    width:40px;
+    height:40px;
     background-color:#fff;
     box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);border:0;
 }
@@ -18,8 +18,8 @@
 .single-share-icon i{
     font-size: 20px;
     position: absolute;
-    top: calc(50% - 15px);
-    left: calc(50% - 10px);
+    top: calc(50% - 16px);
+    left: calc(50% - 9px);
 }
 
 .share{
@@ -79,12 +79,16 @@
 
 /** ************************** 社交分享↑ ************************** */
 main{
-    padding: 60px 60px 20px;
+    padding: 60px 30px 20px;
     background-color: #f9f9f9;
 }
 
 kbd{
     margin: 0px 0.2rem;
+}
+
+ul{
+    padding-left: 20px;
 }
 
 .single-title{
@@ -123,7 +127,7 @@ to {transform: translateY(0px);}
 .post-container{
     margin-top: 20px;
     padding: 30px;
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 4px;
     box-shadow: 0px 3px 8px 0 rgba(219, 219, 219, 0.56);
 }
@@ -323,7 +327,8 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 }
 
 .single-right-side{
-    margin-top: 10px;
+    margin-top: 20px;
+    padding-right: 0;
 }
 
 .single-tool{
@@ -494,6 +499,27 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
 }
 /** ************************** screen<768px ——结束 **************************--- */
+
+/** ************************** 768px<screen<992px **************************--- */
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    main{
+        padding: 60px 80px 20px;
+    }
+    .post-con-left,
+    .post-con-right{
+        display: none;
+    }
+    .single-share-icon{
+        left: 10px;
+    }
+
+
+
+
+}
+
+/** ************************** 768px<screen<992px ——结束 **************************--- */
 
 
 /** ************************** 深色模式 ************************** */

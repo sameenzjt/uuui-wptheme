@@ -109,8 +109,7 @@
 /** ********************************************** >768 <=991 ********************************************** */
 @media screen and (min-width:768px) and (max-width:991px) {
     .index-sidebar-box,
-    .footer-menu-div,
-    .single-right-side{
+    .footer-menu-div{
         display: none;
     }
     

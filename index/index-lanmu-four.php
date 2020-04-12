@@ -1,65 +1,54 @@
 <div class="row">
 
     <!--软件教程-->
-    <div class="col-lg-3 col-sm-6">
-        <div class="little-section border-radius-4 h-100">
-            <i class="iconfont icon-shejiruanjian icon"></i>
-            <span>软件教程</span>
-            <span  class="font-size-small ">常用软件自学路径</span>
-            <div class="dropdown-divider"></div>
-
-            
+    <section class="col-lg-3 col-sm-6">
+        <div class="lanmu-section-div h-100">
+           
         </div>
-    </div>
+    </section>
 
-    <!--必备网站--> 
-    <div class="col-lg-3 col-sm-6">
-        <div class="little-section designer-must-have h-100">
-           <?php echo of_get_option('designer-must-have', ''); ?>
+    <!--必备网站-->
+    <section class="col-lg-3 col-sm-6 designer-must-have">
+        <div class="lanmu-section-div h-100">
+            <?php echo of_get_option('designer-must-have', ''); ?>
         </div>
-    </div>
+    </section>
 
     <!--热门频道--> 
-    <div class="col-lg-3 col-sm-6">
-        <div class="little-section border-radius-4 h-100">
-            <i class="iconfont icon-hot_light icon"></i>
-            <span>热门频道</span>
-            <span  class="font-size-small">常用软件自学路径</span>
-            <div class="dropdown-divider"></div>
-            <div class="lanmu-soft-tutorial">
-                <div class="text-center float-left">
-                    <a href="#">
-                        <i class="iconfont icon-Adobecreativecloud lanmu-icon" style="font-size:30px;"></i>
-                        <p class="font-size-small">Adobe2020</p>
-                    </a>
-                </div>
-                <div class="text-center float-left">
-                    <a href="#">
-                        <i class="iconfont icon-Adobecreativecloud lanmu-icon" style="font-size:30px;"></i>
-                        <p class="font-size-small">Adobe</p>
-                    </a>
-                </div>
-                <div class="text-center float-left">
-                    <a href="#">
-                        <i class="iconfont icon-Adobecreativecloud lanmu-icon" style="font-size:30px;"></i>
-                        <p class="font-size-small">Adobe</p>
-                    </a>
-                </div>
-                <div class="text-center float-left">
-                    <a href="#">
-                        <i class="iconfont icon-Adobecreativecloud lanmu-icon" style="font-size:30px;"></i>
-                        <p class="font-size-small">Adobe</p>
-                    </a>
-                </div>
+    <section class="col-lg-3 col-sm-6">
+        <div class="lanmu-section-div h-100">
+            <div class="lanmu-section text-center float-left">
+                <a href="<?php the_permalink($select_all_tags); ?>">
+                    <i class="iconfont icon-xijie lanmu-icon"></i>
+                    <p class="font-size-small">细节</p>
+                </a>
+            </div>
+            <div class="lanmu-section text-center float-left">
+                <a href="<?php the_permalink($select_pages_allthematic); ?>">
+                    <i class="iconfont icon-zhuanti lanmu-icon"></i>
+                    <p class="font-size-small">专题</p>
+                </a>
+            </div>
+            <div class="lanmu-section text-center float-left">
+                <a href="#">
+                    <i class="iconfont icon-Adobecreativecloud lanmu-icon"></i>
+                    <p class="font-size-small">Adobe</p>
+                </a>
+            </div>
+            <div class="lanmu-section text-center float-left">
+                <a href="#">
+                    <i class="iconfont icon-Adobecreativecloud lanmu-icon"></i>
+                    <p class="font-size-small">Adobe</p>
+                </a>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- 软件教程 --> 
-    <div class="col-lg-3 col-sm-6">
-        <div class="little-section border-radius-4 h-100">
+    <section class="col-lg-3 col-sm-6">
+        <div class="lanmu-section-div h-100">
             
         </div>
-    </div>
+    </section>
 
 </div><!--row-->

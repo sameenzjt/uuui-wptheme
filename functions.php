@@ -4,6 +4,7 @@
 
 //wp_register_script：样式表唯一名称,样式表的URL,依赖关系:脚本将在该数组所包含的其他脚本之后处理,指定版本号,移动到页脚
 //wp_register_style：样式表唯一名称,样式表的URL,依赖关系:脚本将在该数组所包含的其他脚本之后处理,指定版本号,CSS的媒体类型
+//加载文件到前台
 	function myScripts() {
 		wp_register_style( 'bootstrap_css', 'https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css', '', null, 'all' );
 		wp_register_style( 'style_css', get_template_directory_uri() . '/style.css', '', wp_get_theme()->get('Version'), 'all' );
@@ -30,14 +31,14 @@
 		}
 	}
 	add_action( 'init', 'myScripts' );
-
+//加载文件到自定义页面
 	function spScripts() {
 		if ( is_single() ) {
 			wp_register_style( 'fontawesome', 'https://cdn.staticfile.org/font-awesome/5.12.0-1/css/all.min.css', '', null, 'all' );
 			wp_register_style( 'single_css', get_template_directory_uri() . '/res/css/style_single.css', 'style_css', wp_get_theme()->get('Version'), 'screen' );
 			
 			wp_register_script( 'single_js', get_template_directory_uri() . '/res/js/single.js', 'jquery_js', wp_get_theme()->get('Version'), true );
-			wp_register_script( 'code_prettify', 'https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js', '', null, true );
+			wp_register_script( 'code_prettify', 'https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst', '', null, true );
 
 			wp_enqueue_style( 'fontawesome' );
 			wp_enqueue_style( 'single_css' );
@@ -56,8 +57,11 @@
 
 
 
-	include( 'functions/optimization_reception.php' );//网站前台优化Reception
-	include( 'functions/optimization_backstage.php' );//网站后台优化Backstage
+//网站前/后台优化Reception
+	include( 'functions/functions_optimization.php' );
+
+
+
 
 /* —— 保护后台登录 —— */
 	/*add_action('login_enqueue_scripts','login_protection');
@@ -73,19 +77,9 @@
 /* —— 后台禁用古腾堡编辑器 —— 结束 */
 
 
-/**
-  *WordPress 自定义文章编辑器的样式
-  *自定义 CSS 文件
-  *http://www.endskin.com/editor-style/
-*/
-	function Bing_add_editor_style(){
-		add_editor_style( 'https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css' );//引入外部的 CSS 文件
-		add_editor_style( '/res/css/custom-editor-style.css' );//这样就会调用主题目录 CSS 文件夹的 custom-editor-style.css 文件
-	}
-	add_action( 'after_setup_theme', 'Bing_add_editor_style' );
 
 
-	/* —— 语言本地化 —— */
+/* —— 语言本地化 —— */
 	function myplugin_init() {
 		load_plugin_textdomain( 'uuui', false , dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
@@ -441,7 +435,6 @@ function newgravatar ($avatar_defaults) {
 	add_filter( 'user_contactmethods', 'wpdaxue_add_contact_fields' );
 	function wpdaxue_add_contact_fields( $contactmethods ) {
 		$contactmethods['qq'] = 'QQ';
-		$contactmethods['qq_email'] = 'QQ邮箱';
 		$contactmethods['weibo'] = '微博';
 		$contactmethods['wechat'] = '微信';
 		//unset( $contactmethods['yim'] );
@@ -688,7 +681,7 @@ if ( ! function_exists( 'bootstrapwp_comment' ) ) :
 				$comment_avatar = array(
 					'class' => 'mr-3 mt-3 align-self-start',
 				); ?>
-				<?php echo get_avatar( $comment, $size = '56', '', $comment_author, $comment_avatar )?>
+				<?php echo get_avatar( $comment, $size = '64', '', $comment_author, $comment_avatar )?>
 					
 				<?php if ( '0' == $comment->comment_approved ) : // 未审核的评论显示一行提示文字 ?>
 					<p class="comment-awaiting-moderation">

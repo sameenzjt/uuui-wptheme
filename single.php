@@ -9,11 +9,11 @@
 ?>
 
 <div class="row">
-    <div class="col-1">
+    <div class="col-1 post-con-left">
         
         
     </div>
-    <div class="post-container col-lg-8 col-md-12 col-sm-12">
+    <div class="post-container col-lg-7 col-md-9 col-sm-12">
         <div class="post-title-div">
             <?php if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs(); ?>
             <h1 class="post-title"><?php the_title(); ?></h1>
@@ -105,7 +105,7 @@
     </div><!-- col-lg-9 col-sm-12 col-md-12 container -->
 
     <!-- 右 id="fixed-tool" -->
-    <div class="col-lg-3 single-right-side">
+    <div class="col-lg-3 col-md-3 single-right-side">
         <?php if(! wp_is_mobile()){ ?>
             <!-- 相似文章 -->
             <div class="single-tool border-radius-4">
@@ -140,6 +140,9 @@
         
     </div><!-- col-3 -->
 
+    <div class="col-1 post-con-right">
+        
+    </div>
 </div><!-- row -->
     
 </main>

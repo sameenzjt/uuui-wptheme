@@ -2,8 +2,7 @@
     <i class='iconfont icon-zhuanti1 icon'></i>
     <span class="index-title">专题</span>
     <span class="font-size-small-14 float-right view-all">
-        <a href="<?php $select_pages_allthematic = of_get_option('select_pages_allthematic', '');
-                the_permalink($select_pages_allthematic); ?>">查看全部</a>
+        <a href="<?php the_permalink($select_pages_allthematic); ?>">查看全部</a>
     </span>
     <div class="dropdown-divider"></div>
 

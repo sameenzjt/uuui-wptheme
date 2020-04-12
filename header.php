@@ -63,7 +63,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="<?php echo get_bloginfo('rss2_url'); ?>" />
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有评论" href="<?php bloginfo('comments_rss2_url'); ?>" />
     <!-- iconfont -->
-    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_4zzzlieuj55.css" />
+    <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_n7n1pz31gv.css" />
     
     <?php $header_style = of_get_option('header_style');//自定义style样式
         if(!empty($header_style)){
@@ -73,6 +73,8 @@
         } else{
             echo "";
     } ?>
+
+    <?php wp_head(); ?>
 
     <!-- 百度统计 -->
     <?php if(!empty(of_get_option('baidu-tongji', ''))){ ?>
@@ -95,8 +97,7 @@
             img.onerror=null; //控制不要一直跳动
         }
     </script>
-
-    <?php wp_head(); ?>
+    
 </head>
 <?php flush(); ?>
 <body>

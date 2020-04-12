@@ -433,16 +433,23 @@ function optionsframework_options() {
 	);
 
 		$options[] = array(
-			'name' => __( '全部专题', 'uuui' ),
-			'desc' => __( '请先发布页面(页面模板选择“全部专题”，使用位置在首页底部的“查看全部”按钮', 'uuui' ),
+			'name' => __( '全部分类(专题)', 'uuui' ),
+			'desc' => __( '请先发布页面。页面--新建页面--模板选择“全部专题”(有多个可选择任意一个)。', 'uuui' ),
 			'id' => 'select_pages_allthematic',
 			'type' => 'select',
 			'options' => $options_pages
 		);
 		$options[] = array(
 			'name' => __( '全部文章', 'uuui' ),
-			'desc' => __( '请先发布页面(页面模板选择“全部文章”)，使用位置在首页文章列表底部的“查看所有文章”按钮', 'uuui' ),
+			'desc' => __( '请先发布页面。页面--新建页面--模板选择“全部文章”(有多个可选择任意一个)。', 'uuui' ),
 			'id' => 'index-look-all-post',
+			'type' => 'select',
+			'options' => $options_pages
+		);
+		$options[] = array(
+			'name' => __( '全部标签(细节)', 'uuui' ),
+			'desc' => __( '请先发布页面。页面--新建页面--模板选择“标签”(有多个可选择任意一个)。', 'uuui' ),
+			'id' => 'select-all-tags',
 			'type' => 'select',
 			'options' => $options_pages
 		);

@@ -1,4 +1,20 @@
 <?php
+
+//关闭 wptexturize 功能避免符号被转换
+add_filter( 'run_wptexturize', '__return_false' );
+
+/**
+  *WordPress 自定义文章编辑器的样式
+  *自定义 CSS 文件
+  *http://www.endskin.com/editor-style/
+*/
+function Bing_add_editor_style(){
+    add_editor_style( 'https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css' );//引入外部的 CSS 文件
+    add_editor_style( get_stylesheet_directory_uri() . '/res/css/custom-editor-style.css?ver=' . wp_get_theme()->get('Version') );//这样就会调用主题目录 CSS 文件夹的 custom-editor-style.css 文件
+}
+add_action( 'after_setup_theme', 'Bing_add_editor_style' );
+
+
 //编辑器添加按钮
     function appthemes_add_quicktags() {
         ?>
@@ -12,10 +28,6 @@
         <?php
         }
     add_action('admin_print_footer_scripts', 'appthemes_add_quicktags' );
-
-
-
-
 
 /** —— TinyMCE编辑器增强 —— */
     function add_editor_buttons($buttons) {

@@ -40,7 +40,7 @@
     <?php endwhile; ?>
         <!-- < ?php mo_paging(); ?> 分页 -->
         <div class="index-look-all-post w-100">
-            <a href="<?php the_permalink( of_get_option('index-look-all-post', '') ); ?>">
+            <a href="<?php the_permalink($index_look_all_post); ?>">
                 <button type="button" class="btn btn-block">查看全部文章</button>
             </a>
         </div>
