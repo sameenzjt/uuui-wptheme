@@ -102,7 +102,6 @@
 <?php flush(); ?>
 <body>
     <nav>
-        
         <a class="" href="<?php echo get_option('home'); ?>/">
             <?php 
                 $site_logo = of_get_option('site_logo', '');

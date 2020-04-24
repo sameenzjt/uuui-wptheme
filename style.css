@@ -1,11 +1,11 @@
 /*
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
-Version: v0.25.19
+Version: v0.25.20
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: blog, one-column
-Description: 设计资源分享网站 v0.25.19:文件合并；首页、文章页样式调整；优化代码高亮；细节优化。 v0.25.18:优化评论ajax；增加文章代码高亮；优化移动端样式；细节优化。 v0.25.17:美化评论表单；ajax提交评论；文章页面版式调整。 v0.25.16：优化分页；优化全部文章页面；大量样式优化；面包屑优化； v0.25.15:正确加载样式文件；改进文章页样式、首页栏目样式；优化动画。 v0.25.14：优化小工具样式；优化首页专题样式；语言本地化；改进前台优化；修复文章页图片超出的问题。 v0.25.13：美化原生评论表单；样式文件合并；增加小工具；样式改进。 v0.25.12：优化自动记录死链；美化化文章列表；禁用“几天前”时间；SEO优化；修改主题选项的提示信息；首页、文章页样式改进。 v0.25.11：分页显示页数，并在分页时避免权重流失。 v0.25.10：关闭后台登录保护；添加百度统计代码。 v0.25.9：分类页面样式美化；标签页title优化；文章页面SEO优化；统一多处文章列表。 v0.25.8：新增访客默认头像；美化“用户中心”页面。 v0.25.7：优化代码位置。 v0.25.6：优化用户中心。 v0.25.5：【新增】用户中心页面(未完成)。 v0.25.4：【新增】插入B站视频短代码；【修复】浏览器报错bug。 v0.25.3：【完善】文章页滑动页面时标题栏显示文章标题。 v0.25.2：样式优化。 v0.25.1：【合并】js文件；【优化】js执行条件。
+Description: 设计资源分享网站 v0.25.20：帮助面板美化；修改首页样式；优化主题设置；样式表优化。 v0.25.19:文件合并；首页、文章页样式调整；优化代码高亮；细节优化。 v0.25.18:优化评论ajax；增加文章代码高亮；优化移动端样式；细节优化。 v0.25.17:美化评论表单；ajax提交评论；文章页面版式调整。 v0.25.16：优化分页；优化全部文章页面；大量样式优化；面包屑优化； v0.25.15:正确加载样式文件；改进文章页样式、首页栏目样式；优化动画。 v0.25.14：优化小工具样式；优化首页专题样式；语言本地化；改进前台优化；修复文章页图片超出的问题。 v0.25.13：美化原生评论表单；样式文件合并；增加小工具；样式改进。 v0.25.12：优化自动记录死链；美化化文章列表；禁用“几天前”时间；SEO优化；修改主题选项的提示信息；首页、文章页样式改进。 v0.25.11：分页显示页数，并在分页时避免权重流失。 v0.25.10：关闭后台登录保护；添加百度统计代码。 v0.25.9：分类页面样式美化；标签页title优化；文章页面SEO优化；统一多处文章列表。 v0.25.8：新增访客默认头像；美化“用户中心”页面。 v0.25.7：优化代码位置。 v0.25.6：优化用户中心。 v0.25.5：【新增】用户中心页面(未完成)。 v0.25.4：【新增】插入B站视频短代码；【修复】浏览器报错bug。 v0.25.3：【完善】文章页滑动页面时标题栏显示文章标题。 v0.25.2：样式优化。 v0.25.1：【合并】js文件；【优化】js执行条件。
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: UUUI
@@ -87,6 +87,26 @@ ul{
     padding: 0;
 }
 
+/** ************************** 滚动条 ************************** */
+
+::-webkit-scrollbar {/*滚动条整体部分，可以设置宽度啥的*/
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-corner {/*边角*/
+    background: none;
+}
+::-webkit-scrollbar-thumb {/*滚动的滑块*/
+    border-radius: 4px;
+    background: #8D8D8D;
+}
+::-webkit-scrollbar-track {/*外层轨道*/
+    opacity: 0;
+}
+
+/** ************************** 滚动条 结束 ************************** */
+
+
 nav{
     overflow: hidden;
     float: left;
@@ -97,10 +117,10 @@ nav{
     height: 60px;
     padding: 0px 60px;
     background-color: #fff;
+    border: 0;
     -webkit-box-shadow: 0px 1px 10px 0px rgba(207,207,207,0.33);
     -moz-box-shadow: 0px 1px 10px 0px rgba(207,207,207,0.33);
     box-shadow: 0px 1px 10px 0px rgba(207,207,207,0.33);
-    border: 0px solid;
 }
 
 .nav-logo__title{
@@ -351,6 +371,7 @@ nav{
 /** ************************** 首页侧边栏 结束 ************************** */
 
 /** ************************** 首页专题 ************************** */
+
 .view-all a{
     padding: 2px 6px;
     color: #757575;
@@ -362,18 +383,18 @@ nav{
     padding: 2px 6px;
 }
 .index-thematic-div{
-    margin: 10px 0;
-    padding: 0 0 10px;
     border-radius: 4px;
-    box-shadow: 0px 3px 8px 0 rgba(219, 219, 219, 0.56);
-    border: 0px solid;
+    border: 0;
     background-color: #fff;
+    box-shadow: 0px 3px 8px 0 rgba(219, 219, 219, 0.56);
+    
 }
 
 .index-thematic-div:hover{
+    box-shadow: 0px 0px 8px 0px rgba(214,214,214,0.75);
     -webkit-box-shadow: 0px 0px 8px 0px rgba(214,214,214,0.75);
     -moz-box-shadow: 0px 0px 8px 0px rgba(214,214,214,0.75);
-    box-shadow: 0px 0px 8px 0px rgba(214,214,214,0.75);
+    
 }
 
 .index-thematic-img{
@@ -593,8 +614,6 @@ footer{
 .tag-cloud-link:hover,
 .ui-div:hover,
 .post-font-size-change a:hover,
-.sidebar-tags-div:hover,
-.all-tags-btn:hover,
 .sidebar_tag_cloud a:hover{
     color: #fff;
     background-color:#ff5722;
@@ -659,7 +678,7 @@ footer{
 
 .back_top{
     padding: 2px 10px;
-    border: 0px solid;
+    border: 0;
     position: fixed;/*固定位置*/
     z-index: 999;/*设置优先级显示，保证不会被覆盖*/	
     right: 20px;
@@ -764,21 +783,10 @@ footer{
    display: inline;
 }
 
-.sidebar-tags-div{
-    padding:10px;
-    border-radius: 4px;
-    background-color: rgba(248, 248, 248);
-}
 
 .icon{
     margin-right: 5px;
     color:#ff5722;
-}
-
-.all-tags-btn{
-    padding: 5px 0px;
-    border-radius: 4px;
-    background-color: rgba(248, 248, 248);
 }
 
 .registered-landing-img-div-1,
@@ -912,7 +920,7 @@ footer{
 /** ************************** 深色模式 ************************** */
 
 @media (prefers-color-scheme: dark) {
-    body{
+    body,main{
         color: #dedede;
         background-color: #212121;
     }
@@ -925,31 +933,35 @@ footer{
         -moz-box-shadow: 0px 1px 10px 0px rgba(10,10,10,0.33);
         box-shadow: 0px 1px 10px 0px rgba(10,10,10,0.33);
     }
-
-    .index-sidebar-box img,
-    .index-thematic-img{
-        -webkit-filter: brightness(0.8);
+    img{
         filter: brightness(0.8);
+        -webkit-filter: brightness(0.8);
     }
-
+/** 1dp */
+    .lanmu-section-div,
+    .index-post,
+    .index-sidebar-box{
+        border: 0;
+        background-color: #2a2a2a;
+        box-shadow: 2px 4px 6px 2px rgba(30,30,30,0.33);
+    }
+/** 2dp */
+    .index-posts-list:hover,
     .index-thematic-div,
-    .lanmu-section-div{
-        background-color: #2a2a2a;
+    .wechat-show-qr{
+        border: 0;
+        background-color: #313131;
         box-shadow: 2px 4px 6px 2px rgba(30,30,30,0.33);
     }
-    
-    .sidebar-border{
-        border: 0px solid;
-        background-color: #2a2a2a;
-        box-shadow: 2px 4px 6px 2px rgba(30,30,30,0.33);
-    }
-
     .index-thematic-div:hover{
         -webkit-box-shadow: 0px 0px 8px 0px rgba(10, 10, 10, 0.75);
         -moz-box-shadow: 0px 0px 8px 0px rgba(10,10,10,0.75);
         box-shadow: 0px 0px 8px 0px rgba(10,10,10,0.75);
     }
 
+    .index-thematic-img:hover{
+        filter:brightness(80%);
+    }
     
     .index-thematic-div a,
     .index-thematic-div a:hover{
@@ -957,12 +969,6 @@ footer{
         
     }
     
-    .sidebar-tags-div,
-    .all-tags-btn{
-        color: #999999;
-        background-color: #313131;
-    }
-
     .search-form{
         background-color: #2a2a2a;
         box-shadow: 1px 10px 10px 6px rgba(10,10,10,0.33);
@@ -981,11 +987,9 @@ footer{
         border-top: 1px solid #404040;
     }
 
-    .wechat-show-qr{
-        background-color: #313131;
-        box-shadow: 1px 1px 8px 2px rgba(10,10,10,0.33);
-        border: 0px solid;
-    }
+   
+
+
 
 }
 

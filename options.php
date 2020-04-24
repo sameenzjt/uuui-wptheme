@@ -629,33 +629,12 @@ $options[] = array(
 	'type' => 'heading'
 );
 	$options[] = array(
-		'name' => __( '我们用到的技术', 'uuui' ),
-		'desc' => __( '本主题所使用的所有文件', 'uuui' ),
+		'desc' => __( '<a href="https://www.staticfile.org/"><img src="https://img.shields.io/badge/cdn-Staticfile CDN-yellow.svg" alt="Staticfile CDN"><a>
+						<a href="https://getbootstrap.com/"><img src="https://img.shields.io/badge/css-Bootstrap 4-green.svg" alt="Bootstrap 4"><a>
+						<a href="https://fontawesome.com"><img src="https://img.shields.io/badge/icon-FontAwesome-green.svg" alt="FontAwesome"></a>
+						<a href="https://jquery.com"><img src="https://img.shields.io/badge/js-jquery-blue.svg" alt="jquery"></a>', 'uuui' ),
 		'type' => 'info'
 	);
-	$options[] = array(
-		'desc' => __( '<a href="https://www.staticfile.org/">Staticfile CDN<a>：免费、快速、开放的 CDN 服务', 'uuui' ),
-		'type' => 'info',
-	);
-	$options[] = array(
-		'desc' => __( '<a href="https://getbootstrap.com/">Bootstrap 4<a>：全球最受欢迎的前端组件库', 'uuui' ),
-		'type' => 'info',
-	);
-	$options[] = array(
-		'desc' => __( '<a href="https://fontawesome.com/">FontAwesome<a>：网络上最受欢迎的图标集和工具包', 'uuui' ),
-		'type' => 'info',
-	);
-	$options[] = array(
-		'desc' => __( '<a href="https://github.com/hustcc/placeholder.js">placeholder.js<a>：<1Kb的Javascript库，可在客户端生成图像占位符', 'uuui' ),
-		'type' => 'info',
-	);
-	$options[] = array(
-		'desc' => __( '<a href="https://jquery.com/">jquery<a>：一个快速、小型且功能丰富的 JavaScript 库', 'uuui' ),
-		'type' => 'info',
-	);
-
-
-
 
 
 

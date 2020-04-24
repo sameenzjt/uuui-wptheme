@@ -321,13 +321,10 @@ function newgravatar ($avatar_defaults) {
 
 /* —— 添加帮助面板 ——https://www.ludou.org/wordpress-customizing-the-dashboard-widgets.html */
 	function ludou_dashboard_help() {
-		$file_get_contents = file_get_contents( "https://sameenzjt.github.io/version.txt" );
-		$my_theme = wp_get_theme();
-		echo "当前主题版本：" . $my_theme->get( 'Name' ) . "&nbsp;" . $my_theme->get( 'Version' ) . "<br />";
-		echo "最新版本：" . $file_get_contents;
-		echo '<p>有事请与我联系，Email: sameen.zjt@gmail.com   QQ: 2459012173</p>';
-		// 如以下一行代码是露兜博客开放投稿功能所使用的投稿说明
-		// echo "<p><ol><li>投稿，请依次点击 文章 - 添加新文章，点击 "送交审查" 即可提交</li><li>修改个人资料，请依次点击 资料 - 我的资料</li><li>请认真填写“个人说明”，该信息将会显示在文章末尾</li><li>有事请与我联系，Email: zhouzb889@gmail.com   QQ: 825533758</li></ol></p>";     
+		echo '<img src="https://img.shields.io/badge/'. __('当前版本', 'uuui') .'-'. wp_get_theme()->get( 'Version' ) .'-green.svg" alt="当前版本">&nbsp;&nbsp;';
+		echo '<img src="https://img.shields.io/github/v/release/sameenzjt/UUUI-wordpresstheme?include_prereleases&label='. __('最新版本', 'uuui') .'" alt="最新版本">&nbsp;&nbsp;';
+		printf('<a href="%1$s"><img src="https://img.shields.io/badge/'. __('反馈', 'uuui') .'-issues-red.svg" alt="反馈"></a>', 'https://github.com/sameenzjt/UUUI-wordpresstheme/issues');
+		printf(__('<p>E-mail：%1$s / QQ：%2$d</p>', 'uuui'),'sameen.zjt@gmail.com','2459012173');
 	}
 	function ludou_add_dashboard_widgets() {
 		wp_add_dashboard_widget('ludou_help_widget', 'UUUI主题帮助', 'ludou_dashboard_help');

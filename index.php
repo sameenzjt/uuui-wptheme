@@ -7,11 +7,11 @@ $select_all_tags = of_get_option('select-all-tags', '');
 ?>
 <div class="row">
 
-    <div class="col-12" style="margin:20px 0 10px">
+    <div class="col-12" style="margin:30px 0 15px">
         <?php include( 'index/index-lanmu-four.php' ); ?>
     </div>
 
-    <div class="col-lg-9 col-sm-12" style="margin:10px 0">
+    <div class="col-lg-9 col-sm-12" style="margin:15px 0">
         <div class="index-post">
             <i class="iconfont icon-wenzhang icon"></i>
             <h2 class="index-title">最新文章</h2>
@@ -90,7 +90,7 @@ $select_all_tags = of_get_option('select-all-tags', '');
         
     </div>
 
-    <div class="col-12" style="margin:10px 0">
+    <div class="col-12 index-thematic" style="margin:15px 0">
         <?php include( 'index/index-thematic.php' ); ?>
     </div>
 </div>
