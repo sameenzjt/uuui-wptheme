@@ -58,9 +58,9 @@
                             <p>头条</p>
                         </a>
                     </div>
-                    <div class="float-left btn_qq_qun border-radius-4 w-100">
+                    <div class="float-left btn_qq_qun w-100">
                         <a href="<?php echo of_get_option('qq-qun', ''); ?>" target="_blank">
-                            <i class="iconfont icon-qq"></i>&nbsp;&nbsp;官方QQ群
+                            <i class="iconfont icon-qq1"></i>&nbsp;官方QQ群
                         </a>
                     </div>
             </div>

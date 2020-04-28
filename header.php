@@ -73,7 +73,17 @@
         } else{
             echo "";
     } ?>
-
+    <style>
+        :root{
+            --Main_color: #ff5722;
+            --Deep_Main_color: #E64A19;
+            --Secondary_text: #757575;
+            --Font_size_small: 12px;
+            --Footer_bg: #2a2a32;
+            --Single_h2: #e40000;
+        }
+    </style>
+    
     <?php wp_head(); ?>
 
     <!-- 百度统计 -->

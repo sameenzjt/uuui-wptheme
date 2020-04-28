@@ -1,11 +1,11 @@
 /*
 Theme Name: UUUI
 Theme URI: https://www.sameen.art
-Version: v0.25.20
+Version: v1.0.0
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: blog, one-column
-Description: 设计资源分享网站 v0.25.20：帮助面板美化；修改首页样式；优化主题设置；样式表优化。 v0.25.19:文件合并；首页、文章页样式调整；优化代码高亮；细节优化。 v0.25.18:优化评论ajax；增加文章代码高亮；优化移动端样式；细节优化。 v0.25.17:美化评论表单；ajax提交评论；文章页面版式调整。 v0.25.16：优化分页；优化全部文章页面；大量样式优化；面包屑优化； v0.25.15:正确加载样式文件；改进文章页样式、首页栏目样式；优化动画。 v0.25.14：优化小工具样式；优化首页专题样式；语言本地化；改进前台优化；修复文章页图片超出的问题。 v0.25.13：美化原生评论表单；样式文件合并；增加小工具；样式改进。 v0.25.12：优化自动记录死链；美化化文章列表；禁用“几天前”时间；SEO优化；修改主题选项的提示信息；首页、文章页样式改进。 v0.25.11：分页显示页数，并在分页时避免权重流失。 v0.25.10：关闭后台登录保护；添加百度统计代码。 v0.25.9：分类页面样式美化；标签页title优化；文章页面SEO优化；统一多处文章列表。 v0.25.8：新增访客默认头像；美化“用户中心”页面。 v0.25.7：优化代码位置。 v0.25.6：优化用户中心。 v0.25.5：【新增】用户中心页面(未完成)。 v0.25.4：【新增】插入B站视频短代码；【修复】浏览器报错bug。 v0.25.3：【完善】文章页滑动页面时标题栏显示文章标题。 v0.25.2：样式优化。 v0.25.1：【合并】js文件；【优化】js执行条件。
+Description: 设计资源分享网站 v1.0.0：样式调整；CSS引入变量；文章标题样式优化。
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: UUUI
@@ -19,7 +19,14 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /** ************************** 首页文章列表 ************************** */
 /** ************************** 专题 ************************** */
 /** ************************** 深色模式 ************************** */
-
+/*:root{
+    --Main_color: #ff5722;
+    --Deep_Main_color: #E64A19;
+    --Secondary_text: #757575;
+    --Font_size_small: 12px;
+    --Footer_bg: #2a2a32;
+    --Single_h2: #e40000;
+}*/
 
 html,
 body {
@@ -74,7 +81,7 @@ a{
 
 a:hover{
     text-decoration:none; 
-    color: #ff5722;
+    color: var(--Main_color);
     transition: all 0.14s ease-in;
     -moz-transition: all 0.14s ease-in; /* Firefox 4 */
     -webkit-transition: all 0.14s ease-in; /* Safari 和 Chrome */
@@ -87,6 +94,16 @@ ul{
     padding: 0;
 }
 
+.font-size-small,
+.font-size-small a,
+.font-size-small span{
+    font-size: 0.75rem;
+}
+.font-size-small-14,
+.font-size-small-14 a,
+.font-size-small-14 span{
+    font-size: 0.875rem;
+}
 /** ************************** 滚动条 ************************** */
 
 ::-webkit-scrollbar {/*滚动条整体部分，可以设置宽度啥的*/
@@ -132,12 +149,6 @@ nav{
     font-weight: 600;
 }
 
-
-.badge-themecolor{
-    font-size: 16px;
-    color: #fff;
-    background-color: #ff5722;
-}
 
 .site-title h1{
     margin-top: 6px;
@@ -222,7 +233,7 @@ nav{
 }
 .designer-must-have a:hover{
     color: #fff;
-    background-color:#ff5722;
+    background-color: var(--Main_color);
 }
 
 .lanmu-section{
@@ -237,12 +248,12 @@ nav{
     margin-bottom: 5px;
     font-size: 1.6rem;
     border-radius: 100%;
-    color:#ff5722;
+    color:var(--Main_color);
     background-color:rgb(251,251,251);
 }
 .lanmu-icon:hover{
     color: #fff;
-    background-color:#ff5722;
+    background-color:var(--Main_color);
 }
 /** ************************** 首页四栏目 结束 ************************** */
 
@@ -256,12 +267,14 @@ nav{
 
 .index-post-list-tags a{
     padding: 2px 6px;
-    margin: 0px 4px;
+    margin-left: 4px;
+    font-size: var(--Font_size_small);
+    color: var(--Secondary_text);
 }
 
 .index-post-list-tags a:hover{
     color: #fff;
-    background-color: #FF5722;
+    background-color: var(--Main_color);
     border-radius: 4px;
 }
 
@@ -342,18 +355,18 @@ nav{
     margin-top: 20px;
 }
 .index-look-all-post button{
-    background-color: #FF5722;
+    background-color: var(--Main_color);
     color: #fff; 
 }
 .index-look-all-post button:hover{
-    background-color: #E64A19;
+    background-color: var(--Deep_Main_color);
     color: #fff; 
 }
 
 /** 分页 */
 .pagination .page-item.active .page-link{
-    background-color: #ff5722;
-    border-color: #FF5722;
+    background-color: var(--Main_color);
+    border-color: var(--Main_color);
 }
 .pagination .page-item .page-link::before,
 .pagination .page-item .page-link::after{
@@ -372,16 +385,7 @@ nav{
 
 /** ************************** 首页专题 ************************** */
 
-.view-all a{
-    padding: 2px 6px;
-    color: #757575;
-}
-.view-all a:hover{
-    color: #fff;
-    background-color: #FF5722;
-    border-radius: 4px;
-    padding: 2px 6px;
-}
+
 .index-thematic-div{
     border-radius: 4px;
     border: 0;
@@ -422,7 +426,7 @@ nav{
     width: 4px;
     height: 1.4rem;
     line-height: 1.2rem;
-    background-color: #ff5722;
+    background-color: var(--Main_color);
 }
 .index_thematic_name{
     font-size: 1.2rem;
@@ -449,12 +453,11 @@ nav{
 /** ************************** 评论 ************************** */
 
 #commentform .btn{
-    background-color: #FF5722;
+    background-color: var(--Main_color);
     color: #fff; 
 }
 #commentform .btn:hover{
-    background-color: #E64A19;
-    color: #fff; 
+    background-color: var(--Deep_Main_color);
 }
 /** ajax无刷新评论 */
 .butterBar{
@@ -503,7 +506,7 @@ nav{
 
 footer{
     padding: 40px 60px 20px;
-    background-color: #2a2a32;
+    background-color: var(--Footer_bg);
 }
 
 .footer a{
@@ -516,8 +519,7 @@ footer{
 .weixin i:hover,
 .weibo i:hover,
 .toutiao i:hover,
-.category-title a,
-.post_tags li:hover a{
+.category-title a{
     color: #fff;
 }
 
@@ -574,30 +576,10 @@ footer{
 
 
 
-.font-size-small,
-.font-size-small a,
-.font-size-small span{
-    color: #BDBDBD;
-    font-size: 0.75rem;
-}
-
-.font-size-small a:hover{
-    color: #ff5722;
-}
-.font-size-small-14,
-.font-size-small-14 a,
-.font-size-small-14 span{
-    color: #757575;
-    font-size: 0.875rem;
-}
-
-.font-size-small-14 a:hover{
-    color: #ff5722;
-}
-
+/** ************************** 页面 ************************** */
 .support_menu_ul li a:hover,
 .support_menu_ul .current-menu-item a{
-    color: #ff5722;
+    color: var(--Main_color);
 }
 
 .support_menu_ul li a{
@@ -610,13 +592,32 @@ footer{
     padding: 0px;
 }
 
+
+.post_tags{
+    list-style-type: none;
+}
+
+.post_tags li{
+    float: left;
+    margin: 5px 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.post_tags li:hover{
+    background-color: var(--Main_color);
+}
+
+.post_tags li:hover a{
+    color: #fff;
+}
+/** ************************** 页面 结束 ************************** */
 .badge-tags:hover,
 .tag-cloud-link:hover,
 .ui-div:hover,
-.post-font-size-change a:hover,
-.sidebar_tag_cloud a:hover{
+.post-font-size-change a:hover{
     color: #fff;
-    background-color:#ff5722;
+    background-color:var(--Main_color);
 }
 
 
@@ -624,16 +625,6 @@ footer{
     margin: 4px 0px;
 }
 
-.all-post-btn{
-    background-color: #ff5722;
-    margin: 20px 0px;
-    color: #fff;
-}
-
-.all-post-btn:hover{
-    background-color: #E64A19;
-    color: #fff;
-}
 
 .footer-about-us {
     padding-right: 40px;
@@ -648,7 +639,7 @@ footer{
 
 
 .btn_qq_qun{
-    
+    border-radius: 4px;
     padding:10px;
     background: linear-gradient(
         270deg,
@@ -667,7 +658,6 @@ footer{
     bottom: 0;
     display: inline-block;
     width: 100%;
-    border-radius: 4px;
     background: inherit;
     filter: blur(3px) brightness(0.95);
 }
@@ -692,7 +682,7 @@ footer{
 }
 
 .back_top:hover{
-    color: #ff5722;
+    color: var(--Main_color);
 }
 
 
@@ -717,7 +707,7 @@ footer{
     content: ' ';
     width: 4px;
     height: 21px;
-    background-color: #ff5722;
+    background-color: var(--Main_color);
 }
 .index-sidebar-box img{
     width: 100%;
@@ -726,7 +716,7 @@ footer{
 .index-sidebar-box ul li::before{
     content: "\003E";
     margin-right: 6px;
-    color: #ff5722;
+    color: var(--Main_color);
     line-height: 1.8rem;
 }
 /** ************************** 侧边栏sidebar 结束 ************************** */
@@ -744,11 +734,11 @@ footer{
 	text-align:center;
 }
 #wp-calendar tbody a{
-    color: #ff5722;
+    color: var(--Main_color);
 }
 #wp-calendar tbody #today{
     text-align: center;
-    background-color: #ff5722;
+    background-color: var(--Main_color);
     color: #fff;
     border-radius: 4px;
 }
@@ -786,7 +776,7 @@ footer{
 
 .icon{
     margin-right: 5px;
-    color:#ff5722;
+    color:var(--Main_color);
 }
 
 .registered-landing-img-div-1,
@@ -813,20 +803,7 @@ footer{
     padding-right: 80px;
 }
 
-.post_tags{
-    list-style-type: none;
-}
 
-.post_tags li{
-    float: left;
-    margin: 5px 10px;
-    padding: 2px 6px;
-    border-radius: 4px;
-}
-
-.post_tags li:hover{
-    background-color: #ff5722;
-}
 
 .footer-menu-div{
     color: #fff;
@@ -846,16 +823,6 @@ footer{
     padding: 6px 30px;
     white-space: nowrap;
     text-overflow: ellipsis;
-}
-
-.sidebar_tag_cloud a{
-    height: 16px;
-    margin: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 4px;
-    background-color:rgb(240, 240, 240);
-    border-radius: 4px;
 }
 
 .hide{

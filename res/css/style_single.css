@@ -139,6 +139,15 @@ to {transform: translateY(0px);}
     letter-spacing:0.04em;
     margin: 20px 0px;
 }
+.post-info span:not(.badge){
+    color: var(--Secondary_text);
+    margin-right: 10px;
+    font-size: 0.85rem;
+}
+.post-info a,
+.post-info a:hover{
+    color: var(--Secondary_text);
+}
 
 .post-content{
     max-width: 100%;
@@ -149,35 +158,37 @@ to {transform: translateY(0px);}
 
 }
 
-.post-title-div h1{
-    font-size: 30px;
-}
-
 .post-content h2{
-    font-size: 1.6em;
-    margin: 10px -20px 10px 0px;
-    padding: 0 20px;
-    border-left: 5px solid #e40000;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin: 10px -20px 10px -30px;
+    padding: 0 25px;
+    border-left: 5px solid var(--Single_h2);
 }
 
 .post-content h3{
-    font-size: 1.4em;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2px -20px 10px -30px;
+    padding: 0 25px;
+    border-left: 5px solid #3690cf;
 
 }
 .post-content h4{
-    font-size: 1.2em;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 .post-content h5{
-    font-size: 1.15em;
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 .post-content h6{
-    font-size: 1em;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 .post-content p{
-    margin-bottom: 20px;
+    margin-bottom: 0.5rem;
     max-width: 100%;
     text-indent:1em;
     letter-spacing: 0.08em;
@@ -207,7 +218,7 @@ to {transform: translateY(0px);}
 }
 
 .post-content a:hover{
-    color: #ff5722;
+    color: var(--Main_color);
     text-decoration: none;
 }
 
@@ -278,13 +289,6 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 }
 
 
-.post-info span{
-    margin-right: 5px;
-}
-
-.post-info a:hover{
-    color: #BDBDBD;
-}
 
 
  
@@ -443,10 +447,6 @@ a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
     }
     .post-title-div{
         margin-left:0px;
-    }
-
-    .post-title-div h1{
-        font-size: 1.4em;
     }
 
     .post-content{

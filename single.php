@@ -17,8 +17,8 @@
         <div class="post-title-div">
             <?php if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs(); ?>
             <h1 class="post-title"><?php the_title(); ?></h1>
-            <div class="post-info font-size-small-14">
-                <span><?php echo the_author_meta('display_name',get_post($id)->post_author); ?></span>
+            <div class="post-info">
+                <span class="info-author-name"><?php echo the_author_meta('display_name',get_post($id)->post_author); ?></span>
                 <br />
                 <?php
                     if($article_type == "original") {
@@ -31,10 +31,10 @@
                         echo "<span>原文来源：" . $translation_from . "</span>";
                     }
                 ?>
-                <span><a href="javascript:void(0);" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="首次发布于<?php the_time('Y年n月j日') ?>">最后更新:<?php the_modified_time('Y.n.j'); ?></a></span>
-                <span>阅读 <?php get_post_views($post -> ID); ?></span>
-                <span><?php comments_popup_link('评论 0', '评论 1', '评论 %', '', ''); ?></span>
-                <span><?php edit_post_link('编辑', '[', ']'); ?></span>
+                <span class="info-single-time"><a href="javascript:void(0);" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="首次发布于<?php the_time('Y年n月j日') ?>">最后更新:<?php the_modified_time('Y.n.j'); ?></a></span>
+                <span class="info-single-people">阅读 <?php get_post_views($post -> ID); ?></span>
+                <span class="info-single-comments"><?php comments_popup_link('评论 0', '评论 1', '评论 %', '', ''); ?></span>
+                <span class="info-single-edit"><?php edit_post_link('编辑', '[', ']'); ?></span>
             </div>
             <div class="dropdown-divider"></div>
         </div><!-- post-title-div -->
