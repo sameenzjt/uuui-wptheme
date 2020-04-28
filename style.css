@@ -5,7 +5,7 @@ Version: v1.0.0
 Author: 张金涛
 Author URI: https://www.sameen.art
 Tags: blog, one-column
-Description: 设计资源分享网站 v1.0.0：样式调整；CSS引入变量；文章标题样式优化。
+Description: 设计资源分享网站 v1.0.0：样式调整；CSS引入变量；文章标题样式优化。v1.0.1：深色模式优化。
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: UUUI
@@ -26,6 +26,14 @@ Use it to make something cool, have fun, and share what you've learned with othe
     --Font_size_small: 12px;
     --Footer_bg: #2a2a32;
     --Single_h2: #e40000;
+
+    --Dark_theme_bg: #212121;
+    --Dark_theme_01dp: #2c2c2c;
+    --Dark_theme_01dp_boxshadow: 2px 4px 6px 2px rgba(30,30,30,0.33);
+    --Dark_theme_04dp: #353535;
+    --Dark_theme_04dp_boxshadow: 2px 4px 6px 2px rgba(30,30,30,0.33);
+    --Dark_theme_08dp: #3c3c3c;
+    --Dark_theme_08dp_boxshadow: 1px 1px 8px 2px rgba(10,10,10,0.33);
 }*/
 
 html,
@@ -889,13 +897,13 @@ footer{
 @media (prefers-color-scheme: dark) {
     body,main{
         color: #dedede;
-        background-color: #212121;
+        background-color: var(--Dark_theme_bg);
     }
     a{
         color: #dedede;
     }
     nav{
-        background-color: #2a2a2a;
+        background-color: #353535;
         -webkit-box-shadow: 0px 1px 10px 0px rgba(10,10,10,0.33);
         -moz-box-shadow: 0px 1px 10px 0px rgba(10,10,10,0.33);
         box-shadow: 0px 1px 10px 0px rgba(10,10,10,0.33);
@@ -907,17 +915,17 @@ footer{
 /** 1dp */
     .lanmu-section-div,
     .index-post,
-    .index-sidebar-box{
-        border: 0;
-        background-color: #2a2a2a;
-        box-shadow: 2px 4px 6px 2px rgba(30,30,30,0.33);
-    }
-/** 2dp */
-    .index-posts-list:hover,
-    .index-thematic-div,
+    .index-sidebar-box,
     .wechat-show-qr{
         border: 0;
-        background-color: #313131;
+        background-color: var(--Dark_theme_01dp);
+        box-shadow: var(--Dark_theme_01dp_boxshadow);
+    }
+/** 4dp */
+    .index-posts-list:hover,
+    .index-thematic-div{
+        border: 0;
+        background-color: var(--Dark_theme_04dp);
         box-shadow: 2px 4px 6px 2px rgba(30,30,30,0.33);
     }
     .index-thematic-div:hover{
@@ -935,26 +943,31 @@ footer{
         color: #dedede;
         
     }
-    
-    .search-form{
-        background-color: #2a2a2a;
-        box-shadow: 1px 10px 10px 6px rgba(10,10,10,0.33);
-    }
-    .nav-login:hover .nav-user-div{
-        background-color: #2a2a2a;
-        box-shadow: 1px 1px 8px 2px rgba(10,10,10,0.33);
-    }
 
     .designer-must-have a{
         color: #999999;
-        background-color: #313131;
+        background-color: var(--Dark_theme_04dp);
     }
+
+/** 8dp */
+    .search-form{
+        background-color: var(--Dark_theme_08dp);
+        box-shadow: var(--Dark_theme_08dp_boxshadow);
+    }
+    .nav-login:hover .nav-user-div{
+        background-color: var(--Dark_theme_08dp);
+        box-shadow: var(--Dark_theme_08dp_boxshadow);
+    }
+
+    
 
     .dropdown-divider{
         border-top: 1px solid #404040;
     }
-
-   
+   .back_top{
+    background-color: var(--Dark_theme_01dp);
+    box-shadow: var(--Dark_theme_01dp_boxshadow);
+}
 
 
 

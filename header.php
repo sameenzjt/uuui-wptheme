@@ -81,7 +81,16 @@
             --Font_size_small: 12px;
             --Footer_bg: #2a2a32;
             --Single_h2: #e40000;
+
+            --Dark_theme_bg: #212121;
+            --Dark_theme_01dp: #2c2c2c;
+            --Dark_theme_01dp_boxshadow: 2px 4px 6px 2px rgba(30,30,30,0.33);
+            --Dark_theme_04dp: #353535;
+            --Dark_theme_04dp_boxshadow: 2px 4px 6px 2px rgba(30,30,30,0.33);
+            --Dark_theme_08dp: #3c3c3c;
+            --Dark_theme_08dp_boxshadow: 1px 1px 8px 2px rgba(10,10,10,0.33);
         }
+        
     </style>
     
     <?php wp_head(); ?>
