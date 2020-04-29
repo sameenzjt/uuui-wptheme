@@ -92,7 +92,7 @@ function optionsframework_options() {
 	$imagepath =  get_template_directory_uri() . '/images/';
 
 	$options = array();
-
+/*
 	$options[] = array(
 		'name' => __( 'Basic Settings', 'uuui' ),
 		'type' => 'heading'
@@ -283,7 +283,7 @@ function optionsframework_options() {
 		'type' => 'typography',
 		'options' => $typography_options
 	);
-
+*/
 	
 
 
@@ -335,7 +335,7 @@ function optionsframework_options() {
 		'desc' => __( '公网安备，例：X 公网安备 XXXXXX号', 'uuui' ),
 		'id' => 'gongwang-bei',
 		'type' => 'text',
-		'class' => 'small'
+		'class' => 'mini'
 	);
 
 	$options[] = array(
@@ -371,26 +371,6 @@ function optionsframework_options() {
 		'type' => 'textarea'
 	);
 
-	if ( $options_categories ) {
-		$options[] = array(
-			'name' => __( '选择“软件教程”分类', 'uuui' ),
-			'desc' => __( 'Ps分类', 'uuui' ),
-			'id' => 'categories_ps',
-			'type' => 'select',
-			'class' => 'mini',
-			'options' => $options_categories
-		);
-	}
-
-	if ( $options_categories ) {
-		$options[] = array(
-			'desc' => __( 'Ai分类', 'uuui' ),
-			'id' => 'categories_ai',
-			'type' => 'select',
-			'class' => 'mini',
-			'options' => $options_categories
-		);
-	}
 	
 	if ( $options_categories ) {
 		$options[] = array(
@@ -516,34 +496,41 @@ $options[] = array(
 );
 
 	$options[] = array(
-		'name' => __( 'Web应用的名称', 'uuui' ),
-		'desc' => __( '仅当网站被用作为一个应用安装时才使用，详情：<a href="https://www.ithome.com/0/459/353.htm">PWA应用</a>', 'uuui'),
-		'id' => 'application-name',
-		'type' => 'text'
+		'name' => __( '主题色', 'uuui' ),
+		'desc' => __( '主题色', 'uuui' ),
+		'id' => 'main_color',
+		'std' => '#ff5722',
+		'type' => 'color'
 	);
-
 	$options[] = array(
-		'name' => __( 'Web应用的标签条颜色', 'uuui' ),
-		'desc' => __( '仅当网站被用作为一个应用安装时才使用，详情：<a href="https://www.ithome.com/0/471/471.htm">PWA应用</a>', 'uuui' ),
-		'id' => 'application-color',
-		'std' => '',
+		'name' => __( '深主题色', 'uuui' ),
+		'desc' => __( '深主题色', 'uuui' ),
+		'id' => 'deep_main_color',
+		'std' => '#E64A19',
+		'type' => 'color'
+	);
+	$options[] = array(
+		'name' => __( '主要文字颜色', 'uuui' ),
+		'desc' => __( '主要文字颜色', 'uuui' ),
+		'id' => 'primary_text_color',
+		'std' => '#404040',
+		'type' => 'color'
+	);
+	$options[] = array(
+		'name' => __( '辅助文字颜色', 'uuui' ),
+		'desc' => __( '辅助文字颜色', 'uuui' ),
+		'id' => 'secondary_text_color',
+		'std' => '#757575',
 		'type' => 'color'
 	);
 
 	$options[] = array(
-		'name' => __( '自定义样式', 'uuui' ),
-		'desc' => __( '添加自定义的style，直接填写css选择器，无需额外添加&lt;style&gt;', 'uuui' ),
-		'id' => 'header_style',
-		'std' => '',
-		'type' => 'textarea'
-	);
-
-	$options[] = array(
-		'desc' => __( '例如输入：#menu-box {background: #56bbdc;} 将固定的导航背景改为蓝色
-		<br>全局变灰：html{overflow-y:scroll;filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(100%);}', 'uuui' ),
+		'name' => __( '额外CSS', 'uuui' ),
+		'desc' => __( '请转到“外观--自定义--额外CSS”。<br />
+		全局变灰：html{overflow-y:scroll;filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(100%);}
+		', 'uuui' ),
 		'type' => 'info'
 	);
-	
 
 
 /* —— 高级选项 —— */
@@ -563,30 +550,24 @@ $options[] = array(
 		'desc' => __( '主题自带SEO功能包括：网页关键字、网页描述、网页标题', 'uuui' ),
 		'type' => 'info'
 	);
-
-
+	
 	$options[] = array(
-		'name' => __( '站点验证(使用第三方服务验证站点所有权)', 'uuui' ),
-		'desc' => __( '支持的验证服务：<a href="https://www.google.com/webmasters/tools/">Google Search Console</a>、<a href="https://www.bing.com/webmaster/">Bing Webmaster Center</a>。<br><br>要使用这些高级搜索引擎工具并使用某服务验证您的站点，请将 HTML 标签代码复制粘贴到以下相应位置。', 'uuui' ),
-		'type' => 'info'
+		'name' => __( 'Web应用的名称', 'uuui' ),
+		'desc' => __( '仅当网站被用作为一个应用安装时才使用，详情：<a href="https://www.ithome.com/0/459/353.htm">PWA应用</a>', 'uuui'),
+		'id' => 'application-name',
+		'type' => 'text'
 	);
+
 	$options[] = array(
-		'desc' => __( 'Google Search Console', 'uuui' ),
-		'placeholder' => '<mate name="google-site-verification" content="1234">',
-		'id' => 'google-search-console',
-		'type' => 'text',
-		'class' => 'small'
-	);
-	$options[] = array(
-		'desc' => __( 'Bing Webmaster Center', 'uuui' ),
-		'placeholder' => '<mate name="msvalidate" content="1234">',
-		'id' => 'bing-webmaster-center',
-		'type' => 'text',
-		'class' => 'small'
+		'name' => __( 'Web应用的标签条颜色', 'uuui' ),
+		'desc' => __( '仅当网站被用作为一个应用安装时才使用，详情：<a href="https://www.ithome.com/0/471/471.htm">PWA应用</a>', 'uuui' ),
+		'id' => 'application-color',
+		'std' => '#ff5722',
+		'type' => 'color'
 	);
 
 
-/* —— 广告位 —— */
+/* —— 广告与统计 —— */
 $options[] = array(
 	'name' => __( '广告与统计', 'uuui' ),
 	'type' => 'heading'
@@ -621,6 +602,26 @@ $options[] = array(
 		'type' => 'text'
 	);
 
+	
+	$options[] = array(
+		'name' => __( '站点验证(使用第三方服务验证站点所有权)', 'uuui' ),
+		'desc' => __( '支持的验证服务：<a href="https://www.google.com/webmasters/tools/">Google Search Console</a>、<a href="https://www.bing.com/webmaster/">Bing Webmaster Center</a>。<br><br>要使用这些高级搜索引擎工具并使用某服务验证您的站点，请将 HTML 标签代码复制粘贴到以下相应位置。', 'uuui' ),
+		'type' => 'info'
+	);
+	$options[] = array(
+		'desc' => __( 'Google Search Console', 'uuui' ),
+		'placeholder' => '<mate name="google-site-verification" content="1234">',
+		'id' => 'google-search-console',
+		'type' => 'text',
+		'class' => 'small'
+	);
+	$options[] = array(
+		'desc' => __( 'Bing Webmaster Center（必应Bing网站管理员工具）', 'uuui' ),
+		'placeholder' => '<mate name="msvalidate" content="1234">',
+		'id' => 'bing-webmaster-center',
+		'type' => 'text',
+		'class' => 'small'
+	);
 
 
 /* —— 支持 —— */

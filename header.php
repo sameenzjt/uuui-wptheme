@@ -65,19 +65,18 @@
     <!-- iconfont -->
     <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_n7n1pz31gv.css" />
     
-    <?php $header_style = of_get_option('header_style');//自定义style样式
-        if(!empty($header_style)){
-            echo "<style>\n";
-            echo $header_style;
-            echo "\n</style>";
-        } else{
-            echo "";
-    } ?>
+    
+    <?php $main_color = of_get_option('main_color', '');
+        $deep_main_color = of_get_option('deep_main_color', '');
+        $primary_text_color = of_get_option('primary_text_color', '');
+        $secondary_text_color = of_get_option('secondary_text_color', '');
+    
+    ?>
     <style>
         :root{
-            --Main_color: #ff5722;
-            --Deep_Main_color: #E64A19;
-            --Secondary_text: #757575;
+            --Main_color: <?php echo $main_color; /* #ff5722 */ ?>;
+            --Deep_Main_color: <?php echo $deep_main_color; /* #E64A19 */ ?>;
+            --Secondary_text: <?php echo $secondary_text_color; /* #757575 */ ?>;
             --Font_size_small: 12px;
             --Footer_bg: #2a2a32;
             --Single_h2: #e40000;

@@ -75,10 +75,10 @@
                     echo "<p>转载请注明出处：<a href='" . $the_permalink ."'>《".$the_title."》 | " . $blog_title . "</a></p>";
                 } elseif ($article_type == "reproduced") {
                     echo "<span>转载自：<a href='" . $reprinted_url ."'>" . $reprinted_from . "</a></span>";
-                    echo "<br /><i class='iconfont icon-azhuanzai post-icon'></i><span>本文转载自其他网站，请勿再次转载本文</span>";
+                    echo "<br /><i class='iconfont icon-azhuanzai'></i><span>本文转载自其他网站，请勿再次转载本文</span>";
                 } elseif ($article_type == "translation") {
                     echo "<span>原文：<a href='" . $translation_url ."'>" . $translation_from . "</a></span>";
-                    echo "<br /><i class='iconfont icon-fanyiline post-icon'></i><span>本文翻译自其他文章，可能存在翻译错误，本网站不保证文章准确性</span>";
+                    echo "<br /><i class='iconfont icon-fanyiline'></i><span>本文翻译自其他文章，可能存在翻译错误，本网站不保证文章准确性</span>";
             }?>
         </div>
 
@@ -89,7 +89,7 @@
 
         <!-- 文章标签 -->
         <div class="post-tags">
-            <h5><i class="iconfont icon-biaoqian post-icon"></i>继续阅读与本文标签相同的文章</h5>
+            <h5>继续阅读与本文标签相同的文章</h5>
             <div style="margin-top:20px;">
                 <?php the_tags('<span class="post-tags-badge font-size-small-14">','</span><span class="post-tags-badge font-size-small-14">','</span>'); ?>
             </div>

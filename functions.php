@@ -693,7 +693,7 @@ if ( ! function_exists( 'bootstrapwp_comment' ) ) :
 						); ?>
 					</strong>
 					<p class="font-size-small">
-						<?php printf( '<time datetime="%1$s">%2$s</time>', get_comment_time( 'c' ), sprintf( __( '%1$s %2$s', 'fenikso' ), get_comment_date(), get_comment_time() ));?>
+						<?php printf( '<time datetime="%1$s">%2$s</time>', get_comment_time( 'c' ), sprintf( __( '%1$s %2$s', 'uuui' ), get_comment_date(), get_comment_time() ));?>
 						<?php  edit_comment_link( __( 'Edit', 'uuui' ), '<span class="edit-link">', '</span>' ); ?>
 					</p>
 

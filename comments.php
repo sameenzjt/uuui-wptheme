@@ -11,10 +11,10 @@
         #'comment_notes_after'  => '<p class="form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>',
         'id_form'              => 'commentform',
         'id_submit'            => 'submit',
-        'title_reply'          => __( '' ),//评论标题
-        'title_reply_to'       => __( 'Leave a Reply to %s' ),
-        'cancel_reply_link'    => __( 'Cancel reply' ),
-        'label_submit'         => __( 'Post Comment' ),
+        'title_reply'          => '',//评论标题
+        'title_reply_to'       => __( 'Leave a Reply to %s', 'uuui' ),
+        'cancel_reply_link'    => __( 'Cancel reply', 'uuui' ),
+        'label_submit'         => __( 'Post Comment', 'uuui' ),
     );
 
 comment_form($defaults); ?>
