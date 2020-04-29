@@ -80,10 +80,10 @@
 
 
 /* —— 语言本地化 —— */
-	function myplugin_init() {
-		load_plugin_textdomain( 'uuui', false , dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-	}
-	add_action('plugins_loaded', 'myplugin_init');
+add_action('after_setup_theme', 'my_theme_setup');
+function my_theme_setup(){
+    load_theme_textdomain('uuui', get_template_directory() . '/languages');
+}
 /* —— 语言本地化 —— 结束 */
 
 
@@ -249,8 +249,6 @@ include( 'functions/categories-images.php' );
 //向 WordPress 可视化编辑器添加自定义样式
 include( 'functions/custom-editor.php' );
 
-//自定义文章类型
-//include( 'functions/post-type-link.php' );
 
 //面包屑导航调用：if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();
 include( 'functions/breadcrumb.php' );
@@ -616,7 +614,7 @@ function my_search_form( $form ) {
  
     $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
 	<div class="input-group mb-3">
-	<input type="text" class="form-control" placeholder="' . __('Search') . '" value="' . get_search_query() . '" name="s" id="s">
+	<input type="text" class="form-control" placeholder="' . __('Search', 'uuui') . '" value="' . get_search_query() . '" name="s" id="s">
 	<div class="input-group-append">
 	<button class="btn btn-success"  id="searchsubmit" type="submit" value="'. esc_attr__('Search') .'">' . __('Search') . '</button>  
 	</div>

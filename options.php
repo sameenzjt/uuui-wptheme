@@ -83,7 +83,7 @@ function optionsframework_options() {
 	// Pull all the pages into an array
 	$options_pages = array();
 	$options_pages_obj = get_pages( 'sort_column=post_parent,menu_order' );
-	$options_pages[''] = __( 'Select a page:', 'uuui' );
+	$options_pages[''] = __( '请选择一个页面', 'uuui' );
 	foreach ($options_pages_obj as $page) {
 		$options_pages[$page->ID] = $page->post_title;
 	}
@@ -630,10 +630,10 @@ $options[] = array(
 	'type' => 'heading'
 );
 	$options[] = array(
-		'desc' => __( '<a href="https://www.staticfile.org/"><img src="https://img.shields.io/badge/cdn-Staticfile CDN-yellow.svg" alt="Staticfile CDN"><a>
+		'desc' => '<a href="https://www.staticfile.org/"><img src="https://img.shields.io/badge/cdn-Staticfile CDN-yellow.svg" alt="Staticfile CDN"><a>
 						<a href="https://getbootstrap.com/"><img src="https://img.shields.io/badge/css-Bootstrap 4-green.svg" alt="Bootstrap 4"><a>
 						<a href="https://fontawesome.com"><img src="https://img.shields.io/badge/icon-FontAwesome-green.svg" alt="FontAwesome"></a>
-						<a href="https://jquery.com"><img src="https://img.shields.io/badge/js-jquery-blue.svg" alt="jquery"></a>', 'uuui' ),
+						<a href="https://jquery.com"><img src="https://img.shields.io/badge/js-jquery-blue.svg" alt="jquery"></a>',
 		'type' => 'info'
 	);
 

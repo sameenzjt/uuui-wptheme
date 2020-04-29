@@ -8,7 +8,7 @@
 <h1><?php the_title(); ?></h1>
 
 <select class="form-control" name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'>
-    <option value=""><?php echo esc_attr(__('Select Month')); ?></option>
+    <option value=""><?php echo esc_attr(__('选择月份', 'uuui')); ?></option>
     <?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?> 
 </select>
 <div class="row">

@@ -50,8 +50,8 @@
                         'link_after'       => '',//单个链接文本之后的文本
                         'next_or_number'   => 'number',//选择使用数字分页还是上一页、下一页文本分页，可选number或next
                         'separator'        => ' ',//页码分隔符
-                        'nextpagelink'     => __( 'Next page', 'uuui'),//下一页链接文本
-                        'previouspagelink' => __( 'Previous page', 'uuui' ),//上一页链接文本
+                        'nextpagelink'     => __( '下一页', 'uuui'),//下一页链接文本
+                        'previouspagelink' => __( '上一页', 'uuui' ),//上一页链接文本
                         'pagelink'         => '%',//页码的字符串格式，百分号%会被替换成数字，如页%会生成 “页1”、“页2”这样的样式
                         'echo'             => 1,//选择是要返回结果还是直接输出，默认为True，返回NULL或返回内容；设置为false，则直接输出HTML格式
                     )); ?>
