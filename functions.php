@@ -579,8 +579,8 @@ function register_widget_areas() {
 		'description'   => '首页右侧侧边栏，页面宽度小于991px时会隐藏',	//将在管理后台显示的小工具区域的描述
 		'before_widget' => '<div class="border-radius-4 index-sidebar-box">',	//放置在小工具前面的一些html。通常，使用像div或section标签之类的开头的容器标签
 		'after_widget'  => '</div>',	//放置在小工具后面的一些html。通常，关闭容器标签（例如div或section标签）
-		'before_title'  => '<h5 class="index-sidebar-title">',	//放置在小工具标题前面的一些html。通常是H标题标签
-		'after_title'   => '</h5><div class="dropdown-divider"></div>',	//放置在小工具标题后面的一些html。通常是一个关闭的H标题标签
+		'before_title'  => '<h2 class="index-sidebar-title">',	//放置在小工具标题前面的一些html。通常是H标题标签
+		'after_title'   => '</h2><div class="dropdown-divider"></div>',	//放置在小工具标题后面的一些html。通常是一个关闭的H标题标签
 	));
   
 }

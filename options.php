@@ -361,42 +361,32 @@ function optionsframework_options() {
 		'name' => __( '首页设置', 'uuui' ),
 		'type' => 'heading'
 	);
-
-	
-	$options[] = array(
-		'name' => __( '必备网站栏目', 'uuui' ),
-		'desc' => __( '示例：&lt;a href="此处填写链接" target="_blank"&gt;此处填写名称&lt;/a&gt;', 'uuui' ),
-		'std' => '<a href="https://sameen.art" target="_blank">sameen.art</a>',
-		'id' => 'designer-must-have',
-		'type' => 'textarea'
-	);
-
 	
 	if ( $options_categories ) {
 		$options[] = array(
 			'name' => __( '首页专题栏目', 'uuui' ),
-			'desc' => __( '第一个专题', 'uuui' ),
+			'desc' => __( '专题一', 'uuui' ),
 			'id' => 'index_thematic_1',
 			'type' => 'select',
 			'class' => 'mini', //mini, tiny, small
 			'options' => $options_categories
 		);
 		$options[] = array(
-			'desc' => __( '第二个专题', 'uuui' ),
+			'desc' => __( '专题二', 'uuui' ),
 			'id' => 'index_thematic_2',
 			'type' => 'select',
 			'class' => 'mini', //mini, tiny, small
 			'options' => $options_categories
 		);
 		$options[] = array(
-			'desc' => __( '第三个专题', 'uuui' ),
+			'desc' => __( '专题三', 'uuui' ),
 			'id' => 'index_thematic_3',
 			'type' => 'select',
 			'class' => 'mini', //mini, tiny, small
 			'options' => $options_categories
 		);
 		$options[] = array(
-			'desc' => __( '第四个专题', 'uuui' ),
+			'desc' => __( '专题四', 'uuui' ),
 			'id' => 'index_thematic_4',
 			'type' => 'select',
 			'class' => 'mini', //mini, tiny, small
@@ -427,7 +417,7 @@ function optionsframework_options() {
 			'options' => $options_pages
 		);
 		$options[] = array(
-			'name' => __( '全部标签(细节)', 'uuui' ),
+			'name' => __( '全部标签', 'uuui' ),
 			'desc' => __( '请先发布页面。页面--新建页面--模板选择“标签”(有多个可选择任意一个)。', 'uuui' ),
 			'id' => 'select-all-tags',
 			'type' => 'select',

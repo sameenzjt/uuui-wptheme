@@ -3833,7 +3833,7 @@ msgid ""
 msgstr ""
 
 #: options.php:430
-msgid "全部标签(细节)"
+msgid "全部标签"
 msgstr ""
 
 #: options.php:431

@@ -7,11 +7,7 @@ $select_all_tags = of_get_option('select-all-tags', '');
 ?>
 <div class="row">
 
-    <div class="col-12" style="margin:30px 0 15px">
-        <?php include( 'index/index-lanmu-four.php' ); ?>
-    </div>
-
-    <div class="col-lg-9 col-sm-12" style="margin:15px 0">
+    <div class="col-lg-9 col-sm-12" style="margin:20px 0">
         <div class="index-post">
             <i class="iconfont icon-wenzhang icon"></i>
             <h2 class="index-title">最新文章</h2>
@@ -49,6 +45,7 @@ $select_all_tags = of_get_option('select-all-tags', '');
                         </p>
                     </a>
                 </div>
+                <div class="dropdown-divider"></div>
             <?php endwhile; //mo_paging(); ?>
                 <div class="index-look-all-post w-100">
                     <a href="<?php the_permalink( of_get_option('index-look-all-post', '') ); ?>">
@@ -63,12 +60,12 @@ $select_all_tags = of_get_option('select-all-tags', '');
         </div>
     </div>
 
-    <div class="col-3 index-sidebar">
+    <div class="col-3 index-sidebar" style="margin:20px 0">
         <?php if( wp_is_mobile() ){ ?>
             <?php echo ''; ?>
         <?php } else { ?>
             <div class="border-radius-4 index-sidebar-box"><!--置顶文章 -->
-                <h5 class="index-sidebar-title">置顶文章</h5>
+                <h2 class="index-sidebar-title">置顶文章</h2>
                 <div class="dropdown-divider"></div>
                 <ol class="sticky_posts">
                     <?php $args = array(
