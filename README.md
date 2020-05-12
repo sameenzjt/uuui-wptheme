@@ -24,3 +24,7 @@
 2.是否按照提示完成主题设置？登录后台，找到“外观-主题设置”，将所有设置按要求填写完整。
 
 3.将问题反馈给我们。[反馈地址](https://github.com/sameenzjt/uuui-wptheme/issues/new)
+
+### 许可证
+UUUI-wptheme由[（GitHub@sameenzjt） 授权CC BY-NC-ND 4.0CC iconby iconnc iconnd icon
+
