@@ -26,5 +26,8 @@
 3.将问题反馈给我们。[反馈地址](https://github.com/sameenzjt/uuui-wptheme/issues/new)
 
 ### 许可证
-UUUI-wptheme由[（GitHub@sameenzjt） 授权CC BY-NC-ND 4.0CC iconby iconnc iconnd icon
+
+UUUI-wptheme by 张金涛(GitHub@sameenzjt) is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0
+
+UUUI-wptheme 由 张金涛(GitHub@sameenzjt)根据CC BY-NC-ND 4.0 获得许可。要查看此许可证的副本，请访问https://creativecommons.org/licenses/by-nc-nd/4.0
 
