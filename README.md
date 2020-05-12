@@ -27,7 +27,7 @@
 
 ### 许可证
 
-![alt 属性文本](https://img.shields.io/badge/license-CC_BY_NC_ND_4.0-yellow.svg)
+![alt 属性文本](https://img.shields.io/badge/license-CC-yellow.svg)
 
 UUUI-wptheme by 张金涛(GitHub@sameenzjt) is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0
 
