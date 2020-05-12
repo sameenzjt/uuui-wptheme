@@ -26,6 +26,9 @@
 3.将问题反馈给我们。[反馈地址](https://github.com/sameenzjt/uuui-wptheme/issues/new)
 
 ### 许可证
+![APM](https://img.shields.io/badge/徽标标题-徽标内容-徽标颜色.svg)
+
+
 
 UUUI-wptheme by 张金涛(GitHub@sameenzjt) is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0
 
