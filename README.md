@@ -27,10 +27,6 @@
 
 ### 许可证
 
-![alt 属性文本](https://img.shields.io/badge/license-CC-yellow.svg)
-
 UUUI-wptheme by 张金涛(GitHub@sameenzjt) is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0
 
 UUUI-wptheme 由 张金涛(GitHub@sameenzjt)根据CC BY-NC-ND 4.0 获得许可。要查看此许可证的副本，请访问https://creativecommons.org/licenses/by-nc-nd/4.0
-
-[<span rel="dct:title">UUUI-wptheme</span>](https://github.com/sameenzjt/uuui-wptheme) by [<span rel="cc:attributionName">张金涛(GitHub@sameenzjt)</span>](www.sameen.art)CC BY-NC-ND 4.0[![](https://search.creativecommons.org/static/img/cc_icon.svg)![](https://search.creativecommons.org/static/img/cc-by_icon.svg)![](https://search.creativecommons.org/static/img/cc-nc_icon.svg)![](https://search.creativecommons.org/static/img/cc-nd_icon.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0)
