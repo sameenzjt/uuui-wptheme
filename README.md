@@ -26,7 +26,7 @@
 3.将问题反馈给我们。[反馈地址](https://github.com/sameenzjt/uuui-wptheme/issues/new)
 
 ### 许可证
-![APM](https://img.shields.io/badge/徽标标题-徽标内容-徽标颜色.svg)
+![APM](https://img.shields.io/badge/license-CC%20BY--NC--ND%204.0-brightgreen)
 
 
 
