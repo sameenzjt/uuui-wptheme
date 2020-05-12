@@ -27,7 +27,7 @@
 
 ### 许可证
 
-![license](images/by-nc-nd.png =100)
+![license](images/by-nc-nd.png){:width="100px"}
 
 UUUI-wptheme by 张金涛(GitHub@sameenzjt) is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit [https://creativecommons.org/licenses/by-nc-nd/4.0](https://creativecommons.org/licenses/by-nc-nd/4.0)
 
