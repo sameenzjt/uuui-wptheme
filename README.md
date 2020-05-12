@@ -26,11 +26,12 @@
 3.将问题反馈给我们。[反馈地址](https://github.com/sameenzjt/uuui-wptheme/issues/new)
 
 ### 许可证
-![APM](https://img.shields.io/badge/license-CC%20BY--NC--ND%204.0-brightgreen)
 
+<img src="https://img.shields.io/badge/license-CC%20BY--NC--ND%204.0-yellow" />
 
 
 UUUI-wptheme by 张金涛(GitHub@sameenzjt) is licensed under CC BY-NC-ND 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0
 
 UUUI-wptheme 由 张金涛(GitHub@sameenzjt)根据CC BY-NC-ND 4.0 获得许可。要查看此许可证的副本，请访问https://creativecommons.org/licenses/by-nc-nd/4.0
+
 
