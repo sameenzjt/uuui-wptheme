@@ -27,6 +27,13 @@ function optionsframework_options() {
 		'five' => __( 'Five', 'uuui' )
 	);
 
+	// Test data
+	$replace_comments = array(
+		'replace_when_comments_are_displayed' => __( '评论显示时替换(推荐)', 'uuui' ),
+		'replace_when_comments_are_added' => __( '评论添加时替换', 'uuui' ),
+		'do_not_replace_comments' => __( '不替换评论', 'uuui' )
+	);
+
 	// Multicheck Array
 	$multicheck_array = array(
 		'one' => __( 'French Toast', 'uuui' ),
@@ -538,6 +545,19 @@ $options[] = array(
 	);
 	$options[] = array(
 		'desc' => __( '主题自带SEO功能包括：网页关键字、网页描述、网页标题', 'uuui' ),
+		'type' => 'info'
+	);
+
+	$options[] = array(
+		'name' => __( '评论敏感词自动替换', 'uuui' ),
+		'desc' => __( '自动将敏感字词替换', 'uuui' ),
+		'id' => 'replace_comments',
+		'std' => 'replace_when_comments_are_displayed',
+		'type' => 'radio',
+		'options' => $replace_comments
+	);
+	$options[] = array(
+		'desc' => __( '<strong>评论显示时替换</strong>：此方法不会更改评论的原始内容，只会在评论显示给访客时替换相应的关键字(后台“评论”中也是显示替换后的内容，需要点击“编辑”按钮才能看到原始内容)，保存在数据库中的仍然是评论的原文；<br /><strong>评论添加时替换</strong>：此方法将直接替换访客发布的评论内容，数据库中存储的评论就是替换后的内容；<br /><strong>自定义替换规则</strong>：请修改主题文件夹中“functions/prohibited-words.txt”文件，注意格式为“关键字A->替换A || 关键字B->替换B || 关键字C->替换C”，以此类推 ', 'uuui' ),
 		'type' => 'info'
 	);
 	

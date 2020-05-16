@@ -1,7 +1,4 @@
 <?php
-
-
-
 //wp_register_script：样式表唯一名称,样式表的URL,依赖关系:脚本将在该数组所包含的其他脚本之后处理,指定版本号,移动到页脚
 //wp_register_style：样式表唯一名称,样式表的URL,依赖关系:脚本将在该数组所包含的其他脚本之后处理,指定版本号,CSS的媒体类型
 //加载文件到前台
@@ -55,12 +52,8 @@
 	add_action( 'wp_enqueue_scripts', 'spScripts' );
 
 
-
-
 //网站前/后台优化Reception
 	include( 'functions/functions_optimization.php' );
-
-
 
 
 /* —— 保护后台登录 —— */
@@ -75,8 +68,6 @@
 	add_filter('use_block_editor_for_post', '__return_false');
 	remove_action( 'wp_enqueue_scripts', 'wp_common_block_scripts_and_styles' );
 /* —— 后台禁用古腾堡编辑器 —— 结束 */
-
-
 
 
 /* —— 语言本地化 —— */
@@ -110,9 +101,6 @@ if ( function_exists( 'add_theme_support' ) ) {
  —— 启用特色图片 —— 结束 */
 
 
-/* —— 后台启用链接选项 —— */
-	add_filter( 'pre_option_link_manager_enabled', '__return_true' );
-/* —— 后台启用链接选项 —— 结束 */
 
 
 /* —— ACF插件 —— */
@@ -249,17 +237,11 @@ include( 'functions/categories-images.php' );
 //向 WordPress 可视化编辑器添加自定义样式
 include( 'functions/custom-editor.php' );
 
-
 //面包屑导航调用：if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();
 include( 'functions/breadcrumb.php' );
 
-//快速添加友情链接（设置——阅读）按照 链接 |标题 的方式输入 调用：if (function_exists(wpjam_blogroll)) wpjam_blogroll();
-include( 'functions/WPJAM-Blogroll.php' );
-
 //自定义登录页面
 include( 'functions/custom_login.php' );
-
-
 
 
 /* —— 字数统计 —— 使用echo count_words_read_time();调用
@@ -284,7 +266,73 @@ function count_words_read_time () {
 
 
 
+/* —— 后台启用链接选项 —— */
+	#add_filter( 'pre_option_link_manager_enabled', '__return_true' );
+/* —— 后台启用链接选项 —— 结束 */
 
+
+/* —— 快速添加友情链接（设置——阅读）按照 链接 |标题 的方式输入 调用：if (function_exists(wpjam_blogroll)) wpjam_blogroll(); —— */
+	add_action('admin_init', 'wpjam_blogroll_settings_api_init');
+	function wpjam_blogroll_settings_api_init() {
+		add_settings_field('wpjam_blogroll_setting', '友情链接', 'wpjam_blogroll_setting_callback_function', 'reading');
+		register_setting('reading','wpjam_blogroll_setting');
+	}
+
+	function wpjam_blogroll_setting_callback_function() {
+		echo '<textarea name="wpjam_blogroll_setting" rows="10" cols="50" id="wpjam_blogroll_setting" class="large-text code">' . get_option('wpjam_blogroll_setting') . '</textarea>';
+	}
+
+	function wpjam_blogroll(){
+		$wpjam_blogroll_setting =  get_option('wpjam_blogroll_setting');
+		if($wpjam_blogroll_setting){
+			$wpjam_blogrolls = explode("\n", $wpjam_blogroll_setting);
+			foreach ($wpjam_blogrolls as $wpjam_blogroll) {
+				$wpjam_blogroll = explode("|", $wpjam_blogroll );
+				echo '<a target="_blank" href="'.trim($wpjam_blogroll[0]).'" title="'.esc_attr(trim($wpjam_blogroll[1])).'">'.trim($wpjam_blogroll[1]).'</a>';
+				}
+		}
+	}
+/* —— 快速添加友情链接 —— 结束 */
+
+/* —— 评论敏感词自动替换 —— */
+if(of_get_option('replace_comments') == 'replace_when_comments_are_displayed'){
+	function dali_conents_replace($incoming_comment) {
+		$words = file_get_contents(get_stylesheet_directory_uri().'/functions/prohibited-words.txt');//这里是替换规则文件路径
+		$rules = explode('||', $words);
+	
+		foreach($rules as $rule) {
+			$word = explode('->', trim($rule));
+	
+			if(isset($word[1]))
+				$incoming_comment = str_replace(trim($word[0]), trim($word[1]), $incoming_comment);
+		}
+	
+		return $incoming_comment;
+	}
+	add_filter( 'comment_text', 'dali_conents_replace' );
+	add_filter( 'comment_text_rss', 'dali_conents_replace' );
+}elseif(of_get_option('replace_comments') == 'replace_when_comments_are_added'){
+	function dali_conents_replace($incoming_comment) {
+		$words = file_get_contents(get_stylesheet_directory_uri().'/functions/prohibited-words.txt');//这里是替换规则文件路径
+		$rules = explode('||', $words);
+	
+		foreach($rules as $rule) {
+			$word = explode('->', trim($rule));
+	
+			if(isset($word[1]))
+				$incoming_comment['comment_content'] = str_replace(trim($word[0]), trim($word[1]), $incoming_comment['comment_content']);
+		}
+	
+		return $incoming_comment;
+	}
+	
+	add_filter( 'preprocess_comment', 'dali_conents_replace' );
+}else {
+	# code...
+}
+/* —— 评论文字自动替换 —— 结束 */
+
+	
 
 /* —— 支持中文用户名 —— */
 	function ludou_sanitize_user ($username, $raw_username, $strict) {
@@ -305,6 +353,7 @@ function count_words_read_time () {
 	}
 	add_filter ('sanitize_user', 'ludou_sanitize_user', 10, 3);
 /* —— 支持中文用户名 —— 结束 */
+
 
 /** —— 自定义 WordPress 的默认 Gravatar 头像 ——https://www.wpdaxue.com/change-wordpress-default-gravatar.html */
 add_filter( 'avatar_defaults', 'newgravatar' );
@@ -406,21 +455,6 @@ function newgravatar ($avatar_defaults) {
 /**显示页面查询次数、加载时间和内存占用 —— 结束*/
 
 
-/** —— 文章编辑页将作者模块移到发布模块内 ——*/
-	add_action( 'admin_menu', 'remove_author_metabox' );
-	add_action( 'post_submitbox_misc_actions', 'move_author_to_publish_metabox' );
-	function remove_author_metabox() {
-		remove_meta_box( 'authordiv', 'post', 'normal' );
-	}
-	function move_author_to_publish_metabox() {
-		global $post_ID;
-		$post = get_post( $post_ID );
-		echo '<div id="author" class="misc-pub-section" style="border-top-style:solid; border-top-width:1px; border-top-color:#EEEEEE; border-bottom-width:0px;">作者： ';
-		post_author_meta_box( $post );
-		echo '</div>';
-	}
-/** —— 文章编辑页将作者模块移到发布模块内 —— 结束*/
-
 
 
 /**
@@ -520,6 +554,18 @@ function password_protected_change( $content ) {
 }
 add_filter( 'the_password_form','password_protected_change' );
 /** WordPress 更改文章密码保护后显示的提示内容 —— 结束 */
+//改变密码保护文章前缀文字
+function change_protected_title_prefix() {
+    return "%s <span class='badge badge-pill badge-danger'>密码保护</span>";
+}
+add_filter('protected_title_format', 'change_protected_title_prefix');
+//改变私密文章前缀文字
+function change_private_title_prefix() {
+    return "%s <span class='badge badge-pill badge-danger'>私密文章</span>";
+}
+add_filter('private_title_format', 'change_private_title_prefix');
+
+
 
 /** ***************************************短代码********************************************* */
 

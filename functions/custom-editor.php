@@ -90,4 +90,21 @@ function QGG_select(){
 /** 后台编辑器添加下拉式按钮 —— 结束 */ 
 
 
+/** —— 文章编辑页将作者模块移到发布模块内 ——*/
+add_action( 'admin_menu', 'remove_author_metabox' );
+add_action( 'post_submitbox_misc_actions', 'move_author_to_publish_metabox' );
+function remove_author_metabox() {
+    remove_meta_box( 'authordiv', 'post', 'normal' );
+}
+function move_author_to_publish_metabox() {
+    global $post_ID;
+    $post = get_post( $post_ID );
+    echo '<div id="author" class="misc-pub-section" style="border-top-style:solid; border-top-width:1px; border-top-color:#EEEEEE; border-bottom-width:0px;">作者： ';
+    post_author_meta_box( $post );
+    echo '</div>';
+}
+/** —— 文章编辑页将作者模块移到发布模块内 —— 结束*/
+
+
+
 ?>
