@@ -65,14 +65,13 @@
     <!-- iconfont -->
     <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1581944_n7n1pz31gv.css" />
     
-    
-    <?php $main_color = of_get_option('main_color', '');
-        $deep_main_color = of_get_option('deep_main_color', '');
-        $primary_text_color = of_get_option('primary_text_color', '');
-        $secondary_text_color = of_get_option('secondary_text_color', '');
-    
-    ?>
     <style>
+        <?php $main_color = of_get_option('main_color', '');
+            $deep_main_color = of_get_option('deep_main_color', '');
+            $primary_text_color = of_get_option('primary_text_color', '');
+            $secondary_text_color = of_get_option('secondary_text_color', '');
+        
+        ?>
         :root{
             --Main_color: <?php echo $main_color; /* #ff5722 */ ?>;
             --Deep_Main_color: <?php echo $deep_main_color; /* #E64A19 */ ?>;
@@ -94,8 +93,9 @@
     
     <?php wp_head(); ?>
 
-    <!-- 百度统计 -->
-    <?php if(!empty(of_get_option('baidu-tongji', ''))){ ?>
+    
+    <?php if(!empty(of_get_option('baidu-tongji', ''))){ //百度统计 ?>
+        
         <script>
             var _hmt = _hmt || [];
             (function() {
@@ -106,6 +106,13 @@
             })();
         </script>
     <?php } ?>
+    
+    <?php if( !empty( of_get_option( 'google-search-console', '' ) ) ){//谷歌验证
+        echo '<meta name="google-site-verification" content="' . of_get_option( 'google-search-console', '' ) . '" />';
+    } ?>
+    <?php if( !empty( of_get_option( 'bing-webmaster-center', '' ) ) ){//必应验证
+        echo of_get_option( 'bing-webmaster-center', '' );
+    } ?>
 
     <!-- img图片src错误时加载默认图片 -->
     <script type="text/javascript">

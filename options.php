@@ -619,13 +619,15 @@ $options[] = array(
 		'type' => 'info'
 	);
 	$options[] = array(
-		'desc' => __( 'Google Search Console', 'uuui' ),
-		'placeholder' => '<mate name="google-site-verification" content="1234">',
+		'name' => __('Google Search Console', 'uuui'),
+		'desc' => __( '例：只填写content="后面的一串代码', 'uuui' ),
+		'placeholder' => 'x2tkVvAqhT0Y0uBjCh5ARHNSHdxAeD6dzgBjCXb3I',
 		'id' => 'google-search-console',
 		'type' => 'text',
 		'class' => 'small'
 	);
 	$options[] = array(
+		'name' => __('必应Bing网站管理员工具'),
 		'desc' => __( 'Bing Webmaster Center（必应Bing网站管理员工具）', 'uuui' ),
 		'placeholder' => '<mate name="msvalidate" content="1234">',
 		'id' => 'bing-webmaster-center',
