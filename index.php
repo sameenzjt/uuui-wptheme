@@ -88,7 +88,7 @@ $select_all_tags = of_get_option('select-all-tags', '');
     </div>
 
     <div class="col-12 index-thematic" style="margin:15px 0">
-        <?php include( 'index/index-thematic.php' ); ?>
+        <?php get_template_part( 'index/index', 'thematic' ); ?>
     </div>
 </div>
 </main>

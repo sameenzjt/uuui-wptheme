@@ -1,7 +1,7 @@
 <?php
 //添加自定义CSS
 function custom_login() {
-    echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/res/css/style_login.css" />';
+    echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/res/css/style_login.css" />';
 }
 add_action('login_head', 'custom_login');
 
@@ -32,7 +32,7 @@ add_action('login_head', 'my_custom_login_logo');
 
 
 //自定义登录页面的LOGO链接为首页链接
-add_filter('login_headerurl', create_function(false,"return get_bloginfo('url');"));
+add_filter('login_headerurl', create_function(false,"return home_url();"));
 
 
 /*

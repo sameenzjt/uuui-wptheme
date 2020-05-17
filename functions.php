@@ -29,27 +29,27 @@
 	}
 	add_action( 'init', 'myScripts' );
 //加载文件到自定义页面
+add_action( 'wp_enqueue_scripts', 'spScripts' );
 	function spScripts() {
-		if ( is_single() ) {
-			wp_register_style( 'fontawesome', 'https://cdn.staticfile.org/font-awesome/5.12.0-1/css/all.min.css', '', null, 'all' );
-			wp_register_style( 'single_css', get_template_directory_uri() . '/res/css/style_single.css', 'style_css', wp_get_theme()->get('Version'), 'screen' );
+		wp_register_style( 'fontawesome', 'https://cdn.staticfile.org/font-awesome/5.12.0-1/css/all.min.css', '', null, 'all' );
+		wp_register_style( 'single_css', get_template_directory_uri() . '/res/css/style_single.css', 'style_css', wp_get_theme()->get('Version'), 'screen' );
+		
+		wp_register_script( 'single_js', get_template_directory_uri() . '/res/js/single.js', 'jquery_js', wp_get_theme()->get('Version'), true );
+		wp_register_script( 'code_prettify', 'https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst', '', null, true );
+		
+		wp_register_style( 'page_css', get_template_directory_uri() . '/res/css/style_page.css', 'style_css', wp_get_theme()->get('Version'), 'screen' );
 			
-			wp_register_script( 'single_js', get_template_directory_uri() . '/res/js/single.js', 'jquery_js', wp_get_theme()->get('Version'), true );
-			wp_register_script( 'code_prettify', 'https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst', '', null, true );
-
+		if ( is_single() ) {
 			wp_enqueue_style( 'fontawesome' );
 			wp_enqueue_style( 'single_css' );
 			wp_enqueue_script( 'single_js' );
 			wp_enqueue_script( 'code_prettify' );
 		}
 		if ( is_page() ) {
-			wp_register_style( 'page_css', get_template_directory_uri() . '/res/css/style_page.css', 'style_css', wp_get_theme()->get('Version'), 'screen' );
-			
 			wp_enqueue_style( 'page_css' );
 		}
-
 	}
-	add_action( 'wp_enqueue_scripts', 'spScripts' );
+	
 
 
 //网站前/后台优化Reception
@@ -71,10 +71,13 @@
 
 
 /* —— 语言本地化 —— */
-add_action('after_setup_theme', 'my_theme_setup');
 function my_theme_setup(){
+
+	add_theme_support( 'title-tag' );
+
     load_theme_textdomain('uuui', get_template_directory() . '/languages');
 }
+add_action('after_setup_theme', 'my_theme_setup');
 /* —— 语言本地化 —— 结束 */
 
 
@@ -294,6 +297,7 @@ function count_words_read_time () {
 	}
 /* —— 快速添加友情链接 —— 结束 */
 
+
 /* —— 评论敏感词自动替换 —— */
 if(of_get_option('replace_comments') == 'replace_when_comments_are_displayed'){
 	function dali_conents_replace($incoming_comment) {
@@ -358,8 +362,8 @@ if(of_get_option('replace_comments') == 'replace_when_comments_are_displayed'){
 /** —— 自定义 WordPress 的默认 Gravatar 头像 ——https://www.wpdaxue.com/change-wordpress-default-gravatar.html */
 add_filter( 'avatar_defaults', 'newgravatar' );
 function newgravatar ($avatar_defaults) {
-    $myavatar = get_bloginfo('template_directory') . '/images/default_avatar_1.jpg';  
-    $avatar_defaults[$myavatar] = "默认头像1（主题）";
+    $myavatar = get_template_directory_uri() . '/images/default_avatar_1.jpg';  
+    $avatar_defaults[$myavatar] = "默认头像1（主题生成）";
     return $avatar_defaults;  
 }
 /** —— 自定义 WordPress 的默认 Gravatar 头像 —— 结束 */
@@ -453,7 +457,6 @@ function newgravatar ($avatar_defaults) {
 	add_action( 'wp_footer', 'performance', 20 );
 
 /**显示页面查询次数、加载时间和内存占用 —— 结束*/
-
 
 
 
@@ -662,7 +665,7 @@ function my_search_form( $form ) {
 	<div class="input-group mb-3">
 	<input type="text" class="form-control" placeholder="' . __('Search', 'uuui') . '" value="' . get_search_query() . '" name="s" id="s">
 	<div class="input-group-append">
-	<button class="btn btn-success"  id="searchsubmit" type="submit" value="'. esc_attr__('Search') .'">' . __('Search') . '</button>  
+	<button class="btn btn-success"  id="searchsubmit" type="submit" value="'. esc_attr__('Search') .'">' . __('Search', 'uuui') . '</button>  
 	</div>
 	</div>
 	</form>
@@ -745,7 +748,7 @@ if ( ! function_exists( 'bootstrapwp_comment' ) ) :
 					
 					<?php // 显示评论的回复链接 
 						comment_reply_link( array_merge( $args, array( 
-						'reply_text' =>  __( 'Reply'), 
+						'reply_text' =>  __( 'Reply', 'uuui'), 
 						'depth'      =>  $depth, 
 						'max_depth'  =>  $args['max_depth'] ) ) ); 
 					?>

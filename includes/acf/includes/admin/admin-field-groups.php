@@ -813,7 +813,7 @@ class acf_admin_field_groups {
 	
 	
 	// set only options
-	$('#bulk-action-selector-bottom').html('<option value="-1"><?php _e('Bulk Actions'); ?></option><option value="acfsync"><?php _e('Sync', 'acf'); ?></option>');
+	$('#bulk-action-selector-bottom').html('<option value="-1"><?php _e('Bulk Actions', 'acf'); ?></option><option value="acfsync"><?php _e('Sync', 'acf'); ?></option>');
 		
 })(jQuery);
 </script>

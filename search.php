@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-12 col-sm-12 box">
         <div class="tag-content">
-            <?php printf( __( '关键字“%s”的搜索结果如下：', 'tanhaibonet' ), '<span>' . get_search_query() . '</span>' ); ?>
+            <?php printf( __( '关键字“%s”的搜索结果如下：', 'uuui' ), '<span>' . get_search_query() . '</span>' ); ?>
         </div>
         <div class="dropdown-divider"></div>
         

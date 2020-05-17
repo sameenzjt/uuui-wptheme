@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="zh">
+<html <?php language_attributes(); ?>>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,7 +45,7 @@
             } ?></title>
     <!-- 网站SEO，首页/文章/页面的描述和关键词 -->
     <?php if ( of_get_option('site-seo','') == "1" ){
-            include('functions/site-seo.php');
+            get_template_part('functions/site', 'seo');
         } else{
             echo '';
         }
@@ -111,7 +111,7 @@
     <script type="text/javascript">
         function nofind(){
             var img=event.srcElement;
-            img.src="<?php bloginfo('template_url'); ?>/images/1col.png";
+            img.src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/1col.png";
             img.onerror=null; //控制不要一直跳动
         }
     </script>
@@ -120,7 +120,7 @@
 <?php flush(); ?>
 <body>
     <nav>
-        <a class="" href="<?php echo get_option('home'); ?>/">
+        <a class="" href="<?php echo home_url(); ?>/">
             <?php 
                 $site_logo = of_get_option('site_logo', '');
                 $blog_title = get_bloginfo('name');
@@ -182,7 +182,7 @@
                 <a id="jk" href="javascript:void(0);" title="关闭搜索框">
                     <i class="iconfont icon-guanbi float-right" style="font-size: 16px;"></i>
                 </a>
-                <form style="width:80%;box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);" class="input-group input-group-sm mb-3 mx-auto" method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
+                <form style="width:80%;box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);" class="input-group input-group-sm mb-3 mx-auto" method="get" id="searchform" action="<?php echo esc_url( home_url() ); ?>/">
                     <input class="form-control" type="text" placeholder="输入关键字" name="s" id="s"/>
                     <div class="input-group-append">
                         <input class="btn btn-success" type="submit" value="搜 索" onClick="if(document.forms['search'].searchinput.value=='- Search -')document.forms['search'].searchinput.value='';" alt="Search" />

@@ -75,7 +75,7 @@ if(!function_exists('fa_ajax_comment_callback')) :
 				<div class="reply">
 					<?php // 显示评论的回复链接 
 						comment_reply_link( array_merge( $args, array( 
-						'reply_text' =>  __( 'Reply'), 
+						'reply_text' =>  __( 'Reply', 'uuui'), 
 						'after'      =>  ' <span>&darr;</span>', 
 						'depth'      =>  $depth, 
 						'max_depth'  =>  $args['max_depth'] ) ) ); 

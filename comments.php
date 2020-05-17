@@ -4,10 +4,10 @@
 ?>
 
 <?php $defaults = array(
-        'comment_field'        => '<div class="form-group"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><textarea class="form-control" id="comment" name="comment" rows="3" aria-required="true"></textarea></div>',
-        'must_log_in'          => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+        'comment_field'        => '<div class="form-group"><label for="comment">' . _x( 'Comment', 'uuui' ) . '</label><textarea class="form-control" id="comment" name="comment" rows="3" aria-required="true"></textarea></div>',
+        'must_log_in'          => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'uuui' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
         'logged_in_as'         => '<p class="float-right">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'uuui' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
-        'comment_notes_before' => '<p class="float-right">' . __( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) . '</p>',
+        'comment_notes_before' => '<p class="float-right">' . __( 'Your email address will not be published.', 'uuui') . ( $req ? $required_text : '' ) . '</p>',
         #'comment_notes_after'  => '<p class="form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>',
         'id_form'              => 'commentform',
         'id_submit'            => 'submit',
